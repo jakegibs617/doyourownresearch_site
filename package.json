@@ -1,0 +1,13 @@
+{
+  "name": "doyourownresearch-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static public report site for doyourownresearch.me",
+  "scripts": {
+    "test": "node scripts/validate-site.mjs",
+    "serve": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
