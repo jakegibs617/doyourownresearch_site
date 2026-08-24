@@ -1,0 +1,207 @@
+name: Configure doyourownresearch.me DNS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  configure-dns:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Reconcile GitHub Pages DNS records
+        env:
+          GODADDY_PAT: ${{ secrets.GODADDY_PAT }}
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          if [[ -z "${GODADDY_PAT:-}" ]]; then
+            echo "GODADDY_PAT is not configured" >&2
+            exit 1
+          fi
+
+          zone="doyourownresearch.me"
+          api="https://api.godaddy.com/v3/domains/zones/${zone}/dns-records"
+          auth_header="Authorization: Bearer ${GODADDY_PAT}"
+          desired_cname="jakegibs617.github.io"
+          desired_a=(
+            "185.199.108.153"
+            "185.199.109.153"
+            "185.199.110.153"
+            "185.199.111.153"
+          )
+
+          temp_dir="$(mktemp -d)"
+          trap 'rm -rf "${temp_dir}"' EXIT
+          records_file="${temp_dir}/records.json"
+
+          fetch_records() {
+            curl --fail --silent --show-error \
+              -H "${auth_header}" \
+              -H "Accept: application/json" \
+              "${api}?pageSize=100&totalRequired=true" \
+              > "${records_file}"
+            jq -e '.items | type == "array"' "${records_file}" > /dev/null
+          }
+
+          replace_record() {
+            local record_id="$1"
+            local payload="$2"
+            curl --fail --silent --show-error \
+              --request PUT \
+              -H "${auth_header}" \
+              -H "Accept: application/json" \
+              -H "Content-Type: application/json" \
+              --data "${payload}" \
+              "${api}/${record_id}" \
+              > /dev/null
+          }
+
+          create_record() {
+            local payload="$1"
+            curl --fail --silent --show-error \
+              --request POST \
+              -H "${auth_header}" \
+              -H "Accept: application/json" \
+              -H "Content-Type: application/json" \
+              --data "${payload}" \
+              "${api}" \
+              > /dev/null
+          }
+
+          delete_record() {
+            local record_id="$1"
+            curl --fail --silent --show-error \
+              --request DELETE \
+              -H "${auth_header}" \
+              -H "Accept: application/json" \
+              "${api}/${record_id}" \
+              > /dev/null
+          }
+
+          fetch_records
+
+          mapfile -t replaceable_a_ids < <(
+            jq -r \
+              --argjson desired '["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]' \
+              '.items[]
+               | select(.type == "A" and .name == "@")
+               | select((.data as $data | $desired | index($data)) == null)
+               | .recordId' \
+              "${records_file}"
+          )
+
+          replacement_index=0
+          for ip in "${desired_a[@]}"; do
+            if jq -e --arg ip "${ip}" \
+              '.items | any(.type == "A" and .name == "@" and .data == $ip)' \
+              "${records_file}" > /dev/null; then
+              continue
+            fi
+
+            payload="$(jq -cn --arg data "${ip}" \
+              '{name: "@", type: "A", data: $data, ttl: 600}')"
+
+            if (( replacement_index < ${#replaceable_a_ids[@]} )); then
+              replace_record "${replaceable_a_ids[replacement_index]}" "${payload}"
+              replacement_index=$((replacement_index + 1))
+            else
+              create_record "${payload}"
+            fi
+          done
+
+          while (( replacement_index < ${#replaceable_a_ids[@]} )); do
+            delete_record "${replaceable_a_ids[replacement_index]}"
+            replacement_index=$((replacement_index + 1))
+          done
+
+          fetch_records
+
+          mapfile -t cname_rows < <(
+            jq -r \
+              '.items[]
+               | select(.type == "CNAME" and .name == "www")
+               | [.recordId, (.data | rtrimstr("."))]
+               | @tsv' \
+              "${records_file}"
+          )
+
+          cname_payload="$(jq -cn --arg data "${desired_cname}" \
+            '{name: "www", type: "CNAME", data: $data, ttl: 600}')"
+          kept_cname_id=""
+
+          for row in "${cname_rows[@]}"; do
+            IFS=$'\t' read -r record_id record_data <<< "${row}"
+            if [[ -z "${kept_cname_id}" && "${record_data}" == "${desired_cname}" ]]; then
+              kept_cname_id="${record_id}"
+            fi
+          done
+
+          if [[ -z "${kept_cname_id}" ]]; then
+            if (( ${#cname_rows[@]} > 0 )); then
+              IFS=$'\t' read -r kept_cname_id _ <<< "${cname_rows[0]}"
+              replace_record "${kept_cname_id}" "${cname_payload}"
+            else
+              create_record "${cname_payload}"
+              fetch_records
+              kept_cname_id="$(
+                jq -r --arg desired "${desired_cname}" \
+                  '.items[]
+                   | select(.type == "CNAME" and .name == "www")
+                   | select((.data | rtrimstr(".")) == $desired)
+                   | .recordId' \
+                  "${records_file}" \
+                | head -n 1
+              )"
+            fi
+          fi
+
+          for row in "${cname_rows[@]}"; do
+            IFS=$'\t' read -r record_id _ <<< "${row}"
+            if [[ "${record_id}" != "${kept_cname_id}" ]]; then
+              delete_record "${record_id}"
+            fi
+          done
+
+          fetch_records
+
+          declare -A seen_a=()
+          while IFS=$'\t' read -r record_id record_data; do
+            if [[ -n "${seen_a[${record_data}]:-}" ]]; then
+              delete_record "${record_id}"
+            else
+              seen_a["${record_data}"]="${record_id}"
+            fi
+          done < <(
+            jq -r \
+              --argjson desired '["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]' \
+              '.items[]
+               | select(.type == "A" and .name == "@")
+               | select(.data as $data | $desired | index($data))
+               | [.recordId, .data]
+               | @tsv' \
+              "${records_file}"
+          )
+
+          fetch_records
+
+          jq -e \
+            --arg cname "${desired_cname}" \
+            --argjson desired '["185.199.108.153", "185.199.109.153", "185.199.110.153", "185.199.111.153"]' \
+            '([.items[] | select(.type == "A" and .name == "@") | .data] | sort) == ($desired | sort)
+             and
+             ([.items[]
+               | select(.type == "CNAME" and .name == "www")
+               | (.data | rtrimstr("."))] == [$cname])' \
+            "${records_file}" \
+            > /dev/null
+
+          echo "Configured DNS records:"
+          jq -r \
+            '.items[]
+             | select((.type == "A" and .name == "@") or
+                      (.type == "CNAME" and .name == "www"))
+             | "\(.type) \(.name) -> \(.data) (TTL \(.ttl))"' \
+            "${records_file}"
