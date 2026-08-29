@@ -85,6 +85,127 @@
       return `${label}<div class="visual-report-layers">${visual.layers.map((layer) => `<div class="report-layer"><strong>${escapeHtml(layer.label)}</strong><span>${escapeHtml(layer.detail)}</span></div>`).join("")}</div>`;
     }
 
+    if (visual.type === "scope-boundary") {
+      const column = (columnLabel, items, modifier) => `
+        <div class="boundary-column boundary-column--${modifier}">
+          <h3>${escapeHtml(columnLabel)}</h3>
+          <ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>`;
+      return `${label}<div class="visual-scope-boundary">
+        <div class="boundary-columns">
+          ${column(visual.askedLabel, visual.asked, "asked")}
+          ${column(visual.excludedLabel, visual.excluded, "excluded")}
+        </div>
+        <p class="boundary-note">${escapeHtml(visual.note)}</p>
+      </div>`;
+    }
+
+    if (visual.type === "hypothesis-roster") {
+      const rows = visual.items.map((item) => `
+        <div class="roster-row">
+          <div class="roster-row__head">
+            <span class="roster-id">${escapeHtml(item.id)}</span>
+            <p class="roster-claim">${escapeHtml(item.claim)}</p>
+          </div>
+          <p class="roster-falsifier"><span>Falsified by</span>${escapeHtml(item.falsifier)}</p>
+          <div class="roster-counts" role="list" aria-label="Bearing counts for ${escapeHtml(item.id)}">
+            ${item.counts.map((count, index) => `<div class="roster-count${count > 0 ? " is-live" : ""}" role="listitem"><b>${escapeHtml(visual.scale[index])}</b><span>${escapeHtml(count)}</span></div>`).join("")}
+          </div>
+        </div>`).join("");
+      return `${label}<div class="visual-hypothesis-roster"><div class="visual-rows">${rows}</div><p class="roster-note">${escapeHtml(visual.note)}</p></div>`;
+    }
+
+    if (visual.type === "attack-log") {
+      const rows = visual.items.map((item, index) => `
+        <div class="attack-row attack-row--${escapeHtml(item.outcome)}">
+          <span class="attack-index">${String(index + 1).padStart(2, "0")}</span>
+          <span class="attack-target">${escapeHtml(item.target)}</span>
+          <p class="attack-looked">${escapeHtml(item.looked)}</p>
+          <span class="attack-outcome">${item.outcome === "returned" ? "RETURNED" : "EMPTY"}</span>
+        </div>`).join("");
+      return `${label}<div class="visual-attack-log"><div class="visual-rows">${rows}</div><p class="attack-footer">${escapeHtml(visual.footer)}</p></div>`;
+    }
+
+    if (visual.type === "prevalence-ladder") {
+      const bars = visual.items.map((item) => `
+        <div class="ladder-row${item.composite ? " ladder-row--composite" : ""}">
+          <div class="ladder-value"><strong>${escapeHtml(item.value)}</strong><i>%</i></div>
+          <div class="ladder-track"><span style="width:${Math.max(1, Math.min(100, Number(item.value)))}%"></span></div>
+          <p class="ladder-wording">${escapeHtml(item.wording)}</p>
+          <span class="ladder-source">${escapeHtml(item.source)}</span>
+        </div>`).join("");
+      return `${label}<div class="visual-prevalence-ladder"><div class="visual-rows">${bars}</div><p class="ladder-note">${escapeHtml(visual.note)}</p></div>`;
+    }
+
+    if (visual.type === "finding-attack") {
+      const panel = (panelData, modifier, meta) => `
+        <div class="fa-panel fa-panel--${modifier}">
+          <div class="fa-panel__meta">
+            <span>${escapeHtml(panelData.label)}</span>
+            <span class="fa-panel__tag">${escapeHtml(panelData.status || panelData.kind)}</span>
+          </div>
+          <p class="fa-panel__text">${escapeHtml(panelData.text)}</p>
+          <span class="fa-panel__id">${escapeHtml(panelData.id)}</span>
+          ${meta ? `<p class="fa-panel__note">${escapeHtml(meta)}</p>` : ""}
+        </div>`;
+      return `${label}<div class="visual-finding-attack">
+        <div class="visual-rows">
+          ${panel(visual.finding, "finding", visual.finding.meta)}
+          <div class="fa-joint" aria-hidden="true"><span>↓</span></div>
+          ${panel(visual.attack, "attack", "")}
+        </div>
+        <div class="fa-failure">
+          <span>${escapeHtml(visual.failureLabel)}</span>
+          <p>${escapeHtml(visual.failure)}</p>
+        </div>
+      </div>`;
+    }
+
+    if (visual.type === "timeline") {
+      const rows = visual.items.map((item) => `
+        <div class="tl-row${item.tone ? ` tl-row--${escapeHtml(item.tone)}` : ""}">
+          <span class="tl-date">${escapeHtml(item.date)}</span>
+          <div class="tl-body">
+            <strong>${escapeHtml(item.label)}</strong>
+            <p>${escapeHtml(item.detail)}</p>
+          </div>
+        </div>`).join("");
+      return `${label}<div class="visual-timeline"><div class="visual-rows">${rows}</div><p class="tl-note">${escapeHtml(visual.note)}</p></div>`;
+    }
+
+    if (visual.type === "lineage-chain") {
+      const rows = visual.items.map((item, index) => `
+        <div class="lc-row">
+          <span class="lc-index">${String(index + 1).padStart(2, "0")}</span>
+          <div class="lc-body">
+            <div class="lc-head"><strong>${escapeHtml(item.actor)}</strong><span class="lc-date">${item.date ? escapeHtml(item.date) : "date not stated"}</span></div>
+            <p>${escapeHtml(item.added)}</p>
+          </div>
+        </div>`).join("");
+      return `${label}<div class="visual-lineage-chain"><div class="visual-rows">${rows}</div><p class="lc-note">${escapeHtml(visual.note)}</p></div>`;
+    }
+
+    if (visual.type === "score-breakdown") {
+      const rows = visual.components.map((component) => `
+        <div class="score-row${component.value > 0 ? " is-scored" : ""}">
+          <div class="score-row__head"><strong>${escapeHtml(component.label)}</strong><span>${escapeHtml(component.value)} / ${escapeHtml(component.max)}</span></div>
+          <div class="score-track"><span style="width:${Math.max(0, Math.min(100, (Number(component.value) / Number(component.max)) * 100))}%"></span></div>
+          <p>${escapeHtml(component.note)}</p>
+        </div>`).join("");
+      return `${label}<div class="visual-score-breakdown">
+        <div class="visual-rows">
+          ${rows}
+          <div class="score-sum"><span>${escapeHtml(visual.subtotalLabel)}</span><strong>${escapeHtml(visual.subtotal)}</strong></div>
+          <p class="score-cap">${escapeHtml(visual.capLabel)}</p>
+        </div>
+        <div class="score-total">
+          <div><span>Evidence score</span><strong>${escapeHtml(visual.total)}</strong></div>
+          <div><span>Computed confidence</span><strong>${escapeHtml(visual.confidence)}</strong></div>
+        </div>
+        <p class="score-note">${escapeHtml(visual.note)}</p>
+      </div>`;
+    }
+
     return "";
   }
 
@@ -114,10 +235,26 @@
     const limitations = report.limitations.map((limitation, index) => `<li><span>L${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(limitation)}</strong></li>`).join("");
     const sources = report.sources.map((source) => `<article class="source-item">
       <span class="source-item__number">${escapeHtml(source.number)}</span>
-      <div><div class="source-item__publisher">${escapeHtml(source.publisher)}</div><h3 class="source-item__title">${escapeHtml(source.title)}</h3></div>
-      <p class="source-item__note">${escapeHtml(source.note)}</p>
+      <div>
+        <div class="source-item__publisher">${escapeHtml(source.publisher)}${source.tier ? ` <i>/ ${escapeHtml(source.tier)}</i>` : ""}</div>
+        <h3 class="source-item__title">${escapeHtml(source.title)}</h3>
+      </div>
+      <div class="source-item__body">
+        <p class="source-item__note">${escapeHtml(source.note)}</p>
+        ${source.digest ? `<p class="source-item__digest"><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
+      </div>
       <a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}">↗</a>
     </article>`).join("");
+
+    const principlesHeading = report.principlesHeading || { eyebrow: "Report standard", title: "What every public dossier must preserve." };
+    const sourcesHeading = report.sourcesHeading || { eyebrow: "Source record", title: "Read the decisions behind the design." };
+    const sourcesNote = report.sourcesNote ? `<p class="endmatter-note">${escapeHtml(report.sourcesNote)}</p>` : "";
+    const transcript = report.transcript ? `<a class="transcript-link" href="${escapeHtml(report.transcript.href)}">
+      <span class="transcript-link__label">Full record</span>
+      <strong>${escapeHtml(report.transcript.label)}</strong>
+      <p>${escapeHtml(report.transcript.note)}</p>
+      <i aria-hidden="true">↗</i>
+    </a>` : "";
 
     reportRoot.innerHTML = `<article class="report-document" data-report-slug="${escapeHtml(report.slug)}">
       <header class="report-hero">
@@ -171,7 +308,7 @@
 
       <div class="report-endmatter">
         <section class="endmatter-section" id="principles" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">Report standard</p><h2>What every public dossier must preserve.</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(principlesHeading.eyebrow)}</p><h2>${escapeHtml(principlesHeading.title)}</h2></header>
           <ol class="principle-list">${principles}</ol>
         </section>
         <section class="endmatter-section" id="limitations" data-report-section>
@@ -179,8 +316,10 @@
           <ol class="limitation-list">${limitations}</ol>
         </section>
         <section class="endmatter-section" id="sources" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">Source record</p><h2>Read the decisions behind the design.</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(sourcesHeading.eyebrow)}</p><h2>${escapeHtml(sourcesHeading.title)}</h2></header>
+          ${sourcesNote}
           <div class="sources-list">${sources}</div>
+          ${transcript}
         </section>
       </div>
 
@@ -191,7 +330,8 @@
             <h2>${escapeHtml(report.next.title)}</h2>
             <p>${escapeHtml(report.next.body)}</p>
             <div class="report-share-panel">
-              <button class="button button--dark" type="button" data-share-report><span>Share this note</span><i aria-hidden="true">↗</i></button>
+              <button class="button button--dark" type="button" data-share-report><span>Share this ${escapeHtml(report.kind === "report" ? "dossier" : "note")}</span><i aria-hidden="true">↗</i></button>
+              ${report.transcript ? `<a class="text-link" href="${escapeHtml(report.transcript.href)}">Check the work yourself <span aria-hidden="true">↗</span></a>` : ""}
               <a class="text-link" href="index.html#reports">Return to the archive <span aria-hidden="true">↗</span></a>
               <span class="report-share-status" aria-live="polite" data-share-status></span>
             </div>

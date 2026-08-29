@@ -59,7 +59,8 @@ to:
 │   ├── css/site.css           # complete visual system
 │   ├── data/reports.js        # static publication data
 │   ├── img/                   # code-native visual assets
-│   └── js/                    # landing/report interactions
+│   ├── js/                    # landing/report interactions
+│   └── reports/               # raw run transcripts, published unedited
 ├── scripts/validate-site.mjs  # dependency-free content/site checks
 ├── CNAME                      # GitHub Pages custom domain
 └── .github/workflows/pages.yml
@@ -86,12 +87,25 @@ npm test
 
 ## Publishing a report
 
-1. Add one entry to `window.DYOR_REPORTS` in `assets/data/reports.js`.
-2. Keep the upstream run ID and source/evidence identities in the entry.
+The landing archive renders from `assets/data/reports.js`, so a new report is a
+data entry plus a sitemap line—no HTML edit.
+
+1. Add one entry to `window.DYOR_REPORTS` in `assets/data/reports.js`, including
+   a `cover` (`index`, `serial`, `lines`, `footer`) and a `cardLine`. The entry
+   with `featured: true` becomes the cover on the landing page; every other
+   published entry renders as an archive card.
+2. Keep the upstream run ID and source/evidence identities in the entry. For
+   `kind: "report"`, every source needs its snapshot `digest` so quotations stay
+   checkable against the bytes that were stored.
 3. Use `kind: "report"` only for a completed, publishable dossier. Use
    `method-note` or `field-note` for editorial material.
-4. Run `npm test` and review both pages at desktop and mobile widths.
-5. Push `main`. The Pages workflow publishes the repository as a static site.
+4. Commit the raw run transcript to `assets/reports/` and point `transcript.href`
+   at it. The validator fails if the file is missing.
+5. Every `chapter.visual.type` must have a renderer in `assets/js/report.js`—the
+   validator checks this, because an unknown type renders a blank figure.
+6. Add the report URL to `sitemap.xml`.
+7. Run `npm test` and review both pages at desktop and mobile widths.
+8. Push `main`. The Pages workflow publishes the repository as a static site.
 
 The upstream publication adapter should eventually serialize the final
 `ResearchState`, findings, confidence inputs, limitations, and open questions

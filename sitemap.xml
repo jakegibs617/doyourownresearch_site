@@ -6,9 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://doyourownresearch.me/report.html?report=illuminati-what-the-police-seized</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://doyourownresearch.me/report.html?report=flat-earth-the-test-nobody-has-run</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://doyourownresearch.me/report.html?report=why-the-verdict-comes-last</loc>
     <lastmod>2026-08-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

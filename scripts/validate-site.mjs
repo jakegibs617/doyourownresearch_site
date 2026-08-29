@@ -71,7 +71,15 @@ function nonEmpty(value) {
   return typeof value === "string" && value.trim().length > 0;
 }
 
-function validateReports(site, reports) {
+async function supportedVisualTypes() {
+  const source = await readFile(resolve(root, "assets/js/report.js"), "utf8");
+  const types = new Set([...source.matchAll(/visual\.type === "([a-z-]+)"/g)].map((match) => match[1]));
+  if (types.size === 0) fail("could not determine supported visual types from assets/js/report.js");
+  else pass(`renderer supports ${types.size} visual types`);
+  return types;
+}
+
+function validateReports(site, reports, visualTypes) {
   const kinds = new Set(["report", "method-note", "field-note"]);
   const statuses = new Set(["draft", "published", "archived"]);
   const slugs = new Set();
@@ -113,6 +121,26 @@ function validateReports(site, reports) {
         fail(`${chapterAt}.body must contain non-empty paragraphs`);
       }
       if (!nonEmpty(chapter.visual?.type)) fail(`${chapterAt}.visual.type is required`);
+      else if (!visualTypes.has(chapter.visual.type)) {
+        fail(`${chapterAt}.visual.type "${chapter.visual.type}" has no renderer in assets/js/report.js and would render blank`);
+      }
+    }
+
+    if (!report.cover || !nonEmpty(report.cover.index) || !nonEmpty(report.cover.serial) || !nonEmpty(report.cover.footer)) {
+      fail(`${at}.cover requires index, serial, and footer`);
+    }
+    if (!Array.isArray(report.cover?.lines) || report.cover.lines.length === 0 || report.cover.lines.some((line) => !nonEmpty(line))) {
+      fail(`${at}.cover.lines must be a non-empty array of non-empty strings`);
+    }
+    if (!nonEmpty(report.cardLine)) fail(`${at}.cardLine must be a non-empty string`);
+
+    if (report.transcript != null) {
+      if (!nonEmpty(report.transcript.href) || !nonEmpty(report.transcript.label) || !nonEmpty(report.transcript.note)) {
+        fail(`${at}.transcript requires href, label, and note`);
+      }
+      if (/^(?:https?:)?\/\//.test(report.transcript.href || "")) {
+        fail(`${at}.transcript.href must be a local path so the record ships with the site`);
+      }
     }
 
     for (const [sourceIndex, source] of (report.sources || []).entries()) {
@@ -125,6 +153,12 @@ function validateReports(site, reports) {
         if (url.protocol !== "https:") fail(`${sourceAt}.href must use HTTPS`);
       } catch {
         fail(`${sourceAt}.href must be a valid URL`);
+      }
+      if (source.digest != null && !/^[0-9a-f]{64}$/.test(source.digest)) {
+        fail(`${sourceAt}.digest must be 64 lowercase hex characters`);
+      }
+      if (report.kind === "report" && !nonEmpty(source.digest)) {
+        fail(`${sourceAt}.digest is required for empirical reports so quotations stay checkable`);
       }
     }
   }
@@ -190,9 +224,19 @@ async function validateDomain() {
   else pass("sitemap custom-domain URLs");
 }
 
+async function validateTranscripts(reports) {
+  for (const report of reports) {
+    if (!report.transcript?.href) continue;
+    if (await exists(report.transcript.href)) pass(`transcript published: ${report.transcript.href}`);
+    else fail(`report ${report.slug} links a missing transcript: ${report.transcript.href}`);
+  }
+}
+
 await requireFiles();
 const { site, reports } = await loadPublicationData();
-validateReports(site, reports);
+const visualTypes = await supportedVisualTypes();
+validateReports(site, reports, visualTypes);
+await validateTranscripts(reports);
 await Promise.all(["index.html", "report.html", "404.html"].map(validateHtmlFile));
 await validateJavaScript();
 await validateDomain();
