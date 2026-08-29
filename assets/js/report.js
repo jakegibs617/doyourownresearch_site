@@ -243,7 +243,7 @@
         <p class="source-item__note">${escapeHtml(source.note)}</p>
         ${source.digest ? `<p class="source-item__digest"><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
       </div>
-      <a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}">↗</a>
+      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}">↗</a>` : ""}
     </article>`).join("");
 
     const principlesHeading = report.principlesHeading || { eyebrow: "Report standard", title: "What every public dossier must preserve." };

@@ -1,7 +1,7 @@
 # Do Your Own Research — public site
 
-The public, static publishing surface for reports produced by
-[`doyourownresearch`](https://github.com/jakegibs617/doyourownresearch). It is
+The public, static publishing surface for reports produced by the
+`doyourownresearch` research engine (private repository). It is
 designed for GitHub Pages and will be served from
 [`doyourownresearch.me`](https://doyourownresearch.me).
 

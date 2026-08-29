@@ -4,8 +4,6 @@
   window.DYOR_SITE = {
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
-    repository: "https://github.com/jakegibs617/doyourownresearch",
-    publicationRepository: "https://github.com/jakegibs617/doyourownresearch_site",
     strapline: "Research you can take apart.",
     archiveState: "One method note, two research dossiers.",
     archiveNext: {
@@ -226,22 +224,19 @@
         {
           number: "01",
           title: "Design decisions for the contested claim",
-          publisher: "Do Your Own Research repository",
-          href: "https://github.com/jakegibs617/doyourownresearch/blob/main/docs/contested-claims.md",
+          publisher: "Do Your Own Research method record",
           note: "Accepted decisions on transcript-first output, probes, provenance, confidence, and scope."
         },
         {
           number: "02",
           title: "Deep-research methodology",
-          publisher: "Do Your Own Research repository",
-          href: "https://github.com/jakegibs617/doyourownresearch/blob/main/idea.md",
+          publisher: "Do Your Own Research method record",
           note: "The 18-stage process and traceable output structure."
         },
         {
           number: "03",
           title: "Structural constraints and implementation status",
-          publisher: "Do Your Own Research repository",
-          href: "https://github.com/jakegibs617/doyourownresearch/blob/main/README.md",
+          publisher: "Do Your Own Research method record",
           note: "The system’s falsification, snapshot, evidence, and confidence guarantees."
         }
       ],

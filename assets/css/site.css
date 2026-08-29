@@ -342,16 +342,6 @@ blockquote {
   transform-origin: left;
 }
 
-.nav-source {
-  padding-right: 0.8rem !important;
-}
-
-.nav-source span {
-  position: absolute;
-  top: 0.2rem;
-  right: -0.5rem;
-}
-
 .menu-toggle {
   display: none;
   min-width: 3rem;

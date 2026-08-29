@@ -145,14 +145,20 @@ function validateReports(site, reports, visualTypes) {
 
     for (const [sourceIndex, source] of (report.sources || []).entries()) {
       const sourceAt = `${at}.sources[${sourceIndex}]`;
-      ["number", "title", "publisher", "href", "note"].forEach((field) => {
+      ["number", "title", "publisher", "note"].forEach((field) => {
         if (!nonEmpty(source[field])) fail(`${sourceAt}.${field} must be a non-empty string`);
       });
-      try {
-        const url = new URL(source.href);
-        if (url.protocol !== "https:") fail(`${sourceAt}.href must use HTTPS`);
-      } catch {
-        fail(`${sourceAt}.href must be a valid URL`);
+      if (source.href != null) {
+        if (!nonEmpty(source.href)) {
+          fail(`${sourceAt}.href must be omitted or a non-empty string`);
+        } else {
+          try {
+            const url = new URL(source.href);
+            if (url.protocol !== "https:") fail(`${sourceAt}.href must use HTTPS`);
+          } catch {
+            fail(`${sourceAt}.href must be a valid URL`);
+          }
+        }
       }
       if (source.digest != null && !/^[0-9a-f]{64}$/.test(source.digest)) {
         fail(`${sourceAt}.digest must be 64 lowercase hex characters`);
