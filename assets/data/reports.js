@@ -5,9 +5,9 @@
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
     strapline: "Research you can take apart.",
-    archiveState: "One method note, two research dossiers.",
+    archiveState: "One method note, three research dossiers.",
     archiveNext: {
-      number: "004",
+      number: "005",
       eyebrow: "Next in the archive",
       title: "The next contested claim.",
       body: "The series continues through the most widely held conspiracy theories, one run per claim, each published with its empty searches and its own score intact.",
@@ -606,7 +606,7 @@
       label: "Research dossier",
       issue: "DOSSIER 003",
       status: "published",
-      featured: true,
+      featured: false,
       publishedAt: "2026-08-28",
       updatedAt: "2026-08-28",
       readMinutes: 14,
@@ -992,6 +992,416 @@
         eyebrow: "Your turn",
         title: "The documents everyone calls secret were printed in 1787.",
         body: "That is the kind of thing you can check without trusting anyone, which is the only kind of claim this page wants to leave you with. The whole run is published unedited — every search, every excerpt, every digest. The next dossier takes the same method to the next contested claim."
+      }
+    },
+    {
+      slug: "jfk-the-minute-that-came-late",
+      kind: "report",
+      label: "Research dossier",
+      issue: "DOSSIER 004",
+      status: "published",
+      featured: true,
+      publishedAt: "2026-08-29",
+      updatedAt: "2026-08-29",
+      readMinutes: 15,
+      runId: "7ed8eb44-d1cc-4261-bade-3c876b529ed3",
+      title: "The JFK assassination, and the minute that came late.",
+      shortTitle: "The JFK assassination",
+      deck: "Five explanations, nine attacks on its own findings, eight adversarial searches that returned nothing — and one official finding of conspiracy resting on a recording made a minute after the shots.",
+      cardLine: "What the record establishes about the assassination — and the two questions this run could not touch.",
+      question: "What do declassified U.S. government records and the historical evidentiary record establish about who was responsible for the assassination of President John F. Kennedy and how it was carried out?",
+      answer: "The 1979 finding of a probable conspiracy rests on one physical thing — the Dallas police Dictabelt — and in 1982 a National Research Council committee reported those impulses were recorded about a minute after the President was shot. The same committee that found a conspiracy also concurred that Oswald fired the two bullets that hit Kennedy. But nothing in this roster establishes that Oswald possessed and fired the rifle, and nothing in it touches whether anyone knew in advance. All thirteen findings computed to unknown.",
+      disclosure: "This run asked what the official investigative record and the declassified documents establish. It is not an adjudication between conspiracy theories independent of that record, and it makes no finding about whether U.S. agencies, organized crime or foreign actors had foreknowledge — no evidence in this roster bears on that either way.",
+      accent: "signal",
+      tags: ["Forensics", "Official record", "Falsification"],
+      cover: {
+        index: "DYOR—004",
+        serial: "004 / 2026",
+        lines: ["THE JFK", "ASSASSINATION", "ONE MINUTE LATE."],
+        footer: "One recording → one minute → what stays open"
+      },
+      transcript: {
+        href: "assets/reports/dyor-7ed8eb44-d1cc-4261-bade-3c876b529ed3.md",
+        label: "Read the full method transcript",
+        note: "The complete 1,926-line run record: every search, every verbatim excerpt, every bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone weighing the claim — including someone who currently holds it.",
+        focus: "What the official investigative record and the declassified documents establish about who was responsible for the assassination and how it was carried out.",
+        excluded: "Films and fictionalised accounts, conspiracy theories with no substantial basis in declassified records or formal investigative findings, the political consequences of the killing, and Kennedy's biography apart from the event. Each was placed out of scope before any source was read."
+      },
+      stats: [
+        { value: "09", label: "attacks on its own findings" },
+        { value: "7/12", label: "snapshots that produced no passage" },
+        { value: "0/12", label: "sources traced to an origin" }
+      ],
+      thesis: {
+        label: "The decision this run refused to make",
+        statement: "There is no run-level verdict in this record, and the renderer does not invent one. The acoustic evidence for a second gunman fails on a clock. That is not the same as clearing anyone, and every finding on this page still computes to a confidence of unknown.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "The question this run answered is narrower than the one everyone argues about.",
+          lead: "It asked what declassified records and the historical evidentiary record establish about who was responsible and how the shooting was carried out. Before searching, it recorded that the question does not say which of three different arguments it means.",
+          body: [
+            "Those three are the mechanics — who fired, and from where; the conspiracy question — one man or several; and the credibility of the investigations themselves. Each framing changes what counts as relevant evidence and what an answer would even look like. The run wrote that down as an ambiguity rather than quietly picking one and proceeding as though the question had been clear.",
+            "It then made its assumption explicit: absent further specification, it would report what the official record and the declassified documents establish, rather than adjudicating between conspiracy theories independently of that record. That assumption does a great deal of work on this page, and a reader who rejects it should discount what follows accordingly. It means the run went looking in archives — and archives are where one kind of evidence lives and another kind does not.",
+            "Out of scope before any source was read: films and fictionalised accounts, every conspiracy theory without a substantial basis in declassified records or formal findings, the political and policy consequences of the assassination, other assassinations investigated by the same agencies, and Kennedy's biography apart from the event."
+          ],
+          pullquote: "The question does not say whether it is about the shooting, the conspiracy, or the investigations. The run said so instead of choosing.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "Who the record identifies as responsible",
+              "How the shooting was carried out",
+              "What each investigation concluded, and on what",
+              "What the 1992 releases added"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Films and fictionalised accounts",
+              "Theories with no basis in the records",
+              "The political consequences of the killing",
+              "Kennedy's life apart from the event"
+            ],
+            note: "Period: 22 November 1963 to the present. Geography: the United States, centred on Dallas, with foreign contacts where the records touch them."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Five explanations, and the one that never got tested.",
+          lead: "Before any source was read, the run wrote down five rival accounts and, for each, the observation that would destroy it. Forty-four passages went on to declare a bearing on all five.",
+          body: [
+            "Two of the five are the argument the public has: Oswald alone, or a second gunman. The other three are where the interesting distinctions live. H3 says the second gunman is an artifact of a mistimed recording rather than a person. H5 says Oswald fired nothing at all. H4 says Oswald fired every shot and someone else knew it was coming — a conspiracy of foreknowledge with no extra rifle in Dealey Plaza.",
+            "H4 is the column to look at. It collected forty-one zeros out of forty-four, three weak positives, and not one bearing against it. That is not a hypothesis the run defeated, and not one it established. It is a hypothesis nothing in the roster touched. The passages that would have touched it — intelligence files, organised-crime records, the Mexico City material — are not in this ledger, and both searches sent after them came back empty.",
+            "The counts are unweighted by source tier on purpose. No weight vector has been argued anywhere in the system that produced this record, and an invented one would let a genre label quietly outvote the passages themselves."
+          ],
+          pullquote: "H4 collected forty-one zeros and no negative. Nothing here tested the conspiracy most people actually mean.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              {
+                id: "H1",
+                claim: "Oswald acted alone, firing all three shots from the sixth-floor window of the Texas School Book Depository.",
+                falsifier: "Forensic, ballistic or documentary evidence establishing a shot fired from any other location, or another individual firing at the motorcade.",
+                counts: [0, 17, 11, 13, 3]
+              },
+              {
+                id: "H2",
+                claim: "A second shooter, in addition to or instead of Oswald, fired at least one shot at the motorcade.",
+                falsifier: "Re-analysis showing the extra impulses are not gunfire, plus no independent corroboration of a second firing position.",
+                counts: [1, 11, 17, 12, 3]
+              },
+              {
+                id: "H3",
+                claim: "The second gunman is an artifact of flawed or mistimed acoustic data, not a person.",
+                falsifier: "A validated analysis confirming the Dictabelt impulses are gunfire at the time and place of the assassination, correctly synchronised.",
+                counts: [3, 1, 37, 3, 0]
+              },
+              {
+                id: "H4",
+                claim: "Oswald was the sole shooter, but his actions were known of, facilitated or exploited in advance by agencies, organised crime or foreign actors.",
+                falsifier: "Declassified records showing no prior surveillance, contact or actionable knowledge of Oswald before 22 November 1963.",
+                counts: [0, 3, 41, 0, 0]
+              },
+              {
+                id: "H5",
+                claim: "Oswald fired no shots: a patsy, misidentified, or not positioned to fire.",
+                falsifier: "Ballistic matching linking the recovered rifle and cases to his possession and use, plus credible placement of him at the window.",
+                counts: [0, 3, 25, 13, 3]
+              }
+            ],
+            note: "44 passages declared a bearing on each explanation. H2's single strongest bearing is one sentence reporting the HSCA's conclusion; H3's three are the sentences that dispute it."
+          }
+        },
+        {
+          id: "acoustics",
+          number: "03",
+          eyebrow: "The acoustic channel",
+          title: "The only official finding of conspiracy rests on a recording made a minute late.",
+          lead: "The House Select Committee on Assassinations concluded in 1979 that there was a high probability that two gunmen fired at President Kennedy. The physical basis for that was one thing: acoustic analysis of a Dallas police radio channel left open during the motorcade.",
+          body: [
+            "In 1982 the National Research Council's Committee on Ballistic Acoustics re-examined those recordings. Its summary states that the acoustic impulses attributed to gunshots were recorded about one minute after the President had been shot and the motorcade had been instructed to go to the hospital, and therefore that reliable acoustic data do not support a conclusion that there was a second gunman. It adds that the analyses do not demonstrate a grassy-knoll shot and that there is no acoustic basis for the claim of 95% probability of such a shot.",
+            "That is a timing argument, not a motive argument. Nobody has to be lying for it to work. If the impulses are a minute late, the shots cannot have produced them, and the sentence the HSCA built its conspiracy finding on has nothing physical underneath it. The run's own attack on that reasoning is printed further down, and it is a fair one.",
+            "Which leaves the rest of the HSCA report standing — the part that usually gets lost. The same committee concurred with the Warren Commission that Oswald fired the two bullets that hit the President, endorsed the single-bullet trajectory, and reported that its own forensic pathology panel's conclusions were consistent with it. It reported a conspiracy it could not populate with any conspirator other than Oswald. The disagreement between the two investigations localises entirely to the acoustic channel."
+          ],
+          pullquote: "Nobody has to be lying for a minute to be a minute.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "12:30 p.m.", label: "The shots", detail: "The motorcade is passing through Dealey Plaza. The President is shot and suffers a massive head wound." },
+              { date: "about a minute later", label: "The impulses", detail: "The acoustic impulses later attributed to gunshots are recorded — after the motorcade has been instructed to go to the hospital.", tone: "seizure" },
+              { date: "1:00 p.m.", label: "Pronounced dead", detail: "Doctors at Parkland Memorial Hospital pronounce the President dead. Dallas police arrest Lee Harvey Oswald later the same day." },
+              { date: "23 Nov, 1:30 p.m.", label: "Charged", detail: "About twenty-five hours after the shooting, Oswald is charged with assassinating the President." },
+              { date: "Sept 1964", label: "Warren Commission", detail: "An 888-page report with 26 volumes behind it: 552 witnesses deposed or interviewed, roughly 360 cubic feet of records." },
+              { date: "1979", label: "HSCA", detail: "The committee reports a high probability that two gunmen fired and a probable conspiracy — while concurring that Oswald fired the two bullets that hit the President." },
+              { date: "1982", label: "The acoustics re-examined", detail: "The Committee on Ballistic Acoustics reports the impulses postdate the shooting by about a minute, and that no acoustic basis supports the 95% figure.", tone: "end" },
+              { date: "1992", label: "The JFK Act", detail: "Congress requires disclosure of the assassination records — a response, the record says, to thirty years of secrecy that led the public to believe the government had something to hide.", tone: "after" }
+            ],
+            note: "Times and dates appear only where this run's sources state them. The one-minute offset is the whole of the acoustic argument on this page."
+          }
+        },
+        {
+          id: "chain",
+          number: "04",
+          eyebrow: "Where it is exposed",
+          title: "The lone-gunman case survives only if one bullet did seven wounds.",
+          lead: "The single-bullet theory is not a footnote to the lone-gunman finding. It is the load-bearing wall — and this roster holds both the mechanism that supports it and the reasons three commissioners would not sign it as proven.",
+          body: [
+            "The arithmetic first. FBI marksmen who test-fired the recovered Carcano put the minimum for two successive well-aimed shots at about two and a quarter seconds — 41 to 42 frames of the Zapruder film at 18.3 frames per second. The Warren Commission placed Kennedy's wounding between frames 210 and 225 and Connally's no later than frame 240: a window of at most about thirty frames. If separate bullets struck the two men, one bolt-action rifle mechanically could not have delivered them. H1 therefore survives only conditional on the single bullet, exactly as its critics contend.",
+            "In support: the Bethesda autopsy report describes a posterior entry above the scapula traversing the neck and exiting anteriorly, the HSCA panel read the autopsy photographs and X-rays directly and placed the entry at the first thoracic vertebra, and that panel's conclusions were reported as consistent with the theory. Against: three Commission members thought it improbable, Senator Russell asked for his opposition to be footnoted, and the word “compelling” was changed to “persuasive” before the report went out. Wecht dissented at the HSCA that the trajectory from the sixth-floor window could not intersect Connally's right armpit. And O. P. Wright, one of the men who found the bullet at Parkland, told an author in 1966 that the round he held was point-nosed, where CE 399 is round-nosed.",
+            "There is a step here that the critics take and this run does not. Rejecting the single-bullet theory is not the same as finding a second gun. The Connallys rejected it all their lives while still accepting that Oswald acted alone, holding that all three shots struck occupants of the limousine. With a three-shot total and the timing constraint, discarding the single bullet redistributes the hits before it adds a shooter.",
+            "And the first condition, the one that looks least controversial, is the one the run marks unsettled. Nothing in this ledger documents the firearms identification matching the recovered cartridge cases to that specific rifle, nothing documents Oswald's purchase or possession of it, nothing carries the prints or fibres from the sniper's nest, and no passage records a witness placing a man at the sixth-floor window during the shooting."
+          ],
+          pullquote: "Three commissioners thought it improbable. The report went out saying “persuasive”.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "Oswald possessed and used the Carcano found in the Depository", state: "unknown" },
+              { label: "Every wound trajectory fits the sixth-floor window", state: "supported" },
+              { label: "No credible evidence puts a shot anywhere else", state: "supported" },
+              { label: "One bolt-action rifle could fire them inside the observed window", state: "weak link" }
+            ]
+          }
+        },
+        {
+          id: "attack",
+          number: "05",
+          eyebrow: "Falsification",
+          title: "Ten attacks on its own explanations. Eight came back empty.",
+          lead: "The run ran ten adversarial searches, each aimed at an explanation it had written down. Two returned a verified counter-passage. The other eight returned nothing — and where those eight were pointed is the most important thing on this page.",
+          body: [
+            "Both searches that returned were aimed at the second-shooter hypothesis: the National Academies acoustics re-analysis, and the Dealey Plaza curb mark. Everything else came back holding nothing. So the only counter-evidence this run actually obtained points in a single direction, and a reader who wants to discount the acoustic conclusion for exactly that reason has the count to do it with.",
+            "Look at what the blanks were hunting. Two were the defence of the acoustics — Donald Thomas's peer-reviewed challenge to the Ramsey panel, and any replication of the Barger, Weiss and Aschkenasy echo-correlation work. Neither returned, and the one record of that literature in the ledger was stored as a page asking the reader to enable JavaScript. The acoustic conclusion above was reached without this run reading a word written for the other side.",
+            "Two more were aimed at foreknowledge: declassified CIA and FBI records on Oswald's Mexico City contacts, and the HSCA and Church Committee material on organised crime. Both empty. Two more were aimed at Oswald himself: the paraffin and nitrate tests on his hands, and the rifle palm print with the FBI custody records. Both empty. That is why this ledger cannot show that Oswald fired the rifle and cannot show that anyone knew in advance — not because it found otherwise, but because no probe was pre-registered and eight searches came back with nothing to weigh."
+          ],
+          pullquote: "Eight blanks, and not one of them is evidence of absence. The run says so itself.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Medical or photographic evidence of an anterior throat entrance wound", outcome: "empty" },
+              { target: "H1", looked: "Metallurgical re-examination of the fragment match to the Carcano", outcome: "empty" },
+              { target: "H2", looked: "Acoustic analyses showing the Dictabelt impulses were crosstalk or mistimed", outcome: "returned" },
+              { target: "H2", looked: "Whether any recovered bullet or impact mark came from a grassy-knoll shooter", outcome: "returned" },
+              { target: "H3", looked: "Peer-reviewed acoustics challenging the Ramsey panel — Thomas, 2001", outcome: "empty" },
+              { target: "H3", looked: "Replication of the Barger–Weiss–Aschkenasy echo correlation", outcome: "empty" },
+              { target: "H4", looked: "Declassified files on intelligence foreknowledge and Mexico City", outcome: "empty" },
+              { target: "H4", looked: "Organised-crime contact with, or direction over, Oswald", outcome: "empty" },
+              { target: "H5", looked: "The paraffin and nitrate tests on Oswald's hands", outcome: "empty" },
+              { target: "H5", looked: "The rifle palm print and the FBI custody records", outcome: "empty" }
+            ],
+            footer: "2 of 10 adversarial searches yielded a snapshot-bound, verified counter-passage (20.00%)."
+          }
+        },
+        {
+          id: "strongest",
+          number: "06",
+          eyebrow: "The best-supported reading",
+          title: "The strongest finding, printed with the attack made on it.",
+          lead: "The run's leading finding is that the single physical basis for the HSCA's two-gunmen conclusion is directly contradicted inside its own roster. It is typed observed rather than inferred. Then the run named the way it could be wrong, and the objection is a good one.",
+          body: [
+            "The attack is filed as measurement error. Rejecting the Dictabelt rests on a cross-talk synchronisation that matches the recording to a broadcast about a minute after the shooting, and that match assumes both channels ran on identical, constant-speed tape transports with no intermittent pauses and no later re-recording artifacts. Dispatch recorders in 1963 are not self-evidently that.",
+            "The condition under which the finding fails was written down in advance, and it is specific and findable: a forensic acoustic analysis confirming non-linear tape slippage or unrecorded pauses on the Dallas Police dispatch recorder, shifting the true impulse timeline back by roughly sixty seconds into alignment with the Zapruder impact frames. If that turns up, the second gunman comes back with it.",
+            "The run also states where the whole package stops holding. Its best-supported reading — lone-gunman shooting mechanics plus the acoustic artifact — fails under any of three named conditions: a validated re-synchronisation of the Dictabelt, confirmation that CE 399 is not the bullet recovered on the Parkland gurney, or confirmation of Wecht's geometric objection. H4, the conspiracy of foreknowledge, is unaffected by all three and stays open regardless of which way they go."
+          ],
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Finding",
+              id: "fnd_11f2ff88b3e4ea67_00",
+              status: "observed",
+              text: "The single physical basis on which the HSCA rested its “high probability” of two gunmen is the Dictabelt acoustic analysis, and that basis is directly contradicted in the roster: the impulses attributed to gunshots were recorded roughly a minute after the President was shot and after the motorcade had been ordered to the hospital, and the 95% probability figure for a grassy-knoll shot has no acoustic basis.",
+              meta: "6 passages cited · 2 source families · computed confidence: unknown"
+            },
+            attack: {
+              label: "Attack on it",
+              id: "stp_cf0733f13601659f_00",
+              kind: "measurement error",
+              text: "The rejection of the Dictabelt acoustic evidence relies on cross-talk synchronisation matching the recording to a broadcast about one minute after the shooting, which assumes that both recording channels operated on identical, constant-speed tape transports without intermittent pauses or subsequent re-recording artifacts."
+            },
+            failureLabel: "Recorded failure condition",
+            failure: "A forensic acoustic analysis confirms non-linear tape slippage or unrecorded pauses on the Dallas Police Department dispatch recorder that shifts the true impulse timeline back by approximately 60 seconds into alignment with the Zapruder film impact frames."
+          }
+        },
+        {
+          id: "score",
+          number: "07",
+          eyebrow: "The score",
+          title: "Thirteen findings, every one unknown, and 14 out of 100.",
+          lead: "Thirteen findings were asserted, four of them typed observed rather than inferred. Every one computed to a confidence of unknown, and the evidence score came to the same 14 out of 100 as the two dossiers before it — for the same reason.",
+          body: [
+            "Zero of twelve snapshots reached an upstream origin. Corroboration and provenance therefore both scored zero, regardless of how good the underlying history is, because unknown provenance is unknown independence and the scoring will not let a well-argued reading buy its way past that.",
+            "Falsification scored 15 of 20: ten counter-searches ran and two returned. Saturation scored zero — three of the five source families found in the second retrieval round were new, and the counts on all five explanations moved when that round was added, so the search was nowhere near exhausted when it stopped.",
+            "Two measurements are worse here than in the last dossier. No source in this ledger was assessed as primary data at all. And seven of the twelve snapshots produced no scored passage — including the Warren Commission Report chapter on the shots and the HSCA's own findings page, both stored, hashed, and cited by nothing. The forty-four passages came out of five documents, and two of those five carry thirty-seven of them."
+          ],
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 of 12 sources traced to an origin" },
+              { label: "Provenance", value: 0, max: 25, note: "unknown origin is unknown independence" },
+              { label: "Falsification", value: 15, max: 20, note: "2 of 10 counter-searches returned" },
+              { label: "Saturation", value: 0, max: 15, note: "3 of 5 families in round 2 were new" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "15",
+            capLabel: "Counter-evidence was found, which caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: {
+        eyebrow: "Take this with you",
+        title: "Five checks this run was held to. Use them on anything."
+      },
+      principles: [
+        "Ask what a conclusion actually rests on. An official finding of conspiracy resting on one recording is one recording, however large the report built around it.",
+        "Check the clock before you check the motive. The acoustic case did not fail on politics or credibility; it failed on arriving about a minute late.",
+        "Notice which side of a dispute you have actually read. If the rebuttal is in your bibliography as a title and an error page, you have heard one side.",
+        "Separate “not established here” from “shown to be false”. This run cannot show Oswald fired the rifle — a fact about what it retrieved, not about him.",
+        "Count how many of your sources produced anything at all. Seven of twelve here produced nothing, and a bibliography hides that completely."
+      ],
+      limitations: [
+        "Zero of twelve source snapshots could be traced to an upstream origin, so nothing here has established independence between its sources. All thirteen asserted findings computed to a confidence of unknown.",
+        "No source in the ledger was assessed as primary data. Every finding on this page rests on description of the physical and documentary record rather than on the record itself.",
+        "Two sources carry almost everything: one ARRB report chapter and one Wikipedia article supply thirty-seven of the forty-four passages. That Wikipedia article is the sole source for every timing number quoted above.",
+        "Seven of the twelve snapshots produced no scored passage at all — among them the Warren Commission Report chapter on the shots and the HSCA's own findings page.",
+        "Three of the twelve stored snapshots are not documents at all: a university course listing retrieved by a domain-scoped search, a publisher's navigation shell where the acoustics chapter should have been, and a page asking the reader to enable JavaScript where the peer-reviewed echo-correlation analysis should have been.",
+        "Both counter-searches aimed at defending the acoustic evidence returned nothing, and the one record of that defence in the ledger was unreadable. The acoustic finding here was reached without reading anything written for the other side.",
+        "No probe was pre-registered. Eight of the ten adversarial searches came back empty, and not one of those blanks counts as evidence of absence.",
+        "Nothing in the roster documents the ballistic match of the recovered rifle and cartridge cases to Oswald, his purchase or possession of that rifle, the prints and fibres from the sniper's nest, or any witness placing him at the window. The run records that as unsettled, not as settled either way.",
+        "Nothing in the roster addresses prior surveillance of, contact with, or actionable knowledge of Oswald by U.S. agencies, organized crime or foreign intelligence. Four of the ten subquestions were answered by no passage at all.",
+        "The run's only computational-ballistics source is an unreviewed preprint, and three passages from its abstract carry the entire rear-impact simulation result.",
+        "The search was not saturated: three of the five source families found in the second retrieval round were new, and the run stopped there.",
+        "Two of the forty-six readable passages were refused by the verbatim gate and appear nowhere in the record."
+      ],
+      sourcesHeading: {
+        eyebrow: "Source record",
+        title: "Twelve snapshots. Five of them produced every passage on this page."
+      },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        {
+          number: "01",
+          title: "Final Report of the Assassination Records Review Board, Chapter 1",
+          publisher: "Assassination Records Review Board / Federation of American Scientists",
+          tier: "government institutional",
+          digest: "98c36e18161e163709728382003669ec299118529dba98f552b2865cad8b6591",
+          href: "https://sgp.fas.org/advisory/arrb98/part03.htm",
+          note: "Fourteen of the forty-four passages, including both official conclusions, the HSCA's inability to name any conspirator other than Oswald, and the fact that the Warren Commission never viewed the autopsy photographs. States no peer-review process, no internal deliberation method, and no criteria for which episodes and quotations it includes."
+        },
+        {
+          number: "02",
+          title: "Single-bullet theory",
+          publisher: "Wikipedia",
+          tier: "quality journalism",
+          digest: "a4446e4ec55fa3611d9ee60db61f37e8d4a68aa4c1bef9cfee10ab1fabb61cc0",
+          href: "https://en.wikipedia.org/wiki/Single-bullet_theory",
+          note: "The heaviest source in the run: twenty-three of the forty-four passages, including every timing figure, the Wecht dissent, the CE 399 custody dispute and the witness tallies. Discloses no editor identities, no editorial review process and no peer review, and does not resolve the neutron-activation dispute it reports."
+        },
+        {
+          number: "03",
+          title: "Findings — House Select Committee on Assassinations, Part 1C",
+          publisher: "National Archives",
+          tier: "government institutional",
+          digest: "0213c82e522b3e615341d32886c3cd4063bf3db86f265f3f8eb16b084a20402c",
+          href: "https://www.archives.gov/research/jfk/select-committee-report/part-1c.html",
+          note: "The HSCA's own findings page — snapshotted, assessed, and cited by no passage in the run. The run's note on it: the committee reaches a definitive probable-conspiracy conclusion on disputed acoustic evidence while acknowledging it could not identify the other gunman or the extent of the conspiracy."
+        },
+        {
+          number: "04",
+          title: "The President John F. Kennedy Assassination Records Collection",
+          publisher: "National Archives",
+          tier: "government institutional",
+          digest: "e6843590fdc08e06802cb671347b52cd0a48800d4929a9f886b22fbadda2e7cf",
+          href: "https://www.archives.gov/research/jfk",
+          note: "The collection landing page — over six million pages released on a rolling basis under Executive Order 14176. Contributed no passage. States no timeline for full release and no specifics of what remains classified or redacted."
+        },
+        {
+          number: "05",
+          title: "courses [Applied Statistics and Data Mining]",
+          publisher: "stat.sixthfloor.org",
+          tier: "unsupported",
+          digest: "8bc65dc710c362ca6e07d584528138bb19475434031e1089f0f0eab374973101",
+          note: "A university course index listing lectures and labs taught from 2011 to 2025, retrieved by a search scoped to the Sixth Floor Museum's domain. It has nothing to do with the assassination. Snapshotted, hashed, assessed at the lowest tier, cited by nothing — and printed here because the run stored it. Its recorded address is plain HTTP, so it is not linked."
+        },
+        {
+          number: "06",
+          title: "Report of the Committee on Ballistic Acoustics — chapter shell",
+          publisher: "National Academies Press",
+          tier: "unsupported",
+          digest: "1f5e07d3ac6eea8f8d0fed1e0c5b1cbaa16b3a632aa9f611ac3a7bd6f5a8362b",
+          href: "https://www.nationalacademies.org/read/10264/chapter/7",
+          note: "The chapter evaluating the FBI report — retrieved as site chrome. Navigation links, a login and subscription form, and a table of contents; none of the chapter's methods, data or findings are in the stored bytes."
+        },
+        {
+          number: "07",
+          title: "Computational ballistic analysis of the cranial shot to John F. Kennedy",
+          publisher: "Christophe Then (preprint)",
+          tier: "technical report",
+          digest: "90e8ea28fe227aacae7c0b6cfa49d673079995419d87c9308f986d2e0cb8473e",
+          href: "https://exa.ai/library/publication/fjbbglxztsp",
+          note: "Three passages, all taken from the abstract, carrying the entire rear-impact simulation result. Listed as a preprint: no peer review, no funding statement, and no validation of the computational model against known ballistic test data."
+        },
+        {
+          number: "08",
+          title: "Warren Commission Report, Chapter 3: The Shots From the Texas School Book Depository",
+          publisher: "National Archives",
+          tier: "government institutional",
+          digest: "c20d4389abb7c447019284e50e61b83d35bbc73d8bc6f5b8cebaf35775040425",
+          href: "https://www.archives.gov/research/jfk/warren-commission-report/chapter-3.html",
+          note: "Snapshotted in the second retrieval round and cited by no passage. The run's note on it: the report reaches definitive findings while acknowledging in several places that timing, angles and witness recollections were inconclusive, and that it could not determine which of three shots missed."
+        },
+        {
+          number: "09",
+          title: "Report of the Committee on Ballistic Acoustics, 1982",
+          publisher: "National Research Council / National Academies",
+          tier: "government institutional",
+          digest: "0bbe7e472cca584dee130d93f46f54506db28c64b6535a9a91909390370ad972",
+          href: "https://www.nationalacademies.org/publications/10264",
+          note: "The counter-search that worked. Three passages, and every one of the run's strongest bearings for the acoustic-artifact reading. States no committee qualifications, no statistical method of its own for re-evaluating the 95% figure, no funding and no conflicts."
+        },
+        {
+          number: "10",
+          title: "Image of a bullet mark on a curb in Dealey Plaza",
+          publisher: "The Sixth Floor Museum at Dealey Plaza",
+          tier: "government institutional",
+          digest: "66654478a2eb69dd70651d7df077361e5ac41a000173f52f9bbeb468790906b3",
+          href: "https://emuseum.jfk.org/objects/11979/image-of-a-bullet-mark-on-a-curb-in-dealey-plaza",
+          note: "The only independent physical trace of a stray round in the roster, documented as to location and custody only. The record does not itself establish that the mark was made by a bullet; that determination is attributed to a later FBI investigation rather than demonstrated here."
+        },
+        {
+          number: "11",
+          title: "Echo correlation analysis and the acoustic evidence in the assassination",
+          publisher: "Europe PMC",
+          tier: "unsupported",
+          digest: "76b72a2109c88c66d0797d23f4ff43d77d60f8fe52fc45bedcb74ffcc45b107a",
+          href: "https://europepmc.org/article/med/11215295",
+          note: "The record for the peer-reviewed acoustic analysis that argues against this run's acoustic conclusion — stored as a page asking the reader to enable JavaScript. No abstract, no methods, no claims. The defence of the Dictabelt is in this ledger by title alone."
+        },
+        {
+          number: "12",
+          title: "[Various Reports on Paraffin and Nitrate Tests of Lee Harvey Oswald]",
+          publisher: "Dallas Police Department / Portal to Texas History",
+          tier: "government institutional",
+          digest: "d0259e6a88888a59f3eb2bb77ce9aa1fb8b013e976dccea507a7229f44ba42ca",
+          href: "https://texashistory.unt.edu/ark:/67531/metapth338281/",
+          note: "Paraffin casts of Oswald's hands, tested for nitrates by the same department investigating him. Snapshotted, cited by no passage. States no examiner credentials, no testing protocol, no chain-of-custody specifics and no interpretation of what the result means."
+        }
+      ],
+      next: {
+        eyebrow: "Your turn",
+        title: "A recording is dated. You can check a clock without trusting anyone.",
+        body: "That is the kind of claim this page wants to leave you with — and so is its opposite: nothing here shows that Oswald fired the rifle, because the searches that would have shown it came back empty. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
       }
     }
   ];
