@@ -1,6 +1,7 @@
 // Renders every published page at desktop and mobile and reports anything broken.
 // Runs through the playwright-skill executor, which supplies `chromium`:
-//   cd "$PW_SKILL_DIR" && node run.js <abs path to this file>
+//   cd ~/.claude/plugins/cache/playwright-skill/*/*/skills/playwright-skill \
+//     && node run.js "$(git -C <repo> rev-parse --show-toplevel)/.claude/skills/deploy/render-check.js"
 // Requires a local server: python3 -m http.server 4173  (override with DYOR_URL)
 const TARGET_URL = process.env.DYOR_URL || 'http://127.0.0.1:4173';
 

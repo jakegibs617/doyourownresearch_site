@@ -25,9 +25,10 @@ Run all three from the repository root. Any failure stops the deploy.
 ### Render check
 
 ```bash
+CHECK="$(git rev-parse --show-toplevel)/.claude/skills/deploy/render-check.js"
 python3 -m http.server 4173 &
 cd ~/.claude/plugins/cache/playwright-skill/playwright-skill/*/skills/playwright-skill
-node run.js /Users/jacobgiberson/Desktop/doyourownresearch_site/.claude/skills/deploy/render-check.js
+node run.js "$CHECK"
 ```
 
 It reads the published slugs out of `reports.js`, so new dossiers are covered
