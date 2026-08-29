@@ -29,6 +29,8 @@ async function requireFiles() {
     "index.html",
     "report.html",
     "404.html",
+    "privacy.html",
+    "ads.txt",
     "CNAME",
     ".nojekyll",
     "robots.txt",
@@ -37,6 +39,8 @@ async function requireFiles() {
     "assets/data/reports.js",
     "assets/js/site.js",
     "assets/js/report.js",
+    "assets/js/ads.js",
+    "assets/data/ads-config.js",
     "assets/img/favicon.svg",
     "assets/img/social-preview.png",
     "assets/img/social-preview-v2.png",
@@ -211,7 +215,7 @@ async function validateHtmlFile(path) {
 }
 
 async function validateJavaScript() {
-  for (const path of ["assets/js/site.js", "assets/js/report.js"]) {
+  for (const path of ["assets/js/site.js", "assets/js/report.js", "assets/js/ads.js", "assets/data/ads-config.js"]) {
     const source = await readFile(resolve(root, path), "utf8");
     try {
       new vm.Script(source, { filename: path });
@@ -260,6 +264,82 @@ async function validateSocialPreview() {
   pass(`social preview: ${width} × ${height}, ${image.byteLength} bytes`);
 }
 
+const PUBLISHER_ID = /^ca-pub-\d{16}$/;
+
+async function loadAdsConfig() {
+  const source = await readFile(resolve(root, "assets/data/ads-config.js"), "utf8");
+  const sandbox = { window: {} };
+  vm.createContext(sandbox);
+  try {
+    vm.runInContext(source, sandbox, { filename: "assets/data/ads-config.js", timeout: 1000 });
+  } catch (error) {
+    fail(`ads config does not execute: ${error.message}`);
+    return null;
+  }
+  const config = sandbox.window.DYOR_ADS;
+  if (!config || typeof config !== "object") {
+    fail("assets/data/ads-config.js must define window.DYOR_ADS");
+    return null;
+  }
+  return config;
+}
+
+async function referencedAdUnits() {
+  const units = new Set();
+  for (const path of ["index.html", "report.html", "404.html", "privacy.html", "assets/js/report.js"]) {
+    const source = await readFile(resolve(root, path), "utf8");
+    for (const match of source.matchAll(/data-ad-unit="([a-zA-Z0-9_-]+)"/g)) units.add(match[1]);
+  }
+  return [...units];
+}
+
+async function validateAdvertising() {
+  const config = await loadAdsConfig();
+  if (!config) return;
+
+  const client = typeof config.client === "string" ? config.client : "";
+  const slots = config.slots && typeof config.slots === "object" ? config.slots : {};
+  const units = await referencedAdUnits();
+
+  if (client !== "" && !PUBLISHER_ID.test(client)) {
+    fail(`ads config client must be a ca-pub- publisher ID or empty; got ${JSON.stringify(client)}`);
+  }
+
+  units.forEach((unit) => {
+    if (!(unit in slots)) fail(`ad container references unknown slot "${unit}"; add it to assets/data/ads-config.js`);
+  });
+
+  if (config.enabled === true) {
+    if (!PUBLISHER_ID.test(client)) fail("ads are enabled but no valid ca-pub- publisher ID is configured");
+    const empty = units.filter((unit) => !nonEmpty(slots[unit]));
+    if (empty.length > 0) fail(`ads are enabled but these slots have no ad unit ID: ${empty.join(", ")}`);
+  }
+
+  // The <head> snippet is what Google verifies; it must agree with the config.
+  if (nonEmpty(client)) {
+    for (const path of ["index.html", "report.html", "404.html", "privacy.html"]) {
+      const source = await readFile(resolve(root, path), "utf8");
+      const snippet = source.match(/adsbygoogle\.js\?client=(ca-pub-\d+)/);
+      if (!snippet) fail(`${path} is missing the AdSense verification snippet`);
+      else if (snippet[1] !== client) fail(`${path} loads ${snippet[1]} but ads-config.js declares ${client}`);
+    }
+  }
+
+  const adsTxt = await readFile(resolve(root, "ads.txt"), "utf8");
+  const records = adsTxt.split("\n").map((line) => line.trim()).filter((line) => line && !line.startsWith("#"));
+  if (records.length === 0) fail("ads.txt has no seller records");
+  records.forEach((record) => {
+    if (!/^[a-z0-9.-]+,\s*[a-zA-Z0-9-]+,\s*(DIRECT|RESELLER)(,\s*[a-f0-9]+)?$/.test(record)) {
+      fail(`ads.txt record is not a valid IAB entry: ${JSON.stringify(record)}`);
+    }
+  });
+  if (nonEmpty(client) && !adsTxt.includes(client.replace("ca-", ""))) {
+    fail(`ads.txt must authorize ${client.replace("ca-", "")}`);
+  }
+
+  pass(`advertising: ${config.enabled === true ? "enabled" : "configured, ads off"} · ${units.length} slot${units.length === 1 ? "" : "s"} · ads.txt ${records.length} record${records.length === 1 ? "" : "s"}`);
+}
+
 async function validateDomain() {
   const cname = (await readFile(resolve(root, "CNAME"), "utf8")).trim();
   if (cname !== "doyourownresearch.me") fail(`CNAME must contain exactly doyourownresearch.me; got ${JSON.stringify(cname)}`);
@@ -283,9 +363,10 @@ const { site, reports } = await loadPublicationData();
 const visualTypes = await supportedVisualTypes();
 validateReports(site, reports, visualTypes);
 await validateTranscripts(reports);
-await Promise.all(["index.html", "report.html", "404.html"].map(validateHtmlFile));
+await Promise.all(["index.html", "report.html", "404.html", "privacy.html"].map(validateHtmlFile));
 await validateJavaScript();
 await validateSocialPreview();
+await validateAdvertising();
 await validateDomain();
 
 if (failures.length > 0) {

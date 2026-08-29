@@ -323,6 +323,8 @@
         </section>
       </div>
 
+      <aside class="ad-slot" data-ad-slot-container data-ad-unit="reportEnd" aria-label="Advertisement"></aside>
+
       <section class="report-next">
         <div class="report-next__inner">
           <p class="eyebrow">${escapeHtml(report.next.eyebrow)}</p>
@@ -455,6 +457,7 @@
   }
 
   renderReport(report);
+  window.DYOR_ADS_MOUNT?.(reportRoot);
   setMetadata(report);
   setYear();
   initReadingProgress();

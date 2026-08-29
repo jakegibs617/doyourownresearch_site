@@ -55,9 +55,12 @@ to:
 .
 ├── index.html                 # landing page and archive
 ├── report.html                # reusable long-form report renderer
+├── privacy.html               # privacy and advertising disclosure
+├── ads.txt                    # IAB authorized digital sellers
 ├── assets/
 │   ├── css/site.css           # complete visual system
 │   ├── data/reports.js        # static publication data
+│   ├── data/ads-config.js     # AdSense publisher ID, kill switch, slot IDs
 │   ├── img/                   # code-native visual assets
 │   ├── js/                    # landing/report interactions
 │   └── reports/               # raw run transcripts, published unedited
@@ -111,6 +114,65 @@ The upstream publication adapter should eventually serialize the final
 `ResearchState`, findings, confidence inputs, limitations, and open questions
 into this data shape. Until those final pipeline stages exist, the site should
 remain honest about what is a report and what is a note about the method.
+
+## Advertising (Google AdSense)
+
+The site carries AdSense under publisher ID `ca-pub-5744142489358762`. Every
+ad decision lives in one file, `assets/data/ads-config.js`:
+
+```js
+window.DYOR_ADS = {
+  client: "ca-pub-5744142489358762",
+  enabled: false,          // master kill switch for in-page slots
+  slots: { homeArchive: "", reportEnd: "" }
+};
+```
+
+`assets/js/ads.js` reads it and mounts a slot only when `enabled` is `true`,
+the publisher ID is well formed, and that slot has an ad unit ID. Otherwise it
+removes the container from the DOM entirely — no `<ins>` element, no reserved
+space, no visual difference from an ad-free site. **Turning the
+site’s own ad slots off is one line: `enabled: false`.**
+
+One caveat that the config file cannot cover: the AdSense verification snippet
+sits in the `<head>` of every page, because that is what Google’s crawler
+checks. It loads the AdSense library on every page view even while `enabled` is
+`false`, and if **Auto ads** is ever switched on in the AdSense UI, Google will
+inject ads regardless of this config. The kill switch governs the slots in this
+repository; Auto ads is governed only in the AdSense UI. Keep it off.
+
+Placement is deliberately conservative and deliberately outside the argument:
+
+| Slot | Location |
+| --- | --- |
+| `homeArchive` | Home page, between the archive grid and the method section |
+| `reportEnd` | Report page, after the sources endmatter, before “read next” |
+
+No ad appears between chapters, inside the evidence ledger, or in the source
+list. A dossier is never interrupted by an advertisement. `404.html` carries the
+verification snippet but no ad slot.
+
+### Going live after approval
+
+The verification snippet is already in the `<head>` of all four pages, and
+`ads.txt` already authorizes the publisher ID — Google can verify the site as
+it stands. Once AdSense approves it:
+
+1. Create two **display** ad units in the AdSense UI, named `home-archive` and
+   `report-end`, and copy each unit’s slot ID.
+2. Paste both into `slots` in `assets/data/ads-config.js` and set
+   `enabled: true`.
+3. Run `npm test`. The validator fails if ads are enabled while any slot ID is
+   missing, or if the publisher ID in the config and the page `<head>` disagree,
+   so a half-finished rollout cannot reach production.
+4. In the AdSense UI, leave **Auto ads off** — Auto ads override the placement
+   above with anchors and full-screen vignettes. Turn **Privacy & messaging →
+   GDPR/CCPA messages on**; that is Google’s own consent UI, which is why this
+   site ships no cookie banner of its own.
+
+`privacy.html` discloses the GA4 and AdSense cookies and carries the opt-out
+links AdSense requires. Its contact address is `privacy@doyourownresearch.me` —
+set that alias up, or change the address, before applying.
 
 ## Activating `doyourownresearch.me`
 
