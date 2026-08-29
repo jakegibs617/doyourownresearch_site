@@ -39,6 +39,7 @@ async function requireFiles() {
     "assets/data/reports.js",
     "assets/js/site.js",
     "assets/js/report.js",
+    "assets/js/read-aloud.js",
     "assets/js/ads.js",
     "assets/data/ads-config.js",
     "assets/img/favicon.svg",
@@ -215,7 +216,7 @@ async function validateHtmlFile(path) {
 }
 
 async function validateJavaScript() {
-  for (const path of ["assets/js/site.js", "assets/js/report.js", "assets/js/ads.js", "assets/data/ads-config.js"]) {
+  for (const path of ["assets/js/site.js", "assets/js/report.js", "assets/js/read-aloud.js", "assets/js/ads.js", "assets/data/ads-config.js"]) {
     const source = await readFile(resolve(root, path), "utf8");
     try {
       new vm.Script(source, { filename: path });
@@ -224,6 +225,48 @@ async function validateJavaScript() {
       fail(`${path} syntax error: ${error.message}`);
     }
   }
+}
+
+async function validateReadAloud() {
+  const [html, renderer, controller, css, privacy] = await Promise.all([
+    readFile(resolve(root, "report.html"), "utf8"),
+    readFile(resolve(root, "assets/js/report.js"), "utf8"),
+    readFile(resolve(root, "assets/js/read-aloud.js"), "utf8"),
+    readFile(resolve(root, "assets/css/site.css"), "utf8"),
+    readFile(resolve(root, "privacy.html"), "utf8")
+  ]);
+
+  const controllerScript = html.indexOf('src="assets/js/read-aloud.js"');
+  const rendererScript = html.indexOf('src="assets/js/report.js"');
+  if (controllerScript < 0) fail("report.html must load assets/js/read-aloud.js");
+  else if (rendererScript < 0 || controllerScript > rendererScript) fail("report.html must load read-aloud.js before report.js");
+
+  const rendererExpectations = [
+    [/data-read-aloud-controls/, "a read-aloud control mount"],
+    [/data-read-aloud-toggle/, "a read-aloud toggle"],
+    [/data-read-aloud-stop/, "a read-aloud stop control"],
+    [/data-read-aloud-status/, "a live read-aloud status"],
+    [/data-speech-segment/, "explicit narration segments"],
+    [/DYOR_READ_ALOUD\?\.init/, "read-aloud initialization"]
+  ];
+  rendererExpectations.forEach(([pattern, label]) => {
+    if (!pattern.test(renderer)) fail(`assets/js/report.js must contain ${label}`);
+  });
+
+  if (!/speechSynthesis/.test(controller) || !/SpeechSynthesisUtterance/.test(controller)) {
+    fail("read-aloud.js must feature-detect the browser speech synthesis interfaces");
+  }
+  if (!/selectPreferredVoice/.test(controller) || !/en-GB/.test(controller)) {
+    fail("read-aloud.js must prefer an installed British English narration voice");
+  }
+  if (!/\.read-aloud-controls/.test(css) || !/\.is-being-read/.test(css)) {
+    fail("site.css must style the read-aloud controls and current narration segment");
+  }
+  if (!/browser or device speech service/i.test(privacy)) {
+    fail("privacy.html must disclose the browser or device speech service");
+  }
+
+  if (failures.length === 0) pass("read-aloud control, narration markers, and disclosure");
 }
 
 async function validateSocialPreview() {
@@ -365,6 +408,7 @@ validateReports(site, reports, visualTypes);
 await validateTranscripts(reports);
 await Promise.all(["index.html", "report.html", "404.html", "privacy.html"].map(validateHtmlFile));
 await validateJavaScript();
+await validateReadAloud();
 await validateSocialPreview();
 await validateAdvertising();
 await validateDomain();

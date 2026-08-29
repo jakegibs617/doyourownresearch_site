@@ -4,7 +4,7 @@
   "private": true,
   "description": "Static public report site for doyourownresearch.me",
   "scripts": {
-    "test": "node scripts/validate-site.mjs",
+    "test": "node --test scripts/read-aloud.test.mjs && node scripts/validate-site.mjs",
     "serve": "python3 -m http.server 4173"
   },
   "engines": {

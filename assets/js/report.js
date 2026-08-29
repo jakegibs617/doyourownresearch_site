@@ -210,18 +210,18 @@
   }
 
   function renderChapter(chapter) {
-    const body = chapter.body.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("");
-    const quote = chapter.pullquote ? `<blockquote class="chapter-pullquote">${escapeHtml(chapter.pullquote)}</blockquote>` : "";
+    const body = chapter.body.map((paragraph) => `<p data-speech-segment>${escapeHtml(paragraph)}</p>`).join("");
+    const quote = chapter.pullquote ? `<blockquote class="chapter-pullquote" data-speech-segment>${escapeHtml(chapter.pullquote)}</blockquote>` : "";
     return `<section class="report-chapter" id="${escapeHtml(chapter.id)}" data-report-section>
       <div class="chapter-grid">
         <div class="chapter-number">${escapeHtml(chapter.number)} / ${String(chapter.number).padStart(2, "0")}</div>
         <div class="chapter-copy">
           <p class="eyebrow">${escapeHtml(chapter.eyebrow)}</p>
-          <h2>${escapeHtml(chapter.title)}</h2>
-          <p class="chapter-lead">${escapeHtml(chapter.lead)}</p>
+          <h2 data-speech-segment data-speech-text="Chapter ${escapeHtml(chapter.number)}. ${escapeHtml(chapter.title)}">${escapeHtml(chapter.title)}</h2>
+          <p class="chapter-lead" data-speech-segment>${escapeHtml(chapter.lead)}</p>
           ${body}${quote}
         </div>
-        <figure class="chapter-visual" aria-label="${escapeHtml(chapter.visual?.type?.replaceAll("-", " ") || "Chapter visual")}">
+        <figure class="chapter-visual" aria-label="${escapeHtml(chapter.visual?.type?.replaceAll("-", " ") || "Chapter visual")}" data-speech-segment>
           ${renderVisual(chapter.visual, chapter.number)}
         </figure>
       </div>
@@ -230,10 +230,10 @@
 
   function renderReport(report) {
     const chapterLinks = report.chapters.map((chapter) => `<a href="#${escapeHtml(chapter.id)}" data-index-link="${escapeHtml(chapter.id)}">${escapeHtml(chapter.number)} ${escapeHtml(chapter.eyebrow)}</a>`).join("");
-    const stats = report.stats.map((stat) => `<div class="report-stat"><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
-    const principles = report.principles.map((principle, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(principle)}</strong></li>`).join("");
-    const limitations = report.limitations.map((limitation, index) => `<li><span>L${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(limitation)}</strong></li>`).join("");
-    const sources = report.sources.map((source) => `<article class="source-item">
+    const stats = report.stats.map((stat) => `<div class="report-stat" data-speech-segment><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
+    const principles = report.principles.map((principle, index) => `<li data-speech-segment><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(principle)}</strong></li>`).join("");
+    const limitations = report.limitations.map((limitation, index) => `<li data-speech-segment><span>L${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(limitation)}</strong></li>`).join("");
+    const sources = report.sources.map((source) => `<article class="source-item" data-speech-segment>
       <span class="source-item__number">${escapeHtml(source.number)}</span>
       <div>
         <div class="source-item__publisher">${escapeHtml(source.publisher)}${source.tier ? ` <i>/ ${escapeHtml(source.tier)}</i>` : ""}</div>
@@ -241,14 +241,13 @@
       </div>
       <div class="source-item__body">
         <p class="source-item__note">${escapeHtml(source.note)}</p>
-        ${source.digest ? `<p class="source-item__digest"><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
+        ${source.digest ? `<p class="source-item__digest" data-speech-skip><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
       </div>
-      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}">↗</a>` : ""}
+      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}" data-speech-skip>↗</a>` : ""}
     </article>`).join("");
 
     const principlesHeading = report.principlesHeading || { eyebrow: "Report standard", title: "What every public dossier must preserve." };
     const sourcesHeading = report.sourcesHeading || { eyebrow: "Source record", title: "Read the decisions behind the design." };
-    const sourcesNote = report.sourcesNote ? `<p class="endmatter-note">${escapeHtml(report.sourcesNote)}</p>` : "";
     const transcript = report.transcript ? `<a class="transcript-link" href="${escapeHtml(report.transcript.href)}">
       <span class="transcript-link__label">Full record</span>
       <strong>${escapeHtml(report.transcript.label)}</strong>
@@ -265,17 +264,17 @@
         <div class="report-hero__main">
           <div>
             <span class="report-hero__label">${escapeHtml(report.label)} / Public record</span>
-            <h1>${reportTitle(report.title)}</h1>
+            <h1 data-speech-segment>${reportTitle(report.title)}</h1>
           </div>
           <div class="report-hero__side">
-            <p class="report-hero__deck">${escapeHtml(report.deck)}</p>
+            <p class="report-hero__deck" data-speech-segment>${escapeHtml(report.deck)}</p>
             <div class="report-hero__detail"><span>${escapeHtml(report.tags.join(" / "))}</span><span>Updated ${escapeHtml(formatDate(report.updatedAt))}</span></div>
           </div>
         </div>
       </header>
 
       <aside class="report-disclosure" aria-label="Publication disclosure">
-        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p>${escapeHtml(report.disclosure)}</p>
+        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p data-speech-segment data-speech-text="Disclosure. ${escapeHtml(report.disclosure)}">${escapeHtml(report.disclosure)}</p>
       </aside>
 
       <nav class="report-index" aria-label="Report chapters">
@@ -283,41 +282,51 @@
           <a href="#overview" data-index-link="overview">Overview</a>${chapterLinks}
           <a href="#limitations" data-index-link="limitations">Limitations</a>
           <a href="#sources" data-index-link="sources">Sources</a>
-          <button type="button" data-share-report>Share <span aria-hidden="true">↗</span></button>
+          <div class="report-index__actions">
+            <div class="read-aloud-controls" data-read-aloud-controls data-state="idle" hidden>
+              <button class="read-aloud-toggle" type="button" data-read-aloud-toggle aria-controls="report-content" aria-describedby="read-aloud-note">
+                <span data-read-aloud-label>Read aloud</span><span class="read-aloud-icon" data-read-aloud-icon aria-hidden="true">▶</span>
+              </button>
+              <button class="read-aloud-stop" type="button" data-read-aloud-stop hidden>Stop <span aria-hidden="true">■</span></button>
+              <span class="visually-hidden" id="read-aloud-note">Uses your browser or device speech service.</span>
+              <span class="visually-hidden" role="status" aria-live="polite" data-read-aloud-status></span>
+            </div>
+            <button class="report-share-button" type="button" data-share-report>Share <span aria-hidden="true">↗</span></button>
+          </div>
         </div>
       </nav>
 
       <section class="report-intro" id="overview" data-report-section>
         <div class="report-question">
           <div class="report-question__label">The question / Q</div>
-          <blockquote>${escapeHtml(report.question)}</blockquote>
+          <blockquote data-speech-segment data-speech-text="The question. ${escapeHtml(report.question)}">${escapeHtml(report.question)}</blockquote>
         </div>
         <div class="report-answer">
           <div class="report-answer__label">The short answer / A</div>
-          <p>${escapeHtml(report.answer)}</p>
+          <p data-speech-segment data-speech-text="The short answer. ${escapeHtml(report.answer)}">${escapeHtml(report.answer)}</p>
         </div>
         <div class="report-stats">${stats}</div>
       </section>
 
       <section class="report-thesis" aria-label="Thesis">
         <div class="report-thesis__meta"><span>${escapeHtml(report.thesis.label)}</span><span class="report-thesis__status">${escapeHtml(report.thesis.status)}</span></div>
-        <blockquote>${escapeHtml(report.thesis.statement)}</blockquote>
+        <blockquote data-speech-segment data-speech-text="Thesis. ${escapeHtml(report.thesis.statement)}">${escapeHtml(report.thesis.statement)}</blockquote>
       </section>
 
       <div class="report-body"><div class="report-chapters">${report.chapters.map(renderChapter).join("")}</div></div>
 
       <div class="report-endmatter">
         <section class="endmatter-section" id="principles" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(principlesHeading.eyebrow)}</p><h2>${escapeHtml(principlesHeading.title)}</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(principlesHeading.eyebrow)}</p><h2 data-speech-segment>${escapeHtml(principlesHeading.title)}</h2></header>
           <ol class="principle-list">${principles}</ol>
         </section>
         <section class="endmatter-section" id="limitations" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">Limitations / unknowns</p><h2>What this note does not establish.</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">Limitations / unknowns</p><h2 data-speech-segment>What this note does not establish.</h2></header>
           <ol class="limitation-list">${limitations}</ol>
         </section>
         <section class="endmatter-section" id="sources" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(sourcesHeading.eyebrow)}</p><h2>${escapeHtml(sourcesHeading.title)}</h2></header>
-          ${sourcesNote}
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(sourcesHeading.eyebrow)}</p><h2 data-speech-segment>${escapeHtml(sourcesHeading.title)}</h2></header>
+          ${report.sourcesNote ? `<p class="endmatter-note" data-speech-segment>${escapeHtml(report.sourcesNote)}</p>` : ""}
           <div class="sources-list">${sources}</div>
           ${transcript}
         </section>
@@ -463,4 +472,8 @@
   initReadingProgress();
   initSectionTracking();
   initShare(report);
+  window.DYOR_READ_ALOUD?.init({
+    root: reportRoot,
+    controls: document.querySelector("[data-read-aloud-controls]")
+  });
 })();

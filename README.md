@@ -88,6 +88,13 @@ Open <http://127.0.0.1:4173>. Validate the publication contract with:
 npm test
 ```
 
+Report pages progressively enhance with a browser-provided read-aloud control.
+Playback starts only after the reader activates it and can be paused, resumed or
+stopped from the sticky report index. The report remains readable when browser
+speech synthesis or JavaScript is unavailable. Narration prefers an installed
+British English woman's voice and otherwise requests the browser's `en-GB`
+default.
+
 ## Publishing a report
 
 The landing archive renders from `assets/data/reports.js`, so a new report is a

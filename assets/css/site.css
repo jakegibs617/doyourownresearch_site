@@ -96,6 +96,19 @@ blockquote {
   outline-offset: 4px;
 }
 
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: -1px !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+}
+
 .skip-link {
   position: fixed;
   z-index: 999;
@@ -1797,12 +1810,60 @@ blockquote {
 
 .report-index button {
   gap: 0.5rem;
-  margin-left: auto;
-  border-left: 1px solid var(--line);
   cursor: pointer;
 }
 
 .report-index button:hover { background: var(--ink); color: var(--paper); }
+
+.report-index__actions {
+  position: sticky;
+  z-index: 2;
+  right: 0;
+  display: flex;
+  align-self: stretch;
+  margin-left: auto;
+  border-left: 1px solid var(--line);
+  background: rgba(250, 248, 241, 0.98);
+}
+
+.read-aloud-controls {
+  display: flex;
+  align-items: stretch;
+}
+
+.read-aloud-controls[hidden],
+.read-aloud-stop[hidden] {
+  display: none !important;
+}
+
+.read-aloud-controls button + button,
+.report-share-button {
+  border-left: 1px solid var(--line);
+}
+
+.read-aloud-controls[data-state="speaking"] .read-aloud-toggle,
+.read-aloud-controls[data-state="paused"] .read-aloud-toggle {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.read-aloud-icon {
+  min-width: 0.7rem;
+  color: var(--red);
+  font-size: 0.7rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.read-aloud-controls[data-state="speaking"] .read-aloud-icon,
+.read-aloud-controls[data-state="paused"] .read-aloud-icon {
+  color: var(--signal);
+}
+
+[data-speech-segment].is-being-read {
+  outline: 2px solid var(--red);
+  outline-offset: 6px;
+}
 
 .report-intro,
 .report-body,
@@ -2830,7 +2891,8 @@ blockquote {
   .report-hero__meta { flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.52rem; }
   .report-disclosure { grid-template-columns: 1fr; }
   .report-index a { padding-right: 0.8rem; padding-left: 0.8rem; }
-  .report-index button { position: sticky; right: 0; background: var(--paper-bright); }
+  .report-index__actions { background: var(--paper-bright); }
+  .report-index button { padding-right: 0.85rem; padding-left: 0.85rem; }
   .report-stats { grid-template-columns: 1fr; }
   .chapter-grid { grid-template-columns: minmax(0, 1fr); }
   .chapter-number { padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }
