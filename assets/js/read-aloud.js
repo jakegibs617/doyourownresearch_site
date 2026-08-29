@@ -2,7 +2,14 @@
   "use strict";
 
   const DEFAULT_MAX_CHARS = 260;
-  const CANCELLATION_ERRORS = new Set(["canceled", "interrupted"]);
+  const WATCHDOG_INTERVAL_MS = 1500;
+  // Two quiet checks before recovering, so the gap between two utterances is not mistaken for a stall.
+  const WATCHDOG_MISSES = 2;
+  const ERROR_MESSAGES = new Map([
+    ["canceled", "Report narration stopped."],
+    ["interrupted", "Report narration stopped."],
+    ["not-allowed", "Your browser blocked narration. Press Read aloud again to allow it."]
+  ]);
   const BRITISH_WOMEN = [
     "flo",
     "serena",
@@ -151,6 +158,12 @@
     let activeElement = null;
     let destroyed = false;
     let preferredVoice = null;
+    let following = true;
+    let silentChecks = 0;
+    let watchdogHandle = null;
+
+    const scrollBehavior = () =>
+      host.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches === true ? "auto" : "smooth";
 
     const updatePreferredVoice = () => {
       preferredVoice = selectPreferredVoice(synth.getVoices?.() || []);
@@ -183,6 +196,11 @@
       activeElement?.classList?.remove("is-being-read");
       activeElement = element || null;
       activeElement?.classList?.add("is-being-read");
+      // A report runs to tens of minutes of speech. Without this the highlight
+      // stays wherever the reader left the page and the narration reads on unseen.
+      if (activeElement && following) {
+        activeElement.scrollIntoView?.({ block: "center", behavior: scrollBehavior() });
+      }
     };
 
     const returnToIdle = (message) => {
@@ -218,12 +236,28 @@
       utterance.onerror = (event) => {
         if (runGeneration !== generation) return;
         generation += 1;
-        returnToIdle(CANCELLATION_ERRORS.has(event?.error)
-          ? "Report narration stopped."
-          : "This browser could not continue reading the report.");
+        returnToIdle(ERROR_MESSAGES.get(event?.error) || "This browser could not continue reading the report.");
       };
 
+      silentChecks = 0;
       synth.speak(utterance);
+    };
+
+    // Chrome can drop a queue mid-report: the engine goes quiet without firing
+    // onend or onerror, and a chain built on those callbacks waits forever.
+    const watchdog = () => {
+      if (destroyed || state !== "speaking" || synth.paused) {
+        silentChecks = 0;
+        return;
+      }
+      if (synth.speaking || synth.pending) {
+        silentChecks = 0;
+        return;
+      }
+      silentChecks += 1;
+      if (silentChecks < WATCHDOG_MISSES) return;
+      silentChecks = 0;
+      speakNext(generation);
     };
 
     const start = () => {
@@ -235,6 +269,8 @@
 
       generation += 1;
       queueIndex = 0;
+      silentChecks = 0;
+      following = true;
       synth.cancel();
       if (synth.paused) synth.resume();
       state = "speaking";
@@ -253,6 +289,8 @@
 
     const resume = () => {
       synth.resume();
+      silentChecks = 0;
+      following = true;
       state = "speaking";
       renderState();
       setStatus(preferredVoice ? `Reading the report aloud with ${preferredVoice.name}.` : "Reading the report aloud in British English.");
@@ -272,11 +310,19 @@
     };
     const onStop = () => stop();
     const onPageHide = () => stop("");
+    // A reader who scrolls has taken the viewport back; stop dragging it around
+    // until they explicitly restart or resume the narration.
+    const onManualScroll = () => { following = false; };
 
     toggle.addEventListener("click", onToggle);
     stopButton.addEventListener("click", onStop);
     host.addEventListener?.("pagehide", onPageHide);
+    host.addEventListener?.("wheel", onManualScroll, { passive: true });
+    host.addEventListener?.("touchmove", onManualScroll, { passive: true });
     synth.addEventListener?.("voiceschanged", updatePreferredVoice);
+    if (typeof host.setInterval === "function") {
+      watchdogHandle = host.setInterval(watchdog, options.watchdogInterval || WATCHDOG_INTERVAL_MS);
+    }
     updatePreferredVoice();
     controls.hidden = false;
     renderState();
@@ -291,9 +337,13 @@
         if (destroyed) return;
         destroyed = true;
         stop("");
+        if (watchdogHandle !== null) host.clearInterval?.(watchdogHandle);
+        watchdogHandle = null;
         toggle.removeEventListener?.("click", onToggle);
         stopButton.removeEventListener?.("click", onStop);
         host.removeEventListener?.("pagehide", onPageHide);
+        host.removeEventListener?.("wheel", onManualScroll);
+        host.removeEventListener?.("touchmove", onManualScroll);
         synth.removeEventListener?.("voiceschanged", updatePreferredVoice);
       }
     };

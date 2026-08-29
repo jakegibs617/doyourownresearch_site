@@ -8,12 +8,28 @@ const source = await readFile(resolve(import.meta.dirname, "../assets/js/read-al
 
 function loadApi() {
   const listeners = new Map();
+  const timers = [];
   const window = {
     document: { documentElement: { lang: "en" } },
     addEventListener(type, listener) { listeners.set(type, listener); },
     removeEventListener(type, listener) {
       if (listeners.get(type) === listener) listeners.delete(type);
-    }
+    },
+    setInterval(callback, delay) {
+      timers.push({ callback, delay, cleared: false });
+      return timers.length;
+    },
+    clearInterval(handle) {
+      const timer = timers[handle - 1];
+      if (timer) timer.cleared = true;
+    },
+    // Drive every live timer callback n times, standing in for elapsed wall clock.
+    tick(times = 1) {
+      for (let round = 0; round < times; round += 1) {
+        timers.filter((timer) => !timer.cleared).forEach((timer) => timer.callback());
+      }
+    },
+    timers
   };
   const context = vm.createContext({ console, window });
   new vm.Script(source, { filename: "assets/js/read-aloud.js" }).runInContext(context);
@@ -31,6 +47,8 @@ function element(children = [], options = {}) {
     childNodes: children,
     dataset: options.dataset || {},
     hidden: options.hidden || false,
+    scrolledIntoView: [],
+    scrollIntoView(config) { this.scrolledIntoView.push(config); },
     classList: {
       add(value) { classes.add(value); },
       remove(value) { classes.delete(value); },
@@ -96,9 +114,16 @@ class FakeSynth {
     this.spoken = [];
     this.current = null;
     this.voices = voices;
+    this.pending = false;
   }
 
+  get speaking() { return this.current !== null; }
+
   getVoices() { return this.voices; }
+
+  // Chrome's failure mode: the engine goes silent without firing onend or onerror,
+  // so a queue chained on those callbacks stalls forever.
+  goSilentWithoutNotifying() { this.current = null; }
 
   speak(utterance) {
     this.spoken.push(utterance.text);
@@ -259,6 +284,112 @@ test("controller resets when the active utterance is canceled externally", () =>
 
   assert.equal(controller.state, "idle");
   assert.equal(fixture.status.textContent, "Report narration stopped.");
+});
+
+test("narration scrolls each segment into view so the reader can see what is being read", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const first = element([textNode("The short answer.")]);
+  const second = element([textNode("A chapter paragraph.")]);
+  const root = { querySelectorAll: () => [first, second] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  // The config object is built inside the VM context, so compare fields rather than identity.
+  const scrolls = (node) => node.scrolledIntoView.map((config) => `${config.block}/${config.behavior}`);
+
+  controller.start();
+  assert.deepEqual(scrolls(first), ["center/smooth"]);
+  assert.deepEqual(scrolls(second), []);
+
+  synth.finishCurrent();
+  assert.deepEqual(scrolls(second), ["center/smooth"]);
+});
+
+test("scrolling away stops the page following the narration until it is restarted", () => {
+  const { api, listeners, window } = loadApi();
+  const fixture = controlsFixture();
+  const first = element([textNode("One.")]);
+  const second = element([textNode("Two.")]);
+  const root = { querySelectorAll: () => [first, second] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  controller.start();
+  listeners.get("wheel")?.();
+  synth.finishCurrent();
+
+  assert.deepEqual(second.scrolledIntoView, [], "reader took control of the viewport");
+  assert.equal(second.classList.contains("is-being-read"), true, "narration still tracks the segment");
+
+  controller.stop();
+  controller.start();
+  assert.deepEqual(first.scrolledIntoView.length, 2, "restarting hands following back to the narration");
+});
+
+test("a queue that dies without firing onend is resumed by the watchdog", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const root = { querySelectorAll: () => [element([textNode("One.")]), element([textNode("Two.")])] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  controller.start();
+  assert.deepEqual(synth.spoken, ["One."]);
+
+  synth.goSilentWithoutNotifying();
+  window.tick(1);
+  assert.deepEqual(synth.spoken, ["One."], "one quiet check is not yet a stall");
+
+  window.tick(1);
+  assert.equal(controller.state, "speaking", "the watchdog keeps the session alive");
+  assert.deepEqual(synth.spoken, ["One.", "One."], "the unfinished segment is spoken again");
+});
+
+test("the watchdog leaves paused and idle sessions alone", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const root = { querySelectorAll: () => [element([textNode("One.")])] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  window.tick(4);
+  assert.deepEqual(synth.spoken, [], "an idle control never speaks on its own");
+
+  controller.start();
+  controller.pause();
+  synth.goSilentWithoutNotifying();
+  window.tick(4);
+  assert.equal(controller.state, "paused");
+  assert.deepEqual(synth.spoken, ["One."], "a paused session is not restarted");
+});
+
+test("destroying the controller clears the watchdog", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const root = { querySelectorAll: () => [element([textNode("One.")])] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  controller.destroy();
+  assert.ok(window.timers.every((timer) => timer.cleared));
+});
+
+test("a browser that blocks narration says so and stays retryable", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const root = { querySelectorAll: () => [element([textNode("Read this.")])] };
+  const synth = new FakeSynth();
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  controller.start();
+  synth.current.onerror({ error: "not-allowed" });
+
+  assert.equal(controller.state, "idle");
+  assert.equal(fixture.status.textContent, "Your browser blocked narration. Press Read aloud again to allow it.");
+
+  fixture.toggle.click();
+  assert.equal(controller.state, "speaking", "the control still works on a second press");
 });
 
 test("unsupported speech synthesis leaves the progressive control hidden", () => {
