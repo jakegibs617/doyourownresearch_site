@@ -5,9 +5,9 @@
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
     strapline: "Research you can take apart.",
-    archiveState: "One method note, six research dossiers.",
+    archiveState: "One method note, seven research dossiers.",
     archiveNext: {
-      number: "008",
+      number: "009",
       eyebrow: "Next in the archive",
       title: "The next contested claim.",
       body: "The series continues through the most widely held conspiracy theories, one run per claim, each published with its empty searches and its own score intact.",
@@ -2235,7 +2235,7 @@
       label: "Research dossier",
       issue: "DOSSIER 007",
       status: "published",
-      featured: true,
+      featured: false,
       publishedAt: "2026-08-29",
       updatedAt: "2026-08-29",
       readMinutes: 13,
@@ -2647,6 +2647,411 @@
         eyebrow: "Your turn",
         title: "Ask what the measurement is of, not how precise it is.",
         body: "Nine millimetres across half a century is a real number and it settles where the hardware is. It does not settle who carried it, and this run says so instead of letting the precision do work it cannot do. The thing that would settle it is named in the open questions: sub-metre non-NASA imagery of the Apollo sites showing traverse tracks and descent-stage hardware, or failing to. The whole run is published unedited, every search and every digest."
+      }
+    },
+    {
+      slug: "mkultra-the-caption-and-the-document",
+      kind: "report",
+      label: "Research dossier",
+      issue: "DOSSIER 008",
+      status: "published",
+      featured: true,
+      publishedAt: "2026-08-29",
+      updatedAt: "2026-08-29",
+      readMinutes: 12,
+      runId: "41c563cb-fda0-42e6-9fed-56983e8a3086",
+      title: "Project MKUltra, and the caption instead of the document.",
+      shortTitle: "Project MKUltra",
+      deck: "Every quotation in this dossier is accurate, checkable, and taken from an archive’s summary of a document the run never read.",
+      cardLine: "Seven passages, one page, and the CIA’s own list of 149 subprojects sitting unread in the same ledger.",
+      question: "To what extent did Project MKUltra's documented human subjects research activities involve non-consensual experimentation, and what were the program's stated objectives, methods, and institutional oversight failures?",
+      answer: "The ledger points one way and it is not close: unwitting dosing of U.S. citizens was deliberated in the office of the Deputy Director of Central Intelligence, defended by the men who ran the programme, opposed by the Inspector General, and frozen by the Director — a managed policy rather than an oversight gap. But every passage supporting that comes from a single archive page, and from the archive’s own description of a two-page memo rather than the memo itself. Eight counter-searches returned nothing, ten of fifteen subquestions went unanswered, and the proportion the question actually asked for has no denominator anywhere in the record. All thirteen findings computed to unknown.",
+      disclosure: "This run scoped itself to the documented evidentiary record and, in practice, reached one document of it. Nothing here should be read as a survey of MKUltra: the stated objectives, the methods, the named cases, the subproject counts and both congressional investigations are absent from this ledger, and the page says so where each one is missing.",
+      accent: "rust",
+      tags: ["Provenance", "Archival records", "Single-source evidence"],
+      cover: {
+        index: "DYOR—008",
+        serial: "008 / 2026",
+        lines: ["SEVEN", "QUOTATIONS.", "ONE PAGE."],
+        footer: "Quoted → the description · Never read → the memo"
+      },
+      transcript: {
+        href: "assets/reports/dyor-41c563cb-fda0-42e6-9fed-56983e8a3086.md",
+        label: "Read the full method transcript",
+        note: "The complete 924-line run record: every search, every verbatim excerpt, every bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone who has been handed a well-sourced page and wants to know what “well-sourced” was measuring.",
+        focus: "The documented human-subjects activity under MKUltra — its extent, its stated objectives and methods, and the oversight that did or did not govern it.",
+        excluded: "Whether the research findings themselves were scientifically valid, Cold War intelligence history not tied to the experimentation, post-1977 programmes not continuous with MKUltra, compensation claims and litigation, and popular-culture depictions. Each was placed out of scope before any source was read."
+      },
+      stats: [
+        { value: "7/7", label: "passages from one archive page" },
+        { value: "0/8", label: "counter-searches that returned" },
+        { value: "10/15", label: "subquestions no passage answered" }
+      ],
+      thesis: {
+        label: "The distinction this page rests on",
+        statement: "There is no run-level verdict in this record and the renderer does not invent one. The ledger points one way and it is not close. It is also one document deep, quoted at its summary rather than at its source, and the run’s own measurements say so before any reader has to notice.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "The question asked for a proportion. The ledger has no denominator.",
+          lead: "The run’s own question was quantitative — to what extent did MKUltra’s documented research involve non-consensual experimentation. Answering that needs a numerator and a denominator, and the run recorded, before searching, that the denominator might not exist.",
+          body: [
+            "The scope note says why. Most MKUltra records were ordered destroyed in 1973, so the run wrote the ambiguity down in advance: conclusions differ depending on whether the question is scoped to the surviving record or to the presumed full extent. It also recorded that the subproject count and the subject totals vary between the Church Committee, the Rockefeller Commission and later FOIA releases — which would change any quantitative answer on its own.",
+            "The population was bounded to witting and unwitting human subjects in CIA-sponsored behavioural, psychological and pharmacological research, together with the funded researchers and institutions. The period runs 1953 to 1973, with BLUEBIRD and ARTICHOKE treated as background rather than population, and the 1975–77 investigations as aftermath.",
+            "Fifteen subquestions were written before any source was read. Five were answered by a passage. The other ten include every question about objectives, methods, subproject and institution counts, named cases of covert dosing, consent procedures, the Nuremberg Code, the 1973 destruction order, and what the two commissions concluded."
+          ],
+          pullquote: "The question asked how much. The ledger came back with one meeting.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "What MKUltra’s stated objectives and methods were",
+              "How many subprojects and institutions were funded",
+              "What proportion of the activity was non-consensual",
+              "What ethical review or consent procedures governed it",
+              "What the Rockefeller and Church investigations concluded"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Whether the research findings themselves were scientifically valid",
+              "Cold War intelligence history not tied to the experimentation",
+              "Post-1977 behavioural programmes not continuous with MKUltra",
+              "Compensation claims and litigation outcomes",
+              "Popular-culture depictions and fictionalised treatments"
+            ],
+            note: "Period: 1953 to 1973 for the programme, with 1950 precursors as background and the 1975–77 investigations as aftermath. Geography: primarily the United States, with Canadian and allied subprojects included."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Three explanations, and twenty-one bearings from one page.",
+          lead: "Three rival accounts were written down before any source was read, each with the observation that would destroy it. Seven passages went on to declare a bearing on all three.",
+          body: [
+            "H1 is the familiar account: substantial, documented non-consensual experimentation, oversight deliberately bypassed, no meaningful consent process across most subprojects. H2 is that the extent is overstated — that most surviving records describe witting volunteers and contract university science, and the unwitting-subjects story generalises a few publicised cases across a hundred and fifty. H3 is a claim about the era rather than the Agency: that formal human-subjects protections did not yet exist anywhere in U.S. practice, so MKUltra’s lack of ethical review was typical rather than exceptional.",
+            "Every one of the seven passages bore for H1 or was neutral. None bore against it. H2 collected six weak negatives and one neutral; H3 four weak negatives, two strong ones and one neutral. On the counts alone this looks settled.",
+            "It is worth being precise about what produced those counts. All seven passages come from the same document’s description page, and each was scored against all three explanations, so one archival summary generated every cell in the matrix. The one-sidedness is real. Its independence has not been established, and the run does not claim it has."
+          ],
+          pullquote: "Twenty-one bearings, and a single page produced every one of them.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              {
+                id: "H1",
+                claim: "MKUltra involved substantial, well-documented non-consensual experimentation on unwitting subjects alongside witting research, with oversight mechanisms deliberately bypassed and no meaningful ethical review or informed consent across most subprojects.",
+                falsifier: "Surviving Church Committee and Rockefeller Commission records and the ~20,000 recovered financial documents showing that the documented cases of non-consensual dosing were isolated exceptions, with most of the ~150 subprojects carrying documented consent procedures or witting participant pools.",
+                counts: [2, 4, 1, 0, 0]
+              },
+              {
+                id: "H2",
+                claim: "The extent of non-consensual experimentation is substantially overstated: most surviving records describe witting volunteers, university contract science and limited testing, with the unwitting-subjects narrative resting on a few well-publicised cases generalised to the whole programme.",
+                falsifier: "Finding that a significant proportion of the subprojects for which subject-level records survive explicitly describe covert administration to subjects who had not consented, indicating a systemic rather than exceptional pattern.",
+                counts: [0, 0, 1, 6, 0]
+              },
+              {
+                id: "H3",
+                claim: "The oversight failures reflected the legal and regulatory environment of the 1950s and 60s rather than deliberate circumvention: formal human-subjects protections did not yet exist in U.S. law or practice, making MKUltra’s lack of ethical review consistent with contemporaneous norms.",
+                falsifier: "Documentation showing CIA officials or contracted researchers were aware of an applicable existing standard — the Nuremberg Code, service medical-ethics guidance — and were instructed to violate it specifically to avoid detection.",
+                counts: [0, 0, 1, 4, 2]
+              }
+            ],
+            note: "Seven passages declared a bearing on each explanation. H3’s two strongest negatives are the two passages showing the question reached the Deputy Director’s office and was headed for the Director’s."
+          }
+        },
+        {
+          id: "ledger",
+          number: "03",
+          eyebrow: "The whole ledger",
+          title: "Four sources were stored. Three of them produced nothing.",
+          lead: "Every quotation on this page, and every finding in the run, traces to the fourth: the National Security Archive’s page for a two-page memorandum written by the CIA Inspector General on 29 November 1963.",
+          body: [
+            "That memo is a record of one meeting, in the office of Deputy Director of Central Intelligence General Marshall Carter, held to settle the single point of disagreement over the Inspector General’s MKULTRA recommendations — whether to continue testing MKULTRA substances on unwitting U.S. citizens. Seven passages were read out of the page. Six findings were asserted on them. Nothing else in the run’s evidence section exists.",
+            "The run measured this itself and printed the result. Zero of four snapshots reached an upstream origin, and every asserted finding stands on exactly one distinct source family. Its confidence stage read that as unknown for all thirteen findings — not low, unknown, because a source whose provenance was never established cannot be shown to be independent of anything.",
+            "One item shows how thin it gets at the edges. The passage about what happened after the freeze — the 1975 cover memo’s authors finding “no record … that this freeze was ever lifted” — is scored neutral on all three explanations, and the run’s own note on it treats that same sentence as concerning a records-destruction freeze rather than the testing freeze. The ledger contradicts itself about what its last passage is even about. The run prints both readings rather than choosing, and observes that on either one, no record of the freeze being lifted is not a record of the testing stopping."
+          ],
+          pullquote: "Six findings, seven passages, one page, zero traced origins.",
+          visual: {
+            type: "origin-map",
+            origin: "National Security Archive, document 32732 — the page publishing Earman’s two-page memorandum of 29 November 1963",
+            branches: [
+              "ev_01 · SQ4 · Description, para. 1",
+              "ev_02 · SQ4 · Description, para. 2",
+              "ev_03 · SQ13 · Description, para. 2",
+              "ev_04 · SQ8 · Description, para. 2",
+              "ev_05 · SQ8 · Description, para. 3",
+              "ev_06 · SQ15 · Description, para. 3",
+              "ev_07 · SQ14 · Description, para. 3"
+            ],
+            conclusion: "Six asserted findings and one hypothesis — every one computed to a confidence of unknown"
+          }
+        },
+        {
+          id: "caption",
+          number: "04",
+          eyebrow: "Where the passages sit",
+          title: "What was quoted is the archive’s caption, not the memo.",
+          lead: "Look at where the seven passages are located: paragraphs one, two and three of the page’s Description — the summary an archivist wrote about the document, not the document’s own bytes.",
+          body: [
+            "Read them and it is plain enough. “This memo records a meeting held in the office of Deputy Director of Central Intelligence Gen. Marshall Carter…” is not the memo speaking; it is a curator saying what the memo does, with the memo’s own phrases quoted inside. “Earman finds this ‘odd’” is the same construction. What the verbatim gate certified — all seven passages survived it, a clean hundred-per-cent round trip — is that the run quoted the description accurately. It certifies nothing about the memorandum.",
+            "The run’s own source assessment names the gap without flinching: the memo’s conclusions are narrow, a record of one meeting, while the archive’s framing “draws broader inferences about CIA policy and testing practices that extend beyond what this single document directly documents.” Several findings on this page then take the archive’s framing and step further again.",
+            "None of that says the description is wrong. The National Security Archive is a serious institution, the memo is real, and the names in it — Gottlieb, Helms, Earman, Carter, Kirkpatrick — are the right names. It is a claim about what has been checked. The digest printed in the source record below is the digest of a web page. It is not the digest of a CIA memorandum, and nothing in this run ever opened one."
+          ],
+          pullquote: "The verbatim gate certified that the caption was quoted correctly. That is all it can certify.",
+          visual: {
+            type: "lineage-chain",
+            items: [
+              {
+                actor: "John S. Earman, CIA Inspector General",
+                date: "29 November 1963",
+                added: "Writes a two-page memorandum for the record of one meeting in the Deputy Director’s office: who argued what, and that the question might have to go to the Director for a decision."
+              },
+              {
+                actor: "An attached CIA cover memo",
+                date: "1975",
+                added: "Reports that the Director deferred a decision on testing U.S. citizens for one year, asked that the freeze on unwitting testing continue meanwhile, and that no record of the freeze being lifted was found."
+              },
+              {
+                actor: "National Security Archive",
+                date: "date not recorded by the run",
+                added: "Publishes the document and writes a three-paragraph description summarising what it records, quoting the memo’s phrases inside the archive’s own sentences."
+              },
+              {
+                actor: "This run’s retrieval",
+                date: "29 August 2026",
+                added: "Fetches and hashes the archive’s page. Reads seven passages out of the description, at paragraphs 1, 2 and 3. No other stored page contributed a passage."
+              },
+              {
+                actor: "This run’s findings",
+                date: "same run",
+                added: "Assert six findings about MKUltra policy, oversight and the limits of the record, citing those seven passages and nothing else."
+              }
+            ],
+            note: "The digest printed beside every quotation on this page is the digest of the archive’s page. The run did not fetch, hash or read the memorandum itself."
+          }
+        },
+        {
+          id: "conditions",
+          number: "05",
+          eyebrow: "The winner, audited",
+          title: "The explanation that leads still needs two things nobody found.",
+          lead: "H1’s required conditions were written down in advance — all of them have to hold — and the run’s own open questions record which of them this ledger reached.",
+          body: [
+            "The oversight condition is the one the ledger speaks to, and it speaks clearly. The Inspector General’s review produced the disputed meeting; the meeting produced an agreement that continuation would need escalation; the Director then deferred for a year and directed that the Agency continue the freeze. That sequence is fixed in the documents, and a freeze imposed against the advocacy of the men running the programme is a control, not a gap.",
+            "The two quantitative conditions are the ones the run files as unresolved. It states plainly that there is no subject-level record here, no consent documentation, no subproject inventory and therefore no denominator, so it cannot say what share of the roughly 150 subprojects involved covert administration rather than witting volunteers, contract university science or animal work.",
+            "Then the run wrote down the reading that would break its own leading finding, which is the part worth carrying away. The only concrete venue attached to unwitting testing anywhere in this ledger is the domestic safehouse operation, and the extension to foreign nationals was rejected for want of controlled facilities. If “unwitting testing” in that 1963 meeting meant that one operational line rather than a practice spread across subprojects, then a policy fight at the Deputy Director’s level is entirely compatible with H2 — and the run says so, against itself."
+          ],
+          pullquote: "A fight in the Deputy Director’s office proves the practice was managed. It does not say how big it was.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "Multiple specific subprojects involving unwitting subjects are identified, not one or two anecdotal cases", state: "unknown" },
+              { label: "Consent procedures are absent or circumvented across a substantial share of subprojects", state: "unknown" },
+              { label: "Institutional oversight is documented as absent or actively circumvented, not merely undocumented", state: "supported" },
+              { label: "The unwitting testing under debate denotes a programme-wide practice, not the safehouse line alone", state: "weak link" }
+            ]
+          }
+        },
+        {
+          id: "unread",
+          number: "06",
+          eyebrow: "What was stored and not read",
+          title: "The denominator was already in the ledger.",
+          lead: "The CIA’s own January 1976 briefing book — 149 numbered subprojects with their researchers, objectives, funding and monitors — was fetched, hashed and stored by this run. No passage was ever read out of it.",
+          body: [
+            "That document is the closest thing in the ledger to the denominator the run says it lacks. It sat in the source list, snapshotted and assessed, while the findings above reported that no subproject inventory was available to them. The run does not hide this; it prints the source and the zero beside it.",
+            "The Church Committee’s final report was stored too — a year-long investigation, roughly 110,000 pages of documents reviewed, some 800 witnesses, about 30,000 pages of transcript. It produced no passage. So did the Advisory Committee on Human Radiation Experiments report, which is precisely about federally sponsored human experimentation from 1944 to 1974 and the human-subjects protections of that era: the question H3 turns on.",
+            "There is a second reason to be careful with the briefing book, and the run recorded it. The stored copy is an Internet Archive OCR transcription with no named transcriber, no verification procedure and no editorial process, which is why the run assessed it at the bottom tier of the evidence hierarchy — unsupported, the same rank as an anonymous social-media post. It is the right document arriving in the wrong condition. Whether reading it would have moved anything is unknown; what the record shows is only that it was there."
+          ],
+          pullquote: "A list of all 149 subprojects was in the ledger. Nothing was read out of it.",
+          visual: {
+            type: "report-layers",
+            layers: [
+              {
+                label: "Earman memorandum · National Security Archive",
+                detail: "7 passages — every quotation and every finding on this page. Tier: government institutional. Origin: not established."
+              },
+              {
+                label: "MKULTRA briefing book · 149 subprojects · January 1976",
+                detail: "0 passages. The subproject inventory the run reports it does not have, stored as an archive.org OCR transcription and assessed at the bottom tier, unsupported."
+              },
+              {
+                label: "Church Committee final report",
+                detail: "0 passages. 110,000 pages reviewed, ~800 witnesses, ~30,000 pages of transcript across seven administrations. Tier: government institutional."
+              },
+              {
+                label: "Advisory Committee on Human Radiation Experiments",
+                detail: "0 passages. Federally sponsored human experimentation 1944–1974 plus a review of contemporary protections — the era-norms question H3 rests on. Tier: government institutional."
+              }
+            ]
+          }
+        },
+        {
+          id: "attacks",
+          number: "07",
+          eyebrow: "The counter-search",
+          title: "Eight searches went looking for the other side. All eight came back empty.",
+          lead: "The falsification pass ran eight adversarial searches — two against H1, three against H2, three against H3 — and not one returned a snapshot-bound, verified passage.",
+          body: [
+            "Two hunted for what would have supported H2’s quantitative claim: documentation that most subprojects ran on consent or witting volunteers, and findings from either commission describing standard ethical oversight across the programme. Three hunted the opposite way — for a subproject inventory establishing systemic unwitting dosing, for an analysis of the roughly 20,000 recovered financial records, and for the consent status of patients in the Allan Memorial Institute subproject. Three went at H3: internal memos acknowledging the Nuremberg Code, the 1953 Wilson consent policy and whether the Agency evaded it, and whether the 1963 IG report treated unwitting testing as a legal violation rather than a public-relations hazard.",
+            "Nothing came back. The run scores that as a falsification yield of zero out of eight, and prints it beside a note that matters more than the number: no probe was pre-registered in this run, so no absence anywhere in the record counts as evidence of absence. Eight empty searches are eight empty searches, and the run refuses to read them as eight small confirmations.",
+            "The second retrieval round returned nothing at all — no new snapshots, no new source families. By the pipeline’s own rule that counts the search as saturated, and the last chapter is where the bill for that arrives."
+          ],
+          pullquote: "Eight searches for the other side, and eight blanks that prove nothing.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Evidence that most of the ~149 subprojects involved documented consent, formal review, or witting volunteers", outcome: "empty" },
+              { target: "H1", looked: "Church Committee or Rockefeller findings detailing standard ethical oversight and compliance across subprojects", outcome: "empty" },
+              { target: "H2", looked: "Inventories of surviving subproject files showing widespread unwitting administration beyond the known cases", outcome: "empty" },
+              { target: "H2", looked: "Analysis of the ~20,000 financial records establishing covert testing across many distinct subprojects", outcome: "empty" },
+              { target: "H2", looked: "Patient consent status for the Ewen Cameron work at the Allan Memorial Institute, Subproject 68", outcome: "empty" },
+              { target: "H3", looked: "1950s CIA memos acknowledging the Nuremberg Code and directing researchers to bypass it covertly", outcome: "empty" },
+              { target: "H3", looked: "The 1953 Wilson memo’s written-consent rules, and evidence the Agency intentionally evaded them", outcome: "empty" },
+              { target: "H3", looked: "Statements in the 1963 IG report treating unwitting testing as a legal violation rather than an exposure risk", outcome: "empty" }
+            ],
+            footer: "0 of 8 adversarial searches yielded a snapshot-bound, verified counter-passage (0.00%)."
+          }
+        },
+        {
+          id: "strongest",
+          number: "08",
+          eyebrow: "The best-supported reading",
+          title: "The leading finding, printed with the attack made on it.",
+          lead: "The run’s first finding is typed observed rather than inferred. The attack it filed against itself goes at one word in it: programme.",
+          body: [
+            "The finding reads the ledger as favouring H1 at the level it actually speaks to. Unwitting administration of MKULTRA substances to U.S. citizens was a standing programme element, deliberated in the Deputy Director’s office, defended by Gottlieb and Helms, opposed by Earman, Carter and Kirkpatrick, and headed for the Director if the Directorate for Plans insisted it was operationally necessary. Something requiring that much adjudication, and a formal freeze, is a managed policy rather than an accident of oversight.",
+            "The attack is filed as causal overreach, and it is the obvious one. An executive meeting and a freeze are also exactly what crisis containment looks like. If the Deputy Director convened that meeting to contain isolated, unauthorised safehouse experiments the Inspector General had just surfaced, every observation inside the finding still holds and the conclusion drawn from it does not.",
+            "Seven attacks are on the record against six asserted findings and one hypothesis. One argues that the internal objections were about security vulnerability and diplomatic blowback rather than ethics. One argues that the freeze was never checked against what field practice actually did afterwards. One argues that limiting unwitting testing to the safehouses assumes the deliberation surveyed every venue. This run does not record whether any person reviewed any stage of it, and the page says so rather than implying otherwise."
+          ],
+          pullquote: "An executive meeting and a freeze are also exactly what crisis containment looks like.",
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Finding",
+              id: "fnd_36e0d278d5795134_00",
+              status: "observed",
+              text: "Unwitting administration of MKULTRA substances to U.S. citizens was a standing programme element whose continuation was formally deliberated in the office of the Deputy Director of Central Intelligence, with named senior officials arguing for continuation and others opposing, and with the participants agreeing the question might have to be escalated to the Director for decision. A practice that requires DDCI- and DCI-level adjudication and a formal freeze is a managed policy, not an accident of oversight.",
+              meta: "4 passages cited · 1 source family · computed confidence: unknown"
+            },
+            attack: {
+              label: "Attack on it",
+              id: "stp_2e9d970e515e43db_00",
+              kind: "causal overreach",
+              text: "High-level DDCI deliberation and an executive freeze do not establish that unwitting administration was an established, managed policy programme-wide; executive intervention may have been an ad hoc containment response to rogue or compartmentalised activities brought to light by the Inspector General."
+            },
+            failureLabel: "Recorded failure condition",
+            failure: "Contemporaneous records demonstrate that the DDCI meeting was convened strictly as crisis containment for isolated, unauthorised safehouse experiments rather than as a managed review of an authorised Agency-wide policy."
+          }
+        },
+        {
+          id: "score",
+          number: "09",
+          eyebrow: "The score",
+          title: "Fourteen out of a hundred — with full marks for a search that returned nothing.",
+          lead: "Six findings asserted, two of them observed. Every one computed to unknown. The evidence score landed on the same 14 out of 100 as everything else in this archive, but the components got there by a different route.",
+          body: [
+            "Corroboration and provenance both scored zero, for the reason they always do here: not one of the four snapshots reached an upstream origin, and unknown provenance is unknown independence. Falsification scored 14 of 20 — for running eight counter-searches, not for what they found, which was nothing.",
+            "Saturation scored 15 out of 15, a full mark this archive has not printed before, and it is worth seeing exactly what earned it. Round one found three source families. Round two found zero snapshots and therefore zero new families, and no explanation’s counts moved when it was added. A measure of whether more searching would turn up anything new returns its most reassuring value when the second search returns nothing at all. The measurement is doing precisely what it was defined to do; it is the definition that should be read twice.",
+            "The components summed to 29 and the published score is 14, because one source could not be traced to an origin and that caps the unknown band. The single measurement that came back clean is the verbatim gate: seven of seven readable passages survived it, none refused, none unable to be checked. What it certifies is that the quotations match the stored bytes — and the stored bytes are an archive’s description page."
+          ],
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 of 4 sources traced to an origin" },
+              { label: "Provenance", value: 0, max: 25, note: "unknown origin is unknown independence" },
+              { label: "Falsification", value: 14, max: 20, note: "8 counter-searches run, 0 returned" },
+              { label: "Saturation", value: 15, max: 15, note: "round 2 returned no snapshots, so no new families" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "29",
+            capLabel: "One untraced source caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: {
+        eyebrow: "Take this with you",
+        title: "Five checks this run was held to. Use them on anything."
+      },
+      principles: [
+        "Ask what was actually quoted. A quotation can be perfectly accurate about a summary of a document and never touch the document.",
+        "Count sources, not citations. Seven references to one page is one source, however the footnotes are formatted.",
+        "Look for the denominator before accepting a proportion. “How much of it” needs a total, and the total is usually the thing nobody has.",
+        "Check what a reassuring measurement is measuring. A search that returns nothing can score as saturated by the same rule as a search that has exhausted the field.",
+        "Empty searches are evidence only if you said in advance what you expected to find and where. Without that, a blank is just a blank."
+      ],
+      limitations: [
+        "All seven passages come from one source, and each sits in the description paragraphs of an archive’s web page rather than in the memorandum that page publishes. The run never fetched, hashed or read the memo itself.",
+        "Zero of four snapshots reached an upstream origin, so no independence between sources has been established, and all thirteen findings computed to a confidence of unknown.",
+        "Three of the four snapshotted sources produced no passage at all — including the CIA’s own January 1976 briefing book listing 149 subprojects, and the Church Committee’s final report.",
+        "Ten of the fifteen subquestions were answered by no passage: MKUltra’s stated objectives, its methods, the subproject and institution counts, named cases of covert dosing, the consent procedures in force, the Nuremberg Code question, the effect of the 1973 destruction order, what the Rockefeller and Church investigations concluded, where the sources disagree, and the role of BLUEBIRD and ARTICHOKE.",
+        "Zero of eight adversarial searches returned a verified counter-passage, and no probe was pre-registered, so none of those blanks counts as evidence of absence.",
+        "The proportion the question actually asked about is unresolved on this record. There is no subject-level record, no consent documentation and no subproject inventory in the ledger, so no share of the roughly 150 subprojects can be assigned to covert administration.",
+        "The ledger conflicts with itself about its own last passage: the excerpt concerns the freeze on unwitting testing, while the recorded bearing treats it as concerning a records-destruction freeze. It is scored neutral on all three explanations either way.",
+        "Whether unwitting testing resumed, continued informally, or ceased after the one-year deferral is unresolved. The deferral was explicitly for one year, and no record of the freeze being lifted is not a record of the testing stopping — particularly in a programme whose files were largely destroyed.",
+        "H3’s own falsifier is unaddressed. Nothing here shows officials being made aware of an applicable external standard and instructed to set it aside, so the distinction between conscious violation of a recognised norm and conscious management of an operational hazard in a normless environment stays open.",
+        "The second retrieval round returned no snapshots at all, which the pipeline’s rule scores as saturation rather than as a failed round.",
+        "Six further sources are known by metadata alone and can support nothing. Their subjects include neurotechnology rights, the Tuskegee and Guatemala studies, the global traffic in human organs — and the physics of white dwarf stars, which is a fair indication of how loosely the citation graph was assembled.",
+        "The run does not record whether any person reviewed any stage of it, nor its own cost or wall-clock time."
+      ],
+      sourcesHeading: {
+        eyebrow: "Source record",
+        title: "Four snapshots. One of them produced every passage on this page."
+      },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        {
+          number: "01",
+          title: "John S. Earman, Inspector General, Memorandum for the Record, “MKULTRA Program,” Secret, November 29, 1963, 2 pp.",
+          publisher: "National Security Archive",
+          tier: "government institutional",
+          digest: "88177732ca07983f586e559454d5a1e70cf2f6f073e361bf42872274b713d129",
+          href: "https://nsarchive.gwu.edu/document/32732-document-17-john-s-earman-inspector-general-us-central-intelligence-agency",
+          note: "All seven passages, and therefore every finding in the run. The stored bytes are the archive’s page; the passages sit in paragraphs 1, 2 and 3 of its Description. The run’s own note on it records that the memo’s conclusions are narrow — a record of one meeting — while the archive’s framing draws broader inferences about CIA policy than the document itself documents."
+        },
+        {
+          number: "02",
+          title: "Full text of “MKULTRA Briefing Book: List of Subprojects With Brief Descriptions, January 1976”",
+          publisher: "Internet Archive",
+          tier: "unsupported",
+          digest: "3e623f41b22a02f083981d8f8a4ebe1cee494f4b3493d0bda549cffed622dec1",
+          href: "https://archive.org/stream/MKULTRABriefingBookListOfSubprojectsWithBriefDescriptionsJanuary1976/MKULTRA%20Briefing%20Book%20-%20List%20of%20subprojects%20with%20brief%20descriptions%20-%20January%201976_djvu.txt",
+          note: "149 numbered subprojects with their researchers, objectives, funding and CIA monitors — the inventory the run reports it does not have. Contributed no passage. An OCR transcription with no named transcriber, no stated verification procedure and no editorial process, which is why it was assessed at the bottom tier of the hierarchy."
+        },
+        {
+          number: "03",
+          title: "Full text of “Final report of the Select Committee to Study Governmental Operations with Respect to Intelligence Activities”",
+          publisher: "Internet Archive",
+          tier: "government institutional",
+          digest: "9b34d91504d1ffd179a9d5b6ecff9fecc938963a3957d3535c0e59ec2a674b9c",
+          href: "https://archive.org/stream/finalreportofsel02unit/finalreportofsel02unit_djvu.txt",
+          note: "The Church Committee: roughly 110,000 pages of documents, some 800 witnesses and about 30,000 pages of transcript, across seven presidential administrations. Contributed no passage. The run notes that several senators appended dissenting views arguing the recommendations ran beyond what the assembled record supported."
+        },
+        {
+          number: "04",
+          title: "Advisory Committee on Human Radiation Experiments, final report",
+          publisher: "Georgetown University site archives",
+          tier: "government institutional",
+          digest: "05d23a249387455323ffa91898ce23793403bed8bd8e57e4afba48eb1adfc5b3",
+          href: "https://sitearchives.georgetown.edu/kie-achre/final/index.html",
+          note: "Federally sponsored human radiation experiments from 1944 to 1974, plus a review of the human-subjects protections then in force and a subject interview study of nearly 1,900 patients — the era-norms question H3 turns on. Contributed no passage."
+        }
+      ],
+      next: {
+        eyebrow: "Your turn",
+        title: "Ask which document was actually opened.",
+        body: "The finding here is not that the CIA memo is doubtful. It is that this run never read it. It read an archive’s accurate summary of it, quoted that summary seven times, and built six findings on the result — while the CIA’s own list of all 149 subprojects sat in the same ledger, stored and unread. That is an easy thing to do and a hard thing to notice from a reference list, which is why this page prints where every passage sits inside the page it came from. The whole run is published unedited, every search and every digest."
       }
     }
   ];
