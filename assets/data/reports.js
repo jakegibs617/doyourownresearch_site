@@ -5,9 +5,9 @@
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
     strapline: "Research you can take apart.",
-    archiveState: "One method note, three research dossiers.",
+    archiveState: "One method note, five research dossiers.",
     archiveNext: {
-      number: "005",
+      number: "007",
       eyebrow: "Next in the archive",
       title: "The next contested claim.",
       body: "The series continues through the most widely held conspiracy theories, one run per claim, each published with its empty searches and its own score intact.",
@@ -1000,7 +1000,7 @@
       label: "Research dossier",
       issue: "DOSSIER 004",
       status: "published",
-      featured: true,
+      featured: false,
       publishedAt: "2026-08-29",
       updatedAt: "2026-08-29",
       readMinutes: 15,
@@ -1402,6 +1402,831 @@
         eyebrow: "Your turn",
         title: "A recording is dated. You can check a clock without trusting anyone.",
         body: "That is the kind of claim this page wants to leave you with — and so is its opposite: nothing here shows that Oswald fired the rifle, because the searches that would have shown it came back empty. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
+      }
+    },
+    {
+      slug: "9-11-the-demolition-and-the-warning",
+      kind: "report",
+      label: "Research dossier",
+      issue: "DOSSIER 005",
+      status: "published",
+      featured: false,
+      publishedAt: "2026-08-29",
+      updatedAt: "2026-08-29",
+      readMinutes: 18,
+      runId: "6f519009-3f9b-4192-a2a5-75754e889d16",
+      title: "The 9/11 inside-job claim is two claims.",
+      shortTitle: "The 9/11 inside-job claim",
+      deck: "Four explanations, ninety-five passages, seventeen attacks on its own findings — and one phrase carrying a claim this record answers alongside a claim it cannot touch.",
+      cardLine: "What the ledger does to the demolition claim, what it cannot do to the foreknowledge claim, and why the counts read backwards.",
+      question: "What does the available evidence indicate about the validity of claims that the September 11, 2001 attacks were orchestrated or knowingly allowed by elements of the United States government, as opposed to being carried out solely by al-Qaeda as an external terrorist attack?",
+      answer: "The physical channel is one-sided. Impact and fire account for the Twin Towers, and every signature a controlled demolition would have to leave is absent or independently explained — ten passages bear strongly against active orchestration and not one bears strongly for it. The foreknowledge channel is neither one-sided nor settled: the warnings existed in volume, but the run could not establish that any of them named a time, a target and a method, and the episodes that look most like intent are described by the same witnesses in the language of negligence. All twenty-one findings computed to a confidence of unknown.",
+      disclosure: "This run asked what the available evidence indicates about claims of U.S. government orchestration or foreknowledge, against the baseline of the official account. It records no run-level verdict. It makes no finding that anyone held actionable advance knowledge, and no finding that nobody did — four of its findings are questions it explicitly could not settle.",
+      accent: "amber",
+      tags: ["Forensics", "Foreknowledge", "Falsification"],
+      cover: {
+        index: "DYOR—005",
+        serial: "005 / 2026",
+        lines: ["THE 9/11", "INSIDE JOB", "IS TWO CLAIMS."],
+        footer: "Demolition → answered · Foreknowledge → open"
+      },
+      transcript: {
+        href: "assets/reports/dyor-6f519009-3f9b-4192-a2a5-75754e889d16.md",
+        label: "Read the full method transcript",
+        note: "The complete 2,865-line run record: every search, every verbatim excerpt, every bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone weighing the claim — including someone who currently holds it.",
+        focus: "Public claims, investigative findings and evidentiary materials concerning the planning, execution and prior knowledge of the September 11 attacks, official and independent alike.",
+        excluded: "Foreign-policy critiques that allege no complicity, the wars that followed except where they bear on motive, conspiracy theories about other events invoked for comparison, liability and compensation questions, and the psychology of why these theories persist. Each was placed out of scope before any source was read."
+      },
+      stats: [
+        { value: "17", label: "attacks on its own findings" },
+        { value: "0/11", label: "sources traced to an origin" },
+        { value: "11/106", label: "excerpts refused by the verbatim gate" }
+      ],
+      thesis: {
+        label: "The distinction the run refused to collapse",
+        statement: "There is no run-level verdict in this record and the renderer does not invent one. Two different claims travel under one phrase, and this ledger answers them differently: it comes down hard against the demolition claim and cannot settle the foreknowledge claim in either direction.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "One phrase, two claims, and two different evidentiary bars.",
+          lead: "The question asked what the evidence indicates about claims that the attacks were orchestrated or knowingly allowed by elements of the U.S. government. Before any search ran, the run recorded that “inside job” does not say which of those it means.",
+          body: [
+            "Orchestration and foreknowledge-with-inaction are not degrees of one claim. One requires participation — people placing charges, launching a missile, substituting an aircraft. The other requires only a decision not to act on something already known. They break in different places, they leave different traces, and the searches that would test them go to different archives. The run wrote that down as an ambiguity rather than quietly picking one and proceeding as though the question had been clear.",
+            "It recorded two more. Whether the question wanted the truth of the claims adjudicated or a map of what has been claimed and on what basis. And what “government” names here — the administration in office in 2001, particular agencies, or an unspecified set of institutional actors, since different theories implicate different parties. Then it stated its assumption: the comparison baseline would be the official account, al-Qaeda operatives acting without U.S. foreknowledge or complicity. A reader who rejects that baseline should discount what follows accordingly.",
+            "One exclusion matters more than the rest on a page like this. The psychology and sociology of why these theories persist was placed out of scope except where it bears on characterising the claims themselves. The run was not permitted to explain the belief instead of testing it."
+          ],
+          pullquote: "Orchestration and inaction are not degrees of one claim. They break in different places.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "What the official account concludes, and on what evidence",
+              "What orchestration claims cite in support",
+              "What foreknowledge claims cite in support",
+              "What the structural and forensic record shows",
+              "What has been declassified since 2001"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Foreign-policy critiques alleging no complicity",
+              "The wars that followed, except on motive",
+              "Liability and compensation questions",
+              "Why these theories persist and spread"
+            ],
+            note: "Period: the mid-1990s to the present, centred on 11 September 2001. Geography: New York, Arlington and Shanksville, with the international actors the planning touches."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Four explanations, and the column that fills up fastest is the one to distrust.",
+          lead: "Before any source was read the run wrote down four rival accounts and, for each, the observation that would destroy it. Ninety-five passages went on to declare a bearing on all four.",
+          body: [
+            "H1 is the official account. H2 is active orchestration — demolition, a missile, a substituted plane. H3 is LIHOP: specific actionable foreknowledge, deliberately unused. H4 says the public record is genuinely mixed in places without any of that amounting to orchestration.",
+            "Read H2's row first. Nine weak positives, ten strong negatives, no strong positive at all, and sixty-nine passages that bore on it not at all. Now read H3's: forty-eight positives against eighteen negatives. On the face of the table, the foreknowledge hypothesis is doing well and the orchestration hypothesis is not.",
+            "The second half of that reading does not survive chapter six. A positive bearing means the passage, if true, would support the explanation — and a passage reciting an allegation earns a positive whether or not the allegation was ever verified. Sixty of these ninety-five passages come from two compilation pages whose function is to list allegations. H1's fifty-five negatives are the same artifact seen from the other side.",
+            "The counts are unweighted by source tier on purpose. No weight vector has been argued anywhere in the system that produced this record, and an invented one would let a genre label quietly outvote the passages themselves."
+          ],
+          pullquote: "A passage that recites an allegation scores the same as a passage that establishes one.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              {
+                id: "H1",
+                claim: "The attacks were planned and executed solely by al-Qaeda, with no orchestration or deliberate complicity by U.S. actors; the pre-attack failures were ordinary bureaucratic and systemic shortcomings.",
+                falsifier: "Credible corroborated evidence that specific U.S. officials knowingly facilitated, funded, or withheld actionable warning of the specific plan in order to let it proceed.",
+                counts: [3, 29, 8, 55, 0]
+              },
+              {
+                id: "H2",
+                claim: "Elements within the U.S. government actively planned, participated in, or executed parts of the attacks — controlled demolition of the towers or Building 7, or complicity at the Pentagon or Shanksville.",
+                falsifier: "Independent forensic analysis explaining the collapses by impact and fire, with no corroborated explosive residue, no demolition seismic signature, and no credible testimony of personnel planting explosives.",
+                counts: [0, 9, 69, 7, 10]
+              },
+              {
+                id: "H3",
+                claim: "Officials or agencies held specific, actionable foreknowledge beyond generalised threat warnings and deliberately allowed the attacks to proceed.",
+                falsifier: "Records showing the pre-9/11 warnings lacked the specificity of time, place and method needed to act, and that the failures came from silos, resources or misjudgement rather than policy.",
+                counts: [1, 48, 27, 18, 1]
+              },
+              {
+                id: "H4",
+                claim: "The public evidentiary record is genuinely mixed or incomplete in places, so neither complicity nor complete exoneration on foreknowledge can be established from open sources — even though nothing supports active orchestration.",
+                falsifier: "Full declassification and independent expert consensus resolving every cited anomaly, leaving no material technical or documentary dispute open.",
+                counts: [3, 57, 12, 23, 0]
+              }
+            ],
+            note: "95 passages declared a bearing on each explanation. H2 collected ten of the strongest available negatives and not one strong positive."
+          }
+        },
+        {
+          id: "physical",
+          number: "03",
+          eyebrow: "The physical channel",
+          title: "H2 wrote its own falsifier, and this ledger satisfies it item by item.",
+          lead: "The orchestration hypothesis named the conditions that would destroy it before any source was read: collapses fully explained by impact and fire, no corroborated residue, no demolition seismic signature, no chain-of-custody physical evidence. The run went and collected each one.",
+          body: [
+            "The mechanism first, from NIST's own investigation summary. Impact severed and damaged support columns, dislodged the sprayed fireproofing and dispersed jet fuel across multiple floors. Bare steel at about 1,000 degrees Celsius softens to roughly a tenth of its room-temperature strength, and unprotected steel can reach the air temperature within the time those fires burned. Sagging floor trusses pulled the perimeter columns inward, and the potential energy released by the upper block exceeded what the structure below could absorb. Collapse initiated at the impact and fire floors and nowhere else, ran top-down, and took 56 minutes for WTC 2 and 102 for WTC 1 — intervals tracking impact damage and fire spread rather than a schedule.",
+            "Then the signatures a demolition would have to leave. No seismic signal precedes either collapse; the spikes begin about ten seconds after initiation, consistent with debris reaching the ground. No blast or explosion below the impact floors was recorded by NIST, the NYPD, the Port Authority police or the fire department. The lateral “squibs” match air compressed ahead of the falling mass. The bright molten stream is consistent with aircraft aluminium and the lingering rubble heat with oxygen-starved smouldering. USGS dust analysis found no thermite residue.",
+            "The Pentagon is a separate channel and reads the same way: hundreds of witnesses, clipped highway light poles on the approach, recovered airframe debris, DNA-identified victims, a retrieved flight recorder. The run's note on the “too small a hole” objection is that it misconstrues what a thin aluminium airliner does to a reinforced building. And the authorship of the plot is reconstructed independently of any of that — Khalid Sheikh Mohammed's proposal, the flight training, the travel, bin Laden's own acknowledgement of responsibility.",
+            "The chain below is H1's, not H2's. Two of its five conditions are the ones this ledger fully supports, and they are both physical. The rest of this dossier is about the other three."
+          ],
+          pullquote: "Collapse initiated at the impact and fire floors and nowhere else.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "The investigations are methodologically sound and not suppressing contrary evidence", state: "weak link" },
+              { label: "No credible declassified material contradicts the sole-al-Qaeda attribution", state: "weak link" },
+              { label: "The structural and forensic evidence fits impact and fire, not demolition", state: "supported" },
+              { label: "The Pentagon and Shanksville evidence fits aircraft impact", state: "supported" },
+              { label: "The documented intelligence failures are organisational rather than deliberate", state: "unknown" }
+            ]
+          }
+        },
+        {
+          id: "building-seven",
+          number: "04",
+          eyebrow: "One building",
+          title: "The live technical dispute is one building, and the decisive test was declined.",
+          lead: "The disagreement among qualified people in this record is not about the Twin Towers. It is about World Trade Center 7 — and both sides of it are computer models rather than physical samples.",
+          body: [
+            "A four-year University of Alaska Fairbanks modelling study, released on 25 March 2020, concludes that the near-simultaneous failure of every column caused the collapse, rather than the fire-initiated local failure NIST describes. The same record notes that NIST's own simulation shows a façade distortion that does not match the observed footage. This is where H4 holds most strongly and where H2's technical falsifier has not been satisfied.",
+            "The source is worth stating plainly. It is a discussion-forum request for expert input, written by a site manager who says he is not a structural engineer and is asking for opinions he lacks. The run assessed it at the lowest tier, `unsupported`. It is in this ledger because a counter-search aimed at H2 returned it, and it is the whole of the pro-UAF case here.",
+            "NIST declined to test the WTC 7 debris for explosive or thermite residue, on the ground that its collapse hypothesis already accounted for the observations. The run treats that as a genuine methodological failure and then refuses to let it pay out. In its own words: the decision not to test is a fair criticism; it is not evidence that residue existed. So the gap supports the underdetermined reading and carries no affirmative weight for orchestration — which leaves H2 with no evidence in this ledger that is both physical and unrebutted. Only gaps.",
+            "The run also wrote down a candidate reading it did not establish: if the WTC 7 disagreement is ever settled by physical rather than computational evidence, the decisive test is residue and metallurgical analysis of retained steel and dust under documented chain of custody — and if no such material still exists in testable form, the question stays permanently open as a matter of evidence availability rather than of unresolved physics."
+          ],
+          pullquote: "A test that was never run is not a test that found something.",
+          visual: {
+            type: "probe",
+            condition: "H2 requires physical evidence at WTC 7 that impact and fire cannot explain.",
+            prediction: "Residue and metallurgical analysis of retained WTC 7 steel and dust, under documented chain of custody, showing energetic material distinct from building products.",
+            venue: "The retained WTC 7 debris and dust — the material NIST declined to test.",
+            outcomes: [
+              { label: "NOT RUN", tone: "neutral", note: "NIST held that its model already accounted for the observations" },
+              { label: "NOT EVIDENCE", tone: "negative", note: "Declining to test cannot become a positive finding of residue" },
+              { label: "MAYBE UNRUNNABLE", tone: "neutral", note: "If no custody-documented material survives, the gap is permanent" }
+            ]
+          }
+        },
+        {
+          id: "foreknowledge",
+          number: "05",
+          eyebrow: "The other claim",
+          title: "The warnings are not in dispute. Their specificity is.",
+          lead: "The foreknowledge argument does not turn on whether warnings existed — this ledger establishes a great many. It turns on whether any of them named a time, a place and a method.",
+          body: [
+            "The stream in the record: at least twelve reports over seven years about aircraft used as weapons; the Phoenix memo in July 2001; the Moussaoui arrest in August; the President's Daily Brief of 6 August 2001, “Bin Ladin Determined to Strike in US”; a summer the Joint Inquiry described as the system blinking red; and liaison warnings from Italy, Jordan, Egypt, the United Kingdom, France, Israel, Algeria and the Taliban foreign minister.",
+            "On the single variable that decides between the two explanations, the documented warnings are generic. Both the Commission and the Joint Inquiry characterise the failure as vagueness, unrecognised significance and non-dissemination across agencies. The run's own attack on that reading is filed as selection bias and it is a fair one: the characterisation rests on executive summaries and Commission syntheses, and compartmentalised signals intelligence from the summer of 2001 could still contain something specific. The condition under which the reading fails is written down. It has not been met here.",
+            "The episodes that look most like intent are where this cuts hardest. FBI headquarters blocking the Moussaoui FISA warrant; a CIA officer blocking notification to the FBI that al-Hazmi and al-Mihdhar were inside the country; Robert Wright and John O'Neill describing shut-down al-Qaeda investigations; a curtailed inquiry into the bin Laden family; a reported change in the Attorney General's travel. Every one of those is described by the same primary witnesses in the language of negligence — Rowley on mishandling and inertia at headquarters, Grassley on the FISA application not going forward, Mueller conceding the Minneapolis warning about flying something into the World Trade Center should have been pursued more vigorously, Wright framing the shutdown as a failure to take terrorism seriously.",
+            "Blocking behaviour is compatible with both explanations, and nothing in this ledger discriminates the motive behind it. That is the run's finding, and it is not a finding for either side. Two more strands stay open on the same terms: Able Danger, where the dispute is not about interpreting a shared document but about what documents exist; and the word “solely” in the official account, which a partly declassified 2012 FBI summary and the Operation Encore reporting press on from the foreign direction while the 2004 Commission findings press back."
+          ],
+          pullquote: "Blocking behaviour is compatible with both explanations. Nothing here discriminates the motive.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "over seven years", label: "Aircraft as weapons", detail: "At least twelve reports reach the intelligence community about the use of aircraft as weapons." },
+              { date: "July 2001", label: "The Phoenix memo", detail: "An FBI field communication flags men with extremist connections in U.S. flight training." },
+              { date: "Summer 2001", label: "“The system was blinking red”", detail: "Threat reporting peaks. The Joint Inquiry later finds the intelligence community neither well organized nor equipped to act on it." },
+              { date: "6 Aug 2001", label: "The President's Daily Brief", detail: "“Bin Ladin Determined to Strike in US.” Its unredacted full text and the surrounding CIA threat traffic appear nowhere in this record.", tone: "seizure" },
+              { date: "Aug 2001", label: "Moussaoui arrested", detail: "Minneapolis agents seek a FISA warrant. Headquarters does not carry the application forward, and the link is missed." },
+              { date: "11 Sep 2001", label: "The attacks", detail: "Four aircraft, three targets struck. The plot itself is later reconstructed from proposal through flight training and travel to bin Laden's own acknowledgement." },
+              { date: "2002", label: "The Joint Inquiry", detail: "Congress reports systemic failures in watchlisting, information sharing and analysis, and notes that no one will ever know what might have happened had the connections been drawn." },
+              { date: "2004", label: "The 9/11 Commission", detail: "Attributes the failure to vagueness, unrecognised significance and non-dissemination — and cannot fully explain why Phoenix, Moussaoui and CIA knowledge of two hijackers inside the country were never connected.", tone: "end" }
+            ],
+            note: "Dates appear only where this run's sources state them. Every item above is in the ledger, and none of them names a time, a target and a method together."
+          }
+        },
+        {
+          id: "counts",
+          number: "06",
+          eyebrow: "Where the passages came from",
+          title: "Sixty of the ninety-five passages came from two pages whose job is to list allegations.",
+          lead: "Nothing in this run weights a passage by where it came from. That makes it worth seeing where they came from.",
+          body: [
+            "Thirty-nine of the ninety-five were read out of one Wikipedia article, “September 11 attacks advance-knowledge conspiracy theories”, whose assessment in this same record notes that it presents claims alongside official rebuttals without weighing evidentiary strength, giving equal narrative space to unsubstantiated claims and well-documented investigative conclusions. Twenty-one more came from a personal wiki page written under a pseudonym and compiled, by its own note, with AI assistance; the run assessed it at the lowest tier. Between them, sixty-three percent of everything weighed.",
+            "The technical case against demolition — the part of this record that is genuinely one-sided — rests on eight passages from a single NIST FAQ page and fifteen from a conspiracy explainer. That is why chapter two's table looks the way it does. The foreknowledge column filled up because two compilation sources enumerate dozens of allegations one at a time; the orchestration column stayed empty because the technical rebuttal is compact and the claims it answers arrive in bulk.",
+            "This is not an argument that the foreknowledge hypothesis is wrong. It is an argument that its column counts claims made rather than claims established, and that reading the bare tally as a score would invert what the run actually found. The run's own net assessment says the same thing in its own words: the foreknowledge reading is unsupported as to intent, while its factual premises about the sheer volume of warning are conceded."
+          ],
+          pullquote: "The column filled up because a compilation page lists allegations one at a time.",
+          visual: {
+            type: "prevalence-ladder",
+            items: [
+              { value: 41, wording: "“September 11 attacks advance-knowledge conspiracy theories” — 39 passages", source: "Wikipedia" },
+              { value: 22, wording: "“LIHOP_vs_MIHOP” — 21 passages, pseudonymous, AI-compiled, assessed unsupported", source: "holonhq.com" },
+              { value: 16, wording: "“Was 9/11 an inside job? The evidence, examined” — 15 passages", source: "theconspiratory.com" },
+              { value: 8, wording: "WTC Towers investigation FAQ — 8 passages, and the whole technical case against demolition", source: "NIST" },
+              { value: 4, wording: "Operation Encore and the Saudi connection — 4 passages, returned by a counter-search", source: "ProPublica" },
+              { value: 4, wording: "The SEC's pre-9/11 trading review — 4 passages, returned by a counter-search", source: "National Security Archive" },
+              { value: 2, wording: "Congressional Joint Inquiry findings — 2 passages", source: "FAS mirror" },
+              { value: 2, wording: "A forum request for expert input on Building 7 — 2 passages", source: "ASCE collaborate" }
+            ],
+            note: "Shares of the ninety-five passages that declared a bearing. Two sources carry sixty-three percent of them; the government-institutional technical record carries eight."
+          }
+        },
+        {
+          id: "attack",
+          number: "07",
+          eyebrow: "Falsification",
+          title: "Ten attacks on its own explanations. Four came back holding something.",
+          lead: "The run ran ten adversarial searches, each aimed at an explanation it had written down. Four returned a verified counter-passage — the best yield in this archive — and the six blanks are still not evidence of absence, because no probe was pre-registered.",
+          body: [
+            "The four that returned did real work. Against the official account: the Joint Inquiry's own findings on the withholding of information about al-Hazmi and al-Mihdhar. Against orchestration: the thread carrying the UAF Building 7 study. Against foreknowledge: the SEC's account-level trading review, which worked through 9.5 million transactions across 103 companies and six industry groups and spoke to the people responsible for the unusual trades. Against the underdetermined reading: ProPublica's account of Operation Encore and the Saudi files, which pushes back the other way.",
+            "The six blanks are pointed at things worth noticing. Independent chemical analysis of the red-grey chips — the single test that would settle whether they are nanothermite or standard primer paint — came back empty. So did the Pentagon airframe forensics, the Mineta PEOC logs, the NORAD radar reconstruction, the specificity of the foreign-service warnings, and structural-engineering consensus on the NIST collapse models.",
+            "One blank has a second life. A separate snapshot of the Department of Defense Inspector General's report on Able Danger was stored with the digest e3b0c442… — the SHA-256 of zero bytes. The run fetched it, hashed nothing, kept the record, and printed that everything about the source is absent because no text was supplied. The document that would decide whether Able Danger identified Mohamed Atta before the attacks is in this ledger as an empty file, and the page says so rather than quietly dropping it."
+          ],
+          pullquote: "The report that would settle Able Danger is in the ledger as zero bytes, and the record says so.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Whether withholding information on al-Hazmi and al-Mihdhar was deliberate policy rather than procedural failure", outcome: "returned" },
+              { target: "H1", looked: "Whether foreign warnings from Mossad, DGSE or Egyptian intelligence carried actionable tactical detail", outcome: "empty" },
+              { target: "H2", looked: "Peer review of the University of Alaska Fairbanks Building 7 finite-element model", outcome: "returned" },
+              { target: "H2", looked: "Independent chemical analysis of the red-grey chips: nanothermite or epoxy primer paint", outcome: "empty" },
+              { target: "H2", looked: "Flight 77 airframe forensics, recorder telemetry and light-pole trajectory", outcome: "empty" },
+              { target: "H3", looked: "The SEC and FBI review of the pre-9/11 airline put options", outcome: "returned" },
+              { target: "H3", looked: "PEOC and Secret Service logs fixing the referent of Cheney's order", outcome: "empty" },
+              { target: "H3", looked: "The DoD Inspector General's conclusions on Able Danger and Mohamed Atta", outcome: "empty" },
+              { target: "H4", looked: "Independent verification of the NIST collapse models within structural engineering", outcome: "empty" },
+              { target: "H4", looked: "The 28 pages and the FBI's Operation Encore files on Saudi facilitation", outcome: "returned" }
+            ],
+            footer: "4 of 10 adversarial searches yielded a snapshot-bound, verified counter-passage (40.00%)."
+          }
+        },
+        {
+          id: "strongest",
+          number: "08",
+          eyebrow: "The best-supported reading",
+          title: "The strongest finding, printed with the attack made on it.",
+          lead: "The run's second finding is that every physical signature a controlled demolition would have to leave is absent or independently explained. It is typed observed rather than inferred. Then the run named the way it could be wrong, and the objection is specific enough to act on.",
+          body: [
+            "The attack is filed as measurement error, and it goes at the negative controls rather than at the conclusion. Ruling out thermitic material on the strength of USGS dust sampling assumes the sampling caught what mattered: the right selection of samples, enough resolution in bulk spectroscopy, and micro-chemical analysis of the distinct red-grey unreacted chips rather than of dust in aggregate. Those are real analytical limits, not rhetoric.",
+            "The condition under which the finding fails was written down in advance and is findable: re-analysis of authenticated, chain-of-custody dust samples by transmission electron microscopy and energy-dispersive X-ray spectroscopy, confirming nanostructured unreacted thermitic chips distinct from standard primer paint. That is exactly the study the counter-search went looking for and did not find. Nobody has to be dishonest for this finding to be wrong; somebody has to run the assay.",
+            "Seventeen attacks like this are on the record, at least one per asserted finding, each carrying its own failure condition. Nine of the sixteen asserted findings are typed observed and seven inferred. None of them was reviewed by a person: this run does not record whether any reviewer approved any gate, and the page says so rather than implying otherwise."
+          ],
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Finding",
+              id: "fnd_6752eb1991d9f2b3_01",
+              status: "observed",
+              text: "The specific physical signatures a controlled demolition would have to leave are absent or independently explained: no seismic signal precedes either tower's collapse, no blast below the impact floors was recorded by NIST, the NYPD, the Port Authority police or the fire department, the lateral squibs match compressed air ahead of the falling mass, the molten stream is consistent with aircraft aluminium, and USGS dust analysis found no thermite residue.",
+              meta: "6 passages cited · 2 source families · computed confidence: unknown"
+            },
+            attack: {
+              label: "Attack on it",
+              id: "stp_0db0ca058759e9e3_01",
+              kind: "measurement error",
+              text: "The reliance on USGS dust samples to rule out thermitic materials may reflect limits in sample selection, bulk spectroscopy resolution, or the lack of micro-chemical analysis on distinct red-grey unreacted biphasic chips."
+            },
+            failureLabel: "Recorded failure condition",
+            failure: "Re-analysis of authenticated, chain-of-custody dust samples using transmission electron microscopy and energy-dispersive X-ray spectroscopy confirms nanostructured unreacted thermitic chips distinct from standard primer paint."
+          }
+        },
+        {
+          id: "score",
+          number: "09",
+          eyebrow: "The score",
+          title: "Sixteen findings asserted, every one unknown, and 14 out of 100.",
+          lead: "Sixteen findings were asserted, nine of them typed observed rather than inferred. Every one computed to a confidence of unknown, and the evidence score came to the same 14 out of 100 as the four publications before it — for the same reason.",
+          body: [
+            "Zero of eleven snapshots reached an upstream origin. Corroboration and provenance therefore both scored zero regardless of how good the underlying material is, because unknown provenance is unknown independence and the scoring will not let a well-argued reading buy its way past that.",
+            "Falsification scored 16 of 20 — the highest in this archive, four of ten counter-searches returning. Saturation scored zero, and this is the worst saturation measurement the series has produced: all five source families found in the second retrieval round were new, and the bearing counts on all four explanations moved when that round was added. The search was not close to exhausted when it stopped.",
+            "Two measurements belong beside the score. No source in this ledger was assessed as primary data — the technical case against demolition rests on a FAQ page summarising the NCSTAR reports rather than on the reports. And eleven of the hundred and six readable passages were refused by the verbatim gate and appear nowhere in the record, the highest refusal count in the series."
+          ],
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 of 11 sources traced to an origin" },
+              { label: "Provenance", value: 0, max: 25, note: "unknown origin is unknown independence" },
+              { label: "Falsification", value: 16, max: 20, note: "4 of 10 counter-searches returned" },
+              { label: "Saturation", value: 0, max: 15, note: "all 5 families in round 2 were new" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "16",
+            capLabel: "Counter-evidence was found, which caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: {
+        eyebrow: "Take this with you",
+        title: "Five checks this run was held to. Use them on anything."
+      },
+      principles: [
+        "Split the claim before you weigh it. “Inside job” bundles a demolition claim this record answers with a foreknowledge claim it cannot settle; one verdict for both is wrong twice.",
+        "Ask whether a tally counts claims made or claims established. Forty-eight positives here are mostly one compilation page listing allegations one at a time.",
+        "A test that was not run found nothing. NIST declining to test the Building 7 debris is a real methodological failure and still not evidence of residue.",
+        "Check whether the falsifier a theory wrote for itself has been met. On the physical channel, this one was, item by item.",
+        "Notice when the same witness supplies both readings. The people who describe the blocked investigations describe them as incompetence."
+      ],
+      limitations: [
+        "Zero of eleven source snapshots could be traced to an upstream origin, so nothing here has established independence between its sources. All twenty-one findings computed to a confidence of unknown.",
+        "No source in the ledger was assessed as primary data. The technical case against controlled demolition rests on a NIST FAQ page summarising the underlying NCSTAR reports, not on those reports.",
+        "Sixty of the ninety-five weighed passages come from two compilation pages — a Wikipedia article and a pseudonymous personal wiki assessed at the lowest tier — whose function is to enumerate allegations rather than adjudicate them.",
+        "One of the eleven snapshots is a zero-byte file: the Department of Defense Inspector General report on Able Danger, stored with the SHA-256 digest of empty input.",
+        "Another is a Senate committee index page pointing at a PDF, carrying none of the Joint Inquiry's Part Four content, and a third is a 2003 Commission hearing transcript that produced no scored passage.",
+        "The case for the University of Alaska Fairbanks Building 7 model reaches this ledger only through a discussion-forum post by a self-described non-engineer asking for expert opinions he lacks.",
+        "The counter-search aimed at independent chemical analysis of the WTC dust chips returned nothing. Whether the red-grey chips are thermitic or primer paint is not settled here by any analysis this run read.",
+        "No probe was pre-registered. Six of the ten adversarial searches came back empty, and not one of those blanks counts as evidence of absence.",
+        "Eleven of the hundred and six readable passages were refused by the verbatim gate and appear nowhere in the record.",
+        "The search was not saturated: all five source families found in the second retrieval round were new, and the bearing counts on all four explanations moved when it was added.",
+        "The run makes no finding about whether any U.S. official held a warning specifying the date, targets and method. It records that as a question it could not settle, alongside the undisclosed identities behind the Chicago put options, the Able Danger data, and the referent of “the orders” in Mineta's account.",
+        "Official categorical denials that there were any warning signs are contradicted by the documented warning stream in this same ledger. The run holds that they should carry no weight in either direction."
+      ],
+      sourcesHeading: {
+        eyebrow: "Source record",
+        title: "Eleven snapshots. Three of them produced nothing, and one of those is empty."
+      },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        {
+          number: "01",
+          title: "September 11 attacks advance-knowledge conspiracy theories",
+          publisher: "Wikipedia",
+          tier: "quality journalism",
+          digest: "b76137cafec5f37aa5e3d500b61ba1b07637be8e1e0503f88d2b49c280e9ee55",
+          href: "https://en.wikipedia.org/wiki/September_11_attacks_advance-knowledge_conspiracy_theories",
+          note: "The heaviest source in the run: thirty-nine of the ninety-five passages, including the put-option material, Able Danger, the air-defence anomalies and most of the warning stream. The run's own note on it: it presents conspiracy claims alongside official rebuttals without weighing evidentiary strength, giving equal narrative space to unsubstantiated claims and documented conclusions."
+        },
+        {
+          number: "02",
+          title: "LIHOP_vs_MIHOP",
+          publisher: "holonhq.com",
+          tier: "unsupported",
+          digest: "8920219e3e51d32e27b964e02d363ca38d09667506264a99a833f8a4a3f9a16f",
+          href: "https://holonhq.com/9_11_2001/Details/LIHOP_vs_MIHOP/",
+          note: "Twenty-one passages from a personal wiki page written under a pseudonym and assembled, by its own note, with AI assistance. Assessed at the lowest tier. The run's note: it presents contested assertions as comparably documented evidence, and states no methodology for verifying claims or resolving contradictions between its sources."
+        },
+        {
+          number: "03",
+          title: "Was 9/11 an inside job? The evidence, examined",
+          publisher: "theconspiratory.com",
+          tier: "quality journalism",
+          digest: "1a9ecab7fc0008a495199fec12fdb6c6231d95c2c322698390960ac3188c6c83",
+          href: "https://theconspiratory.com/theory/september-11-inside-job",
+          note: "Fifteen passages, including the Pentagon material, the plot reconstruction and both statements about the untested Building 7 debris. The run flags that its framing is more confident than the reports it cites: NIST and the Commission address engineering causation and intelligence failure, not the conspiracy theory as such."
+        },
+        {
+          number: "04",
+          title: "FAQs — NIST WTC Towers Investigation",
+          publisher: "National Institute of Standards and Technology",
+          tier: "government institutional",
+          digest: "cab53742e53f2345bd780f29ce4f03b44f40ae47c21f1ae9ac71494a1f72cb35",
+          href: "https://www.nist.gov/world-trade-center-investigation/study-faqs/wtc-towers-investigation",
+          note: "Eight passages carrying the entire mechanism and every demolition signature. Behind it: 236 pieces of recovered steel, roughly 7,000 photographs and 7,000 video segments, more than 1,000 interviews, ASTM E119 floor-assembly tests and workstation fire tests. The run notes this page is an institutional summary of those reports, not the reports themselves."
+        },
+        {
+          number: "05",
+          title: "Final Report of the Congressional Joint Inquiry Into 9/11: Findings",
+          publisher: "Congressional Joint Inquiry / Federation of American Scientists",
+          tier: "government institutional",
+          digest: "9fc6b375d9a39cb00058c14480bef363a4e4449d6a91b870c3b00b7ad1287367",
+          href: "https://irp.fas.org/congress/2002_rpt/findings.html",
+          note: "Two passages, returned by the counter-search against the official account. Several of its findings are redacted for national security reasons, which limits what can be checked; it acknowledges its own uncertainty, noting that no one will ever know what might have happened had the connections been drawn differently."
+        },
+        {
+          number: "06",
+          title: "Operation Encore and the Saudi Connection: A Secret History of the 9/11 Investigation",
+          publisher: "ProPublica",
+          tier: "quality journalism",
+          digest: "8164feefcd4ed145abcf30f05d88ec887f8d36a0e3349c9989233e8ca0d4246e",
+          href: "https://www.propublica.org/article/9-11-investigation-saudi-connections-operation-encore-fbi",
+          note: "Four passages, returned by the counter-search against the underdetermined reading, and the source of the pressure on the word “solely”. Built on more than fifty interviews plus previously secret FBI documents. The run notes the narrative framing sometimes suggests more significance than the investigators' own sourced conclusions support."
+        },
+        {
+          number: "07",
+          title: "The SEC's pre-September 11, 2001 trading review",
+          publisher: "UNREDACTED — The National Security Archive Blog",
+          tier: "government institutional",
+          digest: "19e459f01086dbdea62682261b27743e3a7bf6a836e8cbaa0e50326eebdb475e",
+          href: "https://unredacted.com/2010/04/30/document-friday-terrorist-insider-trading-the-secs-pre-september-11-2001-trading-review/",
+          note: "Four passages on the account-level review: 9.5 million transactions, 103 companies, six industry groups, seven markets, 20 August to 11 September 2001. The run notes the post does not address the insurer options activity that other studies flagged, and does not state the thresholds the SEC used for “unusual”."
+        },
+        {
+          number: "08",
+          title: "Request for Expert Input: Building 7 Model Resembling Reality",
+          publisher: "ASCE Collaborate",
+          tier: "unsupported",
+          digest: "326d1f7981f001eca5e7d74e11aa4ee2f1ef81d3e773e1d8284be2fc9958d9fb",
+          href: "https://collaborate.asce.org/discussion/request-for-expert-input-building-7-model-resembling-reality",
+          note: "Two passages, and the whole of the pro-UAF case in this run. A forum post by a site manager who identifies himself as not a structural engineer and explicitly seeks expertise he lacks. It offers no analytical basis beyond inviting opinions on how three videos look."
+        },
+        {
+          number: "09",
+          title: "Declassified Version of Part Four, Joint Inquiry into Intelligence Community Activities",
+          publisher: "Senate Select Committee on Intelligence",
+          tier: "government institutional",
+          digest: "3f55b718d99edcfeab1c603b277ee62769ac837401a679f6cf5f10db52b95943",
+          href: "https://www.intelligence.senate.gov/2016/07/15/publications-declassified-version-part-four-joint-inquiry-intelligence-community-activities-and/",
+          note: "The 28 pages — snapshotted as a website index pointing at a downloadable PDF. None of the report's content is in the stored bytes, and no passage in the run rests on it."
+        },
+        {
+          number: "10",
+          title: "National Commission on Terrorist Attacks Upon the United States — hearing, 23 May 2003",
+          publisher: "9-11commission.gov",
+          tier: "government institutional",
+          digest: "55ba3d8d852eb2eceb5924d69e59cc6903ff5453747cb52f840415d047353f8f",
+          href: "https://www.9-11commission.gov/archive/hearing2/9-11Commission_Hearing_2003-05-23.htm",
+          note: "A public hearing transcript covering the attacks, the aviation and NORAD response, and subsequent security reform — snapshotted, assessed, and cited by no passage in the run. The run's note: the transcript does not reconcile conflicting witness accounts of the timeline or of shoot-down authority."
+        },
+        {
+          number: "11",
+          title: "Department of Defense Inspector General report on Able Danger",
+          publisher: "Federation of American Scientists mirror",
+          tier: "unsupported",
+          digest: "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          href: "https://irp.fas.org/agency/dod/ig-abledanger.pdf",
+          note: "Zero bytes. That digest is the SHA-256 of empty input, and the run's own assessment reads that everything about the source is absent because no text was supplied. The document that would settle whether Able Danger identified Mohamed Atta before the attacks is in this ledger as an empty file — printed here because the run stored it."
+        }
+      ],
+      next: {
+        eyebrow: "Your turn",
+        title: "Two claims, two answers, and the run would not merge them.",
+        body: "You can check a falsifier against a record without trusting anyone — H2 wrote its own, and this ledger satisfies it. You can also check what came back empty: six of ten adversarial searches, and the report that would settle Able Danger sitting in the sources as zero bytes. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
+      }
+    },
+    {
+      slug: "vaccine-sterilization-the-water-that-tested-higher",
+      kind: "report",
+      label: "Research dossier",
+      issue: "DOSSIER 006",
+      status: "published",
+      featured: true,
+      publishedAt: "2026-08-29",
+      updatedAt: "2026-08-29",
+      readMinutes: 14,
+      runId: "115f404c-9194-4de7-81cf-5c18fd48ad6d",
+      title: "The vaccine sterilization claim, and the water that tested higher.",
+      shortTitle: "The vaccine sterilization claim",
+      deck: "Four explanations, eight adversarial searches, and a positive result that fails on the instrument rather than on anybody's motive — from a ledger where twenty-one of twenty-five passages came out of one fact-check.",
+      cardLine: "Why the tests that found a sterilising agent in tetanus vaccine were the wrong tests — and what this run still could not reach.",
+      question: "What evidence exists regarding claims that the World Health Organization has used vaccination programs to covertly sterilize populations?",
+      answer: "Every positive hCG signal in this record traces to an assay used outside the domain it was validated for, and every properly validated test came back negative — in one Hungarian laboratory, sterile hospital water produced a higher false-positive reading than the vaccine did. The affirmative case in this ledger is assertion and testimony with no named laboratory, assay or custody trail. But the run also found that the explanation of where the claim came from is not established here, that one Kenyan strand genuinely does not resolve, and that nothing in the ledger touches India at all. All thirteen findings computed to a confidence of unknown.",
+      disclosure: "This run surveyed the evidentiary basis of specific, documented sterilization allegations against WHO-linked vaccination campaigns. It records no run-level verdict. Its reach is bounded to the Kenyan and Philippine episodes, where testing details are on the record; for Mexico, Nicaragua, Tanzania and India it holds no assay records either way.",
+      accent: "teal",
+      tags: ["Assay validation", "Rumour transmission", "Falsification"],
+      cover: {
+        index: "DYOR—006",
+        serial: "006 / 2026",
+        lines: ["THE WATER", "TESTED HIGHER", "THAN THE VACCINE."],
+        footer: "One assay → one control → what stays open"
+      },
+      transcript: {
+        href: "assets/reports/dyor-115f404c-9194-4de7-81cf-5c18fd48ad6d.md",
+        label: "Read the full method transcript",
+        note: "The complete 1,327-line run record: every search, every verbatim excerpt, every bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone weighing the claim — including a parent who has heard it and wants to know how it was checked.",
+        focus: "Documented allegations that WHO-associated vaccination campaigns were used to sterilize recipients covertly, and what testing and investigation followed them.",
+        excluded: "Vaccine safety concerns unrelated to fertility, consented family-planning programmes, non-WHO population policies, other vaccine-ingredient theories, and the legal and political consequences of the allegations except as evidence of their spread. Each was placed out of scope before any source was read."
+      },
+      stats: [
+        { value: "21/25", label: "passages from a single fact-check" },
+        { value: "0/6", label: "sources traced to an origin" },
+        { value: "07", label: "attacks on its own findings" }
+      ],
+      thesis: {
+        label: "Where the argument actually turns",
+        statement: "There is no run-level verdict in this record and the renderer does not invent one. The claim's evidentiary core fails on a question of assay validation that has nothing to do with anyone's honesty — and the run then says plainly which parts of its own explanation it has not established.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "The question said the world. The record covers two countries.",
+          lead: "The input asked about the World Health Organization sterilizing the world through vaccination. Before searching, the run wrote down that it would read “the world” as a rhetorical claim about a covert programme rather than a literal universal target, and that it would test documented allegations rather than presuppose them.",
+          body: [
+            "It recorded three more ambiguities. Whether “the world” means one unified global conspiracy or a set of separate national-level allegations. Whether “trying to” is a claim about institutional intent or about effects. And whether the question wanted the truth of the claim assessed or a survey of its origins and how it was investigated. It also fixed a definition that does real work later: WHO as an institutional actor, distinct from national health ministries and from other bodies that sometimes co-fund the campaigns.",
+            "What that produced is narrower than the question sounds. The ledger reaches Kenya in 2014 and the Philippines in 1995 with actual testing details on the record. For Mexico, Nicaragua and Tanzania it holds only characterisations of the allegations as rumours, plus the accusing bishops' contrary assertion, with no underlying assay records either way. For India it holds nothing at all — India is named among the target countries in the hypothesis the run wrote, and no passage in the run addresses it.",
+            "Out of scope before any source was read: vaccine safety concerns unrelated to fertility, voluntary family-planning programmes labelled as such, non-WHO population policies, other vaccine-ingredient theories, and the legal and political fallout of the allegations except as evidence of their spread."
+          ],
+          pullquote: "India is named in the hypothesis and addressed by nothing in the ledger. The run prints that as a gap, not a silence.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "Where the allegations first emerged, and what triggered them",
+              "What laboratory testing was done, and by what method",
+              "How WHO and health ministries responded",
+              "What fact-checkers and researchers concluded",
+              "What remains unresolved on either side"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Vaccine safety concerns unrelated to fertility",
+              "Consented family-planning programmes",
+              "Other vaccine-ingredient theories",
+              "Boycotts and litigation, except as spread"
+            ],
+            note: "Period: the 1990s to the present. Geography: global in principle; in this ledger, Kenya and the Philippines carry every testing detail."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Four explanations, and only one of them collected a strong negative.",
+          lead: "Before any source was read the run wrote down four rival accounts and, for each, the observation that would destroy it. Twenty-five passages went on to declare a bearing on all four.",
+          body: [
+            "H1 says there was no covert programme and the allegations came from flawed testing. H2 says anti-fertility agents really were included in at least some campaigns. H3 says the allegations descend from real historical anti-fertility vaccine research being conflated with unrelated tetanus campaigns. H4 says the pattern is driven by institutional distrust rather than by case-specific evidence.",
+            "H2 is the only column carrying strong negatives: five of them, plus thirteen weak, against four weak positives and no strong positive at all. That is what it looks like when a hypothesis meets the falsifier it wrote for itself — the run's own note is that H2's affirmative case in this ledger consists entirely of assertion and testimony with no verified chain of custody.",
+            "H3's column is the strange one. Eight weak positives, seventeen non-discriminating, and not a single negative in either direction. A column of zeros is not agreement; it is a hypothesis nothing in the roster touched. Chapter four is about why."
+          ],
+          pullquote: "A column of zeros is not agreement. It is a hypothesis nothing here tested.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              {
+                id: "H1",
+                claim: "The campaigns were not used to sterilize anyone; the allegations arose from flawed lab testing, misidentified antigens, chain-of-custody failures and misreading of legitimate anti-fertility research.",
+                falsifier: "A verified, custody-intact WHO-linked batch containing beta-hCG conjugate, corroborated by independent replication with validated assays across multiple laboratories.",
+                counts: [5, 14, 2, 4, 0]
+              },
+              {
+                id: "H2",
+                claim: "WHO, with other bodies, covertly included anti-fertility agents in vaccination campaigns in at least some documented cases, without informed consent.",
+                falsifier: "Absence of any verified positive for anti-fertility agents in properly custodied samples across the investigated cases, with documented unbiased re-testing consistently negative.",
+                counts: [0, 4, 3, 13, 5]
+              },
+              {
+                id: "H3",
+                claim: "The allegations stem from real historical WHO-affiliated research into hCG-based anti-fertility vaccines being conflated with unrelated tetanus toxoid campaigns.",
+                falsifier: "Evidence that no such research programme existed — or, conversely, that its outputs really were deployed in the disputed campaigns rather than merely running in parallel.",
+                counts: [0, 8, 17, 0, 0]
+              },
+              {
+                id: "H4",
+                claim: "The persistence of the allegations is explained by institutional distrust and a recurring template, rather than by new evidence in each case.",
+                falsifier: "Evidence that allegations in different countries arose independently from case-specific local findings rather than from an imported narrative, and that trust does not predict prevalence.",
+                counts: [2, 7, 15, 1, 0]
+              }
+            ],
+            note: "25 passages declared a bearing on each explanation. H3 collected no negative bearing of any strength — and no strong positive either."
+          }
+        },
+        {
+          id: "assay",
+          number: "03",
+          eyebrow: "The instrument",
+          title: "The positives fail on the equipment, not on anyone's honesty.",
+          lead: "The Kenya Catholic Doctors Association said six samples sent to South African laboratories tested positive for hCG. The run's leading finding is that every positive signal in this record traces to an assay used outside the domain it was validated for — and that every properly validated test returned negative.",
+          body: [
+            "Start with what was put into the machine. Vaccine samples were sent to hospital laboratories and tested with pregnancy test kits developed for use on serum and urine — not for a tetanus toxoid vaccine containing merthiolate as a preservative and an aluminium salt as an adjuvant. Low levels of hCG-like activity duly appeared in some samples. The testing laboratories themselves recognised the results as insignificant: below the reliable detection capability of the kits, and produced by a non-specific interaction between the adjuvant and the test.",
+            "Then what the laboratories were told. The staff running those analyses could not tell whether they were testing vaccine, because that was not declared to them. Kenyan hospital laboratories were running human-sample analyzers — the ones used for blood and urine pregnancy testing — and UNICEF's position in this record is that no laboratory in Kenya had the capacity to assay a non-human sample such as a vaccine for hCG at all.",
+            "Then the control that settles it. When the vaccines were tested in laboratories using properly validated systems, the results showed no hCG; the low readings elsewhere were false positives. In one Hungarian laboratory, the sterile water supply from the local hospital gave a higher false-positive hCG level than the tetanus vaccine did. That is a negative control doing its job, and it does not require anyone in the story to be lying.",
+            "The same signature recurs independently in the Philippines. The physician who tested six vials in 1995 — outside any official research protocol — found hCG-like substances in three of them at up to seven milli-international units per cubic centimetre, and said himself that this was insignificant: it would have mattered in the hundreds or thousands of units. That is a magnitude discrepancy, not a detection, and it was the accusing side's own witness who said so."
+          ],
+          pullquote: "Sterile hospital water gave a higher false-positive reading than the vaccine did.",
+          visual: {
+            type: "probe",
+            condition: "H2 requires hCG conjugated to tetanus toxoid in a verified, custody-intact WHO-distributed batch.",
+            prediction: "A validated assay for a non-human matrix, run on a declared vaccine sample, returning hCG at a level that could plausibly do anything.",
+            venue: "An accredited laboratory with negative controls and a documented chain of custody from vaccination site to bench.",
+            outcomes: [
+              { label: "WRONG MATRIX", tone: "negative", note: "Serum and urine pregnancy kits, run on vaccine containing merthiolate and an aluminium adjuvant" },
+              { label: "UNDECLARED SAMPLE", tone: "negative", note: "The Kenyan laboratories were not told what they were testing, and had no non-human-matrix capacity" },
+              { label: "VALIDATED: NEGATIVE", tone: "positive", note: "Systems with controls found no hCG; sterile hospital water read higher than the vaccine" }
+            ]
+          }
+        },
+        {
+          id: "template",
+          number: "04",
+          eyebrow: "Where the claim came from",
+          title: "The claim arrived before the samples did — and the paper that would explain why is a blank page.",
+          lead: "The Kenyan allegation reproduces, nearly clause for clause, a narrative already circulating two decades earlier in Mexico, Tanzania, Nicaragua and the Philippines during WHO and UNICEF tetanus campaigns. The bishops cite those countries as precedent rather than as independent local findings.",
+          body: [
+            "That is the pattern H4 predicts, and the run reads it as supported: an imported template supplies the hypothesis and the choice of target campaign. But the run then says H4 overreaches as stated, because at least some allegations did generate case-specific local artefacts. Samples really were collected and tested in Kenya, and independently in the Philippines. The better-supported reading is two-stage — the template supplies the suspicion, and locally generated false positives then supply what looks like case-specific confirmation. The run marks that inferred rather than observed, because it is a pattern read across passages, not a sequence anyone watched happen.",
+            "Now the part that matters for anyone trying to explain the belief rather than just rebut it. H3 says the whole thing descends from real WHO-affiliated research into hCG-based anti-fertility vaccines, conflated with routine tetanus campaigns. The run could not establish that here. The only description of hCG-toxoid immunocontraception in the entire ledger comes from the accusing bishops' own statement, and the WHO and UNICEF rebuttal mentions a contraceptive vaccine only to deny that tetanus toxoid was one.",
+            "The run went looking. It snapshotted the Europe PMC record for a study on a candidate antipregnancy vaccine — beta-subunit of human chorionic gonadotropin linked to tetanus toxoid — and what came back was the site's interface and navigation menu. No abstract, no methods, no results. Its counter-search for WHO Task Force documentation returned nothing, and so did its search for textual tracing of the 1990s anti-vaccine publications. So H3 currently rests on an adversarial source's account of the very research it alleges was deployed, and the run says exactly that rather than borrowing the explanation from general knowledge."
+          ],
+          pullquote: "The paper that would anchor the whole conflation story is in this ledger as a navigation menu.",
+          visual: {
+            type: "lineage-chain",
+            items: [
+              { date: "", actor: "A candidate antipregnancy vaccine", added: "Beta-hCG linked to tetanus toxoid — a real line of research, and the factual anchor the conflation story needs. In this ledger it is a Europe PMC landing page carrying no abstract." },
+              { date: "two decades earlier", actor: "Mexico, Tanzania, Nicaragua, the Philippines", added: "Rumours that WHO and UNICEF are testing a contraceptive vaccine under the guise of tetanus toxoid. WHO calls them completely untrue and attributes them to pro-life groups." },
+              { date: "Feb 1995", actor: "Dr Edmundo Villacorta", added: "Tests six Philippine vials outside any official protocol. Finds hCG-like substances in three, at up to 7 mIU/cc, and says himself it is insignificant — significance would begin in the hundreds or thousands." },
+              { date: "Mar 1995", actor: "A Manila court", added: "A temporary restraining order halts the national immunisation drive after pro-life groups allege the vaccine contains abortifacient hCG." },
+              { date: "Oct 2014", actor: "Catholic bishops in Kenya", added: "Assert as established fact that hCG-laced tetanus toxoid had previously been used in the Philippines, Nicaragua and Mexico — citing no test." },
+              { date: "2014", actor: "The Kenya Catholic Doctors Association", added: "Says six samples sent to laboratories in South Africa tested positive for the hCG antigen. No laboratory, assay or custody trail is named anywhere in this record." },
+              { date: "Dec 2016", actor: "KENAS and ILAC", added: "Audit Agriq-Quest, one of the testing companies, which loses its accreditation. The theory outlives its evidence, sustained afterwards by the accreditation loss rather than by any new positive result." }
+            ],
+            note: "Dates appear only where this run's sources state one. The head of this chain carries none, because the page stored for it contains no publication data."
+          }
+        },
+        {
+          id: "exposed",
+          number: "05",
+          eyebrow: "Where it is exposed",
+          title: "One strand genuinely does not resolve, and the run refuses to close it.",
+          lead: "Agriq-Quest, the company that ran analyses for the Catholic Doctors Association, alleged through counsel that the Ministry of Health withheld 13.8 million shillings because the firm refused to doctor results. The same firm then lost its accreditation after KENAS and ILAC audits, and a former employee alleged it lacked the capacity for the tests it was handling.",
+          body: [
+            "Read those two ways. Suppression of true positives predicts a payment dispute followed by an adverse audit. Incompetence generating false positives predicts a payment dispute followed by an adverse audit. The observable set is identical, and the run says so: this cluster discriminates between the explanations only if the audit's substantive findings and the raw instrument data are examined, and neither is in the ledger.",
+            "That is why one of the run's open questions asks specifically whether the audit's cited deficiencies actually covered the hCG assays run for the Catholic Doctors Association, as opposed to unrelated capacity or procedural problems. Until that is on the record, the accreditation loss cannot do the work that both sides have asked it to do. Snopes itself supplies the third reading the run keeps live throughout: someone, somewhere, is sincere but mistaken.",
+            "The chain below is the official reading's own required conditions. Two of the three hold in this ledger. The third — that health authorities re-tested from verified cold-chain samples and found nothing — is not established here: the WHO and UNICEF statement in this record is stored as an introductory snippet asserting misinformation without presenting testing or data, and no cold-chain re-test record appears anywhere in the run.",
+            "The outcome evidence points the same way as the assay evidence without settling intent. Neonatal tetanus incidence fell over fifteen years in rural Kilifi, contemporaneously with the campaigns and against a real disease burden — 550 Kenyan infant deaths in 2013. The Philippine product had been in use since 1983 with no reported adverse reactions, and Kenya's head of immunization reported subsequent conceptions among vaccinated women. The run marks the attribution partial: the same study notes a concurrent rise in facility-based deliveries as an uncontrolled co-intervention, and the fertility observations are official testimony rather than cohort data."
+          ],
+          pullquote: "Suppression and incompetence predict the same two events. The ledger holds neither the audit findings nor the instrument data.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "No independently replicated, methodologically sound result confirms beta-hCG in WHO-distributed batches", state: "supported" },
+              { label: "The documented positive testing claims suffer methodological flaws", state: "supported" },
+              { label: "Health authorities re-tested from verified cold-chain samples and found nothing", state: "unknown" }
+            ]
+          }
+        },
+        {
+          id: "attack",
+          number: "06",
+          eyebrow: "Falsification",
+          title: "Eight attacks on its own explanations. Six came back empty.",
+          lead: "The run ran eight adversarial searches, two against each explanation. Two returned a verified counter-passage. The six blanks are not evidence of absence — no probe was pre-registered — and where they were pointed says a good deal about what this dossier can and cannot claim.",
+          body: [
+            "Both that returned were aimed at the covert-sterilization hypothesis, and both weakened it: the 1995 Philippine episode, which produced the physician's own account of insignificant readings, and the Kilifi neonatal tetanus study, which is the only peer-reviewed source in the entire ledger. So the counter-evidence this run actually obtained runs in one direction, and a reader who wants to discount the conclusion for that reason has the count to do it with.",
+            "The two searches aimed at the official reading came back empty — peer-reviewed laboratory confirmation of beta-hCG in sealed vials, and whistleblower or internal documentation of deliberate covert deployment. Those blanks are the ones proponents would most want to fill, and the run is explicit that finding nothing there is not the same as establishing that nothing exists.",
+            "The remaining four blanks are the ones that shape this page. Both searches for the historical anti-fertility research programme returned nothing, which is why the conflation explanation stays unanchored. And both searches aimed at the distrust hypothesis returned nothing: no data pairing measured institutional trust with allegation prevalence, and no archival evidence on whether the Kenyan groups began testing before or after encountering the earlier literature. The run therefore cannot show that distrust drives the pattern, and says so."
+          ],
+          pullquote: "The two searches for the research programme came back empty, which is why the explanation stays unanchored.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Peer-reviewed confirmation of beta-hCG conjugate in sealed, verified tetanus vials using validated non-serum assays", outcome: "empty" },
+              { target: "H1", looked: "Leaked internal communications or whistleblower testimony of deliberate covert deployment", outcome: "empty" },
+              { target: "H2", looked: "Official Philippine testing results from the 1995 tetanus toxoid investigations", outcome: "returned" },
+              { target: "H2", looked: "Post-campaign fertility and birth-rate data among vaccinated Kenyan women", outcome: "returned" },
+              { target: "H3", looked: "Whether WHO anti-fertility trial batches were ever manufactured or shipped alongside public tetanus supply", outcome: "empty" },
+              { target: "H3", looked: "Whether the 1994–95 anti-vaccine publications cited the real research papers out of context", outcome: "empty" },
+              { target: "H4", looked: "Whether the Kenyan claims began from local anomalies or from imported template literature", outcome: "empty" },
+              { target: "H4", looked: "Empirical studies linking institutional distrust to sterilization-rumour uptake", outcome: "empty" }
+            ],
+            footer: "2 of 8 adversarial searches yielded a snapshot-bound, verified counter-passage (25.00%)."
+          }
+        },
+        {
+          id: "strongest",
+          number: "07",
+          eyebrow: "The best-supported reading",
+          title: "The strongest finding, printed with the attack made on it.",
+          lead: "The run's leading finding is that every positive signal traces to an assay used outside its validated domain, and every validated test returned negative. It is typed observed. Then the run named the way it could be wrong, and the objection is a real one.",
+          body: [
+            "The attack is filed as measurement error, and it inverts the argument rather than denying it. Suppose the clinical analyzers were picking up intact hCG-toxoid conjugate, and suppose the specialised diluents and extraction protocols used by the validating laboratories degraded or precipitated that conjugate. Then the validated negatives are false negatives and the crude positives were the real signal. Nothing about that requires a conspiracy; it requires a specific chemistry to be true.",
+            "The failure condition was written down in advance and is testable: a demonstration, by analytical chemistry or controlled spiking experiments, that standard matrix-neutralising preparation for non-human fluids degrades hCG-toxoid conjugates, preventing detection in validated systems while leaving cross-reactive fragments detectable in direct clinical analyzers. Nothing in this ledger runs that experiment.",
+            "Seven attacks like this are on the record against nine asserted findings, each with its own failure condition — including one arguing that the accreditation audits could themselves have been punitive, and one arguing that aggregate public-health outcomes cannot rule out batch-specific contamination or partial fertility effects. This run does not record whether any person reviewed any stage of it, and the page says so rather than implying otherwise."
+          ],
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Finding",
+              id: "fnd_0aacffcd6a55eb57_00",
+              status: "observed",
+              text: "Every positive hCG signal in the record traces to an assay used outside its validated domain, and every properly validated test returned negative: pregnancy kits designed for serum and urine were applied to vaccine containing merthiolate and an aluminium adjuvant; the testing laboratories themselves called the resulting readings insignificant and below reliable detection; and a Hungarian laboratory's sterile hospital water produced a higher false positive than the vaccine.",
+              meta: "5 passages cited · 1 source family · computed confidence: unknown"
+            },
+            attack: {
+              label: "Attack on it",
+              id: "stp_a107fb0205ff6ce8_00",
+              kind: "measurement error",
+              text: "If the clinical analyzers were sensitive to intact hCG-tetanus toxoid conjugates that were altered, degraded or stripped out by the specialised diluents and extraction protocols used in the validating laboratories, the negative validation tests would be false negatives rather than true negatives."
+            },
+            failureLabel: "Recorded failure condition",
+            failure: "Demonstration via analytical chemistry or controlled spiking experiments that standard matrix-neutralizing sample preparation protocols for non-human fluids degrade or precipitate hCG-toxoid conjugates, preventing detection in validated systems while leaving residual cross-reactive fragments detectable in direct clinical analyzers."
+          }
+        },
+        {
+          id: "score",
+          number: "08",
+          eyebrow: "The score",
+          title: "Nine findings asserted, every one unknown, and 14 out of 100.",
+          lead: "Nine findings were asserted, five of them typed observed rather than inferred. Every one computed to a confidence of unknown, and the evidence score came to the same 14 out of 100 as every dossier before it — for the same reason.",
+          body: [
+            "Zero of six snapshots reached an upstream origin, so corroboration and provenance both scored zero. That is not a comment on the quality of the underlying material; it is the scoring refusing to treat untraced sources as independent of one another.",
+            "Falsification scored 15 of 20 for two of eight counter-searches returning. Saturation scored zero: the first retrieval round found a single source family, the second found four and all four were new, and the counts on all four explanations moved when that round was added. A run that quadruples its source base on the second pass has not finished looking.",
+            "Two measurements make this the thinnest ledger in the archive. Twenty-one of the twenty-five weighed passages came out of one fact-check article, and four of the nine asserted findings rest on that single source family alone. And this run does not record an excerpt-verification tally at all — the field that reports how many quotations survived the verbatim gate is absent here, so this page cannot tell you what it usually can."
+          ],
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 of 6 sources traced to an origin" },
+              { label: "Provenance", value: 0, max: 25, note: "unknown origin is unknown independence" },
+              { label: "Falsification", value: 15, max: 20, note: "2 of 8 counter-searches returned" },
+              { label: "Saturation", value: 0, max: 15, note: "all 4 families in round 2 were new" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "15",
+            capLabel: "Counter-evidence was found, which caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: {
+        eyebrow: "Take this with you",
+        title: "Five checks this run was held to. Use them on anything."
+      },
+      principles: [
+        "Ask what the instrument was validated for. A pregnancy kit reading a vaccine is not a positive result; it is a kit being used outside its domain.",
+        "Look for the negative control before you look at the result. Sterile hospital water reading higher than the sample tells you what the number is worth.",
+        "Check the magnitude against what would matter. Seven units where hundreds would be needed is a discrepancy, not a detection — and the accusing side's own witness said so.",
+        "When two stories predict the same two events, the events cannot choose between them. A payment dispute plus a failed audit is what both suppression and incompetence look like.",
+        "Separate the rebuttal from the explanation. This run can say the testing was flawed and still not have established where the claim originally came from."
+      ],
+      limitations: [
+        "Twenty-one of the twenty-five weighed passages come from a single fact-check article, and four of the nine asserted findings rest on that one source family alone.",
+        "Zero of six source snapshots could be traced to an upstream origin, so nothing here has established independence between its sources. All thirteen findings computed to a confidence of unknown.",
+        "No source in the ledger was assessed as primary data. The only peer-reviewed source is the Kilifi neonatal tetanus study, and it contributes one passage.",
+        "The Europe PMC record for the candidate antipregnancy vaccine — the paper that would anchor the conflation explanation — was stored as the site's interface and navigation menu, with no abstract, methods or results in the bytes.",
+        "The WHO and UNICEF statement on the Kenyan vaccine was stored as an introductory snippet that asserts misinformation without presenting testing, data or methodology, and no passage in the run rests on it.",
+        "No probe was pre-registered. Six of the eight adversarial searches came back empty, including both searches aimed at the official reading, and not one of those blanks counts as evidence of absence.",
+        "This run does not record an excerpt-verification tally, so the usual measurement of how many quotations survived the verbatim gate is missing here.",
+        "The reach is bounded to Kenya and the Philippines. For Mexico, Nicaragua and Tanzania the ledger holds only characterisations of the allegations as rumours; for India it holds nothing at all.",
+        "The Agriq-Quest strand is unresolved: the ledger contains neither the substantive findings of the KENAS and ILAC audit nor the raw instrument data, so the accreditation loss cannot adjudicate between suppression and incompetence.",
+        "Nothing in the ledger measures institutional trust, refusal rates or allegation prevalence in any population, so the quantitative half of the distrust explanation is untested here.",
+        "The outcome evidence is only partially attributable: the Kilifi study notes a concurrent rise in facility-based deliveries as an uncontrolled co-intervention, and the reports of subsequent conceptions are official testimony rather than cohort data.",
+        "The search was not saturated: round one found one source family, round two found four and all four were new."
+      ],
+      sourcesHeading: {
+        eyebrow: "Source record",
+        title: "Six snapshots. One carries the dossier; three carry nothing."
+      },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        {
+          number: "01",
+          title: "Is Tetanus Vaccine Spiked with Sterilization Chemicals?",
+          publisher: "Snopes",
+          tier: "quality journalism",
+          digest: "7ccc8d843637f4b82a4e0e40986ff4b7d959bf79b3c73ef68f9715524b049643",
+          href: "https://www.snopes.com/fact-check/tetanus-vaccine-sterilization/",
+          note: "Twenty-one of the twenty-five passages, and every testing detail on this page: the pregnancy kits, the undeclared samples, the Hungarian water, the bishops' statement, the accreditation loss and the payment dispute. It discloses no funding, no conflicts, no methodology beyond described archival research, and no editorial review process beyond a byline."
+        },
+        {
+          number: "02",
+          title: "Court stops use of antitetanus vaccine in immunization drive",
+          publisher: "UCA News",
+          tier: "quality journalism",
+          digest: "2a74d37be8409ef3633f2aa2403625ba8a915e0550f75154a2498891f5d7b3f2",
+          href: "https://www.ucanews.com/story-archive/?post_id=46985&post_name=%2F1995%2F03%2F20%2Fcourt-stops-use-of-antitetanus-vaccine-in-immunization-drive",
+          note: "Three passages, returned by a counter-search: the Manila restraining order, the physician's own account of insignificant readings, and the joint assurance from health authorities. The run notes the gap in the story it tells — an informal test whose own author calls the result insignificant becomes the basis for halting a national immunisation drive."
+        },
+        {
+          number: "03",
+          title: "Incidence and Risk Factors for Neonatal Tetanus in Admissions to Kilifi County Hospital, Kenya",
+          publisher: "PLOS One",
+          tier: "peer reviewed",
+          digest: "1b4e2ee4d8bcef31d12db86f28ecee21705d9cf0c5547a48135da454bbb58140",
+          href: "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0122606",
+          note: "The only peer-reviewed source in the run, and it contributes one passage: neonatal tetanus incidence fell over fifteen years in rural Kenya, contemporaneously with the campaigns. Its design is observational, and the authors themselves name a competing explanation — a rising rate of facility-based delivery over the same period."
+        },
+        {
+          number: "04",
+          title: "Statement from WHO and UNICEF on the Tetanus Vaccine in Kenya",
+          publisher: "World Health Organization",
+          tier: "government institutional",
+          digest: "2abafd99abed2d3db1ae3e3b7c75c79924ffa78b1bbcb8e419a95febdcbc2ad6",
+          href: "https://www.afro.who.int/news/statement-who-and-unicef-tetanus-vaccine-kenya",
+          note: "The institutional response — snapshotted as an introductory snippet rather than the full statement, and cited by no passage in the run. The run's note: it asserts misinformation about the vaccine's quality without presenting evidence, testing or data within the stored text."
+        },
+        {
+          number: "05",
+          title: "Observations on the antigenicity and clinical effects of a candidate antipregnancy vaccine: beta-subunit of human chorionic gonadotropin linked to tetanus toxoid",
+          publisher: "Europe PMC",
+          tier: "unsupported",
+          digest: "51e1387bf7904f6bd80de4ccd064897fd104f9416f08e3e9d5f8a505f566a752",
+          href: "https://europepmc.org/article/med/7418885",
+          note: "The paper the whole conflation argument turns on — stored as the site's interface and navigation menu. No abstract, no methodology, no results, no sample, no funding. The record of hCG-toxoid anti-fertility research is in this ledger by title alone, which is why the run refuses to claim that explanation as established."
+        },
+        {
+          number: "06",
+          title: "The Bill Gates “Depopulation Through Forced Vaccination” Headline, Explained",
+          publisher: "Snopes",
+          tier: "quality journalism",
+          digest: "0607be4d6d2470ea6224672e45d14c9babd70ba2d4f23ec1bf5aeebc4c911d99",
+          href: "https://www.snopes.com/fact-check/bill-gates-depopulation/",
+          note: "Retrieved in the first round, assessed, and cited by no passage in the run. It is printed here because the run stored it: a snapshot that contributed nothing to any finding is still part of what was read."
+        }
+      ],
+      next: {
+        eyebrow: "Your turn",
+        title: "A negative control is something you can check without trusting anyone.",
+        body: "Sterile water reading higher than the vaccine is the kind of fact that settles an argument without anyone having to be called a liar — and so is its limit: this run could not establish where the claim originally came from, because the paper that would explain it is in the sources as a navigation menu. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
       }
     }
   ];
