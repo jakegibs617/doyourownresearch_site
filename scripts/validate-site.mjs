@@ -38,6 +38,7 @@ async function requireFiles() {
     "assets/js/site.js",
     "assets/js/report.js",
     "assets/img/favicon.svg",
+    "assets/img/social-preview.png",
     ".github/workflows/pages.yml"
   ];
 
@@ -220,6 +221,44 @@ async function validateJavaScript() {
   }
 }
 
+async function validateSocialPreview() {
+  const path = "assets/img/social-preview.png";
+  const source = await readFile(resolve(root, "index.html"), "utf8");
+  const expectations = [
+    [/<meta\s+property="og:site_name"\s+content="Do Your Own Research">/i, "an Open Graph site name"],
+    [/<meta\s+property="og:title"\s+content="[^"]+">/i, "an Open Graph title"],
+    [/<meta\s+property="og:description"\s+content="[^"]+">/i, "an Open Graph description"],
+    [/<meta\s+property="og:url"\s+content="https:\/\/doyourownresearch\.me\/">/i, "the canonical Open Graph URL"],
+    [/<meta\s+property="og:image"\s+content="https:\/\/doyourownresearch\.me\/assets\/img\/social-preview\.png">/i, "the Open Graph preview image"],
+    [/<meta\s+property="og:image:width"\s+content="1200">/i, "the Open Graph image width"],
+    [/<meta\s+property="og:image:height"\s+content="627">/i, "the Open Graph image height"],
+    [/<meta\s+name="twitter:card"\s+content="summary_large_image">/i, "a large Twitter card"],
+    [/<meta\s+name="twitter:image"\s+content="https:\/\/doyourownresearch\.me\/assets\/img\/social-preview\.png">/i, "the Twitter preview image"]
+  ];
+
+  expectations.forEach(([pattern, label]) => {
+    if (!pattern.test(source)) fail(`index.html must contain ${label}`);
+  });
+
+  const image = await readFile(resolve(root, path));
+  const pngSignature = "89504e470d0a1a0a";
+  if (image.subarray(0, 8).toString("hex") !== pngSignature) {
+    fail(`${path} must be a PNG image`);
+    return;
+  }
+
+  const width = image.readUInt32BE(16);
+  const height = image.readUInt32BE(20);
+  if (width !== 1200 || height !== 627) {
+    fail(`${path} must be exactly 1200 × 627 pixels; found ${width} × ${height}`);
+  }
+  if (image.byteLength > 5_000_000) {
+    fail(`${path} must be no larger than 5 MB; found ${image.byteLength} bytes`);
+  }
+
+  pass(`social preview: ${width} × ${height}, ${image.byteLength} bytes`);
+}
+
 async function validateDomain() {
   const cname = (await readFile(resolve(root, "CNAME"), "utf8")).trim();
   if (cname !== "doyourownresearch.me") fail(`CNAME must contain exactly doyourownresearch.me; got ${JSON.stringify(cname)}`);
@@ -245,6 +284,7 @@ validateReports(site, reports, visualTypes);
 await validateTranscripts(reports);
 await Promise.all(["index.html", "report.html", "404.html"].map(validateHtmlFile));
 await validateJavaScript();
+await validateSocialPreview();
 await validateDomain();
 
 if (failures.length > 0) {
