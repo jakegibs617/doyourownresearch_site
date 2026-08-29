@@ -5,9 +5,9 @@
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
     strapline: "Research you can take apart.",
-    archiveState: "One method note, five research dossiers.",
+    archiveState: "One method note, six research dossiers.",
     archiveNext: {
-      number: "007",
+      number: "008",
       eyebrow: "Next in the archive",
       title: "The next contested claim.",
       body: "The series continues through the most widely held conspiracy theories, one run per claim, each published with its empty searches and its own score intact.",
@@ -1862,7 +1862,7 @@
       label: "Research dossier",
       issue: "DOSSIER 006",
       status: "published",
-      featured: true,
+      featured: false,
       publishedAt: "2026-08-29",
       updatedAt: "2026-08-29",
       readMinutes: 14,
@@ -2227,6 +2227,426 @@
         eyebrow: "Your turn",
         title: "A negative control is something you can check without trusting anyone.",
         body: "Sterile water reading higher than the vaccine is the kind of fact that settles an argument without anyone having to be called a liar — and so is its limit: this run could not establish where the claim originally came from, because the paper that would explain it is in the sources as a navigation menu. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
+      }
+    },
+    {
+      slug: "moon-landing-what-the-mirrors-cannot-prove",
+      kind: "report",
+      label: "Research dossier",
+      issue: "DOSSIER 007",
+      status: "published",
+      featured: true,
+      publishedAt: "2026-08-29",
+      updatedAt: "2026-08-29",
+      readMinutes: 13,
+      runId: "26d8b267-7df3-43b3-a759-ba003acc38c3",
+      title: "The Moon landing, and what the mirrors cannot prove.",
+      shortTitle: "The Moon landing hoax",
+      deck: "Not one passage in this ledger bears for the hoax — and the run still says the evidence everyone reaches for proves the wrong thing.",
+      cardLine: "The lasers establish that hardware is on the Moon. Something else has to establish that people put it there.",
+      question: "What is the origin, content, and evidentiary basis of claims that the 1969-1972 Apollo Moon landings were staged or fabricated, and how do these claims hold up against the physical, photographic, and independent third-party evidence available?",
+      answer: "Fourteen passages declared a bearing and not one of them supports fabrication. But the run's second finding is the one worth reading: laser ranging constrains the presence of hardware, not the agency that delivered it. Every precision passage is silent on who emplaced the arrays, and the Lunokhod reflectors sitting beside them are proof that robots could place working retroreflectors at the time. What actually discriminates is a Japanese orbiter's image of engine-scoured ground at the Apollo 15 site — and its 10-metre resolution cannot show a crew. All fourteen findings computed to unknown.",
+      disclosure: "This run scoped itself to the evidentiary basis of the claims rather than to the sociology of who believes them. Nine of its twelve subquestions were answered by no passage at all: the photographic anomalies, the Van Allen belts, the engineering feasibility argument and the origins of the hoax literature are all absent from this ledger, and nothing here should be read as having addressed them.",
+      accent: "violet",
+      tags: ["Physics", "Independent verification", "Falsification"],
+      cover: {
+        index: "DYOR—007",
+        serial: "007 / 2026",
+        lines: ["THE MIRRORS", "PROVE HARDWARE.", "NOT A CREW."],
+        footer: "Hardware → the lasers · Crew → something else"
+      },
+      transcript: {
+        href: "assets/reports/dyor-26d8b267-7df3-43b3-a759-ba003acc38c3.md",
+        label: "Read the full method transcript",
+        note: "The complete 1,233-line run record: every search, every verbatim excerpt, every bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone weighing the claim — including someone who has been handed the laser-ranging argument and found it did not quite land.",
+        focus: "The claims themselves and their evidentiary support, tested against physical, photographic and independent third-party evidence, across all six crewed landings.",
+        excluded: "Uncrewed lunar missions unrelated to Apollo, the general psychology of conspiracy belief, other space-programme controversies, and Apollo engineering detail beyond what the specific claims require. Each was placed out of scope before any source was read."
+      },
+      stats: [
+        { value: "0/14", label: "passages bearing for the hoax" },
+        { value: "9/12", label: "subquestions no passage answered" },
+        { value: "14/23", label: "excerpts that survived the verbatim gate" }
+      ],
+      thesis: {
+        label: "The distinction the run insisted on",
+        statement: "There is no run-level verdict in this record and the renderer does not invent one. The ledger is one-sided — nothing in it bears for fabrication. It is also narrow, and the run is explicit that its strongest evidence answers a question one step to the side of the one being argued about.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "Two questions wear the same name, and the run picked one.",
+          lead: "“The Moon Landing Hoax” can mean an inquiry into whether the claims hold up, or an inquiry into who believes them and why. Those need different evidence, and the run recorded the ambiguity before choosing.",
+          body: [
+            "It went with the evidentiary reading: the claims and their support, tested against the physical, photographic and third-party record. It also recorded a second ambiguity — whether the question covers Apollo 11 alone or all six crewed landings — and assumed all six, because hoax arguments range across the programme.",
+            "That first choice matters more than it looks, and chapter six is where the bill arrives. Having scoped itself to evidence rather than to the belief, the run then failed to retrieve anything on most of the evidence that hoax arguments actually use. It went to laser ranging and orbital imagery, and to almost nothing else.",
+            "Out of scope before any source was read: uncrewed lunar missions unrelated to Apollo, conspiracy-theory psychology beyond this case, other space-programme controversies, and spacecraft engineering detail beyond what the specific claims require."
+          ],
+          pullquote: "The run scoped itself to the evidence, then retrieved almost none of the evidence the argument is actually about.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "Where the hoax claims came from, and what they assert",
+              "What the photographic and radiation claims are, and their answers",
+              "What physical evidence exists, and who has checked it independently",
+              "What non-US tracking and imaging shows",
+              "Which disagreements remain genuinely open"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Uncrewed lunar missions unrelated to Apollo",
+              "The general psychology of conspiracy belief",
+              "Other space-programme controversies",
+              "Apollo engineering beyond the specific claims"
+            ],
+            note: "Period: 1969 to 1972 for the missions; the 1970s to the present for the claims. All six crewed landings, not Apollo 11 alone."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Three explanations, and one of them collected nothing at all.",
+          lead: "Before any source was read the run wrote down three rival accounts and, for each, the observation that would destroy it. Fourteen passages went on to declare a bearing on all three.",
+          body: [
+            "H1 is the documented history. H2 is fabrication in whole or significant part, with the independent verification either misread or not actually independent. H3 is a claim about the claim: that the controversy is a traceable cultural narrative rather than a response to real gaps in the record.",
+            "H2's row has no positive bearing of any strength. Not one of the fourteen passages, read by a run that was actively searching for material against the official account, supports fabrication. Ten bear weakly against it and two strongly. That is about as one-sided as this archive gets.",
+            "H3 is the column to be careful with. Four weak positives, nine non-discriminating, one negative — and the run's own reading is that H3 is only half-testable here. Its evidentiary half is weakly supported, because the domain most often invoked in hoax argument turns out to be well-modelled and non-anomalous. Its causal half — that the phenomenon traces to a specific origin and evolved rhetorically from there — is untested, because nothing in this ledger is about the hoax literature at all."
+          ],
+          pullquote: "Zero passages bear for fabrication. That is a fact about this ledger before it is a fact about the Moon.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              {
+                id: "H1",
+                claim: "The landings occurred as documented; hoax claims come from misunderstanding the photographic and physical evidence, radiation physics and engineering, not from real gaps in the record.",
+                falsifier: "Independent, non-NASA tracking, ranging or imaging data inconsistent with crewed landings in 1969–1972 — Soviet tracking logs showing no signal at the claimed times, or an absence of retroreflector returns when non-US observatories test for them.",
+                counts: [2, 10, 2, 0, 0]
+              },
+              {
+                id: "H2",
+                claim: "The landings were staged or fabricated in whole or in significant part, and the evidence cited as independent verification is NASA-influenced, misinterpreted, or not independent enough to rule fabrication out.",
+                falsifier: "Demonstration that the ranging returns, sample analyses and foreign tracking data are fabricated, coordinated with NASA, or explainable without crewed landings — for instance, retroreflectors delivered robotically and verified independently afterwards.",
+                counts: [0, 0, 2, 10, 2]
+              },
+              {
+                id: "H3",
+                claim: "The controversy is a persistent cultural narrative with a traceable origin that evolved rhetorically over time, largely independent of any real evidentiary weakness in the Apollo record.",
+                falsifier: "Identification of specific unresolved evidentiary anomalies — not rhetorical claims — that genuine investigation has failed to explain, showing the controversy has substantive rather than rhetorical origins.",
+                counts: [0, 4, 9, 1, 0]
+              }
+            ],
+            note: "14 passages declared a bearing on each explanation. H2's two strongest negatives are both the Japanese orbital imagery of the Apollo 15 site."
+          }
+        },
+        {
+          id: "lasers",
+          number: "03",
+          eyebrow: "The measurement still running",
+          title: "The strongest evidence here is an experiment you could rerun tonight.",
+          lead: "Four observatories on Earth fire short laser pulses at five retroreflector sites on the Moon, and the pulses come back. Not an archive to be trusted — a measurement, still operating, whose success depends on hardware actually sitting at fixed lunar coordinates.",
+          body: [
+            "The precision is the part that does the work. Early ranges carried metre-level uncertainty; within a few months of 1969 the measurement went from hundreds of metres to metres to decimetres, reached 2 cm in 1995, and is under a centimetre today. Current analyses fit modern ranges with a 9 mm weighted rms residual — 2.3 parts in a hundred billion of the distance. Half a century of lunar geophysics, geodesy and gravitational physics has been built on top of it.",
+            "The arrays are also mutually distinguishable, which closes an obvious alternative. Apollo 11 and 14 each carry 100 circular corner cubes 3.8 cm across; Apollo 15 carries 300; Lunokhod 1 and 2 carry 14 larger triangular cubes whose exiting beam is hexagonal rather than circular. The Apollo returns cannot be Soviet hardware relabelled, and fabricated data would have to stay mutually consistent across four independent observatories for fifty years.",
+            "This is the argument that usually ends the conversation, and on its own terms it holds. The next chapter is about the terms."
+          ],
+          pullquote: "Nine millimetres, from four observatories, for fifty years.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "1969", label: "The first array", detail: "The first retroreflector is placed on the Moon. Early ranging carries metre-level uncertainty, having started at hundreds of metres." },
+              { date: "early 1970", label: "Decimetres", detail: "Within a few months the measurement uncertainty falls from hundreds of metres, to metres, to decimetres." },
+              { date: "1970–73", label: "Lunokhod", detail: "Soviet rovers place their own retroreflectors — 14 larger triangular cubes returning a hexagonal beam, distinguishable from the Apollo arrays and delivered without a crew.", tone: "seizure" },
+              { date: "1995", label: "Two centimetres", detail: "Successive refinement across independent observatories brings the range uncertainty to 2 cm." },
+              { date: "today", label: "Nine millimetres", detail: "Current analyses fit modern ranges with a 9 mm weighted rms residual, 2.3 × 10⁻¹¹ relative to the distance, from four observatories to five sites.", tone: "end" },
+              { date: "half a century", label: "Downstream science", detail: "Lunar geophysics and geodesy, terrestrial geodesy and gravitational physics have all been built on the resulting data.", tone: "after" }
+            ],
+            note: "Every figure here is quoted from one peer-reviewed review in the ledger. No passage in it says who placed the Apollo arrays."
+          }
+        },
+        {
+          id: "agency",
+          number: "04",
+          eyebrow: "The step to the side",
+          title: "Laser ranging constrains where the hardware is, not who carried it.",
+          lead: "This is the run's second finding, and it is the reason this dossier exists. Every laser-ranging passage that carries precision information is silent about how the arrays got there.",
+          body: [
+            "The crew attribution in the record is real, but look at where it lives. It is descriptive prose inside the same technical reviews — “placed on the Moon in 1969 by the Apollo 11 astronauts”, “Apollo astronauts and Russian rovers deployed” — not a property of the returns. Nothing about a 9 mm residual distinguishes an array a person set down from an array something else set down. So H2's robotic-delivery variant passes through the entire laser-ranging ledger untouched.",
+            "And the proof that robotic emplacement was possible at the time is sitting in the same dataset. Lunokhod 1 and 2 placed working retroreflectors without a crew, and their returns are being measured alongside the Apollo ones. The strongest evidence for the landings contains, as a component, a demonstration of the cheapest alternative to them.",
+            "What the ranging record does do is narrow the claim. It moves H2 from “the returns are faked or misattributed” to “the arrays were delivered without crew” — a much more specific and much more expensive thing to assert. The run also filed an attack on its own reasoning here: corner-cube arrays might be deliverable by hard-impact penetrators or tethered deployment from orbit, and that possibility fails only if optical modelling shows the arrays need soft-landing orientation and levelling no unguided system of that era could achieve."
+          ],
+          pullquote: "The best evidence for the landings includes, as a component, a working demonstration of the cheapest alternative to them.",
+          visual: {
+            type: "probe",
+            condition: "H2's surviving variant requires only that the arrays reached the lunar surface without a crew.",
+            prediction: "Some property of the returns — timing, signature, geometry — that depends on how the array was delivered rather than on where it sits.",
+            venue: "Fifty years of ranging solutions from four observatories to five sites.",
+            outcomes: [
+              { label: "NOT PRESENT", tone: "negative", note: "Every passage carrying precision information is silent on agency of delivery" },
+              { label: "ATTRIBUTED, NOT MEASURED", tone: "neutral", note: "Crew placement appears as descriptive prose inside the same reviews" },
+              { label: "ALTERNATIVE DEMONSTRATED", tone: "neutral", note: "Lunokhod placed working retroreflectors robotically, in the same dataset" }
+            ]
+          }
+        },
+        {
+          id: "imagery",
+          number: "05",
+          eyebrow: "What discriminates",
+          title: "A Japanese orbiter photographed ground the engine had scoured.",
+          lead: "The only evidence in this ledger that bears on a landing event rather than on hardware presence came from a counter-search aimed at the fabrication hypothesis — and it came from JAXA, not NASA.",
+          body: [
+            "Two things, from SELENE/Kaguya. A reflectivity halo brighter than the surrounding regolith was confirmed at the Apollo 15 site and attributed to the lunar module's descent engine exhaust plume. And a 3D terrain-camera reconstruction of the same site reproduces the mountain and hill profiles in a photograph taken from the surface by the crew, AS15-82-11122HR. A plume-scoured patch is a mechanical consequence of a powered descent at that exact spot; a surface-perspective photograph matching independently derived topography is evidence that a camera was standing there.",
+            "Together those refute “nothing landed there” and “the photographs were shot on Earth” — the two claims the laser ranging could not touch. They are also the only two passages in the entire run that earned the strongest available bearing against fabrication.",
+            "Then the limit, which the run states as plainly as the finding. The terrain camera resolves 10 metres. Rocks are explicitly not resolvable, and a lander, equipment or a person even less so. The halo constrains that an engine fired at that location; the topographic match constrains that a camera was at that location. Neither distinguishes a crewed landing from an uncrewed powered landing carrying a camera.",
+            "The chain below is H1's own required conditions — the winning hypothesis, audited. One is supported. One is the weak link. Three are simply not addressed by anything this run retrieved, including the lunar samples, which the ledger never touches at all."
+          ],
+          pullquote: "The camera resolves ten metres. A person is not ten metres.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "Retroreflectors are detectable and have been used by non-US observatories since the 1970s", state: "supported" },
+              { label: "Later non-US orbital imagery shows landing-site artifacts at the claimed coordinates", state: "weak link" },
+              { label: "Soviet and other nations independently tracked Apollo signals on lunar trajectories", state: "unknown" },
+              { label: "Apollo samples have been independently analysed by non-US laboratories", state: "unknown" },
+              { label: "Foreign governments and observers with no incentive to corroborate nonetheless did", state: "unknown" }
+            ]
+          }
+        },
+        {
+          id: "blanks",
+          number: "06",
+          eyebrow: "What was never reached",
+          title: "Nine of twelve subquestions were answered by no passage at all.",
+          lead: "The run asked itself twelve questions before searching. Three got answers. The other nine are the ones the argument is usually about.",
+          body: [
+            "Unanswered by any passage in this ledger: where the hoax claims originated and who the earliest proponents were; how the claims evolved; the photographic and film anomalies — shadows, lighting, flag movement, missing stars, cross-hair alignment — and their explanations; the Van Allen belt and radiation dosimetry claims; the technical feasibility arguments about Apollo-era rocketry and life support; the documentary and testimonial evidence about keeping thousands of people quiet; where the two sides disagree most sharply; which hoax claims lack a rebuttal; and what proponents still cite as unresolved.",
+            "Part of that is retrieval and part is the gate. Seven adversarial searches ran and two returned. Both Soviet tracking searches came back empty, and so did the search for peer-reviewed literature identifying genuine unresolved Apollo anomalies, and the search for technical objections predating the 1976 book. Then, of the 23 readable passages the run did collect, nine were refused by the verbatim gate and appear nowhere — a 39% refusal rate, the highest in this archive.",
+            "The consequence is specific rather than rhetorical. An article on the origins and persistence of the hoax narrative is sitting in this run's source list, snapshotted and assessed, and no passage was ever read out of it. That is why the run reports H3's causal half as wholly untested while the source that would test it is printed in the endmatter."
+          ],
+          pullquote: "The source that would answer where the claim came from is in the ledger. Nothing was read out of it.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Soviet deep-space tracking records showing missing or anomalous Apollo signals during lunar transit", outcome: "empty" },
+              { target: "H1", looked: "Jodrell Bank or Bochum logs reporting a discrepancy between Apollo's stated trajectory and the measured signal", outcome: "empty" },
+              { target: "H2", looked: "Kaguya, Chandrayaan and Chang'e imagery of the Apollo landing sites", outcome: "returned" },
+              { target: "H2", looked: "Comparative isotopic analysis of Apollo samples against the Soviet robotic Luna returns", outcome: "empty" },
+              { target: "H2", looked: "Declassified Soviet archives on real-time surveillance of the Apollo missions", outcome: "returned" },
+              { target: "H3", looked: "Peer-reviewed literature detailing genuine unresolved physical or photographic anomalies", outcome: "empty" },
+              { target: "H3", looked: "Technical objections to the landings originating from scientific sources before 1976", outcome: "empty" }
+            ],
+            footer: "2 of 7 adversarial searches yielded a snapshot-bound, verified counter-passage (28.57%)."
+          }
+        },
+        {
+          id: "strongest",
+          number: "07",
+          eyebrow: "The best-supported reading",
+          title: "The strongest finding, printed with the attack made on it.",
+          lead: "The run's leading finding is the laser-ranging record itself, typed observed. Then the run named the way it could be wrong, and the objection goes at the word “independent” rather than at the physics.",
+          body: [
+            "The attack is filed as measurement error. Ranging fits run on standard geophysical and orbital models that carry assumed coordinates and target properties. If the processing software across those four observatories shares common ephemeris models or systematic calibration baselines, then a 9 mm residual might be measuring internal model consistency rather than four independent confirmations of where the reflectors are.",
+            "The failure condition was written down in advance and is a specific piece of work someone could do: independent re-analysis of the raw timing data using unconstrained orbital parameter estimators, failing to recover distinct point-source reflections at the published coordinates within the stated error bounds. Nothing in this ledger runs that re-analysis.",
+            "Seven attacks are on the record against eight asserted findings, including one arguing the Apollo 15 halo could be a natural albedo anomaly from micro-meteoroid impact or dust redistribution, and one arguing that reading H3 through laser ranging is selection bias, since precision geodesy is the domain least likely to show the macroscopic anomalies skeptics point at. This run does not record whether any person reviewed any stage of it, and the page says so."
+          ],
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Finding",
+              id: "fnd_3cbe92648d08b05c_00",
+              status: "observed",
+              text: "Laser pulses fired from four separate Earth observatories return from five distinct lunar retroreflector sites, with modern fits reaching a 9 mm weighted rms residual and uncertainties falling from hundreds of metres in 1969 to under a centimetre today, sustained across half a century of published geophysics and gravitational physics. This is not an archival claim but a repeatable, presently rerunnable measurement whose success depends on retroreflecting hardware sitting at fixed selenographic coordinates.",
+              meta: "7 passages cited · 2 source families · computed confidence: unknown"
+            },
+            attack: {
+              label: "Attack on it",
+              id: "stp_51f2c4a4c72651d2_00",
+              kind: "measurement error",
+              text: "Lunar laser ranging fits rely on standard geophysical and orbital models that incorporate assumed coordinates and target properties. If the processing software across observatories shares common ephemeris models or systematic calibration baselines, the high precision could reflect internal model consistency rather than purely independent verification of retroreflector coordinates."
+            },
+            failureLabel: "Recorded failure condition",
+            failure: "Independent re-analysis of raw timing datasets using unconstrained orbital parameter estimators fails to recover distinct retroreflector point-source reflections at the specified coordinates within published error bounds."
+          }
+        },
+        {
+          id: "score",
+          number: "08",
+          eyebrow: "The score",
+          title: "Eight findings asserted, every one unknown, and 14 out of 100.",
+          lead: "Eight findings were asserted, three of them typed observed rather than inferred. Every one computed to a confidence of unknown, and the evidence score came to the same 14 out of 100 as every publication before it — for the same reason.",
+          body: [
+            "Zero of twelve snapshots reached an upstream origin, so corroboration and provenance both scored zero. One measurement did improve on the archive: one source of twelve was assessed as primary data — the NASA ranging dataset itself, the first primary-data source in this series. It does not move the score, because provenance and primary-data classification are separate measurements and neither repairs the other.",
+            "Falsification scored 16 of 20 for two of seven counter-searches returning, and both of those returns did real work: one produced the only evidence here that bears on a landing rather than on hardware. Saturation scored zero — round one found three source families, round two found eight and all eight were new, and the counts on all three explanations moved when it was added.",
+            "The measurement that most limits this page is the verbatim gate. Of 23 readable passages, nine were refused; the entire dossier rests on the fourteen that survived, and those came from just four of the twelve stored sources. Eight snapshots produced nothing at all."
+          ],
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 of 12 sources traced to an origin" },
+              { label: "Provenance", value: 0, max: 25, note: "unknown origin is unknown independence" },
+              { label: "Falsification", value: 16, max: 20, note: "2 of 7 counter-searches returned" },
+              { label: "Saturation", value: 0, max: 15, note: "all 8 families in round 2 were new" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "16",
+            capLabel: "Counter-evidence was found, which caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: {
+        eyebrow: "Take this with you",
+        title: "Five checks this run was held to. Use them on anything."
+      },
+      principles: [
+        "Ask what the measurement is actually of. Laser ranging measures where hardware is. Who put it there is a different question, and the returns do not carry it.",
+        "Separate the number from the sentence beside it. The 9 mm residual is a measurement; “placed by the Apollo 11 astronauts” is prose in the same paper.",
+        "Prefer evidence that is still running. This one can be rerun tonight from four observatories, which is a different kind of thing from an archive you are asked to trust.",
+        "Read the resolution before you read the conclusion. Imagery that cannot resolve a rock cannot show you a crew, however well it shows the ground.",
+        "Count what the search never reached. Nine of twelve questions here got no passage — including every photographic claim the argument is usually about."
+      ],
+      limitations: [
+        "Nine of the twelve subquestions were answered by no passage at all: the origins of the hoax claims, their evolution, every photographic and film anomaly, the Van Allen radiation claims, the engineering feasibility arguments, the documentary and testimonial evidence, the sharpest points of disagreement, which claims lack rebuttals, and what proponents still cite as unresolved.",
+        "Nine of the 23 readable passages were refused by the verbatim gate and appear nowhere in the record — a 39% refusal rate, the highest in this archive.",
+        "Fourteen passages carry the whole dossier, and they come from four of the twelve stored sources. Eight snapshots produced no scored passage.",
+        "Zero of twelve source snapshots could be traced to an upstream origin, so nothing here has established independence between its sources. All fourteen findings computed to a confidence of unknown.",
+        "The laser-ranging evidence constrains the presence of hardware, not the agency that delivered it. The run states plainly that the robotic-delivery variant of the fabrication hypothesis survives that entire line of evidence untouched.",
+        "Nothing in the ledger addresses lunar sample analysis, so the fabrication hypothesis's own named falsifier — that independently analysed Apollo samples are explainable without crewed landings — is entirely unaddressed here.",
+        "The tracking evidence supplies capability but no measurement: one passage establishes that a Soviet station existed for tracking lunar and planetary probes, another records only that photographs of the antennas were released. Neither reports whether Apollo transmissions were received at the claimed times.",
+        "The orbital imagery covers the Apollo 15 site only. Whether the same halo and topographic match exist for Apollo 11, 12, 14, 16 and 17 is undetermined on this record.",
+        "The Kaguya terrain camera resolves 10 metres, so no crew-scale feature — hardware, tracks, footprints — is resolvable in it either way.",
+        "No probe was pre-registered. Five of the seven adversarial searches came back empty, and not one of those blanks counts as evidence of absence.",
+        "An article on the origins and persistence of the hoax narrative was snapshotted and assessed but produced no passage, which is why the run reports the cultural-origin hypothesis as wholly untested.",
+        "The search was not saturated: round one found three source families, round two found eight and all eight were new."
+      ],
+      sourcesHeading: {
+        eyebrow: "Source record",
+        title: "Twelve snapshots. Four of them produced every passage on this page."
+      },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        {
+          number: "01",
+          title: "Lunar Laser Ranging Retroreflectors: Velocity Aberration and Diffraction Pattern",
+          publisher: "The Planetary Science Journal / IOPscience",
+          tier: "peer reviewed",
+          digest: "541aa8e503d3bdecfc31714d04a9a5d28cc99225aa46c209b9cbc2d4162d287c",
+          href: "https://beta.iopscience.iop.org/article/10.3847/PSJ/acbeab",
+          note: "Seven of the fourteen passages, and every precision figure quoted on this page — the four observatories, the five sites, the 9 mm residual, the array descriptions that distinguish Apollo hardware from Lunokhod. Its own subject is the design of next-generation reflectors; the Apollo material is background. It reports no uncertainty bars on its simulation outputs."
+        },
+        {
+          number: "02",
+          title: "CDDIS_LLR_data",
+          publisher: "NASA Open Data Portal",
+          tier: "primary data",
+          digest: "d37574d69bdc107324128750fda33e6b9b8cc04e9c63a80863fb251e8a6a8140",
+          href: "https://data.nasa.gov/dataset/cddis-llr-data",
+          note: "Three passages, and the only source in this archive so far assessed as primary data. It is also the source of the sentence the run singles out as attribution rather than measurement: “Apollo astronauts and Russian rovers deployed laser ranging retroreflector arrays.” It states no sample size, no observing-station count, no error margins and no statistical processing."
+        },
+        {
+          number: "03",
+          title: "The “halo” area around the Apollo 15 landing site observed by the Terrain Camera on SELENE (KAGUYA)",
+          publisher: "JAXA",
+          tier: "government institutional",
+          digest: "06b175513f9ce7be8fe7e72b1cd48736754c799546f2f8bf063b02f74e99f8b3",
+          href: "https://global.jaxa.jp/press/2008/05/20080520_kaguya_e.html",
+          note: "Two passages — and the only two in the run that earned the strongest available bearing against fabrication. The engine-plume halo and the terrain match to AS15-82-11122HR. The run notes the framing outruns the evidence: a confirmed finding from a single qualitative image comparison at one site, with no quantitative analysis, no uncertainty and no discussion of alternative explanations for the reflectivity change."
+        },
+        {
+          number: "04",
+          title: "Breaking dishes: the space facility at Yevpatoriya",
+          publisher: "The Space Review",
+          tier: "quality journalism",
+          digest: "ce6f0bf5b126f123e5b5defac1f2b41dc0d3a0409851b385fbb9599632d0a0b5",
+          href: "https://thespacereview.com/article/5155/1",
+          note: "Two passages, returned by the counter-search for Soviet surveillance of Apollo. It establishes that a station existed for tracking lunar and planetary probes, and that photographs of the antennas were released. Neither passage reports whether Apollo signals were received, which is why the run marks the tracking line unweighted for either hypothesis."
+        },
+        {
+          number: "05",
+          title: "How moon landing conspiracy theories began and why they persist today",
+          publisher: "The Conversation",
+          tier: "expert analysis",
+          digest: "1dd0b0e03bea3e697b4f5e2f8f8533f3acf82fd6852e5b4f563ab4940f824d75",
+          href: "https://theconversation.com/how-moon-landing-conspiracy-theories-began-and-why-they-persist-today-118643",
+          note: "The one source that addresses where the claims came from — traced from a 1976 book through Watergate, Vietnam and the Kennedy assassination to present-day belief. Snapshotted, assessed, and cited by no passage in the run, which is why the cultural-origin hypothesis is reported as untested while its evidence sits here."
+        },
+        {
+          number: "06",
+          title: "What evidence exists of Soviet tracking or telemetry confirming the Apollo missions",
+          publisher: "Factually",
+          tier: "quality journalism",
+          digest: "1d5d0c765543e827f14f9a05b21801e33297db9d98b46ee6851479a2c0105da6",
+          href: "https://factually.co/fact-checks/science/soviet-tracking-telemetry-evidence-apollo-missions-99d399",
+          note: "Contributed no passage. The run's note on it: it concludes that third-party evidence strongly supports Soviet confirmation while admitting the raw telemetry and archival data are sparsely represented and not broadly published, so the conclusion outruns the evidence cited for it."
+        },
+        {
+          number: "07",
+          title: "What Soviet and Russian archival documents detail tracking of the Apollo missions",
+          publisher: "Factually",
+          tier: "industry commentary",
+          digest: "12db824854b399f80fb9bb87566aa1ba423e389eb3242824a7a6fa44a63181b7",
+          href: "https://factually.co/fact-checks/history/soviet-russian-documents-tracking-apollo-missions-access-archives-8edb99",
+          note: "Contributed no passage. It concludes that no definitive catalogue of Soviet archival tracking documents is accessible — a conclusion the run notes rests on a single search of secondary Western sources, without consulting Russian archives or specialist historians."
+        },
+        {
+          number: "08",
+          title: "Recording of Russia's lunar gatecrash attempt released",
+          publisher: "Jodrell Bank Centre for Astrophysics",
+          tier: "government institutional",
+          digest: "03a1423425cc7b7358f13133ab392e49869e8c31e0c7640f5e08040bbd2eb9aa",
+          href: "https://www.jb.man.ac.uk/news/2009/luna15-apollo11/",
+          note: "Archival radio telescope recordings made at Jodrell Bank in July 1969, tracking both Apollo 11 and the Soviet Luna 15. Contributed no passage. The run notes it mixes directly observed telescope data with a secondhand rumour without distinguishing them."
+        },
+        {
+          number: "09",
+          title: "Moon landing: How Jodrell Bank tracked Apollo 11 and a Russian probe",
+          publisher: "BBC News",
+          tier: "quality journalism",
+          digest: "fd494b85a028a596060fce22b2d69c29880cab7870a7b12329515b6f8810da2f",
+          href: "https://www.bbc.co.uk/news/uk-england-manchester-49001181",
+          note: "Contributed no passage. Built on recollections gathered fifty years after the events, with no documentary corroboration cited — which the run records as a limitation of the source rather than a fault of the story."
+        },
+        {
+          number: "10",
+          title: "Geodetically Anchored 0.30 m Digital Elevation Model of the Chandrayaan-3 Vikram Landing Site",
+          publisher: "arXiv preprint",
+          tier: "technical report",
+          digest: "ca5be7d5cf494f20de87423d70ebe24e212a2d31d0410f74ac715e1c2ca19a4f",
+          href: "https://arxiv.org/html/2602.14993",
+          note: "Sub-metre lunar terrain modelling from Indian orbital stereo imagery — the resolution class that would settle what the 10-metre Kaguya data cannot. Snapshotted and cited by no passage. It is a preprint with no stated peer-review status."
+        },
+        {
+          number: "11",
+          title: "Apollo 17 mission anomaly report no. 1",
+          publisher: "NASA Technical Reports Server",
+          tier: "technical report",
+          digest: "c1157e601f268659356c49b3bd75cc484139af4ea2de47b11ef3e0b80cbac275",
+          href: "https://ntrs.nasa.gov/citations/19730018391",
+          note: "A documented Apollo 17 telemetry anomaly: 60 channels transmitting erroneous data for about two minutes. Snapshotted and cited by nothing. The run notes the abstract asserts that causes and corrective actions were identified without giving any method detail, leaving that conclusion unverifiable from the stored bytes."
+        },
+        {
+          number: "12",
+          title: "The Truth About The Moon Landings",
+          publisher: "YouTube",
+          tier: "unsupported",
+          digest: "36432d33eb1e78d584b364d2ce3dec8eac9b4752550ee9e161be2cea6ae56bad",
+          href: "https://www.youtube.com/watch?v=fMHLvoWZfqQ",
+          note: "Stored as page furniture — About, Press, Copyright, Terms, Privacy and a copyright year. No content, no argument, no claim. The run's note is that the title implies a conclusion and the gap to any supporting evidence is total. Printed here because the run stored it."
+        }
+      ],
+      next: {
+        eyebrow: "Your turn",
+        title: "Ask what the measurement is of, not how precise it is.",
+        body: "Nine millimetres across half a century is a real number and it settles where the hardware is. It does not settle who carried it, and this run says so instead of letting the precision do work it cannot do. The thing that would settle it is named in the open questions: sub-metre non-NASA imagery of the Apollo sites showing traverse tracks and descent-stage hardware, or failing to. The whole run is published unedited, every search and every digest."
       }
     }
   ];
