@@ -1,0 +1,492 @@
+{
+  "schemaVersion": 1,
+  "report": "mkultra-the-caption-and-the-document",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 2073.685,
+  "fingerprint": "97493ebd5e7f67a715ad2ff48b6ec867d447fca1467544a498155b5f2c2bba02",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 4.375
+    },
+    {
+      "id": "hero:deck",
+      "start": 4.495,
+      "end": 12.695
+    },
+    {
+      "id": "disclosure",
+      "start": 12.815,
+      "end": 35.315
+    },
+    {
+      "id": "overview:question",
+      "start": 35.435,
+      "end": 51.235
+    },
+    {
+      "id": "overview:answer",
+      "start": 51.355,
+      "end": 93.175
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 93.295,
+      "end": 96.92
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 97.04,
+      "end": 100.115
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 100.235,
+      "end": 104.01
+    },
+    {
+      "id": "overview:thesis",
+      "start": 104.13,
+      "end": 122.155
+    },
+    {
+      "id": "chapter:boundary:title",
+      "start": 122.275,
+      "end": 127.875
+    },
+    {
+      "id": "chapter:boundary:lead",
+      "start": 127.995,
+      "end": 145.145
+    },
+    {
+      "id": "chapter:boundary:body:0",
+      "start": 145.265,
+      "end": 172.44
+    },
+    {
+      "id": "chapter:boundary:body:1",
+      "start": 172.56,
+      "end": 197.56
+    },
+    {
+      "id": "chapter:boundary:body:2",
+      "start": 197.68,
+      "end": 219.63
+    },
+    {
+      "id": "chapter:boundary:pullquote",
+      "start": 219.75,
+      "end": 224.05
+    },
+    {
+      "id": "chapter:boundary:visual",
+      "start": 224.17,
+      "end": 279.84
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 279.96,
+      "end": 284.91
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 285.03,
+      "end": 295.73
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 295.85,
+      "end": 336.72
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 336.84,
+      "end": 352.215
+    },
+    {
+      "id": "chapter:explanations:body:2",
+      "start": 352.335,
+      "end": 373.785
+    },
+    {
+      "id": "chapter:explanations:pullquote",
+      "start": 373.905,
+      "end": 378.33
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 378.45,
+      "end": 505.4
+    },
+    {
+      "id": "chapter:ledger:title",
+      "start": 505.52,
+      "end": 510.245
+    },
+    {
+      "id": "chapter:ledger:lead",
+      "start": 510.365,
+      "end": 525.365
+    },
+    {
+      "id": "chapter:ledger:body:0",
+      "start": 525.485,
+      "end": 552.66
+    },
+    {
+      "id": "chapter:ledger:body:1",
+      "start": 552.78,
+      "end": 575.93
+    },
+    {
+      "id": "chapter:ledger:body:2",
+      "start": 576.05,
+      "end": 612.27
+    },
+    {
+      "id": "chapter:ledger:pullquote",
+      "start": 612.39,
+      "end": 617.09
+    },
+    {
+      "id": "chapter:ledger:visual",
+      "start": 617.21,
+      "end": 660.555
+    },
+    {
+      "id": "chapter:caption:title",
+      "start": 660.675,
+      "end": 665.3
+    },
+    {
+      "id": "chapter:caption:lead",
+      "start": 665.42,
+      "end": 677.12
+    },
+    {
+      "id": "chapter:caption:body:0",
+      "start": 677.24,
+      "end": 707.56
+    },
+    {
+      "id": "chapter:caption:body:1",
+      "start": 707.68,
+      "end": 730.38
+    },
+    {
+      "id": "chapter:caption:body:2",
+      "start": 730.5,
+      "end": 755.725
+    },
+    {
+      "id": "chapter:caption:pullquote",
+      "start": 755.845,
+      "end": 761.77
+    },
+    {
+      "id": "chapter:caption:visual",
+      "start": 761.89,
+      "end": 840.13
+    },
+    {
+      "id": "chapter:conditions:title",
+      "start": 840.25,
+      "end": 845.5
+    },
+    {
+      "id": "chapter:conditions:lead",
+      "start": 845.62,
+      "end": 855.52
+    },
+    {
+      "id": "chapter:conditions:body:0",
+      "start": 855.64,
+      "end": 881.465
+    },
+    {
+      "id": "chapter:conditions:body:1",
+      "start": 881.585,
+      "end": 906.835
+    },
+    {
+      "id": "chapter:conditions:body:2",
+      "start": 906.955,
+      "end": 942.775
+    },
+    {
+      "id": "chapter:conditions:pullquote",
+      "start": 942.895,
+      "end": 949.67
+    },
+    {
+      "id": "chapter:conditions:visual",
+      "start": 949.79,
+      "end": 978.74
+    },
+    {
+      "id": "chapter:unread:title",
+      "start": 978.86,
+      "end": 982.735
+    },
+    {
+      "id": "chapter:unread:lead",
+      "start": 982.855,
+      "end": 998.43
+    },
+    {
+      "id": "chapter:unread:body:0",
+      "start": 998.55,
+      "end": 1016.85
+    },
+    {
+      "id": "chapter:unread:body:1",
+      "start": 1016.97,
+      "end": 1049.365
+    },
+    {
+      "id": "chapter:unread:body:2",
+      "start": 1049.485,
+      "end": 1081.755
+    },
+    {
+      "id": "chapter:unread:pullquote",
+      "start": 1081.875,
+      "end": 1088.075
+    },
+    {
+      "id": "chapter:unread:visual",
+      "start": 1088.195,
+      "end": 1149.185
+    },
+    {
+      "id": "chapter:attacks:title",
+      "start": 1149.305,
+      "end": 1155.03
+    },
+    {
+      "id": "chapter:attacks:lead",
+      "start": 1155.15,
+      "end": 1167.75
+    },
+    {
+      "id": "chapter:attacks:body:0",
+      "start": 1167.87,
+      "end": 1214.99
+    },
+    {
+      "id": "chapter:attacks:body:1",
+      "start": 1215.11,
+      "end": 1237.31
+    },
+    {
+      "id": "chapter:attacks:body:2",
+      "start": 1237.43,
+      "end": 1250.68
+    },
+    {
+      "id": "chapter:attacks:pullquote",
+      "start": 1250.8,
+      "end": 1255.1
+    },
+    {
+      "id": "chapter:attacks:visual",
+      "start": 1255.22,
+      "end": 1328.835
+    },
+    {
+      "id": "chapter:strongest:title",
+      "start": 1328.955,
+      "end": 1333.33
+    },
+    {
+      "id": "chapter:strongest:lead",
+      "start": 1333.45,
+      "end": 1342.1
+    },
+    {
+      "id": "chapter:strongest:body:0",
+      "start": 1342.22,
+      "end": 1375.94
+    },
+    {
+      "id": "chapter:strongest:body:1",
+      "start": 1376.06,
+      "end": 1400.085
+    },
+    {
+      "id": "chapter:strongest:body:2",
+      "start": 1400.205,
+      "end": 1433.425
+    },
+    {
+      "id": "chapter:strongest:pullquote",
+      "start": 1433.545,
+      "end": 1439.42
+    },
+    {
+      "id": "chapter:strongest:visual",
+      "start": 1439.54,
+      "end": 1536.845
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 1536.965,
+      "end": 1542.665
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 1542.785,
+      "end": 1556.785
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 1556.905,
+      "end": 1575.68
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 1575.8,
+      "end": 1608.17
+    },
+    {
+      "id": "chapter:score:body:2",
+      "start": 1608.29,
+      "end": 1633.515
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 1633.635,
+      "end": 1666.855
+    },
+    {
+      "id": "principles:title",
+      "start": 1666.975,
+      "end": 1671.075
+    },
+    {
+      "id": "principles:item:0",
+      "start": 1671.195,
+      "end": 1680.47
+    },
+    {
+      "id": "principles:item:1",
+      "start": 1680.59,
+      "end": 1689.215
+    },
+    {
+      "id": "principles:item:2",
+      "start": 1689.335,
+      "end": 1699.06
+    },
+    {
+      "id": "principles:item:3",
+      "start": 1699.18,
+      "end": 1710.105
+    },
+    {
+      "id": "principles:item:4",
+      "start": 1710.225,
+      "end": 1720.025
+    },
+    {
+      "id": "limitations:title",
+      "start": 1720.145,
+      "end": 1722.67
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 1722.79,
+      "end": 1737.79
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1737.91,
+      "end": 1750.66
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1750.78,
+      "end": 1766.305
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1766.425,
+      "end": 1793.0
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1793.12,
+      "end": 1804.845
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1804.965,
+      "end": 1823.815
+    },
+    {
+      "id": "limitations:item:6",
+      "start": 1823.935,
+      "end": 1841.085
+    },
+    {
+      "id": "limitations:item:7",
+      "start": 1841.205,
+      "end": 1861.03
+    },
+    {
+      "id": "limitations:item:8",
+      "start": 1861.15,
+      "end": 1882.175
+    },
+    {
+      "id": "limitations:item:9",
+      "start": 1882.295,
+      "end": 1892.47
+    },
+    {
+      "id": "limitations:item:10",
+      "start": 1892.59,
+      "end": 1913.79
+    },
+    {
+      "id": "limitations:item:11",
+      "start": 1913.91,
+      "end": 1922.51
+    },
+    {
+      "id": "sources:title",
+      "start": 1922.63,
+      "end": 1927.18
+    },
+    {
+      "id": "sources:note",
+      "start": 1927.3,
+      "end": 1941.35
+    },
+    {
+      "id": "sources:item:0",
+      "start": 1941.47,
+      "end": 1979.09
+    },
+    {
+      "id": "sources:item:1",
+      "start": 1979.21,
+      "end": 2013.23
+    },
+    {
+      "id": "sources:item:2",
+      "start": 2013.35,
+      "end": 2046.57
+    },
+    {
+      "id": "sources:item:3",
+      "start": 2046.69,
+      "end": 2073.565
+    }
+  ]
+}

@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "report": "flat-earth-the-test-nobody-has-run",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 1223.415,
+  "fingerprint": "0867e94f9fc7dc9b106c580f40e19c99044169403c21150931ea7aa51e371e19",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 3.075
+    },
+    {
+      "id": "hero:deck",
+      "start": 3.195,
+      "end": 13.42
+    },
+    {
+      "id": "disclosure",
+      "start": 13.54,
+      "end": 25.69
+    },
+    {
+      "id": "overview:question",
+      "start": 25.81,
+      "end": 38.835
+    },
+    {
+      "id": "overview:answer",
+      "start": 38.955,
+      "end": 64.93
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 65.05,
+      "end": 67.7
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 67.82,
+      "end": 70.595
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 70.715,
+      "end": 74.315
+    },
+    {
+      "id": "overview:thesis",
+      "start": 74.435,
+      "end": 89.61
+    },
+    {
+      "id": "chapter:boundary:title",
+      "start": 89.73,
+      "end": 94.28
+    },
+    {
+      "id": "chapter:boundary:lead",
+      "start": 94.4,
+      "end": 106.375
+    },
+    {
+      "id": "chapter:boundary:body:0",
+      "start": 106.495,
+      "end": 124.57
+    },
+    {
+      "id": "chapter:boundary:body:1",
+      "start": 124.69,
+      "end": 143.365
+    },
+    {
+      "id": "chapter:boundary:pullquote",
+      "start": 143.485,
+      "end": 148.26
+    },
+    {
+      "id": "chapter:boundary:visual",
+      "start": 148.38,
+      "end": 172.68
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 172.8,
+      "end": 177.775
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 177.895,
+      "end": 191.295
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 191.415,
+      "end": 207.94
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 208.06,
+      "end": 228.535
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 228.655,
+      "end": 307.22
+    },
+    {
+      "id": "chapter:attack:title",
+      "start": 307.34,
+      "end": 312.69
+    },
+    {
+      "id": "chapter:attack:lead",
+      "start": 312.81,
+      "end": 327.01
+    },
+    {
+      "id": "chapter:attack:body:0",
+      "start": 327.13,
+      "end": 349.105
+    },
+    {
+      "id": "chapter:attack:body:1",
+      "start": 349.225,
+      "end": 370.725
+    },
+    {
+      "id": "chapter:attack:pullquote",
+      "start": 370.845,
+      "end": 374.92
+    },
+    {
+      "id": "chapter:attack:visual",
+      "start": 375.04,
+      "end": 428.81
+    },
+    {
+      "id": "chapter:numbers:title",
+      "start": 428.93,
+      "end": 434.455
+    },
+    {
+      "id": "chapter:numbers:lead",
+      "start": 434.575,
+      "end": 448.675
+    },
+    {
+      "id": "chapter:numbers:body:0",
+      "start": 448.795,
+      "end": 470.87
+    },
+    {
+      "id": "chapter:numbers:body:1",
+      "start": 470.99,
+      "end": 495.565
+    },
+    {
+      "id": "chapter:numbers:body:2",
+      "start": 495.685,
+      "end": 523.11
+    },
+    {
+      "id": "chapter:numbers:visual",
+      "start": 523.23,
+      "end": 567.475
+    },
+    {
+      "id": "chapter:strongest:title",
+      "start": 567.595,
+      "end": 572.72
+    },
+    {
+      "id": "chapter:strongest:lead",
+      "start": 572.84,
+      "end": 592.99
+    },
+    {
+      "id": "chapter:strongest:body:0",
+      "start": 593.11,
+      "end": 618.81
+    },
+    {
+      "id": "chapter:strongest:body:1",
+      "start": 618.93,
+      "end": 633.055
+    },
+    {
+      "id": "chapter:strongest:body:2",
+      "start": 633.175,
+      "end": 658.425
+    },
+    {
+      "id": "chapter:strongest:visual",
+      "start": 658.545,
+      "end": 735.985
+    },
+    {
+      "id": "chapter:missing-test:title",
+      "start": 736.105,
+      "end": 740.305
+    },
+    {
+      "id": "chapter:missing-test:lead",
+      "start": 740.425,
+      "end": 755.9
+    },
+    {
+      "id": "chapter:missing-test:body:0",
+      "start": 756.02,
+      "end": 788.79
+    },
+    {
+      "id": "chapter:missing-test:body:1",
+      "start": 788.91,
+      "end": 809.585
+    },
+    {
+      "id": "chapter:missing-test:body:2",
+      "start": 809.705,
+      "end": 818.73
+    },
+    {
+      "id": "chapter:missing-test:pullquote",
+      "start": 818.85,
+      "end": 825.575
+    },
+    {
+      "id": "chapter:missing-test:visual",
+      "start": 825.695,
+      "end": 841.095
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 841.215,
+      "end": 846.94
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 847.06,
+      "end": 859.885
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 860.005,
+      "end": 881.855
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 881.975,
+      "end": 899.175
+    },
+    {
+      "id": "chapter:score:body:2",
+      "start": 899.295,
+      "end": 916.495
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 916.615,
+      "end": 950.085
+    },
+    {
+      "id": "principles:title",
+      "start": 950.205,
+      "end": 954.305
+    },
+    {
+      "id": "principles:item:0",
+      "start": 954.425,
+      "end": 962.025
+    },
+    {
+      "id": "principles:item:1",
+      "start": 962.145,
+      "end": 968.82
+    },
+    {
+      "id": "principles:item:2",
+      "start": 968.94,
+      "end": 977.565
+    },
+    {
+      "id": "principles:item:3",
+      "start": 977.685,
+      "end": 984.66
+    },
+    {
+      "id": "principles:item:4",
+      "start": 984.78,
+      "end": 991.58
+    },
+    {
+      "id": "limitations:title",
+      "start": 991.7,
+      "end": 994.225
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 994.345,
+      "end": 1004.57
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1004.69,
+      "end": 1014.79
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1014.91,
+      "end": 1024.66
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1024.78,
+      "end": 1035.455
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1035.575,
+      "end": 1045.6
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1045.72,
+      "end": 1055.745
+    },
+    {
+      "id": "limitations:item:6",
+      "start": 1055.865,
+      "end": 1066.315
+    },
+    {
+      "id": "sources:title",
+      "start": 1066.435,
+      "end": 1070.61
+    },
+    {
+      "id": "sources:note",
+      "start": 1070.73,
+      "end": 1084.78
+    },
+    {
+      "id": "sources:item:0",
+      "start": 1084.9,
+      "end": 1107.65
+    },
+    {
+      "id": "sources:item:1",
+      "start": 1107.77,
+      "end": 1131.42
+    },
+    {
+      "id": "sources:item:2",
+      "start": 1131.54,
+      "end": 1150.99
+    },
+    {
+      "id": "sources:item:3",
+      "start": 1151.11,
+      "end": 1167.785
+    },
+    {
+      "id": "sources:item:4",
+      "start": 1167.905,
+      "end": 1186.23
+    },
+    {
+      "id": "sources:item:5",
+      "start": 1186.35,
+      "end": 1204.0
+    },
+    {
+      "id": "sources:item:6",
+      "start": 1204.12,
+      "end": 1223.295
+    }
+  ]
+}

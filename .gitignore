@@ -3,3 +3,6 @@ node_modules/
 graphify-out/
 playwright-report/
 test-results/
+.narration-cache/
+.venv-piper/
+.venv-kokoro/

@@ -61,6 +61,7 @@ to:
 │   ├── css/site.css           # complete visual system
 │   ├── data/reports.js        # static publication data
 │   ├── data/ads-config.js     # AdSense publisher ID, kill switch, slot IDs
+│   ├── audio/michael/         # generated report narration and timed cues
 │   ├── img/                   # code-native visual assets
 │   ├── js/                    # landing/report interactions
 │   └── reports/               # raw run transcripts, published unedited
@@ -88,12 +89,42 @@ Open <http://127.0.0.1:4173>. Validate the publication contract with:
 npm test
 ```
 
-Report pages progressively enhance with a browser-provided read-aloud control.
-Playback starts only after the reader activates it and can be paused, resumed or
-stopped from the sticky report index. The report remains readable when browser
-speech synthesis or JavaScript is unavailable. Narration prefers an installed
-British English woman's voice and otherwise requests the browser's `en-GB`
-default.
+Report pages progressively enhance with a read-aloud control. Published
+narration uses Kokoro's `am_michael` American English male voice and is
+generated before publication, so every reader hears the same voice without
+downloading or running the neural model. Timed cue files keep the current page
+segment highlighted. Playback starts only after the reader activates it and can
+be paused, resumed or stopped from the sticky report index. If a recording is
+missing or cannot play, the controller falls back to an installed American
+English man's browser voice, and to any American English voice when none is
+installed. The report remains readable when audio,
+JavaScript or browser speech synthesis is unavailable.
+
+## Regenerating Michael narration
+
+Kokoro, PyTorch and the roughly 320 MB model are local publishing tools; none is
+served by the site. One reproducible setup is:
+
+```bash
+python3 -m venv .venv-kokoro
+.venv-kokoro/bin/pip install "kokoro>=0.9.4" soundfile
+```
+
+Generate the narration manifest from the same pure content module used by the
+report renderer, then synthesize the MP3 and exact cue timings:
+
+```bash
+npm run narration:manifest -- REPORT-SLUG --output /tmp/REPORT-SLUG.json
+.venv-kokoro/bin/python scripts/synthesize-narration.py \
+  --manifest /tmp/REPORT-SLUG.json \
+  --speed 1.15 \
+  --audio assets/audio/michael/REPORT-SLUG.mp3 \
+  --cues assets/audio/michael/REPORT-SLUG.cues.json
+```
+
+Add the slug to `assets/data/narration.js`. The site validator checks that the
+audio exists, every timed cue matches the rendered segment order, and the cue
+fingerprint still matches the current report text.
 
 ## Publishing a report
 
@@ -111,11 +142,15 @@ data entry plus a sitemap line—no HTML edit.
    `method-note` or `field-note` for editorial material.
 4. Commit the raw run transcript to `assets/reports/` and point `transcript.href`
    at it. The validator fails if the file is missing.
-5. Every `chapter.visual.type` must have a renderer in `assets/js/report.js`—the
+5. Generate its Michael MP3 and cue file, then add its slug to
+   `assets/data/narration.js`. A report can remain readable with browser speech
+   while narration is being prepared, but published dossiers should include the
+   consistent recorded voice.
+6. Every `chapter.visual.type` must have a renderer in `assets/js/report.js`—the
    validator checks this, because an unknown type renders a blank figure.
-6. Add the report URL to `sitemap.xml`.
-7. Run `npm test` and review both pages at desktop and mobile widths.
-8. Push `main`. The Pages workflow publishes the repository as a static site.
+7. Add the report URL to `sitemap.xml`.
+8. Run `npm test` and review both pages at desktop and mobile widths.
+9. Push `main`. The Pages workflow publishes the repository as a static site.
 
 The upstream publication adapter should eventually serialize the final
 `ResearchState`, findings, confidence inputs, limitations, and open questions

@@ -87,15 +87,17 @@ function controlsFixture() {
   const label = new FakeControl();
   const icon = new FakeControl();
   const status = new FakeControl();
+  const voice = new FakeControl();
   const nodes = new Map([
     ["[data-read-aloud-toggle]", toggle],
     ["[data-read-aloud-stop]", stop],
     ["[data-read-aloud-label]", label],
     ["[data-read-aloud-icon]", icon],
-    ["[data-read-aloud-status]", status]
+    ["[data-read-aloud-status]", status],
+    ["[data-read-aloud-voice]", voice]
   ]);
   controls.querySelector = (selector) => nodes.get(selector) || null;
-  return { controls, icon, label, status, stop, toggle };
+  return { controls, icon, label, status, stop, toggle, voice };
 }
 
 class FakeUtterance {
@@ -153,6 +155,30 @@ class FakeSynth {
   }
 }
 
+class FakeAudio {
+  constructor() {
+    this.currentTime = 0;
+    this.duration = 120;
+    this.ended = false;
+    this.listeners = new Map();
+    this.pauseCalls = 0;
+    this.playCalls = 0;
+    this.preload = "";
+    this.src = "";
+  }
+
+  addEventListener(type, listener) { this.listeners.set(type, listener); }
+  removeEventListener(type, listener) {
+    if (this.listeners.get(type) === listener) this.listeners.delete(type);
+  }
+  fire(type) { this.listeners.get(type)?.(); }
+  pause() { this.pauseCalls += 1; }
+  play() {
+    this.playCalls += 1;
+    return Promise.resolve();
+  }
+}
+
 test("splitText preserves words while limiting utterance size", () => {
   const { api } = loadApi();
   const input = "First sentence is deliberately short. Second sentence has enough words to require another speech chunk without losing any content.";
@@ -179,32 +205,55 @@ test("collectSegments skips digests and decorative content", () => {
   );
 });
 
-test("selectPreferredVoice chooses a British woman's voice instead of the first UK voice", () => {
+test("selectPreferredVoice chooses an American man's voice instead of the first US voice", () => {
   const { api } = loadApi();
   const voices = [
-    { name: "Daniel", lang: "en-GB" },
     { name: "Samantha", lang: "en-US" },
-    { name: "Flo (English (UK))", lang: "en_GB" },
-    { name: "Shelley (English (UK))", lang: "en-GB" }
+    { name: "Flo (English (UK))", lang: "en-GB" },
+    { name: "Alex", lang: "en_US" },
+    { name: "Tom (English (US))", lang: "en-US" }
   ];
 
   assert.equal(api.selectPreferredVoice(voices), voices[2]);
   assert.equal(api.selectPreferredVoice([{ name: "Daniel", lang: "en-GB" }]), null);
 });
 
-test("utterances use the preferred British English voice", () => {
+test("selectPreferredVoice keeps the American accent when no American man is installed", () => {
+  const { api } = loadApi();
+  const voices = [
+    { name: "Flo (English (UK))", lang: "en-GB" },
+    { name: "Google US English", lang: "en-US" }
+  ];
+
+  assert.equal(api.selectPreferredVoice(voices), voices[1]);
+});
+
+test("utterances use the preferred American English voice", () => {
   const { api, window } = loadApi();
   const fixture = controlsFixture();
   const root = { querySelectorAll: () => [element([textNode("Read this.")])] };
-  const voice = { name: "Flo (English (UK))", lang: "en-GB" };
+  const voice = { name: "Alex", lang: "en-US" };
   const synth = new FakeSynth([voice]);
   const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
 
   controller.start();
 
   assert.equal(synth.current.voice, voice);
-  assert.equal(synth.current.lang, "en-GB");
-  assert.equal(fixture.status.textContent, "Reading the report aloud with Flo (English (UK)).");
+  assert.equal(synth.current.lang, "en-US");
+  assert.equal(fixture.status.textContent, "Reading the report aloud with Alex.");
+});
+
+test("utterances fall back to American English when no voice is installed", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const root = { querySelectorAll: () => [element([textNode("Read this.")])] };
+  const synth = new FakeSynth([]);
+  const controller = api.init({ root, controls: fixture.controls, host: window, synth, Utterance: FakeUtterance });
+
+  controller.start();
+
+  assert.equal(synth.current.lang, "en-US");
+  assert.equal(fixture.status.textContent, "Reading the report aloud in American English.");
 });
 
 test("controller starts, pauses, resumes, stops, and finishes cleanly", () => {
@@ -256,6 +305,84 @@ test("controller starts, pauses, resumes, stops, and finishes cleanly", () => {
   listeners.get("pagehide")?.();
   assert.equal(controller.state, "idle");
   assert.equal(fixture.status.textContent, "");
+});
+
+test("recorded Cori narration takes priority and follows precise segment cues", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const first = element([textNode("First segment")], { dataset: { speechId: "first" } });
+  const second = element([textNode("Second segment")], { dataset: { speechId: "second" } });
+  const all = [first, second];
+  const root = { querySelectorAll: () => all };
+  const audio = new FakeAudio();
+  const controller = api.init({
+    root,
+    controls: fixture.controls,
+    host: window,
+    audio,
+    recording: {
+      src: "assets/audio/michael/report.mp3",
+      voice: "Michael",
+      cues: [
+        { id: "first", start: 0, end: 3.5 },
+        { id: "second", start: 3.6, end: 7 }
+      ]
+    }
+  });
+
+  assert.ok(controller, "recorded audio works without browser speech synthesis");
+  assert.equal(fixture.voice.textContent, "Michael · recorded");
+  assert.equal(audio.src, "assets/audio/michael/report.mp3");
+
+  controller.start();
+  assert.equal(controller.state, "speaking");
+  assert.equal(audio.playCalls, 1);
+  assert.equal(fixture.status.textContent, "Reading the report aloud with Michael.");
+  assert.equal(first.classList.contains("is-being-read"), true);
+
+  audio.currentTime = 4;
+  audio.fire("timeupdate");
+  assert.equal(first.classList.contains("is-being-read"), false);
+  assert.equal(second.classList.contains("is-being-read"), true);
+
+  controller.pause();
+  assert.equal(controller.state, "paused");
+  assert.equal(audio.pauseCalls, 1);
+  controller.resume();
+  assert.equal(audio.playCalls, 2);
+
+  controller.stop();
+  assert.equal(controller.state, "idle");
+  assert.equal(audio.currentTime, 0);
+  assert.equal(second.classList.contains("is-being-read"), false);
+
+  controller.start();
+  audio.fire("ended");
+  assert.equal(controller.state, "idle");
+  assert.equal(fixture.status.textContent, "Finished reading the report.");
+});
+
+test("a missing recording falls back to the American browser voice", () => {
+  const { api, window } = loadApi();
+  const fixture = controlsFixture();
+  const speechElement = element([textNode("Fallback sentence.")]);
+  const root = { querySelectorAll: (selector) => selector === "[data-speech-id]" ? [] : [speechElement] };
+  const audio = new FakeAudio();
+  const synth = new FakeSynth([{ name: "Alex", lang: "en-US" }]);
+  const controller = api.init({
+    root,
+    controls: fixture.controls,
+    host: window,
+    audio,
+    synth,
+    Utterance: FakeUtterance,
+    recording: { src: "missing.mp3", voice: "Michael", cues: [] }
+  });
+
+  audio.fire("error");
+  assert.equal(fixture.voice.textContent, "American voice · device");
+  controller.start();
+  assert.deepEqual(synth.spoken, ["Fallback sentence."]);
 });
 
 test("controller resets after a real synthesis error", () => {

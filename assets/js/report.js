@@ -24,6 +24,12 @@
     }).format(date);
   }
 
+  function speechAttributes(id, text) {
+    const normalized = window.DYOR_NARRATION_CONTENT?.normalizeText(text);
+    const explicit = normalized ? ` data-speech-text="${escapeHtml(normalized)}"` : "";
+    return `data-speech-segment data-speech-id="${escapeHtml(id)}"${explicit}`;
+  }
+
   function reportTitle(title) {
     const words = title.trim().split(/\s+/);
     const last = words.pop();
@@ -209,19 +215,20 @@
     return "";
   }
 
-  function renderChapter(chapter) {
-    const body = chapter.body.map((paragraph) => `<p data-speech-segment>${escapeHtml(paragraph)}</p>`).join("");
-    const quote = chapter.pullquote ? `<blockquote class="chapter-pullquote" data-speech-segment>${escapeHtml(chapter.pullquote)}</blockquote>` : "";
+  function renderChapter(chapter, speech) {
+    const prefix = `chapter:${chapter.id}`;
+    const body = chapter.body.map((paragraph, index) => `<p ${speech(`${prefix}:body:${index}`)}>${escapeHtml(paragraph)}</p>`).join("");
+    const quote = chapter.pullquote ? `<blockquote class="chapter-pullquote" ${speech(`${prefix}:pullquote`)}>${escapeHtml(chapter.pullquote)}</blockquote>` : "";
     return `<section class="report-chapter" id="${escapeHtml(chapter.id)}" data-report-section>
       <div class="chapter-grid">
         <div class="chapter-number">${escapeHtml(chapter.number)} / ${String(chapter.number).padStart(2, "0")}</div>
         <div class="chapter-copy">
           <p class="eyebrow">${escapeHtml(chapter.eyebrow)}</p>
-          <h2 data-speech-segment data-speech-text="Chapter ${escapeHtml(chapter.number)}. ${escapeHtml(chapter.title)}">${escapeHtml(chapter.title)}</h2>
-          <p class="chapter-lead" data-speech-segment>${escapeHtml(chapter.lead)}</p>
+          <h2 ${speech(`${prefix}:title`)}>${escapeHtml(chapter.title)}</h2>
+          <p class="chapter-lead" ${speech(`${prefix}:lead`)}>${escapeHtml(chapter.lead)}</p>
           ${body}${quote}
         </div>
-        <figure class="chapter-visual" aria-label="${escapeHtml(chapter.visual?.type?.replaceAll("-", " ") || "Chapter visual")}" data-speech-segment>
+        <figure class="chapter-visual" aria-label="${escapeHtml(chapter.visual?.type?.replaceAll("-", " ") || "Chapter visual")}" ${speech(`${prefix}:visual`)}>
           ${renderVisual(chapter.visual, chapter.number)}
         </figure>
       </div>
@@ -229,11 +236,14 @@
   }
 
   function renderReport(report) {
+    const narrationSegments = window.DYOR_NARRATION_CONTENT?.segmentsForReport(report) || [];
+    const narrationById = new Map(narrationSegments.map((segment) => [segment.id, segment.text]));
+    const speech = (id) => speechAttributes(id, narrationById.get(id));
     const chapterLinks = report.chapters.map((chapter) => `<a href="#${escapeHtml(chapter.id)}" data-index-link="${escapeHtml(chapter.id)}">${escapeHtml(chapter.number)} ${escapeHtml(chapter.eyebrow)}</a>`).join("");
-    const stats = report.stats.map((stat) => `<div class="report-stat" data-speech-segment><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
-    const principles = report.principles.map((principle, index) => `<li data-speech-segment><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(principle)}</strong></li>`).join("");
-    const limitations = report.limitations.map((limitation, index) => `<li data-speech-segment><span>L${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(limitation)}</strong></li>`).join("");
-    const sources = report.sources.map((source) => `<article class="source-item" data-speech-segment>
+    const stats = report.stats.map((stat, index) => `<div class="report-stat" ${speech(`overview:stat:${index}`)}><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></div>`).join("");
+    const principles = report.principles.map((principle, index) => `<li ${speech(`principles:item:${index}`)}><span>${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(principle)}</strong></li>`).join("");
+    const limitations = report.limitations.map((limitation, index) => `<li ${speech(`limitations:item:${index}`)}><span>L${String(index + 1).padStart(2, "0")}</span><strong>${escapeHtml(limitation)}</strong></li>`).join("");
+    const sources = report.sources.map((source, index) => `<article class="source-item" ${speech(`sources:item:${index}`)}>
       <span class="source-item__number">${escapeHtml(source.number)}</span>
       <div>
         <div class="source-item__publisher">${escapeHtml(source.publisher)}${source.tier ? ` <i>/ ${escapeHtml(source.tier)}</i>` : ""}</div>
@@ -264,17 +274,17 @@
         <div class="report-hero__main">
           <div>
             <span class="report-hero__label">${escapeHtml(report.label)} / Public record</span>
-            <h1 data-speech-segment>${reportTitle(report.title)}</h1>
+            <h1 ${speech("hero:title")}>${reportTitle(report.title)}</h1>
           </div>
           <div class="report-hero__side">
-            <p class="report-hero__deck" data-speech-segment>${escapeHtml(report.deck)}</p>
+            <p class="report-hero__deck" ${speech("hero:deck")}>${escapeHtml(report.deck)}</p>
             <div class="report-hero__detail"><span>${escapeHtml(report.tags.join(" / "))}</span><span>Updated ${escapeHtml(formatDate(report.updatedAt))}</span></div>
           </div>
         </div>
       </header>
 
       <aside class="report-disclosure" aria-label="Publication disclosure">
-        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p data-speech-segment data-speech-text="Disclosure. ${escapeHtml(report.disclosure)}">${escapeHtml(report.disclosure)}</p>
+        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p ${speech("disclosure")}>${escapeHtml(report.disclosure)}</p>
       </aside>
 
       <nav class="report-index" aria-label="Report chapters">
@@ -288,7 +298,8 @@
                 <span data-read-aloud-label>Read aloud</span><span class="read-aloud-icon" data-read-aloud-icon aria-hidden="true">▶</span>
               </button>
               <button class="read-aloud-stop" type="button" data-read-aloud-stop hidden>Stop <span aria-hidden="true">■</span></button>
-              <span class="visually-hidden" id="read-aloud-note">Uses your browser or device speech service.</span>
+              <span class="read-aloud-voice" data-read-aloud-voice aria-hidden="true"></span>
+              <span class="visually-hidden" id="read-aloud-note">Uses pre-generated Cori audio when available, with your browser or device voice as a fallback.</span>
               <span class="visually-hidden" role="status" aria-live="polite" data-read-aloud-status></span>
             </div>
             <button class="report-share-button" type="button" data-share-report>Share <span aria-hidden="true">↗</span></button>
@@ -299,34 +310,34 @@
       <section class="report-intro" id="overview" data-report-section>
         <div class="report-question">
           <div class="report-question__label">The question / Q</div>
-          <blockquote data-speech-segment data-speech-text="The question. ${escapeHtml(report.question)}">${escapeHtml(report.question)}</blockquote>
+          <blockquote ${speech("overview:question")}>${escapeHtml(report.question)}</blockquote>
         </div>
         <div class="report-answer">
           <div class="report-answer__label">The short answer / A</div>
-          <p data-speech-segment data-speech-text="The short answer. ${escapeHtml(report.answer)}">${escapeHtml(report.answer)}</p>
+          <p ${speech("overview:answer")}>${escapeHtml(report.answer)}</p>
         </div>
         <div class="report-stats">${stats}</div>
       </section>
 
       <section class="report-thesis" aria-label="Thesis">
         <div class="report-thesis__meta"><span>${escapeHtml(report.thesis.label)}</span><span class="report-thesis__status">${escapeHtml(report.thesis.status)}</span></div>
-        <blockquote data-speech-segment data-speech-text="Thesis. ${escapeHtml(report.thesis.statement)}">${escapeHtml(report.thesis.statement)}</blockquote>
+        <blockquote ${speech("overview:thesis")}>${escapeHtml(report.thesis.statement)}</blockquote>
       </section>
 
-      <div class="report-body"><div class="report-chapters">${report.chapters.map(renderChapter).join("")}</div></div>
+      <div class="report-body"><div class="report-chapters">${report.chapters.map((chapter) => renderChapter(chapter, speech)).join("")}</div></div>
 
       <div class="report-endmatter">
         <section class="endmatter-section" id="principles" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(principlesHeading.eyebrow)}</p><h2 data-speech-segment>${escapeHtml(principlesHeading.title)}</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(principlesHeading.eyebrow)}</p><h2 ${speech("principles:title")}>${escapeHtml(principlesHeading.title)}</h2></header>
           <ol class="principle-list">${principles}</ol>
         </section>
         <section class="endmatter-section" id="limitations" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">Limitations / unknowns</p><h2 data-speech-segment>What this note does not establish.</h2></header>
+          <header class="endmatter-heading"><p class="eyebrow">Limitations / unknowns</p><h2 ${speech("limitations:title")}>What this note does not establish.</h2></header>
           <ol class="limitation-list">${limitations}</ol>
         </section>
         <section class="endmatter-section" id="sources" data-report-section>
-          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(sourcesHeading.eyebrow)}</p><h2 data-speech-segment>${escapeHtml(sourcesHeading.title)}</h2></header>
-          ${report.sourcesNote ? `<p class="endmatter-note" data-speech-segment>${escapeHtml(report.sourcesNote)}</p>` : ""}
+          <header class="endmatter-heading"><p class="eyebrow">${escapeHtml(sourcesHeading.eyebrow)}</p><h2 ${speech("sources:title")}>${escapeHtml(sourcesHeading.title)}</h2></header>
+          ${report.sourcesNote ? `<p class="endmatter-note" ${speech("sources:note")}>${escapeHtml(report.sourcesNote)}</p>` : ""}
           <div class="sources-list">${sources}</div>
           ${transcript}
         </section>
@@ -455,6 +466,31 @@
     });
   }
 
+  async function initReadAloud(report) {
+    const controls = document.querySelector("[data-read-aloud-controls]");
+    const narration = window.DYOR_NARRATION?.[report.slug];
+    let recording = null;
+
+    if (narration?.audio && narration?.cues) {
+      try {
+        const response = await fetch(narration.cues, { cache: "force-cache" });
+        if (!response.ok) throw new Error(`Cue request returned ${response.status}`);
+        const payload = await response.json();
+        if (!Array.isArray(payload.cues)) throw new Error("Cue file has no cue list");
+        recording = {
+          src: narration.audio,
+          cues: payload.cues,
+          voice: narration.voice || payload.voice || "Cori",
+          language: narration.language || payload.language || "en-GB"
+        };
+      } catch (error) {
+        console.warn("Recorded narration unavailable; using the browser voice.", error);
+      }
+    }
+
+    window.DYOR_READ_ALOUD?.init({ root: reportRoot, controls, recording });
+  }
+
   const requestedSlug = new URLSearchParams(window.location.search).get("report");
   const report = reports.find((entry) => entry.slug === requestedSlug) || (!requestedSlug ? reports.find((entry) => entry.featured) : null);
 
@@ -472,8 +508,5 @@
   initReadingProgress();
   initSectionTracking();
   initShare(report);
-  window.DYOR_READ_ALOUD?.init({
-    root: reportRoot,
-    controls: document.querySelector("[data-read-aloud-controls]")
-  });
+  void initReadAloud(report);
 })();

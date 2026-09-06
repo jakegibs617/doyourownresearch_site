@@ -10,19 +10,22 @@
     ["interrupted", "Report narration stopped."],
     ["not-allowed", "Your browser blocked narration. Press Read aloud again to allow it."]
   ]);
-  const BRITISH_WOMEN = [
-    "flo",
-    "serena",
-    "kate",
-    "sonia",
-    "libby",
-    "google uk english female",
-    "sandy",
-    "shelley",
-    "martha",
-    "hazel",
-    "susan",
-    "fiona"
+  const AMERICAN_MEN = [
+    "alex",
+    "tom",
+    "fred",
+    "aaron",
+    "nathan",
+    "eric",
+    "guy",
+    "david",
+    "microsoft david",
+    "microsoft guy",
+    "microsoft eric",
+    "junior",
+    "ralph",
+    "reed",
+    "rocko"
   ];
 
   function normalizeText(value) {
@@ -119,18 +122,19 @@
   }
 
   function selectPreferredVoice(voices) {
-    const britishVoices = [...(voices || [])].filter((voice) =>
-      String(voice?.lang || "").toLowerCase().replace("_", "-").startsWith("en-gb")
+    const americanVoices = [...(voices || [])].filter((voice) =>
+      String(voice?.lang || "").toLowerCase().replace("_", "-").startsWith("en-us")
     );
 
-    for (const preferredName of BRITISH_WOMEN) {
-      const voice = britishVoices.find((candidate) =>
+    for (const preferredName of AMERICAN_MEN) {
+      const voice = americanVoices.find((candidate) =>
         String(candidate?.name || "").toLowerCase().includes(preferredName)
       );
       if (voice) return voice;
     }
 
-    return britishVoices.find((voice) => /female|woman/i.test(String(voice?.name || ""))) || null;
+    // No American man installed: the accent is the louder mismatch, so keep en-US over gender.
+    return americanVoices[0] || null;
   }
 
   function init(options = {}) {
@@ -139,8 +143,11 @@
     const host = options.host || window;
     const synth = options.synth || host.speechSynthesis;
     const Utterance = options.Utterance || host.SpeechSynthesisUtterance;
+    const recording = options.recording?.src ? options.recording : null;
+    const audio = options.audio || (recording && typeof host.Audio === "function" ? new host.Audio() : null);
+    const canUseSpeech = Boolean(synth && typeof synth.speak === "function" && typeof Utterance === "function");
 
-    if (!root || !controls || !synth || typeof synth.speak !== "function" || typeof Utterance !== "function") {
+    if (!root || !controls || (!audio && !canUseSpeech)) {
       return null;
     }
 
@@ -149,9 +156,12 @@
     const label = controls.querySelector("[data-read-aloud-label]");
     const icon = controls.querySelector("[data-read-aloud-icon]");
     const status = controls.querySelector("[data-read-aloud-status]");
+    const voiceLabel = controls.querySelector("[data-read-aloud-voice]");
     if (!toggle || !stopButton || !label || !icon || !status) return null;
 
     let state = "idle";
+    let mode = audio ? "recorded" : "speech";
+    let recordingAvailable = Boolean(audio);
     let queue = [];
     let queueIndex = 0;
     let generation = 0;
@@ -161,13 +171,29 @@
     let following = true;
     let silentChecks = 0;
     let watchdogHandle = null;
+    const cues = Array.isArray(recording?.cues) ? recording.cues : [];
+    const speechElements = new Map(
+      [...(root.querySelectorAll?.("[data-speech-id]") || [])]
+        .filter((element) => element?.dataset?.speechId)
+        .map((element) => [element.dataset.speechId, element])
+    );
+
+    if (audio && recording) {
+      audio.preload = "metadata";
+      audio.src = recording.src;
+    }
 
     const scrollBehavior = () =>
       host.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches === true ? "auto" : "smooth";
 
     const updatePreferredVoice = () => {
-      preferredVoice = selectPreferredVoice(synth.getVoices?.() || []);
+      preferredVoice = selectPreferredVoice(synth?.getVoices?.() || []);
       return preferredVoice;
+    };
+
+    const updateVoiceLabel = () => {
+      if (!voiceLabel) return;
+      voiceLabel.textContent = recordingAvailable ? `${recording?.voice || "Michael"} · recorded` : "American voice · device";
     };
 
     const setStatus = (message) => {
@@ -176,6 +202,7 @@
 
     const renderState = () => {
       controls.dataset.state = state;
+      controls.dataset.source = mode;
       stopButton.hidden = state === "idle";
       toggle.setAttribute("aria-label", state === "speaking" ? "Pause report narration" : state === "paused" ? "Resume report narration" : "Read report aloud");
 
@@ -212,8 +239,15 @@
       setStatus(message);
     };
 
+    const syncRecordedCue = () => {
+      if (mode !== "recorded" || state === "idle") return;
+      const time = Number(audio?.currentTime || 0);
+      const cue = cues.find((candidate) => time >= Number(candidate.start) && time < Number(candidate.end));
+      setActiveElement(cue ? speechElements.get(cue.id) : null);
+    };
+
     const speakNext = (runGeneration) => {
-      if (destroyed || runGeneration !== generation) return;
+      if (destroyed || mode !== "speech" || runGeneration !== generation) return;
       if (queueIndex >= queue.length) {
         returnToIdle("Finished reading the report.");
         return;
@@ -223,7 +257,7 @@
       const utterance = new Utterance(item.text);
       const voice = updatePreferredVoice();
       if (voice) utterance.voice = voice;
-      utterance.lang = voice?.lang || options.language || "en-GB";
+      utterance.lang = voice?.lang || options.language || "en-US";
 
       utterance.onstart = () => {
         if (runGeneration === generation) setActiveElement(item.element);
@@ -246,7 +280,7 @@
     // Chrome can drop a queue mid-report: the engine goes quiet without firing
     // onend or onerror, and a chain built on those callbacks waits forever.
     const watchdog = () => {
-      if (destroyed || state !== "speaking" || synth.paused) {
+      if (destroyed || mode !== "speech" || state !== "speaking" || synth?.paused) {
         silentChecks = 0;
         return;
       }
@@ -260,7 +294,11 @@
       speakNext(generation);
     };
 
-    const start = () => {
+    const startSpeech = () => {
+      if (!canUseSpeech) {
+        setStatus("Narration is not available in this browser.");
+        return;
+      }
       queue = collectSegments(root, options.maxChars || DEFAULT_MAX_CHARS);
       if (queue.length === 0) {
         setStatus("No report text is available to read.");
@@ -268,6 +306,7 @@
       }
 
       generation += 1;
+      mode = "speech";
       queueIndex = 0;
       silentChecks = 0;
       following = true;
@@ -276,30 +315,76 @@
       state = "speaking";
       renderState();
       const voice = updatePreferredVoice();
-      setStatus(voice ? `Reading the report aloud with ${voice.name}.` : "Reading the report aloud in British English.");
+      setStatus(voice ? `Reading the report aloud with ${voice.name}.` : "Reading the report aloud in American English.");
       speakNext(generation);
     };
 
+    const useSpeechFallback = () => {
+      recordingAvailable = false;
+      updateVoiceLabel();
+      startSpeech();
+    };
+
+    const playRecorded = () => {
+      let playResult;
+      try {
+        playResult = audio.play();
+      } catch {
+        useSpeechFallback();
+        return;
+      }
+      Promise.resolve(playResult).catch(() => {
+        if (!destroyed && mode === "recorded") useSpeechFallback();
+      });
+    };
+
+    const startRecorded = () => {
+      generation += 1;
+      mode = "recorded";
+      following = true;
+      silentChecks = 0;
+      synth?.cancel?.();
+      if (audio.ended || (Number.isFinite(audio.duration) && audio.currentTime >= audio.duration)) audio.currentTime = 0;
+      state = "speaking";
+      renderState();
+      setStatus(`Reading the report aloud with ${recording?.voice || "Michael"}.`);
+      syncRecordedCue();
+      playRecorded();
+    };
+
+    const start = () => {
+      if (recordingAvailable) startRecorded();
+      else startSpeech();
+    };
+
     const pause = () => {
-      synth.pause();
+      if (mode === "recorded") audio.pause();
+      else synth.pause();
       state = "paused";
       renderState();
       setStatus("Report narration paused.");
     };
 
     const resume = () => {
-      synth.resume();
+      if (mode === "recorded") playRecorded();
+      else synth.resume();
       silentChecks = 0;
       following = true;
       state = "speaking";
       renderState();
-      setStatus(preferredVoice ? `Reading the report aloud with ${preferredVoice.name}.` : "Reading the report aloud in British English.");
+      setStatus(mode === "recorded"
+        ? `Reading the report aloud with ${recording?.voice || "Michael"}.`
+        : preferredVoice ? `Reading the report aloud with ${preferredVoice.name}.` : "Reading the report aloud in American English.");
     };
 
     const stop = (message = "Report narration stopped.") => {
       generation += 1;
-      synth.cancel();
-      if (synth.paused) synth.resume();
+      if (audio) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+      synth?.cancel?.();
+      if (synth?.paused) synth.resume();
       returnToIdle(message);
     };
 
@@ -310,6 +395,22 @@
     };
     const onStop = () => stop();
     const onPageHide = () => stop("");
+    const onRecordedTime = () => syncRecordedCue();
+    const onRecordedEnd = () => {
+      if (mode !== "recorded") return;
+      generation += 1;
+      returnToIdle("Finished reading the report.");
+    };
+    const onRecordedError = () => {
+      if (!recordingAvailable) return;
+      recordingAvailable = false;
+      updateVoiceLabel();
+      if (mode === "recorded" && state !== "idle") {
+        returnToIdle(canUseSpeech
+          ? "Recorded narration is unavailable. Press Read aloud to use your device voice."
+          : "Recorded narration is unavailable in this browser.");
+      }
+    };
     // A reader who scrolls has taken the viewport back; stop dragging it around
     // until they explicitly restart or resume the narration.
     const onManualScroll = () => { following = false; };
@@ -319,11 +420,15 @@
     host.addEventListener?.("pagehide", onPageHide);
     host.addEventListener?.("wheel", onManualScroll, { passive: true });
     host.addEventListener?.("touchmove", onManualScroll, { passive: true });
-    synth.addEventListener?.("voiceschanged", updatePreferredVoice);
+    synth?.addEventListener?.("voiceschanged", updatePreferredVoice);
+    audio?.addEventListener?.("timeupdate", onRecordedTime);
+    audio?.addEventListener?.("ended", onRecordedEnd);
+    audio?.addEventListener?.("error", onRecordedError);
     if (typeof host.setInterval === "function") {
       watchdogHandle = host.setInterval(watchdog, options.watchdogInterval || WATCHDOG_INTERVAL_MS);
     }
     updatePreferredVoice();
+    updateVoiceLabel();
     controls.hidden = false;
     renderState();
 
@@ -344,7 +449,10 @@
         host.removeEventListener?.("pagehide", onPageHide);
         host.removeEventListener?.("wheel", onManualScroll);
         host.removeEventListener?.("touchmove", onManualScroll);
-        synth.removeEventListener?.("voiceschanged", updatePreferredVoice);
+        synth?.removeEventListener?.("voiceschanged", updatePreferredVoice);
+        audio?.removeEventListener?.("timeupdate", onRecordedTime);
+        audio?.removeEventListener?.("ended", onRecordedEnd);
+        audio?.removeEventListener?.("error", onRecordedError);
       }
     };
   }

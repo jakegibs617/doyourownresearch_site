@@ -1841,6 +1841,18 @@ blockquote {
   border-left: 1px solid var(--line);
 }
 
+.read-aloud-voice {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  border-left: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
 .read-aloud-controls[data-state="speaking"] .read-aloud-toggle,
 .read-aloud-controls[data-state="paused"] .read-aloud-toggle {
   background: var(--ink);
@@ -2893,6 +2905,7 @@ blockquote {
   .report-index a { padding-right: 0.8rem; padding-left: 0.8rem; }
   .report-index__actions { background: var(--paper-bright); }
   .report-index button { padding-right: 0.85rem; padding-left: 0.85rem; }
+  .read-aloud-voice { display: none; }
   .report-stats { grid-template-columns: 1fr; }
   .chapter-grid { grid-template-columns: minmax(0, 1fr); }
   .chapter-number { padding-bottom: 0.6rem; border-bottom: 1px solid var(--line); }

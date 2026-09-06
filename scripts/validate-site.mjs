@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { readFile, access } from "node:fs/promises";
 import { constants } from "node:fs";
 import { resolve, dirname } from "node:path";
@@ -37,8 +38,10 @@ async function requireFiles() {
     "sitemap.xml",
     "assets/css/site.css",
     "assets/data/reports.js",
+    "assets/data/narration.js",
     "assets/js/site.js",
     "assets/js/report.js",
+    "assets/js/narration-content.js",
     "assets/js/read-aloud.js",
     "assets/js/ads.js",
     "assets/data/ads-config.js",
@@ -216,7 +219,7 @@ async function validateHtmlFile(path) {
 }
 
 async function validateJavaScript() {
-  for (const path of ["assets/js/site.js", "assets/js/report.js", "assets/js/read-aloud.js", "assets/js/ads.js", "assets/data/ads-config.js"]) {
+  for (const path of ["assets/js/site.js", "assets/js/report.js", "assets/js/narration-content.js", "assets/js/read-aloud.js", "assets/js/ads.js", "assets/data/ads-config.js", "assets/data/narration.js"]) {
     const source = await readFile(resolve(root, path), "utf8");
     try {
       new vm.Script(source, { filename: path });
@@ -237,8 +240,10 @@ async function validateReadAloud() {
   ]);
 
   const controllerScript = html.indexOf('src="assets/js/read-aloud.js"');
+  const contentScript = html.indexOf('src="assets/js/narration-content.js"');
   const rendererScript = html.indexOf('src="assets/js/report.js"');
   if (controllerScript < 0) fail("report.html must load assets/js/read-aloud.js");
+  else if (contentScript < 0 || contentScript > controllerScript) fail("report.html must load narration-content.js before read-aloud.js");
   else if (rendererScript < 0 || controllerScript > rendererScript) fail("report.html must load read-aloud.js before report.js");
 
   const rendererExpectations = [
@@ -246,8 +251,10 @@ async function validateReadAloud() {
     [/data-read-aloud-toggle/, "a read-aloud toggle"],
     [/data-read-aloud-stop/, "a read-aloud stop control"],
     [/data-read-aloud-status/, "a live read-aloud status"],
+    [/data-read-aloud-voice/, "a narration voice label"],
     [/data-speech-segment/, "explicit narration segments"],
-    [/DYOR_READ_ALOUD\?\.init/, "read-aloud initialization"]
+    [/DYOR_READ_ALOUD\?\.init/, "read-aloud initialization"],
+    [/DYOR_NARRATION/, "recorded narration configuration"]
   ];
   rendererExpectations.forEach(([pattern, label]) => {
     if (!pattern.test(renderer)) fail(`assets/js/report.js must contain ${label}`);
@@ -256,8 +263,11 @@ async function validateReadAloud() {
   if (!/speechSynthesis/.test(controller) || !/SpeechSynthesisUtterance/.test(controller)) {
     fail("read-aloud.js must feature-detect the browser speech synthesis interfaces");
   }
-  if (!/selectPreferredVoice/.test(controller) || !/en-GB/.test(controller)) {
-    fail("read-aloud.js must prefer an installed British English narration voice");
+  if (!/selectPreferredVoice/.test(controller) || !/en-US/.test(controller)) {
+    fail("read-aloud.js must prefer an installed American English narration voice");
+  }
+  if (!/recording/.test(controller) || !/timeupdate/.test(controller) || !/HTMLAudioElement|host\.Audio/.test(controller)) {
+    fail("read-aloud.js must support timed recorded narration");
   }
   if (!/\.read-aloud-controls/.test(css) || !/\.is-being-read/.test(css)) {
     fail("site.css must style the read-aloud controls and current narration segment");
@@ -267,6 +277,59 @@ async function validateReadAloud() {
   }
 
   if (failures.length === 0) pass("read-aloud control, narration markers, and disclosure");
+}
+
+async function validateNarrationAssets(reports) {
+  const [configSource, contentSource] = await Promise.all([
+    readFile(resolve(root, "assets/data/narration.js"), "utf8"),
+    readFile(resolve(root, "assets/js/narration-content.js"), "utf8")
+  ]);
+  const sandbox = { window: { DYOR_REPORTS: reports } };
+  vm.createContext(sandbox);
+  vm.runInContext(contentSource, sandbox, { filename: "assets/js/narration-content.js", timeout: 1000 });
+  vm.runInContext(configSource, sandbox, { filename: "assets/data/narration.js", timeout: 1000 });
+  const config = sandbox.window.DYOR_NARRATION;
+  if (!config || typeof config !== "object") {
+    fail("assets/data/narration.js must define window.DYOR_NARRATION");
+    return;
+  }
+
+  for (const [slug, narration] of Object.entries(config)) {
+    const report = reports.find((candidate) => candidate.slug === slug);
+    if (!report) {
+      fail(`narration config references unknown report: ${slug}`);
+      continue;
+    }
+    if (!nonEmpty(narration.audio) || !nonEmpty(narration.cues)) {
+      fail(`narration config for ${slug} needs audio and cues paths`);
+      continue;
+    }
+    if (!(await exists(narration.audio))) fail(`narration audio is missing: ${narration.audio}`);
+    if (!(await exists(narration.cues))) {
+      fail(`narration cues are missing: ${narration.cues}`);
+      continue;
+    }
+
+    const cuePayload = JSON.parse(await readFile(resolve(root, narration.cues), "utf8"));
+    const expectedSegments = sandbox.window.DYOR_NARRATION_CONTENT.segmentsForReport(report);
+    const expectedFingerprint = createHash("sha256").update(JSON.stringify(expectedSegments)).digest("hex");
+    const cues = cuePayload.cues;
+    if (cuePayload.report !== slug) fail(`narration cue report mismatch for ${slug}`);
+    if (cuePayload.voiceModel !== "kokoro-am_michael") fail(`narration for ${slug} must use kokoro-am_michael`);
+    if (cuePayload.fingerprint !== expectedFingerprint) fail(`narration for ${slug} is stale; regenerate it from the current report text`);
+    if (!Array.isArray(cues) || cues.length !== expectedSegments.length) {
+      fail(`narration for ${slug} must have ${expectedSegments.length} timed cues`);
+      continue;
+    }
+    cues.forEach((cue, index) => {
+      if (cue.id !== expectedSegments[index].id) fail(`narration cue ${index} for ${slug} has the wrong segment ID`);
+      if (!Number.isFinite(cue.start) || !Number.isFinite(cue.end) || cue.start < 0 || cue.end <= cue.start) {
+        fail(`narration cue ${index} for ${slug} has invalid timing`);
+      }
+      if (index > 0 && cue.start < cues[index - 1].end) fail(`narration cues overlap at index ${index} for ${slug}`);
+    });
+    pass(`recorded narration: ${slug} · ${cues.length} cues · ${Math.round(cuePayload.duration / 60)} min`);
+  }
 }
 
 async function validateSocialPreview() {
@@ -409,6 +472,7 @@ await validateTranscripts(reports);
 await Promise.all(["index.html", "report.html", "404.html", "privacy.html"].map(validateHtmlFile));
 await validateJavaScript();
 await validateReadAloud();
+await validateNarrationAssets(reports);
 await validateSocialPreview();
 await validateAdvertising();
 await validateDomain();

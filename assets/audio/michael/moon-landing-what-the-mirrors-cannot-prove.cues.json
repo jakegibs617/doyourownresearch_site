@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 1,
+  "report": "moon-landing-what-the-mirrors-cannot-prove",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 1985.545,
+  "fingerprint": "94d1fc780f89df06d9163a0bb8bc1b69feaed8195a7bddd7f0f74d5cb4cad5ae",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 3.675
+    },
+    {
+      "id": "hero:deck",
+      "start": 3.795,
+      "end": 11.995
+    },
+    {
+      "id": "disclosure",
+      "start": 12.115,
+      "end": 36.34
+    },
+    {
+      "id": "overview:question",
+      "start": 36.46,
+      "end": 54.935
+    },
+    {
+      "id": "overview:answer",
+      "start": 55.055,
+      "end": 93.425
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 93.545,
+      "end": 97.02
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 97.14,
+      "end": 100.89
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 101.01,
+      "end": 105.56
+    },
+    {
+      "id": "overview:thesis",
+      "start": 105.68,
+      "end": 124.005
+    },
+    {
+      "id": "chapter:boundary:title",
+      "start": 124.125,
+      "end": 128.925
+    },
+    {
+      "id": "chapter:boundary:lead",
+      "start": 129.045,
+      "end": 142.195
+    },
+    {
+      "id": "chapter:boundary:body:0",
+      "start": 142.315,
+      "end": 162.565
+    },
+    {
+      "id": "chapter:boundary:body:1",
+      "start": 162.685,
+      "end": 182.16
+    },
+    {
+      "id": "chapter:boundary:body:2",
+      "start": 182.28,
+      "end": 198.705
+    },
+    {
+      "id": "chapter:boundary:pullquote",
+      "start": 198.825,
+      "end": 205.725
+    },
+    {
+      "id": "chapter:boundary:visual",
+      "start": 205.845,
+      "end": 247.515
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 247.635,
+      "end": 252.585
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 252.705,
+      "end": 264.38
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 264.5,
+      "end": 284.95
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 285.07,
+      "end": 303.895
+    },
+    {
+      "id": "chapter:explanations:body:2",
+      "start": 304.015,
+      "end": 333.04
+    },
+    {
+      "id": "chapter:explanations:pullquote",
+      "start": 333.16,
+      "end": 340.16
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 340.28,
+      "end": 445.135
+    },
+    {
+      "id": "chapter:lasers:title",
+      "start": 445.255,
+      "end": 450.705
+    },
+    {
+      "id": "chapter:lasers:lead",
+      "start": 450.825,
+      "end": 467.7
+    },
+    {
+      "id": "chapter:lasers:body:0",
+      "start": 467.82,
+      "end": 499.64
+    },
+    {
+      "id": "chapter:lasers:body:1",
+      "start": 499.76,
+      "end": 532.98
+    },
+    {
+      "id": "chapter:lasers:body:2",
+      "start": 533.1,
+      "end": 541.2
+    },
+    {
+      "id": "chapter:lasers:pullquote",
+      "start": 541.32,
+      "end": 545.52
+    },
+    {
+      "id": "chapter:lasers:visual",
+      "start": 545.64,
+      "end": 619.105
+    },
+    {
+      "id": "chapter:agency:title",
+      "start": 619.225,
+      "end": 624.875
+    },
+    {
+      "id": "chapter:agency:lead",
+      "start": 624.995,
+      "end": 636.82
+    },
+    {
+      "id": "chapter:agency:body:0",
+      "start": 636.94,
+      "end": 665.465
+    },
+    {
+      "id": "chapter:agency:body:1",
+      "start": 665.585,
+      "end": 686.36
+    },
+    {
+      "id": "chapter:agency:body:2",
+      "start": 686.48,
+      "end": 720.925
+    },
+    {
+      "id": "chapter:agency:pullquote",
+      "start": 721.045,
+      "end": 728.745
+    },
+    {
+      "id": "chapter:agency:visual",
+      "start": 728.865,
+      "end": 766.86
+    },
+    {
+      "id": "chapter:imagery:title",
+      "start": 766.98,
+      "end": 772.38
+    },
+    {
+      "id": "chapter:imagery:lead",
+      "start": 772.5,
+      "end": 785.225
+    },
+    {
+      "id": "chapter:imagery:body:0",
+      "start": 785.345,
+      "end": 823.69
+    },
+    {
+      "id": "chapter:imagery:body:1",
+      "start": 823.81,
+      "end": 839.635
+    },
+    {
+      "id": "chapter:imagery:body:2",
+      "start": 839.755,
+      "end": 865.205
+    },
+    {
+      "id": "chapter:imagery:body:3",
+      "start": 865.325,
+      "end": 881.975
+    },
+    {
+      "id": "chapter:imagery:pullquote",
+      "start": 882.095,
+      "end": 886.62
+    },
+    {
+      "id": "chapter:imagery:visual",
+      "start": 886.74,
+      "end": 919.285
+    },
+    {
+      "id": "chapter:blanks:title",
+      "start": 919.405,
+      "end": 924.655
+    },
+    {
+      "id": "chapter:blanks:lead",
+      "start": 924.775,
+      "end": 933.475
+    },
+    {
+      "id": "chapter:blanks:body:0",
+      "start": 933.595,
+      "end": 970.24
+    },
+    {
+      "id": "chapter:blanks:body:1",
+      "start": 970.36,
+      "end": 1002.855
+    },
+    {
+      "id": "chapter:blanks:body:2",
+      "start": 1002.975,
+      "end": 1024.075
+    },
+    {
+      "id": "chapter:blanks:pullquote",
+      "start": 1024.195,
+      "end": 1029.87
+    },
+    {
+      "id": "chapter:blanks:visual",
+      "start": 1029.99,
+      "end": 1088.085
+    },
+    {
+      "id": "chapter:strongest:title",
+      "start": 1088.205,
+      "end": 1092.93
+    },
+    {
+      "id": "chapter:strongest:lead",
+      "start": 1093.05,
+      "end": 1105.4
+    },
+    {
+      "id": "chapter:strongest:body:0",
+      "start": 1105.52,
+      "end": 1131.745
+    },
+    {
+      "id": "chapter:strongest:body:1",
+      "start": 1131.865,
+      "end": 1153.915
+    },
+    {
+      "id": "chapter:strongest:body:2",
+      "start": 1154.035,
+      "end": 1182.31
+    },
+    {
+      "id": "chapter:strongest:visual",
+      "start": 1182.43,
+      "end": 1281.835
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 1281.955,
+      "end": 1287.805
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 1287.925,
+      "end": 1303.2
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 1303.32,
+      "end": 1328.545
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 1328.665,
+      "end": 1351.515
+    },
+    {
+      "id": "chapter:score:body:2",
+      "start": 1351.635,
+      "end": 1368.86
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 1368.98,
+      "end": 1401.35
+    },
+    {
+      "id": "principles:title",
+      "start": 1401.47,
+      "end": 1405.57
+    },
+    {
+      "id": "principles:item:0",
+      "start": 1405.69,
+      "end": 1416.615
+    },
+    {
+      "id": "principles:item:1",
+      "start": 1416.735,
+      "end": 1427.635
+    },
+    {
+      "id": "principles:item:2",
+      "start": 1427.755,
+      "end": 1438.755
+    },
+    {
+      "id": "principles:item:3",
+      "start": 1438.875,
+      "end": 1449.15
+    },
+    {
+      "id": "principles:item:4",
+      "start": 1449.27,
+      "end": 1459.745
+    },
+    {
+      "id": "limitations:title",
+      "start": 1459.865,
+      "end": 1462.39
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 1462.51,
+      "end": 1487.61
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1487.73,
+      "end": 1499.98
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1500.1,
+      "end": 1510.7
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1510.82,
+      "end": 1524.92
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1525.04,
+      "end": 1541.515
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1541.635,
+      "end": 1558.085
+    },
+    {
+      "id": "limitations:item:6",
+      "start": 1558.205,
+      "end": 1578.705
+    },
+    {
+      "id": "limitations:item:7",
+      "start": 1578.825,
+      "end": 1593.825
+    },
+    {
+      "id": "limitations:item:8",
+      "start": 1593.945,
+      "end": 1604.445
+    },
+    {
+      "id": "limitations:item:9",
+      "start": 1604.565,
+      "end": 1615.365
+    },
+    {
+      "id": "limitations:item:10",
+      "start": 1615.485,
+      "end": 1629.76
+    },
+    {
+      "id": "limitations:item:11",
+      "start": 1629.88,
+      "end": 1638.58
+    },
+    {
+      "id": "sources:title",
+      "start": 1638.7,
+      "end": 1643.325
+    },
+    {
+      "id": "sources:note",
+      "start": 1643.445,
+      "end": 1657.495
+    },
+    {
+      "id": "sources:item:0",
+      "start": 1657.615,
+      "end": 1691.035
+    },
+    {
+      "id": "sources:item:1",
+      "start": 1691.155,
+      "end": 1718.755
+    },
+    {
+      "id": "sources:item:2",
+      "start": 1718.875,
+      "end": 1758.545
+    },
+    {
+      "id": "sources:item:3",
+      "start": 1758.665,
+      "end": 1785.965
+    },
+    {
+      "id": "sources:item:4",
+      "start": 1786.085,
+      "end": 1812.835
+    },
+    {
+      "id": "sources:item:5",
+      "start": 1812.955,
+      "end": 1838.355
+    },
+    {
+      "id": "sources:item:6",
+      "start": 1838.475,
+      "end": 1863.25
+    },
+    {
+      "id": "sources:item:7",
+      "start": 1863.37,
+      "end": 1889.32
+    },
+    {
+      "id": "sources:item:8",
+      "start": 1889.44,
+      "end": 1910.89
+    },
+    {
+      "id": "sources:item:9",
+      "start": 1911.01,
+      "end": 1935.86
+    },
+    {
+      "id": "sources:item:10",
+      "start": 1935.98,
+      "end": 1963.855
+    },
+    {
+      "id": "sources:item:11",
+      "start": 1963.975,
+      "end": 1985.425
+    }
+  ]
+}

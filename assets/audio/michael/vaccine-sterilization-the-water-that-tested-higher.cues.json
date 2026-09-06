@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "report": "vaccine-sterilization-the-water-that-tested-higher",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 2030.46,
+  "fingerprint": "b9a048b64499301c6f52359613b68e62704f7c37ab1ca0e1aec31774744c3837",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 4.575
+    },
+    {
+      "id": "hero:deck",
+      "start": 4.695,
+      "end": 17.895
+    },
+    {
+      "id": "disclosure",
+      "start": 18.015,
+      "end": 42.34
+    },
+    {
+      "id": "overview:question",
+      "start": 42.46,
+      "end": 52.735
+    },
+    {
+      "id": "overview:answer",
+      "start": 52.855,
+      "end": 95.225
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 95.345,
+      "end": 99.395
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 99.515,
+      "end": 102.94
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 103.06,
+      "end": 105.735
+    },
+    {
+      "id": "overview:thesis",
+      "start": 105.855,
+      "end": 124.43
+    },
+    {
+      "id": "chapter:boundary:title",
+      "start": 124.55,
+      "end": 129.575
+    },
+    {
+      "id": "chapter:boundary:lead",
+      "start": 129.695,
+      "end": 149.47
+    },
+    {
+      "id": "chapter:boundary:body:0",
+      "start": 149.59,
+      "end": 182.96
+    },
+    {
+      "id": "chapter:boundary:body:1",
+      "start": 183.08,
+      "end": 216.6
+    },
+    {
+      "id": "chapter:boundary:body:2",
+      "start": 216.72,
+      "end": 236.445
+    },
+    {
+      "id": "chapter:boundary:pullquote",
+      "start": 236.565,
+      "end": 244.24
+    },
+    {
+      "id": "chapter:boundary:visual",
+      "start": 244.36,
+      "end": 282.48
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 282.6,
+      "end": 288.1
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 288.22,
+      "end": 299.945
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 300.065,
+      "end": 325.565
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 325.685,
+      "end": 348.91
+    },
+    {
+      "id": "chapter:explanations:body:2",
+      "start": 349.03,
+      "end": 365.505
+    },
+    {
+      "id": "chapter:explanations:pullquote",
+      "start": 365.625,
+      "end": 371.125
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 371.245,
+      "end": 481.525
+    },
+    {
+      "id": "chapter:assay:title",
+      "start": 481.645,
+      "end": 487.02
+    },
+    {
+      "id": "chapter:assay:lead",
+      "start": 487.14,
+      "end": 507.815
+    },
+    {
+      "id": "chapter:assay:body:0",
+      "start": 507.935,
+      "end": 543.53
+    },
+    {
+      "id": "chapter:assay:body:1",
+      "start": 543.65,
+      "end": 569.5
+    },
+    {
+      "id": "chapter:assay:body:2",
+      "start": 569.62,
+      "end": 596.645
+    },
+    {
+      "id": "chapter:assay:body:3",
+      "start": 596.765,
+      "end": 624.465
+    },
+    {
+      "id": "chapter:assay:pullquote",
+      "start": 624.585,
+      "end": 629.96
+    },
+    {
+      "id": "chapter:assay:visual",
+      "start": 630.08,
+      "end": 678.4
+    },
+    {
+      "id": "chapter:template:title",
+      "start": 678.52,
+      "end": 685.72
+    },
+    {
+      "id": "chapter:template:lead",
+      "start": 685.84,
+      "end": 706.215
+    },
+    {
+      "id": "chapter:template:body:0",
+      "start": 706.335,
+      "end": 748.63
+    },
+    {
+      "id": "chapter:template:body:1",
+      "start": 748.75,
+      "end": 784.045
+    },
+    {
+      "id": "chapter:template:body:2",
+      "start": 784.165,
+      "end": 823.91
+    },
+    {
+      "id": "chapter:template:pullquote",
+      "start": 824.03,
+      "end": 830.355
+    },
+    {
+      "id": "chapter:template:visual",
+      "start": 830.475,
+      "end": 941.385
+    },
+    {
+      "id": "chapter:exposed:title",
+      "start": 941.505,
+      "end": 947.68
+    },
+    {
+      "id": "chapter:exposed:lead",
+      "start": 947.8,
+      "end": 971.425
+    },
+    {
+      "id": "chapter:exposed:body:0",
+      "start": 971.545,
+      "end": 996.27
+    },
+    {
+      "id": "chapter:exposed:body:1",
+      "start": 996.39,
+      "end": 1023.54
+    },
+    {
+      "id": "chapter:exposed:body:2",
+      "start": 1023.66,
+      "end": 1049.81
+    },
+    {
+      "id": "chapter:exposed:body:3",
+      "start": 1049.93,
+      "end": 1092.8
+    },
+    {
+      "id": "chapter:exposed:pullquote",
+      "start": 1092.92,
+      "end": 1100.795
+    },
+    {
+      "id": "chapter:exposed:visual",
+      "start": 1100.915,
+      "end": 1123.065
+    },
+    {
+      "id": "chapter:attack:title",
+      "start": 1123.185,
+      "end": 1128.61
+    },
+    {
+      "id": "chapter:attack:lead",
+      "start": 1128.73,
+      "end": 1146.605
+    },
+    {
+      "id": "chapter:attack:body:0",
+      "start": 1146.725,
+      "end": 1173.925
+    },
+    {
+      "id": "chapter:attack:body:1",
+      "start": 1174.045,
+      "end": 1196.795
+    },
+    {
+      "id": "chapter:attack:body:2",
+      "start": 1196.915,
+      "end": 1228.91
+    },
+    {
+      "id": "chapter:attack:pullquote",
+      "start": 1229.03,
+      "end": 1235.93
+    },
+    {
+      "id": "chapter:attack:visual",
+      "start": 1236.05,
+      "end": 1303.365
+    },
+    {
+      "id": "chapter:strongest:title",
+      "start": 1303.485,
+      "end": 1308.21
+    },
+    {
+      "id": "chapter:strongest:lead",
+      "start": 1308.33,
+      "end": 1324.905
+    },
+    {
+      "id": "chapter:strongest:body:0",
+      "start": 1325.025,
+      "end": 1354.075
+    },
+    {
+      "id": "chapter:strongest:body:1",
+      "start": 1354.195,
+      "end": 1380.32
+    },
+    {
+      "id": "chapter:strongest:body:2",
+      "start": 1380.44,
+      "end": 1407.14
+    },
+    {
+      "id": "chapter:strongest:visual",
+      "start": 1407.26,
+      "end": 1502.44
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 1502.56,
+      "end": 1508.51
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 1508.63,
+      "end": 1523.93
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 1524.05,
+      "end": 1540.425
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 1540.545,
+      "end": 1562.695
+    },
+    {
+      "id": "chapter:score:body:2",
+      "start": 1562.815,
+      "end": 1587.64
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 1587.76,
+      "end": 1619.755
+    },
+    {
+      "id": "principles:title",
+      "start": 1619.875,
+      "end": 1623.975
+    },
+    {
+      "id": "principles:item:0",
+      "start": 1624.095,
+      "end": 1635.02
+    },
+    {
+      "id": "principles:item:1",
+      "start": 1635.14,
+      "end": 1645.115
+    },
+    {
+      "id": "principles:item:2",
+      "start": 1645.235,
+      "end": 1656.835
+    },
+    {
+      "id": "principles:item:3",
+      "start": 1656.955,
+      "end": 1668.78
+    },
+    {
+      "id": "principles:item:4",
+      "start": 1668.9,
+      "end": 1679.175
+    },
+    {
+      "id": "limitations:title",
+      "start": 1679.295,
+      "end": 1681.82
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 1681.94,
+      "end": 1693.365
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1693.485,
+      "end": 1707.41
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1707.53,
+      "end": 1718.93
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1719.05,
+      "end": 1735.6
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1735.72,
+      "end": 1751.095
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1751.215,
+      "end": 1764.965
+    },
+    {
+      "id": "limitations:item:6",
+      "start": 1765.085,
+      "end": 1776.035
+    },
+    {
+      "id": "limitations:item:7",
+      "start": 1776.155,
+      "end": 1790.43
+    },
+    {
+      "id": "limitations:item:8",
+      "start": 1790.55,
+      "end": 1807.125
+    },
+    {
+      "id": "limitations:item:9",
+      "start": 1807.245,
+      "end": 1820.47
+    },
+    {
+      "id": "limitations:item:10",
+      "start": 1820.59,
+      "end": 1838.09
+    },
+    {
+      "id": "limitations:item:11",
+      "start": 1838.21,
+      "end": 1846.785
+    },
+    {
+      "id": "sources:title",
+      "start": 1846.905,
+      "end": 1851.23
+    },
+    {
+      "id": "sources:note",
+      "start": 1851.35,
+      "end": 1865.4
+    },
+    {
+      "id": "sources:item:0",
+      "start": 1865.52,
+      "end": 1892.795
+    },
+    {
+      "id": "sources:item:1",
+      "start": 1892.915,
+      "end": 1920.59
+    },
+    {
+      "id": "sources:item:2",
+      "start": 1920.71,
+      "end": 1949.585
+    },
+    {
+      "id": "sources:item:3",
+      "start": 1949.705,
+      "end": 1974.655
+    },
+    {
+      "id": "sources:item:4",
+      "start": 1974.775,
+      "end": 2010.32
+    },
+    {
+      "id": "sources:item:5",
+      "start": 2010.44,
+      "end": 2030.34
+    }
+  ]
+}

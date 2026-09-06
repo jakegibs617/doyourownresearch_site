@@ -1,0 +1,542 @@
+{
+  "schemaVersion": 1,
+  "report": "9-11-the-demolition-and-the-warning",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 2389.14,
+  "fingerprint": "9e569c0db0b403c377acccfef9370b73797a66758fce6e155c551f9bc91512bd",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 3.45
+    },
+    {
+      "id": "hero:deck",
+      "start": 3.57,
+      "end": 14.945
+    },
+    {
+      "id": "disclosure",
+      "start": 15.065,
+      "end": 38.14
+    },
+    {
+      "id": "overview:question",
+      "start": 38.26,
+      "end": 56.535
+    },
+    {
+      "id": "overview:answer",
+      "start": 56.655,
+      "end": 97.2
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 97.32,
+      "end": 100.57
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 100.69,
+      "end": 104.165
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 104.285,
+      "end": 108.885
+    },
+    {
+      "id": "overview:thesis",
+      "start": 109.005,
+      "end": 126.505
+    },
+    {
+      "id": "chapter:boundary:title",
+      "start": 126.625,
+      "end": 131.725
+    },
+    {
+      "id": "chapter:boundary:lead",
+      "start": 131.845,
+      "end": 147.395
+    },
+    {
+      "id": "chapter:boundary:body:0",
+      "start": 147.515,
+      "end": 175.815
+    },
+    {
+      "id": "chapter:boundary:body:1",
+      "start": 175.935,
+      "end": 208.98
+    },
+    {
+      "id": "chapter:boundary:body:2",
+      "start": 209.1,
+      "end": 226.15
+    },
+    {
+      "id": "chapter:boundary:pullquote",
+      "start": 226.27,
+      "end": 232.245
+    },
+    {
+      "id": "chapter:boundary:visual",
+      "start": 232.365,
+      "end": 271.935
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 272.055,
+      "end": 278.28
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 278.4,
+      "end": 290.2
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 290.32,
+      "end": 310.52
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 310.64,
+      "end": 331.465
+    },
+    {
+      "id": "chapter:explanations:body:2",
+      "start": 331.585,
+      "end": 357.885
+    },
+    {
+      "id": "chapter:explanations:body:3",
+      "start": 358.005,
+      "end": 371.605
+    },
+    {
+      "id": "chapter:explanations:pullquote",
+      "start": 371.725,
+      "end": 377.7
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 377.82,
+      "end": 493.175
+    },
+    {
+      "id": "chapter:physical:title",
+      "start": 493.295,
+      "end": 499.795
+    },
+    {
+      "id": "chapter:physical:lead",
+      "start": 499.915,
+      "end": 518.365
+    },
+    {
+      "id": "chapter:physical:body:0",
+      "start": 518.485,
+      "end": 567.005
+    },
+    {
+      "id": "chapter:physical:body:1",
+      "start": 567.125,
+      "end": 603.77
+    },
+    {
+      "id": "chapter:physical:body:2",
+      "start": 603.89,
+      "end": 638.135
+    },
+    {
+      "id": "chapter:physical:body:3",
+      "start": 638.255,
+      "end": 650.455
+    },
+    {
+      "id": "chapter:physical:pullquote",
+      "start": 650.575,
+      "end": 655.225
+    },
+    {
+      "id": "chapter:physical:visual",
+      "start": 655.345,
+      "end": 683.045
+    },
+    {
+      "id": "chapter:building-seven:title",
+      "start": 683.165,
+      "end": 689.69
+    },
+    {
+      "id": "chapter:building-seven:lead",
+      "start": 689.81,
+      "end": 702.335
+    },
+    {
+      "id": "chapter:building-seven:body:0",
+      "start": 702.455,
+      "end": 731.33
+    },
+    {
+      "id": "chapter:building-seven:body:1",
+      "start": 731.45,
+      "end": 753.675
+    },
+    {
+      "id": "chapter:building-seven:body:2",
+      "start": 753.795,
+      "end": 790.24
+    },
+    {
+      "id": "chapter:building-seven:body:3",
+      "start": 790.36,
+      "end": 818.11
+    },
+    {
+      "id": "chapter:building-seven:pullquote",
+      "start": 818.23,
+      "end": 822.48
+    },
+    {
+      "id": "chapter:building-seven:visual",
+      "start": 822.6,
+      "end": 862.77
+    },
+    {
+      "id": "chapter:foreknowledge:title",
+      "start": 862.89,
+      "end": 867.815
+    },
+    {
+      "id": "chapter:foreknowledge:lead",
+      "start": 867.935,
+      "end": 879.26
+    },
+    {
+      "id": "chapter:foreknowledge:body:0",
+      "start": 879.38,
+      "end": 907.63
+    },
+    {
+      "id": "chapter:foreknowledge:body:1",
+      "start": 907.75,
+      "end": 945.895
+    },
+    {
+      "id": "chapter:foreknowledge:body:2",
+      "start": 946.015,
+      "end": 996.41
+    },
+    {
+      "id": "chapter:foreknowledge:body:3",
+      "start": 996.53,
+      "end": 1031.85
+    },
+    {
+      "id": "chapter:foreknowledge:pullquote",
+      "start": 1031.97,
+      "end": 1038.345
+    },
+    {
+      "id": "chapter:foreknowledge:visual",
+      "start": 1038.465,
+      "end": 1139.85
+    },
+    {
+      "id": "chapter:counts:title",
+      "start": 1139.97,
+      "end": 1146.995
+    },
+    {
+      "id": "chapter:counts:lead",
+      "start": 1147.115,
+      "end": 1153.465
+    },
+    {
+      "id": "chapter:counts:body:0",
+      "start": 1153.585,
+      "end": 1190.83
+    },
+    {
+      "id": "chapter:counts:body:1",
+      "start": 1190.95,
+      "end": 1218.95
+    },
+    {
+      "id": "chapter:counts:body:2",
+      "start": 1219.07,
+      "end": 1243.745
+    },
+    {
+      "id": "chapter:counts:pullquote",
+      "start": 1243.865,
+      "end": 1249.265
+    },
+    {
+      "id": "chapter:counts:visual",
+      "start": 1249.385,
+      "end": 1314.9
+    },
+    {
+      "id": "chapter:attack:title",
+      "start": 1315.02,
+      "end": 1321.07
+    },
+    {
+      "id": "chapter:attack:lead",
+      "start": 1321.19,
+      "end": 1338.015
+    },
+    {
+      "id": "chapter:attack:body:0",
+      "start": 1338.135,
+      "end": 1374.28
+    },
+    {
+      "id": "chapter:attack:body:1",
+      "start": 1374.4,
+      "end": 1400.45
+    },
+    {
+      "id": "chapter:attack:body:2",
+      "start": 1400.57,
+      "end": 1435.79
+    },
+    {
+      "id": "chapter:attack:pullquote",
+      "start": 1435.91,
+      "end": 1442.16
+    },
+    {
+      "id": "chapter:attack:visual",
+      "start": 1442.28,
+      "end": 1518.37
+    },
+    {
+      "id": "chapter:strongest:title",
+      "start": 1518.49,
+      "end": 1523.09
+    },
+    {
+      "id": "chapter:strongest:lead",
+      "start": 1523.21,
+      "end": 1540.635
+    },
+    {
+      "id": "chapter:strongest:body:0",
+      "start": 1540.755,
+      "end": 1567.68
+    },
+    {
+      "id": "chapter:strongest:body:1",
+      "start": 1567.8,
+      "end": 1596.525
+    },
+    {
+      "id": "chapter:strongest:body:2",
+      "start": 1596.645,
+      "end": 1618.945
+    },
+    {
+      "id": "chapter:strongest:visual",
+      "start": 1619.065,
+      "end": 1703.65
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 1703.77,
+      "end": 1710.145
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 1710.265,
+      "end": 1726.315
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 1726.435,
+      "end": 1744.71
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 1744.83,
+      "end": 1768.98
+    },
+    {
+      "id": "chapter:score:body:2",
+      "start": 1769.1,
+      "end": 1792.55
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 1792.67,
+      "end": 1825.115
+    },
+    {
+      "id": "principles:title",
+      "start": 1825.235,
+      "end": 1829.335
+    },
+    {
+      "id": "principles:item:0",
+      "start": 1829.455,
+      "end": 1841.58
+    },
+    {
+      "id": "principles:item:1",
+      "start": 1841.7,
+      "end": 1852.975
+    },
+    {
+      "id": "principles:item:2",
+      "start": 1853.095,
+      "end": 1864.495
+    },
+    {
+      "id": "principles:item:3",
+      "start": 1864.615,
+      "end": 1873.415
+    },
+    {
+      "id": "principles:item:4",
+      "start": 1873.535,
+      "end": 1883.16
+    },
+    {
+      "id": "limitations:title",
+      "start": 1883.28,
+      "end": 1885.805
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 1885.925,
+      "end": 1900.15
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1900.27,
+      "end": 1915.645
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1915.765,
+      "end": 1932.04
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1932.16,
+      "end": 1945.785
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1945.905,
+      "end": 1960.88
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1961.0,
+      "end": 1974.975
+    },
+    {
+      "id": "limitations:item:6",
+      "start": 1975.095,
+      "end": 1990.795
+    },
+    {
+      "id": "limitations:item:7",
+      "start": 1990.915,
+      "end": 2001.64
+    },
+    {
+      "id": "limitations:item:8",
+      "start": 2001.76,
+      "end": 2010.51
+    },
+    {
+      "id": "limitations:item:9",
+      "start": 2010.63,
+      "end": 2022.605
+    },
+    {
+      "id": "limitations:item:10",
+      "start": 2022.725,
+      "end": 2043.775
+    },
+    {
+      "id": "limitations:item:11",
+      "start": 2043.895,
+      "end": 2057.62
+    },
+    {
+      "id": "sources:title",
+      "start": 2057.74,
+      "end": 2062.865
+    },
+    {
+      "id": "sources:note",
+      "start": 2062.985,
+      "end": 2077.035
+    },
+    {
+      "id": "sources:item:0",
+      "start": 2077.155,
+      "end": 2106.18
+    },
+    {
+      "id": "sources:item:1",
+      "start": 2106.3,
+      "end": 2131.25
+    },
+    {
+      "id": "sources:item:2",
+      "start": 2131.37,
+      "end": 2158.045
+    },
+    {
+      "id": "sources:item:3",
+      "start": 2158.165,
+      "end": 2193.11
+    },
+    {
+      "id": "sources:item:4",
+      "start": 2193.23,
+      "end": 2222.105
+    },
+    {
+      "id": "sources:item:5",
+      "start": 2222.225,
+      "end": 2250.475
+    },
+    {
+      "id": "sources:item:6",
+      "start": 2250.595,
+      "end": 2284.59
+    },
+    {
+      "id": "sources:item:7",
+      "start": 2284.71,
+      "end": 2309.61
+    },
+    {
+      "id": "sources:item:8",
+      "start": 2309.73,
+      "end": 2331.755
+    },
+    {
+      "id": "sources:item:9",
+      "start": 2331.875,
+      "end": 2359.725
+    },
+    {
+      "id": "sources:item:10",
+      "start": 2359.845,
+      "end": 2389.02
+    }
+  ]
+}
