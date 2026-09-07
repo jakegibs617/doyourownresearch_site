@@ -168,7 +168,7 @@ function reportPage(window, report) {
         <span class="wordmark__type"><strong>DO YOUR OWN</strong><span>RESEARCH</span></span>
       </a>
       <p>Research you can take apart.</p>
-      <nav aria-label="Footer"><a href="${base}index.html#reports">Archive</a><a href="${base}index.html#method">Method</a><a href="${base}index.html#about">About</a><a href="${base}privacy.html">Privacy</a></nav>
+      <nav aria-label="Footer"><a href="${base}index.html#reports">Reports</a><a href="${base}index.html#method">Method</a><a href="${base}about.html">About</a><a href="${base}editorial-standards.html">Editorial standards</a><a href="${base}contact.html">Contact</a><a href="${base}privacy.html">Privacy</a></nav>
       <div class="site-footer__bottom"><span>© <span data-year>2026</span> DYOR</span><span>The method is public. Question everything.</span><a href="#report-content">Back to top ↑</a></div>
     </footer>
   </body>

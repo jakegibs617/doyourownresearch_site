@@ -527,6 +527,20 @@ async function validateTrustPages() {
   pass(`trust pages: ${TRUST_PAGES.join(", ")} · canonical, social, sitemap and footer links`);
 }
 
+// The pre-rendered dossiers are the pages a reviewer actually lands on, so they have to carry
+// the same accountability links as the hand-written pages.
+async function validateGeneratedFooters(reports) {
+  const published = reports.filter((report) => report.status === "published");
+  for (const report of published) {
+    const path = `reports/${report.slug}/index.html`;
+    const source = await readFile(resolve(root, path), "utf8");
+    for (const page of TRUST_PAGES) {
+      if (!source.includes(`href="../../${page}"`)) fail(`${path} footer does not link ${page}`);
+    }
+  }
+  if (failures.length === 0) pass(`generated footers: ${published.length} dossier pages link every trust page`);
+}
+
 // The Article record is what a crawler reads instead of the prose, so it has to be present in the
 // renderer, well-formed once rendered, and sourced from site data rather than an invented byline.
 async function validateStructuredData(site, reports) {
@@ -679,6 +693,7 @@ validateReports(site, reports, visualTypes);
 await validateStructuredData(site, reports);
 await validateTranscripts(reports);
 await validateTrustPages();
+await validateGeneratedFooters(reports);
 await Promise.all(["index.html", "report.html", "404.html", "privacy.html", ...TRUST_PAGES].map(validateHtmlFile));
 await validateJavaScript();
 await validateReadAloud();
