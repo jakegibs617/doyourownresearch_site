@@ -8,6 +8,9 @@ const root = resolve(import.meta.dirname, "..");
 const failures = [];
 const checks = [];
 
+// Pages a reviewer checks for before believing a publication is accountable.
+const TRUST_PAGES = ["about.html", "contact.html", "editorial-standards.html"];
+
 function pass(message) {
   checks.push(message);
 }
@@ -31,6 +34,7 @@ async function requireFiles() {
     "report.html",
     "404.html",
     "privacy.html",
+    ...TRUST_PAGES,
     "ads.txt",
     "CNAME",
     ".nojekyll",
@@ -423,7 +427,7 @@ async function validateAdvertising() {
 
   // The <head> snippet is what Google verifies; it must agree with the config.
   if (nonEmpty(client)) {
-    for (const path of ["index.html", "report.html", "404.html", "privacy.html"]) {
+    for (const path of ["index.html", "report.html", "404.html", "privacy.html", ...TRUST_PAGES]) {
       const source = await readFile(resolve(root, path), "utf8");
       const snippet = source.match(/adsbygoogle\.js\?client=(ca-pub-\d+)/);
       if (!snippet) fail(`${path} is missing the AdSense verification snippet`);
@@ -456,6 +460,62 @@ async function validateDomain() {
   else pass("sitemap custom-domain URLs");
 }
 
+async function validateTrustPages() {
+  const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
+
+  for (const path of TRUST_PAGES) {
+    const source = await readFile(resolve(root, path), "utf8");
+    const url = `https://doyourownresearch.me/${path}`;
+    const expectations = [
+      [`<link rel="canonical" href="${url}">`, "a canonical link pointing at itself"],
+      [`<meta property="og:url" content="${url}">`, "its own Open Graph URL"],
+      ['<meta property="og:site_name" content="Do Your Own Research">', "an Open Graph site name"],
+      ['<meta property="og:title"', "an Open Graph title"],
+      ['<meta property="og:description"', "an Open Graph description"],
+      ['<meta property="og:image"', "an Open Graph preview image"]
+    ];
+    expectations.forEach(([needle, label]) => {
+      if (!source.includes(needle)) fail(`${path} must contain ${label}`);
+    });
+    if (!sitemap.includes(`<loc>${url}</loc>`)) fail(`sitemap.xml must list ${path}`);
+  }
+
+  // A reviewer reaches these pages from the footer or not at all.
+  for (const path of ["index.html", "report.html", "404.html", "privacy.html", ...TRUST_PAGES]) {
+    const source = await readFile(resolve(root, path), "utf8");
+    for (const target of [...TRUST_PAGES, "privacy.html"]) {
+      if (path === target) continue;
+      if (!source.includes(`href="${target}"`)) fail(`${path} must link to ${target}`);
+    }
+  }
+
+  const contact = await readFile(resolve(root, "contact.html"), "utf8");
+  if (!contact.includes("mailto:contact@doyourownresearch.me")) {
+    fail("contact.html must publish a reachable contact address");
+  }
+  if (!/correction/i.test(contact) || !/dispute|disputing/i.test(contact)) {
+    fail("contact.html must state a corrections and dispute route");
+  }
+
+  const standards = await readFile(resolve(root, "editorial-standards.html"), "utf8");
+  const standardsExpectations = [
+    [/confidence: unknown/i, "what a confidence of unknown means"],
+    [/does not mean/i, "what a confidence of unknown does not mean"],
+    [/endorsement/i, "that an unresolved finding is not an endorsement"],
+    [/evidence ledger/i, "the evidence ledger"],
+    [/falsification/i, "the falsification pass"],
+    [/verbatim/i, "the verbatim excerpt standard"],
+    [/snapshot/i, "the snapshot standard"],
+    [/corrections policy/i, "the corrections policy"],
+    [/mailto:contact@doyourownresearch\.me/, "the corrections address"]
+  ];
+  standardsExpectations.forEach(([pattern, label]) => {
+    if (!pattern.test(standards)) fail(`editorial-standards.html must explain ${label}`);
+  });
+
+  pass(`trust pages: ${TRUST_PAGES.join(", ")} · canonical, social, sitemap and footer links`);
+}
+
 async function validateTranscripts(reports) {
   for (const report of reports) {
     if (!report.transcript?.href) continue;
@@ -469,7 +529,8 @@ const { site, reports } = await loadPublicationData();
 const visualTypes = await supportedVisualTypes();
 validateReports(site, reports, visualTypes);
 await validateTranscripts(reports);
-await Promise.all(["index.html", "report.html", "404.html", "privacy.html"].map(validateHtmlFile));
+await validateTrustPages();
+await Promise.all(["index.html", "report.html", "404.html", "privacy.html", ...TRUST_PAGES].map(validateHtmlFile));
 await validateJavaScript();
 await validateReadAloud();
 await validateNarrationAssets(reports);
