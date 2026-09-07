@@ -1464,6 +1464,7 @@ blockquote {
 
 .site-footer nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   font-family: var(--condensed);
   font-size: 0.62rem;
