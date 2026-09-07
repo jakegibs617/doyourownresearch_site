@@ -330,13 +330,13 @@
       <span class="source-item__number">${escapeHtml(source.number)}</span>
       <div>
         <div class="source-item__publisher">${escapeHtml(source.publisher)}${source.tier ? ` <i>/ ${escapeHtml(source.tier)}</i>` : ""}</div>
-        <h3 class="source-item__title">${escapeHtml(source.title)}</h3>
+        <h3 class="source-item__title">${source.href ? `<a href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}</a>` : escapeHtml(source.title)}</h3>
       </div>
       <div class="source-item__body">
         <p class="source-item__note">${escapeHtml(source.note)}</p>
         ${source.digest ? `<p class="source-item__digest" data-speech-skip><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
       </div>
-      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}" data-speech-skip>↗</a>` : ""}
+      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true" data-speech-skip>↗</a>` : ""}
     </article>`).join("");
 
     const principlesHeading = report.principlesHeading || { eyebrow: "Report standard", title: "What every public dossier must preserve." };
