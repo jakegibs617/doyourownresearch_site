@@ -1,19 +1,10 @@
-(function () {
+/*
+ * The homepage script. The archive markup builders are pure and published as
+ * window.DYOR_ARCHIVE so scripts/build-site.mjs can write the same cards into index.html
+ * at build time; the hydration below re-renders them identically as an enhancement.
+ */
+(function (global) {
   "use strict";
-
-  document.documentElement.classList.add("js");
-
-  const header = document.querySelector("[data-header]");
-  const menuToggle = document.querySelector("[data-menu-toggle]");
-  const siteNav = document.querySelector("[data-site-nav]");
-  const methodShell = document.querySelector("[data-method-shell]");
-  const methodSteps = window.DYOR_SITE?.methodSteps || [];
-
-  function setYear() {
-    document.querySelectorAll("[data-year]").forEach((node) => {
-      node.textContent = String(new Date().getFullYear());
-    });
-  }
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -24,8 +15,10 @@
       .replaceAll("'", "&#039;");
   }
 
+  // Every report has its own pre-rendered page at reports/<slug>/index.html. A clean
+  // directory URL is what the archive links to; report.html only forwards to it.
   function reportHref(report) {
-    return `report.html?report=${encodeURIComponent(report.slug)}`;
+    return `reports/${encodeURIComponent(report.slug)}/`;
   }
 
   function coverPlate(report) {
@@ -78,34 +71,71 @@
     </a>`;
   }
 
-  function renderArchive() {
-    const reports = (Array.isArray(window.DYOR_REPORTS) ? window.DYOR_REPORTS : [])
-      .filter((report) => report.status === "published");
-    if (reports.length === 0) return;
+  function archiveNextPanel(next) {
+    return `<div class="archive-next__number">${escapeHtml(next.number)}</div>
+        <div><p class="eyebrow">${escapeHtml(next.eyebrow)}</p><h3>${escapeHtml(next.title)}</h3></div>
+        <p>${escapeHtml(next.body)}</p>
+        <span class="status-pill">${escapeHtml(next.status)}</span>`;
+  }
 
+  // The archive order: one featured publication, then everything else newest first.
+  function orderArchive(allReports) {
+    const reports = (Array.isArray(allReports) ? allReports : []).filter((report) => report.status === "published");
+    if (reports.length === 0) return { featured: null, rest: [] };
     const featured = reports.find((report) => report.featured) || reports[0];
+    const rest = reports
+      .filter((report) => report !== featured)
+      .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+    return { featured, rest };
+  }
+
+  global.DYOR_ARCHIVE = Object.freeze({
+    reportHref,
+    orderArchive,
+    coverPlate,
+    featuredSummary,
+    archiveCard,
+    archiveNextPanel
+  });
+
+  // Everything below needs a document. In Node the file stops here, having exported the
+  // archive markup builders for the static build.
+  if (typeof document === "undefined") return;
+
+  document.documentElement.classList.add("js");
+
+  const header = document.querySelector("[data-header]");
+  const menuToggle = document.querySelector("[data-menu-toggle]");
+  const siteNav = document.querySelector("[data-site-nav]");
+  const methodShell = document.querySelector("[data-method-shell]");
+  const methodSteps = global.DYOR_SITE?.methodSteps || [];
+
+  function setYear() {
+    document.querySelectorAll("[data-year]").forEach((node) => {
+      node.textContent = String(new Date().getFullYear());
+    });
+  }
+
+  // The build step already wrote this markup into index.html. Re-rendering it keeps the
+  // page correct if the data file moves ahead of the committed build.
+  function renderArchive() {
+    const { featured, rest } = orderArchive(global.DYOR_REPORTS);
+    if (!featured) return;
+
     const featuredMount = document.querySelector("[data-featured-report]");
     if (featuredMount && featured.cover) {
       featuredMount.innerHTML = `${coverPlate(featured)}${featuredSummary(featured)}`;
     }
 
-    const rest = reports
-      .filter((report) => report !== featured)
-      .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
     const gridMount = document.querySelector("[data-archive-grid]");
     if (gridMount) {
       if (rest.length === 0) gridMount.remove();
       else gridMount.innerHTML = rest.map(archiveCard).join("");
     }
 
-    const next = window.DYOR_SITE?.archiveNext;
+    const next = global.DYOR_SITE?.archiveNext;
     const nextMount = document.querySelector("[data-archive-next]");
-    if (nextMount && next) {
-      nextMount.innerHTML = `<div class="archive-next__number">${escapeHtml(next.number)}</div>
-        <div><p class="eyebrow">${escapeHtml(next.eyebrow)}</p><h3>${escapeHtml(next.title)}</h3></div>
-        <p>${escapeHtml(next.body)}</p>
-        <span class="status-pill">${escapeHtml(next.status)}</span>`;
-    }
+    if (nextMount && next) nextMount.innerHTML = archiveNextPanel(next);
   }
 
   function initHeader() {
@@ -212,4 +242,4 @@
   renderArchive();
   initReveals();
   initMethod();
-})();
+})(typeof window === "object" ? window : globalThis);
