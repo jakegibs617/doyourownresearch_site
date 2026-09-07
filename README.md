@@ -53,8 +53,9 @@ to:
 
 ```text
 .
-├── index.html                 # landing page and archive
-├── report.html                # reusable long-form report renderer
+├── index.html                 # landing page and archive (archive markup generated)
+├── report.html                # legacy ?report= address; forwards to reports/<slug>/
+├── reports/<slug>/index.html  # generated: one crawlable page per publication
 ├── privacy.html               # privacy and advertising disclosure
 ├── ads.txt                    # IAB authorized digital sellers
 ├── assets/
@@ -65,10 +66,16 @@ to:
 │   ├── img/                   # code-native visual assets
 │   ├── js/                    # landing/report interactions
 │   └── reports/               # raw run transcripts, published unedited
+├── scripts/build-site.mjs     # pre-renders report pages, archive and sitemap
 ├── scripts/validate-site.mjs  # dependency-free content/site checks
+├── sitemap.xml                # generated
 ├── CNAME                      # GitHub Pages custom domain
 └── .github/workflows/pages.yml
 ```
+
+The generated files are committed. GitHub Pages deploys the repository exactly
+as it stands and runs no build step, so `npm test` re-runs the build in memory
+and fails if what is committed is stale.
 
 `assets/data/reports.js` is intentionally plain data. It is the seam between
 the upstream research pipeline and the publication renderer. The first entry is
@@ -77,13 +84,16 @@ it is not presented as an empirical research report.
 
 ## Local development
 
-No installation or build step is required.
+No dependencies to install. After editing `assets/data/reports.js` or either
+renderer, regenerate the static pages and commit them:
 
 ```bash
+npm run build
 python3 -m http.server 4173
 ```
 
-Open <http://127.0.0.1:4173>. Validate the publication contract with:
+Open <http://127.0.0.1:4173>. Validate the publication contract, and that the
+committed build is current, with:
 
 ```bash
 npm test
@@ -148,7 +158,8 @@ data entry plus a sitemap line—no HTML edit.
    consistent recorded voice.
 6. Every `chapter.visual.type` must have a renderer in `assets/js/report.js`—the
    validator checks this, because an unknown type renders a blank figure.
-7. Add the report URL to `sitemap.xml`.
+7. Run `npm run build` and commit the generated `reports/<slug>/index.html`,
+   the regenerated `index.html` archive, and `sitemap.xml`.
 8. Run `npm test` and review both pages at desktop and mobile widths.
 9. Push `main`. The Pages workflow publishes the repository as a static site.
 

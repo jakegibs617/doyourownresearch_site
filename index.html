@@ -86,7 +86,7 @@
             <p class="eyebrow">The public evidence record</p>
             <p class="hero__copy">DYOR publishes research you can take apart: every question bounded, every explanation challenged, every important claim traceable.</p>
             <div class="button-row">
-              <a class="button button--dark" href="report.html?report=why-the-verdict-comes-last"><span>Read note 001</span><i aria-hidden="true">↗</i></a>
+              <a class="button button--dark" href="reports/why-the-verdict-comes-last/"><span>Read note 001</span><i aria-hidden="true">↗</i></a>
               <a class="text-link" href="#method">Follow the method <span aria-hidden="true">↓</span></a>
             </div>
           </div>
@@ -127,17 +127,75 @@
           <p class="section-heading__note">Every dossier here publishes its competing explanations, its adversarial searches—including the ones that returned nothing—and the arithmetic behind its own confidence score.</p>
         </header>
 
-        <div class="featured-report" id="featured-report" data-reveal data-featured-report>
-          <article class="report-summary">
-            <p class="eyebrow">The archive</p>
-            <h3><a href="report.html">Open the latest publication</a></h3>
-            <p class="report-summary__deck">Published reports are listed here. Enable JavaScript to browse the full archive.</p>
-          </article>
-        </div>
+        <!-- The three regions below are written by scripts/build-site.mjs. Edit the report
+             data, run npm run build, and commit the result — not the markup itself. -->
+        <div class="featured-report" id="featured-report" data-reveal data-featured-report><!-- build:featured-report -->
+<a class="report-cover" href="reports/mkultra-the-caption-and-the-document/">
+      <div class="report-cover__top"><span>Research dossier</span><span>008 / 2026</span></div>
+      <div class="report-cover__field">
+        <span class="cover-index">DYOR—008</span>
+        <span class="cover-orbit" aria-hidden="true"><i></i><i></i><i></i></span>
+        <strong>SEVEN<br>QUOTATIONS.<br>ONE <em>PAGE.</em></strong>
+      </div>
+      <div class="report-cover__bottom"><span>Quoted → the description · Never read → the memo</span><span class="cover-arrow" aria-hidden="true">↗</span></div>
+    </a><article class="report-summary">
+      <div class="report-summary__meta">
+        <span>Featured / DOSSIER 008</span>
+        <span>12 min read</span>
+      </div>
+      <p class="eyebrow">Research dossier</p>
+      <h3><a href="reports/mkultra-the-caption-and-the-document/">Project MKUltra, and the caption instead of the document.</a></h3>
+      <p class="report-summary__deck">Every quotation in this dossier is accurate, checkable, and taken from an archive’s summary of a document the run never read.</p>
+      <div class="report-summary__facts"><div><strong>7/7</strong><span>passages from one archive page</span></div><div><strong>0/8</strong><span>counter-searches that returned</span></div><div><strong>10/15</strong><span>subquestions no passage answered</span></div></div>
+      <a class="button button--outline" href="reports/mkultra-the-caption-and-the-document/"><span>Open the dossier</span><i aria-hidden="true">↗</i></a>
+    </article>
+          <!-- /build:featured-report --></div>
 
-        <div class="archive-grid" data-reveal data-archive-grid></div>
+        <div class="archive-grid" data-reveal data-archive-grid><!-- build:archive-grid -->
+<a class="archive-card" href="reports/jfk-the-minute-that-came-late/">
+      <div class="archive-card__meta"><span>DOSSIER 004</span><span>15 min</span></div>
+      <h3>The JFK assassination</h3>
+      <p>What the record establishes about the assassination — and the two questions this run could not touch.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/9-11-the-demolition-and-the-warning/">
+      <div class="archive-card__meta"><span>DOSSIER 005</span><span>18 min</span></div>
+      <h3>The 9/11 inside-job claim</h3>
+      <p>What the ledger does to the demolition claim, what it cannot do to the foreknowledge claim, and why the counts read backwards.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/vaccine-sterilization-the-water-that-tested-higher/">
+      <div class="archive-card__meta"><span>DOSSIER 006</span><span>14 min</span></div>
+      <h3>The vaccine sterilization claim</h3>
+      <p>Why the tests that found a sterilising agent in tetanus vaccine were the wrong tests — and what this run still could not reach.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/moon-landing-what-the-mirrors-cannot-prove/">
+      <div class="archive-card__meta"><span>DOSSIER 007</span><span>13 min</span></div>
+      <h3>The Moon landing hoax</h3>
+      <p>The lasers establish that hardware is on the Moon. Something else has to establish that people put it there.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/flat-earth-the-test-nobody-has-run/">
+      <div class="archive-card__meta"><span>DOSSIER 002</span><span>12 min</span></div>
+      <h3>Flat Earth</h3>
+      <p>A research run on flat-earth belief that reaches no verdict, and shows every reason it could not.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/illuminati-what-the-police-seized/">
+      <div class="archive-card__meta"><span>DOSSIER 003</span><span>14 min</span></div>
+      <h3>The Illuminati</h3>
+      <p>Where the New World Order story came from — traced through the archive, not adjudicated.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a><a class="archive-card" href="reports/why-the-verdict-comes-last/">
+      <div class="archive-card__meta"><span>NOTE 001</span><span>7 min</span></div>
+      <h3>The verdict comes last</h3>
+      <p>A design note on provenance, pre-registered tests, and conclusions that can survive inspection.</p>
+      <span class="archive-card__more">Open ↗</span>
+    </a>
+          <!-- /build:archive-grid --></div>
 
-        <div class="archive-next rule-top" data-reveal data-archive-next></div>
+        <div class="archive-next rule-top" data-reveal data-archive-next><!-- build:archive-next -->
+<div class="archive-next__number">009</div>
+        <div><p class="eyebrow">Next in the archive</p><h3>The next contested claim.</h3></div>
+        <p>The series continues through the most widely held conspiracy theories, one run per claim, each published with its empty searches and its own score intact.</p>
+        <span class="status-pill">In research</span>
+          <!-- /build:archive-next --></div>
 
         <aside class="ad-slot" data-ad-slot-container data-ad-unit="homeArchive" aria-label="Advertisement"></aside>
       </section>
@@ -253,7 +311,7 @@
       <section class="closing" aria-label="Closing statement">
         <p class="eyebrow">The standard</p>
         <h2 data-reveal>DON’T TRUST US.<br><em>CHECK THE WORK.</em></h2>
-        <a class="round-link" href="report.html?report=why-the-verdict-comes-last" aria-label="Read the first method note"><span>Read<br>note 001</span><i aria-hidden="true">↗</i></a>
+        <a class="round-link" href="reports/why-the-verdict-comes-last/" aria-label="Read the first method note"><span>Read<br>note 001</span><i aria-hidden="true">↗</i></a>
       </section>
     </main>
 

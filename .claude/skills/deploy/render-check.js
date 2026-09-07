@@ -25,7 +25,7 @@ const VIEWPORTS = [
   await page.goto(TARGET_URL + '/index.html', { waitUntil: 'networkidle' });
   const slugs = await page.evaluate(() =>
     (window.DYOR_REPORTS || []).filter((r) => r.status === 'published').map((r) => r.slug));
-  const targets = [['home', '/index.html'], ...slugs.map((s) => [s, `/report.html?report=${s}`])];
+  const targets = [['home', '/index.html'], ...slugs.map((s) => [s, `/reports/${s}/`])];
   console.log(`checking ${targets.length} page(s) × ${VIEWPORTS.length} viewport(s)\n`);
 
   for (const [name, path] of targets) {
