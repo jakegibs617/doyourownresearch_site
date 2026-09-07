@@ -2606,6 +2606,104 @@ blockquote {
   font-size: 1.2rem;
 }
 
+/* Related dossiers are picked by shared tags, so this is a real index into the archive
+   and one more crawlable path between reports. */
+.report-related {
+  padding: clamp(4rem, 7vw, 7rem) var(--pad);
+  border-top: 1px solid var(--line);
+  background: var(--paper-bright);
+}
+
+.report-related__inner {
+  display: grid;
+  gap: 2rem;
+}
+
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+
+.related-card {
+  display: grid;
+  padding: 1.6rem;
+  border: 1px solid var(--ink);
+  gap: 0.7rem;
+  align-content: start;
+  background: var(--paper);
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+
+.related-card:hover { background: var(--ink); color: var(--paper); }
+
+.related-card__issue,
+.related-card__tags {
+  font-family: var(--condensed);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.related-card__title {
+  margin: 0;
+  font-family: var(--condensed);
+  font-size: clamp(1.15rem, 2vw, 1.6rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.related-card__line {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.report-next__link {
+  display: grid;
+  max-width: 44rem;
+  margin-top: 2.5rem;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid var(--ink);
+  gap: 0.35rem;
+  background: var(--ink);
+  color: var(--paper);
+  transition: background 200ms var(--ease), color 200ms var(--ease);
+}
+
+.report-next__link:hover { background: var(--paper); color: var(--ink); }
+
+.report-next__link span {
+  font-family: var(--condensed);
+  font-size: 0.56rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+
+.report-next__link:hover span { color: var(--red); }
+
+.report-next__link strong {
+  font-family: var(--condensed);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.report-next__link i {
+  justify-self: end;
+  margin-top: -1.6rem;
+  font-style: normal;
+}
+
 .report-share-panel {
   display: flex;
   flex-wrap: wrap;
@@ -2969,6 +3067,7 @@ blockquote {
   .reading-progress,
   .report-index,
   .site-footer,
+  .report-related,
   .report-share-panel { display: none !important; }
   .report-hero { min-height: auto; padding-top: 3rem; background: #fff; color: #000; }
   .report-hero h1 { font-size: 72pt; }

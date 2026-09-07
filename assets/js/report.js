@@ -318,6 +318,42 @@
     return `<p class="report-byline" data-speech-skip><span class="report-byline__label">By</span> ${name}${imprint}</p>`;
   }
 
+  function renderNextLink(report) {
+    const target = reports.find((entry) => entry.slug === report.next.slug);
+    if (!target) return "";
+    return `<a class="report-next__link" href="${escapeHtml(reportPath(target.slug))}" data-speech-skip>
+      <span>Read ${escapeHtml(target.issue)}</span>
+      <strong>${escapeHtml(target.shortTitle || target.title)}</strong>
+      <i aria-hidden="true">↗</i>
+    </a>`;
+  }
+
+  // Related by shared tags rather than by publication order, so the block is a real index and not a carousel.
+  function renderRelated(report) {
+    const tags = new Set(report.tags);
+    const related = reports
+      .filter((entry) => entry.slug !== report.slug && entry.status === "published")
+      .map((entry) => ({ entry, shared: entry.tags.filter((tag) => tags.has(tag)) }))
+      .filter((candidate) => candidate.shared.length > 0)
+      .sort((a, b) => b.shared.length - a.shared.length || a.entry.publishedAt.localeCompare(b.entry.publishedAt))
+      .slice(0, 3);
+    if (related.length === 0) return "";
+
+    const cards = related.map(({ entry, shared }) => `<a class="related-card" href="${escapeHtml(reportPath(entry.slug))}">
+      <span class="related-card__issue">${escapeHtml(entry.issue)}</span>
+      <h3 class="related-card__title">${escapeHtml(entry.shortTitle || entry.title)}</h3>
+      <p class="related-card__line">${escapeHtml(entry.cardLine)}</p>
+      <span class="related-card__tags">${escapeHtml(shared.join(" / "))}</span>
+    </a>`).join("");
+
+    return `<nav class="report-related" aria-label="Related dossiers" data-speech-skip>
+      <div class="report-related__inner">
+        <p class="eyebrow">Related dossiers / shared method</p>
+        <div class="related-grid">${cards}</div>
+      </div>
+    </nav>`;
+  }
+
   function renderReport(report) {
     const narrationSegments = window.DYOR_NARRATION_CONTENT?.segmentsForReport(report) || [];
     const narrationById = new Map(narrationSegments.map((segment) => [segment.id, segment.text]));
@@ -427,6 +463,8 @@
         </section>
       </div>
 
+      ${renderRelated(report)}
+
       <aside class="ad-slot" data-ad-slot-container data-ad-unit="reportEnd" aria-label="Advertisement"></aside>
 
       <section class="report-next">
@@ -435,6 +473,7 @@
           <div>
             <h2>${escapeHtml(report.next.title)}</h2>
             <p>${escapeHtml(report.next.body)}</p>
+            ${renderNextLink(report)}
             <div class="report-share-panel">
               <button class="button button--dark" type="button" data-share-report><span>Share this ${escapeHtml(report.kind === "report" ? "dossier" : "note")}</span><i aria-hidden="true">↗</i></button>
               ${report.transcript ? `<a class="text-link" href="${escapeHtml(report.transcript.href)}">Check the work yourself <span aria-hidden="true">↗</span></a>` : ""}
