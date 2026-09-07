@@ -5,6 +5,21 @@
     name: "Do Your Own Research",
     domain: "doyourownresearch.me",
     strapline: "Research you can take apart.",
+    // Attribution is organisational, not personal: no named human is claimed anywhere on the site,
+    // and nothing here should be read as a biographical claim about one. Swap in a real byline the
+    // day someone is willing to stand behind the verdicts under their own name.
+    author: {
+      name: "The Do Your Own Research desk",
+      type: "Organization",
+      byline: "The Do Your Own Research desk",
+      url: "https://doyourownresearch.me/index.html#about"
+    },
+    publisher: {
+      name: "Do Your Own Research",
+      type: "Organization",
+      url: "https://doyourownresearch.me/",
+      logo: "https://doyourownresearch.me/assets/img/favicon.svg"
+    },
     archiveState: "One method note, seven research dossiers.",
     archiveNext: {
       number: "009",
@@ -241,6 +256,7 @@
         }
       ],
       next: {
+        slug: "flat-earth-the-test-nobody-has-run",
         eyebrow: "What comes next",
         title: "The first empirical dossier is published, and it scored itself 14 out of 100.",
         body: "Dossier 002 puts this method against a live contested claim. It reaches no verdict, prints its five empty searches as empty, and shows the arithmetic behind its own low score."
@@ -594,6 +610,7 @@
         }
       ],
       next: {
+        slug: "illuminati-what-the-police-seized",
         eyebrow: "Your turn",
         title: "Now run the same five checks on whatever convinced you.",
         body: "This page reached no verdict, so there is nothing here to take on faith. The whole run is published unedited — every search, every excerpt, every digest — so the story above can be checked against the record it came from. The next dossier takes the same method to the next contested claim."
@@ -989,6 +1006,7 @@
         }
       ],
       next: {
+        slug: "jfk-the-minute-that-came-late",
         eyebrow: "Your turn",
         title: "The documents everyone calls secret were printed in 1787.",
         body: "That is the kind of thing you can check without trusting anyone, which is the only kind of claim this page wants to leave you with. The whole run is published unedited — every search, every excerpt, every digest. The next dossier takes the same method to the next contested claim."
@@ -1399,6 +1417,7 @@
         }
       ],
       next: {
+        slug: "9-11-the-demolition-and-the-warning",
         eyebrow: "Your turn",
         title: "A recording is dated. You can check a clock without trusting anyone.",
         body: "That is the kind of claim this page wants to leave you with — and so is its opposite: nothing here shows that Oswald fired the rifle, because the searches that would have shown it came back empty. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
@@ -1851,6 +1870,7 @@
         }
       ],
       next: {
+        slug: "vaccine-sterilization-the-water-that-tested-higher",
         eyebrow: "Your turn",
         title: "Two claims, two answers, and the run would not merge them.",
         body: "You can check a falsifier against a record without trusting anyone — H2 wrote its own, and this ledger satisfies it. You can also check what came back empty: six of ten adversarial searches, and the report that would settle Able Danger sitting in the sources as zero bytes. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
@@ -2224,6 +2244,7 @@
         }
       ],
       next: {
+        slug: "moon-landing-what-the-mirrors-cannot-prove",
         eyebrow: "Your turn",
         title: "A negative control is something you can check without trusting anyone.",
         body: "Sterile water reading higher than the vaccine is the kind of fact that settles an argument without anyone having to be called a liar — and so is its limit: this run could not establish where the claim originally came from, because the paper that would explain it is in the sources as a navigation menu. The whole run is published unedited, every search and every digest. The next dossier takes the same method to the next contested claim."
@@ -2644,6 +2665,7 @@
         }
       ],
       next: {
+        slug: "mkultra-the-caption-and-the-document",
         eyebrow: "Your turn",
         title: "Ask what the measurement is of, not how precise it is.",
         body: "Nine millimetres across half a century is a real number and it settles where the hardware is. It does not settle who carried it, and this run says so instead of letting the precision do work it cannot do. The thing that would settle it is named in the open questions: sub-metre non-NASA imagery of the Apollo sites showing traverse tracks and descent-stage hardware, or failing to. The whole run is published unedited, every search and every digest."
@@ -3049,6 +3071,7 @@
         }
       ],
       next: {
+        slug: "why-the-verdict-comes-last",
         eyebrow: "Your turn",
         title: "Ask which document was actually opened.",
         body: "The finding here is not that the CIA memo is doubtful. It is that this run never read it. It read an archive’s accurate summary of it, quoted that summary seven times, and built six findings on the result — while the CIA’s own list of all 149 subprojects sat in the same ledger, stored and unread. That is an easy thing to do and a hard thing to notice from a reference list, which is why this page prints where every passage sits inside the page it came from. The whole run is published unedited, every search and every digest."

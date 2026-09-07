@@ -7,6 +7,12 @@
 (function (global) {
   "use strict";
 
+  // Published by assets/data/reports.js, which loads before this file in the browser and in
+  // the build sandbox alike. This is data, not DOM, so the pure half may read it.
+  const site = global.DYOR_SITE || {};
+  const siteOrigin = `https://${site.domain || "doyourownresearch.me"}`;
+  const allReports = () => (Array.isArray(global.DYOR_REPORTS) ? global.DYOR_REPORTS : []);
+
   function escapeHtml(value) {
     return String(value ?? "")
       .replaceAll("&", "&amp;")
@@ -14,6 +20,26 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  // JSON-LD lives inside a <script> block, where HTML entity escaping would corrupt the values a
+  // parser reads back. The only characters that can end the block early are < > and &, and in this
+  // payload they only ever occur inside JSON strings, where \u escapes are valid and lossless.
+  function escapeJsonLd(value) {
+    return JSON.stringify(value, null, 2)
+      .replaceAll("<", "\\u003c")
+      .replaceAll(">", "\\u003e")
+      .replaceAll("&", "\\u0026");
+  }
+
+  // The param URL is still the canonical one. Static pre-rendering swaps this for /reports/<slug>/,
+  // and every internal link and every structured-data URL is built here so there is one place to change.
+  function reportPath(slug, base) {
+    return `${base || ""}reports/${encodeURIComponent(slug)}/`;
+  }
+
+  function reportUrl(slug) {
+    return `${siteOrigin}/${reportPath(slug)}`;
   }
 
   function formatDate(value) {
@@ -236,6 +262,103 @@
     </section>`;
   }
 
+  // Every word a reader actually reads on the page, so wordCount describes the article and not the data file.
+  function countWords(report) {
+    const parts = [report.title, report.deck, report.question, report.answer, report.disclosure, report.thesis?.statement];
+    report.chapters.forEach((chapter) => {
+      parts.push(chapter.title, chapter.lead, chapter.pullquote, ...chapter.body);
+    });
+    parts.push(...report.principles, ...report.limitations, report.sourcesNote);
+    report.sources.forEach((source) => parts.push(source.title, source.note));
+    return parts.filter(Boolean).join(" ").split(/\s+/).filter(Boolean).length;
+  }
+
+  function renderStructuredData(report) {
+    const author = site.author || {};
+    const publisher = site.publisher || {};
+    const url = reportUrl(report.slug);
+    const article = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: report.title,
+      description: report.deck,
+      url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      datePublished: report.publishedAt,
+      dateModified: report.updatedAt,
+      wordCount: countWords(report),
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      keywords: report.tags.join(", "),
+      author: {
+        "@type": author.type || "Organization",
+        name: author.name || site.name,
+        url: author.url || `${siteOrigin}/`
+      },
+      publisher: {
+        "@type": publisher.type || "Organization",
+        name: publisher.name || site.name,
+        url: publisher.url || `${siteOrigin}/`
+      },
+      // The bibliography is the point of the dossier, so it travels with the machine-readable record too.
+      citation: report.sources.map((source) => ({
+        "@type": "CreativeWork",
+        name: source.title,
+        publisher: { "@type": "Organization", name: source.publisher },
+        ...(source.href ? { url: source.href } : {})
+      }))
+    };
+    if (publisher.logo) article.publisher.logo = { "@type": "ImageObject", url: publisher.logo };
+    return `<script type="application/ld+json" data-speech-skip>${escapeJsonLd(article)}</script>`;
+  }
+
+  function renderByline() {
+    const author = site.author || {};
+    const publisher = site.publisher || {};
+    const byline = author.byline || author.name;
+    if (!byline) return "";
+    const href = author.url && author.url.startsWith(`${siteOrigin}/`) ? author.url.slice(siteOrigin.length + 1) : author.url;
+    const name = href ? `<a href="${escapeHtml(href)}">${escapeHtml(byline)}</a>` : escapeHtml(byline);
+    const imprint = publisher.name ? `<span class="report-byline__publisher">Published by ${escapeHtml(publisher.name)}</span>` : "";
+    return `<p class="report-byline" data-speech-skip><span class="report-byline__label">By</span> ${name}${imprint}</p>`;
+  }
+
+  function renderNextLink(report, base) {
+    const target = allReports().find((entry) => entry.slug === report.next.slug);
+    if (!target) return "";
+    return `<a class="report-next__link" href="${escapeHtml(reportPath(target.slug, base))}" data-speech-skip>
+      <span>Read ${escapeHtml(target.issue)}</span>
+      <strong>${escapeHtml(target.shortTitle || target.title)}</strong>
+      <i aria-hidden="true">↗</i>
+    </a>`;
+  }
+
+  // Related by shared tags rather than by publication order, so the block is a real index and not a carousel.
+  function renderRelated(report, base) {
+    const tags = new Set(report.tags);
+    const related = allReports()
+      .filter((entry) => entry.slug !== report.slug && entry.status === "published")
+      .map((entry) => ({ entry, shared: entry.tags.filter((tag) => tags.has(tag)) }))
+      .filter((candidate) => candidate.shared.length > 0)
+      .sort((a, b) => b.shared.length - a.shared.length || a.entry.publishedAt.localeCompare(b.entry.publishedAt))
+      .slice(0, 3);
+    if (related.length === 0) return "";
+
+    const cards = related.map(({ entry, shared }) => `<a class="related-card" href="${escapeHtml(reportPath(entry.slug, base))}">
+      <span class="related-card__issue">${escapeHtml(entry.issue)}</span>
+      <h3 class="related-card__title">${escapeHtml(entry.shortTitle || entry.title)}</h3>
+      <p class="related-card__line">${escapeHtml(entry.cardLine)}</p>
+      <span class="related-card__tags">${escapeHtml(shared.join(" / "))}</span>
+    </a>`).join("");
+
+    return `<nav class="report-related" aria-label="Related dossiers" data-speech-skip>
+      <div class="report-related__inner">
+        <p class="eyebrow">Related dossiers / shared method</p>
+        <div class="related-grid">${cards}</div>
+      </div>
+    </nav>`;
+  }
+
   // Returns the complete <article> for a report. `base` is the path prefix that reaches
   // the site root from the page the markup is going into: "" at the root, "../../" for a
   // pre-rendered page at reports/<slug>/index.html.
@@ -252,13 +375,13 @@
       <span class="source-item__number">${escapeHtml(source.number)}</span>
       <div>
         <div class="source-item__publisher">${escapeHtml(source.publisher)}${source.tier ? ` <i>/ ${escapeHtml(source.tier)}</i>` : ""}</div>
-        <h3 class="source-item__title">${escapeHtml(source.title)}</h3>
+        <h3 class="source-item__title">${source.href ? `<a href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer">${escapeHtml(source.title)}</a>` : escapeHtml(source.title)}</h3>
       </div>
       <div class="source-item__body">
         <p class="source-item__note">${escapeHtml(source.note)}</p>
         ${source.digest ? `<p class="source-item__digest" data-speech-skip><span>Snapshot digest</span><code>${escapeHtml(source.digest)}</code></p>` : ""}
       </div>
-      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" aria-label="Open ${escapeHtml(source.title)}" data-speech-skip>↗</a>` : ""}
+      ${source.href ? `<a class="source-item__link" href="${escapeHtml(source.href)}" target="_blank" rel="noreferrer" tabindex="-1" aria-hidden="true" data-speech-skip>↗</a>` : ""}
     </article>`).join("");
 
     const principlesHeading = report.principlesHeading || { eyebrow: "Report standard", title: "What every public dossier must preserve." };
@@ -271,6 +394,7 @@
     </a>` : "";
 
     return `<article class="report-document" data-report-slug="${escapeHtml(report.slug)}">
+      ${renderStructuredData(report)}
       <header class="report-hero">
         <div class="report-hero__meta">
           <span>${escapeHtml(report.issue)} / ${escapeHtml(report.label)}</span>
@@ -283,14 +407,14 @@
           </div>
           <div class="report-hero__side">
             <p class="report-hero__deck" ${speech("hero:deck")}>${escapeHtml(report.deck)}</p>
+            <aside class="report-disclosure" aria-label="Publication disclosure">
+              <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p ${speech("disclosure")}>${escapeHtml(report.disclosure)}</p>
+            </aside>
             <div class="report-hero__detail"><span>${escapeHtml(report.tags.join(" / "))}</span><span>Updated ${escapeHtml(formatDate(report.updatedAt))}</span></div>
+            ${renderByline()}
           </div>
         </div>
       </header>
-
-      <aside class="report-disclosure" aria-label="Publication disclosure">
-        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p ${speech("disclosure")}>${escapeHtml(report.disclosure)}</p>
-      </aside>
 
       <nav class="report-index" aria-label="Report chapters">
         <div class="report-index__inner">
@@ -348,6 +472,8 @@
         </section>
       </div>
 
+      ${renderRelated(report, base)}
+
       <aside class="ad-slot" data-ad-slot-container data-ad-unit="reportEnd" aria-label="Advertisement"></aside>
 
       <section class="report-next">
@@ -356,6 +482,7 @@
           <div>
             <h2>${escapeHtml(report.next.title)}</h2>
             <p>${escapeHtml(report.next.body)}</p>
+            ${renderNextLink(report, base)}
             <div class="report-share-panel">
               <button class="button button--dark" type="button" data-share-report><span>Share this ${escapeHtml(report.kind === "report" ? "dossier" : "note")}</span><i aria-hidden="true">↗</i></button>
               ${report.transcript ? `<a class="text-link" href="${escapeHtml(base + report.transcript.href)}">Check the work yourself <span aria-hidden="true">↗</span></a>` : ""}
