@@ -307,6 +307,17 @@
     return `<script type="application/ld+json" data-speech-skip>${escapeJsonLd(article)}</script>`;
   }
 
+  function renderByline() {
+    const author = site.author || {};
+    const publisher = site.publisher || {};
+    const byline = author.byline || author.name;
+    if (!byline) return "";
+    const href = author.url && author.url.startsWith(`${siteOrigin}/`) ? author.url.slice(siteOrigin.length + 1) : author.url;
+    const name = href ? `<a href="${escapeHtml(href)}">${escapeHtml(byline)}</a>` : escapeHtml(byline);
+    const imprint = publisher.name ? `<span class="report-byline__publisher">Published by ${escapeHtml(publisher.name)}</span>` : "";
+    return `<p class="report-byline" data-speech-skip><span class="report-byline__label">By</span> ${name}${imprint}</p>`;
+  }
+
   function renderReport(report) {
     const narrationSegments = window.DYOR_NARRATION_CONTENT?.segmentsForReport(report) || [];
     const narrationById = new Map(narrationSegments.map((segment) => [segment.id, segment.text]));
@@ -351,14 +362,14 @@
           </div>
           <div class="report-hero__side">
             <p class="report-hero__deck" ${speech("hero:deck")}>${escapeHtml(report.deck)}</p>
+            <aside class="report-disclosure" aria-label="Publication disclosure">
+              <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p ${speech("disclosure")}>${escapeHtml(report.disclosure)}</p>
+            </aside>
             <div class="report-hero__detail"><span>${escapeHtml(report.tags.join(" / "))}</span><span>Updated ${escapeHtml(formatDate(report.updatedAt))}</span></div>
+            ${renderByline()}
           </div>
         </div>
       </header>
-
-      <aside class="report-disclosure" aria-label="Publication disclosure">
-        <strong>Disclosure / ${escapeHtml(report.kind)}</strong><p ${speech("disclosure")}>${escapeHtml(report.disclosure)}</p>
-      </aside>
 
       <nav class="report-index" aria-label="Report chapters">
         <div class="report-index__inner">

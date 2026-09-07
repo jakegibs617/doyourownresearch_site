@@ -1727,12 +1727,16 @@ blockquote {
   text-transform: none;
 }
 
+/* The side column runs from the top of the hero rather than the bottom, so the disclosure —
+   the scope of the run and the absence of a verdict — is inside the first screen instead of
+   the first scroll. On a title-led hero that is the only placement that actually clears the fold. */
 .report-hero__side {
+  align-self: start;
   padding-bottom: 1rem;
 }
 
 .report-hero__deck {
-  margin-bottom: 3rem;
+  margin-bottom: 1.6rem;
   font-family: var(--serif);
   font-size: clamp(1.2rem, 1.75vw, 1.55rem);
   line-height: 1.48;
@@ -1751,15 +1755,44 @@ blockquote {
   text-transform: uppercase;
 }
 
+.report-byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.6rem;
+  align-items: baseline;
+  margin: 1rem 0 0;
+  font-family: var(--condensed);
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.report-byline__label,
+.report-byline__publisher {
+  color: rgba(241, 238, 229, 0.55);
+}
+
+.report-byline__publisher {
+  flex-basis: 100%;
+}
+
+.report-byline a {
+  border-bottom: 1px solid var(--signal);
+  color: var(--signal);
+}
+
 .report-disclosure {
+  position: relative;
+  z-index: 1;
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1rem var(--pad);
+  gap: 0.45rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.1rem;
   background: var(--signal);
   color: var(--ink);
   font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 .report-disclosure strong {
@@ -2901,7 +2934,6 @@ blockquote {
   .report-hero { padding-top: 7rem; }
   .report-hero h1 { font-size: clamp(3rem, 15vw, 7rem); overflow-wrap: anywhere; }
   .report-hero__meta { flex-wrap: wrap; gap: 0.35rem 1rem; font-size: 0.52rem; }
-  .report-disclosure { grid-template-columns: 1fr; }
   .report-index a { padding-right: 0.8rem; padding-left: 0.8rem; }
   .report-index__actions { background: var(--paper-bright); }
   .report-index button { padding-right: 0.85rem; padding-left: 0.85rem; }
