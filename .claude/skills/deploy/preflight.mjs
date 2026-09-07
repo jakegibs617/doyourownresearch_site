@@ -23,7 +23,7 @@ const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
 const published = reports.filter((r) => r.status === "published");
 
 // 1. Every published entry is reachable from the sitemap, and vice versa.
-const inSitemap = new Set([...sitemap.matchAll(/\?report=([a-z0-9-]+)/g)].map((m) => m[1]));
+const inSitemap = new Set([...sitemap.matchAll(/\/reports\/([a-z0-9-]+)\//g)].map((m) => m[1]));
 for (const report of published) {
   if (!inSitemap.has(report.slug)) problems.push(`sitemap.xml is missing ${report.slug} (${report.issue})`);
 }

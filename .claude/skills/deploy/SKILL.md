@@ -18,7 +18,7 @@ Run all three from the repository root. Any failure stops the deploy.
 
 | # | Command | Catches |
 |---|---|---|
-| 1 | `npm test` | Publication contract: required fields, one `featured`, unknown `visual.type`, missing transcript file, ad config, HTML structure, social preview dimensions |
+| 1 | `npm test` | Publication contract: required fields, one `featured`, unknown `visual.type`, missing transcript file, ad config, HTML structure, social preview dimensions, and a stale committed build (`npm run build` output out of date) |
 | 2 | `node .claude/skills/deploy/preflight.mjs` | What `npm test` does not: sitemap out of sync with published slugs, a transcript present on disk but never committed, a stale `archiveNext.number` |
 | 3 | Render check (below) | Horizontal overflow, blank figures, console errors, across every published page at 1440px and 375px |
 
@@ -84,7 +84,7 @@ timestamps in the transcripts, not from file order.
 | Mistake | Consequence |
 |---|---|
 | Branching before pushing | Nothing deploys; the site is unchanged while the summary says it shipped |
-| Adding a report but not a sitemap entry | Page is live but unlisted — preflight catches this |
+| Editing report data without running `npm run build` | The static pages and sitemap stay behind the data — `npm test` catches this |
 | Leaving two entries `featured: true` | `npm test` fails |
 | Enabling ads with an empty slot ID | `npm test` fails; see README for the AdSense rollout order |
 | Reporting success on the workflow alone | Overstates what was verified — see the red flags above |
