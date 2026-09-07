@@ -5,6 +5,8 @@
 
   const reportRoot = document.querySelector("#report-content");
   const reports = Array.isArray(window.DYOR_REPORTS) ? window.DYOR_REPORTS : [];
+  const site = window.DYOR_SITE || {};
+  const siteOrigin = `https://${site.domain || "doyourownresearch.me"}`;
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -13,6 +15,26 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  // JSON-LD lives inside a <script> block, where HTML entity escaping would corrupt the values a
+  // parser reads back. The only characters that can end the block early are < > and &, and in this
+  // payload they only ever occur inside JSON strings, where \u escapes are valid and lossless.
+  function escapeJsonLd(value) {
+    return JSON.stringify(value, null, 2)
+      .replaceAll("<", "\\u003c")
+      .replaceAll(">", "\\u003e")
+      .replaceAll("&", "\\u0026");
+  }
+
+  // The param URL is still the canonical one. Static pre-rendering swaps this for /reports/<slug>/,
+  // and every internal link and every structured-data URL is built here so there is one place to change.
+  function reportPath(slug) {
+    return `report.html?report=${encodeURIComponent(slug)}`;
+  }
+
+  function reportUrl(slug) {
+    return `${siteOrigin}/${reportPath(slug)}`;
   }
 
   function formatDate(value) {
@@ -235,6 +257,56 @@
     </section>`;
   }
 
+  // Every word a reader actually reads on the page, so wordCount describes the article and not the data file.
+  function countWords(report) {
+    const parts = [report.title, report.deck, report.question, report.answer, report.disclosure, report.thesis?.statement];
+    report.chapters.forEach((chapter) => {
+      parts.push(chapter.title, chapter.lead, chapter.pullquote, ...chapter.body);
+    });
+    parts.push(...report.principles, ...report.limitations, report.sourcesNote);
+    report.sources.forEach((source) => parts.push(source.title, source.note));
+    return parts.filter(Boolean).join(" ").split(/\s+/).filter(Boolean).length;
+  }
+
+  function renderStructuredData(report) {
+    const author = site.author || {};
+    const publisher = site.publisher || {};
+    const url = reportUrl(report.slug);
+    const article = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: report.title,
+      description: report.deck,
+      url,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      datePublished: report.publishedAt,
+      dateModified: report.updatedAt,
+      wordCount: countWords(report),
+      inLanguage: "en",
+      isAccessibleForFree: true,
+      keywords: report.tags.join(", "),
+      author: {
+        "@type": author.type || "Organization",
+        name: author.name || site.name,
+        url: author.url || `${siteOrigin}/`
+      },
+      publisher: {
+        "@type": publisher.type || "Organization",
+        name: publisher.name || site.name,
+        url: publisher.url || `${siteOrigin}/`
+      },
+      // The bibliography is the point of the dossier, so it travels with the machine-readable record too.
+      citation: report.sources.map((source) => ({
+        "@type": "CreativeWork",
+        name: source.title,
+        publisher: { "@type": "Organization", name: source.publisher },
+        ...(source.href ? { url: source.href } : {})
+      }))
+    };
+    if (publisher.logo) article.publisher.logo = { "@type": "ImageObject", url: publisher.logo };
+    return `<script type="application/ld+json" data-speech-skip>${escapeJsonLd(article)}</script>`;
+  }
+
   function renderReport(report) {
     const narrationSegments = window.DYOR_NARRATION_CONTENT?.segmentsForReport(report) || [];
     const narrationById = new Map(narrationSegments.map((segment) => [segment.id, segment.text]));
@@ -266,6 +338,7 @@
     </a>` : "";
 
     reportRoot.innerHTML = `<article class="report-document" data-report-slug="${escapeHtml(report.slug)}">
+      ${renderStructuredData(report)}
       <header class="report-hero">
         <div class="report-hero__meta">
           <span>${escapeHtml(report.issue)} / ${escapeHtml(report.label)}</span>
@@ -373,7 +446,7 @@
     if (ogDescription) ogDescription.setAttribute("content", report.deck);
     document.querySelector("[data-report-issue]")?.replaceChildren(document.createTextNode(report.issue));
 
-    const canonicalUrl = `https://doyourownresearch.me/report.html?report=${encodeURIComponent(report.slug)}`;
+    const canonicalUrl = reportUrl(report.slug);
     let canonical = document.querySelector('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement("link");
