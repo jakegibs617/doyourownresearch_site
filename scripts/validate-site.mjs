@@ -3,6 +3,7 @@ import { readFile, access } from "node:fs/promises";
 import { constants } from "node:fs";
 import { resolve, dirname } from "node:path";
 import vm from "node:vm";
+import { buildSite } from "./build-site.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const failures = [];
@@ -79,6 +80,16 @@ async function loadPublicationData() {
 
 function nonEmpty(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+// Mirrors the renderers' escaping so report prose can be searched for in the built markup.
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 async function supportedVisualTypes() {
@@ -493,6 +504,106 @@ async function validateStructuredData(site, reports) {
   if (failures.length === 0) pass(`structured data: Article JSON-LD, ${reports.length} next links, tag-related dossiers`);
 }
 
+/*
+ * The generated pages are committed, because GitHub Pages deploys the repository as it
+ * stands and runs no build step. Re-running the build in memory and comparing it with what
+ * is on disk is the only thing standing between a data edit and a stale published site.
+ */
+async function validateGeneratedFreshness() {
+  let files;
+  try {
+    files = await buildSite(root);
+  } catch (error) {
+    fail(`site build failed: ${error.message}`);
+    return [];
+  }
+
+  for (const [path, expected] of files) {
+    let actual = null;
+    try {
+      actual = await readFile(resolve(root, path), "utf8");
+    } catch {
+      fail(`generated file is missing: ${path} — run npm run build and commit the result`);
+      continue;
+    }
+    if (actual !== expected) {
+      fail(`generated file is stale: ${path} — run npm run build and commit the result`);
+    }
+  }
+
+  const generated = [...files.keys()].filter((path) => path.startsWith("reports/"));
+  if (failures.length === 0) pass(`generated output current: ${files.size} files, ${generated.length} report pages`);
+  return generated;
+}
+
+// A report is only crawlable if its own URL serves the article, its own title and its own
+// canonical link before any JavaScript runs. That is the failure this whole build exists for.
+async function validateReportPages(reports, generatedPages) {
+  const published = reports.filter((report) => report.status === "published");
+  const titles = new Map();
+  const descriptions = new Map();
+  // A page the build expects but nobody committed is already reported as missing above.
+  const onDisk = [];
+  for (const path of generatedPages) {
+    if (await exists(path)) onDisk.push(path);
+  }
+
+  for (const report of published) {
+    const path = `reports/${report.slug}/index.html`;
+    if (!generatedPages.includes(path)) {
+      fail(`published report has no static page: ${path}`);
+      continue;
+    }
+    if (!onDisk.includes(path)) continue;
+
+    const source = await readFile(resolve(root, path), "utf8");
+    const canonical = `https://doyourownresearch.me/reports/${report.slug}/`;
+    const title = source.match(/<title>([^<]+)<\/title>/i)?.[1] || "";
+    const description = source.match(/<meta\s+name="description"\s+content="([^"]*)">/i)?.[1] || "";
+
+    if (!/<article class="report-document"/.test(source)) fail(`${path} must contain the rendered article, not a JavaScript placeholder`);
+    if (!source.includes(`<link rel="canonical" href="${canonical}">`)) fail(`${path} must declare its own canonical URL`);
+    if (!source.includes(`<meta property="og:url" content="${canonical}">`)) fail(`${path} must declare its own Open Graph URL`);
+    if (!nonEmpty(title)) fail(`${path} must contain a document title`);
+    if (!nonEmpty(description)) fail(`${path} must contain a meta description`);
+    if (titles.has(title)) fail(`${path} shares its title with ${titles.get(title)}`);
+    if (descriptions.has(description)) fail(`${path} shares its meta description with ${descriptions.get(description)}`);
+    titles.set(title, path);
+    descriptions.set(description, path);
+
+    // Chapter prose is the content AdSense reviewed and did not find. Check it is here.
+    const firstParagraph = report.chapters[0]?.body[0];
+    if (firstParagraph && !source.includes(escapeHtml(firstParagraph.slice(0, 60)))) {
+      fail(`${path} does not contain the first chapter paragraph of ${report.slug}`);
+    }
+  }
+
+  await Promise.all(onDisk.map(validateHtmlFile));
+
+  // A crawler reading index.html must find a path to every published report.
+  const home = await readFile(resolve(root, "index.html"), "utf8");
+  const linked = new Set([...home.matchAll(/href="reports\/([a-z0-9-]+)\/"/g)].map((match) => match[1]));
+  published.forEach((report) => {
+    if (!linked.has(report.slug)) fail(`index.html has no static link to reports/${report.slug}/`);
+  });
+
+  const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
+  if (sitemap.includes("report.html?report=")) fail("sitemap must not list query-string report URLs");
+  published.forEach((report) => {
+    if (!sitemap.includes(`https://doyourownresearch.me/reports/${report.slug}/`)) {
+      fail(`sitemap is missing reports/${report.slug}/`);
+    }
+  });
+
+  // Every URL the sitemap advertises has to exist in the repository.
+  for (const match of sitemap.matchAll(/<loc>https:\/\/doyourownresearch\.me\/([^<]*)<\/loc>/g)) {
+    const target = match[1] === "" ? "index.html" : match[1].endsWith("/") ? `${match[1]}index.html` : match[1];
+    if (!(await exists(target))) fail(`sitemap lists a URL with no file behind it: /${match[1]}`);
+  }
+
+  if (failures.length === 0) pass(`static report pages: ${published.length} unique titles, canonicals and articles`);
+}
+
 async function validateTranscripts(reports) {
   for (const report of reports) {
     if (!report.transcript?.href) continue;
@@ -514,6 +625,8 @@ await validateNarrationAssets(reports);
 await validateSocialPreview();
 await validateAdvertising();
 await validateDomain();
+const generatedPages = await validateGeneratedFreshness();
+await validateReportPages(reports, generatedPages);
 
 if (failures.length > 0) {
   console.error(`\nSite validation failed (${failures.length}):`);
