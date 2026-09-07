@@ -456,6 +456,43 @@ async function validateDomain() {
   else pass("sitemap custom-domain URLs");
 }
 
+// The Article record is what a crawler reads instead of the prose, so it has to be present in the
+// renderer, well-formed once rendered, and sourced from site data rather than an invented byline.
+async function validateStructuredData(site, reports) {
+  const renderer = await readFile(resolve(root, "assets/js/report.js"), "utf8");
+  if (!/application\/ld\+json/.test(renderer)) {
+    fail("assets/js/report.js must render an application/ld+json block into the report document");
+    return;
+  }
+  if (!/\\\\u003c/.test(renderer) || !/\\\\u0026/.test(renderer)) {
+    fail("assets/js/report.js must escape <, > and & inside the JSON-LD block");
+  }
+
+  for (const field of ["headline", "description", "datePublished", "dateModified", "wordCount", "mainEntityOfPage"]) {
+    if (!new RegExp(`\\b${field}:`).test(renderer)) fail(`JSON-LD is missing the ${field} property`);
+  }
+
+  for (const attribution of ["author", "publisher"]) {
+    const entity = site?.[attribution];
+    if (!entity || !nonEmpty(entity.name) || !nonEmpty(entity.url)) {
+      fail(`window.DYOR_SITE.${attribution} must carry a name and a url`);
+    }
+  }
+
+  const slugs = new Set(reports.map((report) => report.slug));
+  for (const report of reports) {
+    const target = report.next?.slug;
+    if (!nonEmpty(target)) fail(`report ${report.slug} has no next.slug to link to`);
+    else if (target === report.slug) fail(`report ${report.slug} links its next dossier to itself`);
+    else if (!slugs.has(target)) fail(`report ${report.slug} links an unknown next dossier: ${target}`);
+  }
+
+  if (!/renderRelated/.test(renderer)) fail("assets/js/report.js must render a related-dossiers block");
+  if (!/report-byline/.test(renderer)) fail("assets/js/report.js must render a byline in the report document");
+
+  if (failures.length === 0) pass(`structured data: Article JSON-LD, ${reports.length} next links, tag-related dossiers`);
+}
+
 async function validateTranscripts(reports) {
   for (const report of reports) {
     if (!report.transcript?.href) continue;
@@ -468,6 +505,7 @@ await requireFiles();
 const { site, reports } = await loadPublicationData();
 const visualTypes = await supportedVisualTypes();
 validateReports(site, reports, visualTypes);
+await validateStructuredData(site, reports);
 await validateTranscripts(reports);
 await Promise.all(["index.html", "report.html", "404.html", "privacy.html"].map(validateHtmlFile));
 await validateJavaScript();
