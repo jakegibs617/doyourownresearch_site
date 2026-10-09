@@ -621,6 +621,16 @@
   const report = reports.find((entry) => entry.slug === requestedSlug) || (!requestedSlug ? reports.find((entry) => entry.featured) : null);
 
   if (!reportRoot) return;
+  // Static report pages are already complete HTML documents. Keep that server-rendered
+  // article visible if a cached or lagging reports.js bundle does not know the newest slug.
+  // This prevents a deploy race from turning a valid publication into an “Unknown report”
+  // screen while the data bundle catches up.
+  if (!report && staticSlug && reportRoot.querySelector(`[data-report-slug="${staticSlug}"]`)) {
+    setYear();
+    initReadingProgress();
+    initSectionTracking();
+    return;
+  }
   if (!report) {
     reportRoot.innerHTML = `<section class="report-error"><p class="eyebrow">Unknown report</p><h1>This report is not in the public record.</h1><a class="button button--dark" href="${escapeHtml(base)}index.html#reports"><span>Return to the archive</span><i aria-hidden="true">↗</i></a></section>`;
     document.title = "Report not found — Do Your Own Research";
