@@ -1,0 +1,332 @@
+{
+  "schemaVersion": 1,
+  "report": "jesus-the-bible-and-the-claims-made-for-god",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 602.255,
+  "fingerprint": "4e25e560142da2734c3053620cf546ea3e0f296da7bb93cb635b99787c58db0f",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 3.325
+    },
+    {
+      "id": "hero:deck",
+      "start": 3.445,
+      "end": 13.62
+    },
+    {
+      "id": "disclosure",
+      "start": 13.74,
+      "end": 24.265
+    },
+    {
+      "id": "overview:question",
+      "start": 24.385,
+      "end": 33.535
+    },
+    {
+      "id": "overview:answer",
+      "start": 33.655,
+      "end": 55.605
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 55.725,
+      "end": 58.275
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 58.395,
+      "end": 61.195
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 61.315,
+      "end": 64.44
+    },
+    {
+      "id": "overview:thesis",
+      "start": 64.56,
+      "end": 73.935
+    },
+    {
+      "id": "chapter:jesus-and-writing:title",
+      "start": 74.055,
+      "end": 79.28
+    },
+    {
+      "id": "chapter:jesus-and-writing:lead",
+      "start": 79.4,
+      "end": 88.225
+    },
+    {
+      "id": "chapter:jesus-and-writing:body:0",
+      "start": 88.345,
+      "end": 108.245
+    },
+    {
+      "id": "chapter:jesus-and-writing:body:1",
+      "start": 108.365,
+      "end": 122.865
+    },
+    {
+      "id": "chapter:jesus-and-writing:pullquote",
+      "start": 122.985,
+      "end": 128.235
+    },
+    {
+      "id": "chapter:jesus-and-writing:visual",
+      "start": 128.355,
+      "end": 137.28
+    },
+    {
+      "id": "chapter:canon-clocks:title",
+      "start": 137.4,
+      "end": 142.75
+    },
+    {
+      "id": "chapter:canon-clocks:lead",
+      "start": 142.87,
+      "end": 155.27
+    },
+    {
+      "id": "chapter:canon-clocks:body:0",
+      "start": 155.39,
+      "end": 176.865
+    },
+    {
+      "id": "chapter:canon-clocks:body:1",
+      "start": 176.985,
+      "end": 194.01
+    },
+    {
+      "id": "chapter:canon-clocks:pullquote",
+      "start": 194.13,
+      "end": 197.955
+    },
+    {
+      "id": "chapter:canon-clocks:visual",
+      "start": 198.075,
+      "end": 208.025
+    },
+    {
+      "id": "chapter:selectors:title",
+      "start": 208.145,
+      "end": 215.02
+    },
+    {
+      "id": "chapter:selectors:lead",
+      "start": 215.14,
+      "end": 222.74
+    },
+    {
+      "id": "chapter:selectors:body:0",
+      "start": 222.86,
+      "end": 239.31
+    },
+    {
+      "id": "chapter:selectors:body:1",
+      "start": 239.43,
+      "end": 256.93
+    },
+    {
+      "id": "chapter:selectors:pullquote",
+      "start": 257.05,
+      "end": 263.325
+    },
+    {
+      "id": "chapter:selectors:visual",
+      "start": 263.445,
+      "end": 269.52
+    },
+    {
+      "id": "chapter:violence:title",
+      "start": 269.64,
+      "end": 276.14
+    },
+    {
+      "id": "chapter:violence:lead",
+      "start": 276.26,
+      "end": 285.135
+    },
+    {
+      "id": "chapter:violence:body:0",
+      "start": 285.255,
+      "end": 305.88
+    },
+    {
+      "id": "chapter:violence:body:1",
+      "start": 306.0,
+      "end": 321.275
+    },
+    {
+      "id": "chapter:violence:pullquote",
+      "start": 321.395,
+      "end": 325.795
+    },
+    {
+      "id": "chapter:violence:visual",
+      "start": 325.915,
+      "end": 331.09
+    },
+    {
+      "id": "chapter:god-and-command:title",
+      "start": 331.21,
+      "end": 336.26
+    },
+    {
+      "id": "chapter:god-and-command:lead",
+      "start": 336.38,
+      "end": 344.63
+    },
+    {
+      "id": "chapter:god-and-command:body:0",
+      "start": 344.75,
+      "end": 362.5
+    },
+    {
+      "id": "chapter:god-and-command:body:1",
+      "start": 362.62,
+      "end": 376.77
+    },
+    {
+      "id": "chapter:god-and-command:pullquote",
+      "start": 376.89,
+      "end": 383.29
+    },
+    {
+      "id": "chapter:god-and-command:visual",
+      "start": 383.41,
+      "end": 389.91
+    },
+    {
+      "id": "chapter:suffering:title",
+      "start": 390.03,
+      "end": 395.005
+    },
+    {
+      "id": "chapter:suffering:lead",
+      "start": 395.125,
+      "end": 405.775
+    },
+    {
+      "id": "chapter:suffering:body:0",
+      "start": 405.895,
+      "end": 422.745
+    },
+    {
+      "id": "chapter:suffering:body:1",
+      "start": 422.865,
+      "end": 434.415
+    },
+    {
+      "id": "chapter:suffering:pullquote",
+      "start": 434.535,
+      "end": 439.71
+    },
+    {
+      "id": "chapter:suffering:visual",
+      "start": 439.83,
+      "end": 446.605
+    },
+    {
+      "id": "chapter:afterlife:title",
+      "start": 446.725,
+      "end": 452.125
+    },
+    {
+      "id": "chapter:afterlife:lead",
+      "start": 452.245,
+      "end": 462.87
+    },
+    {
+      "id": "chapter:afterlife:body:0",
+      "start": 462.99,
+      "end": 483.24
+    },
+    {
+      "id": "chapter:afterlife:body:1",
+      "start": 483.36,
+      "end": 496.06
+    },
+    {
+      "id": "chapter:afterlife:pullquote",
+      "start": 496.18,
+      "end": 501.13
+    },
+    {
+      "id": "chapter:afterlife:visual",
+      "start": 501.25,
+      "end": 508.2
+    },
+    {
+      "id": "principles:title",
+      "start": 508.32,
+      "end": 510.595
+    },
+    {
+      "id": "principles:item:0",
+      "start": 510.715,
+      "end": 513.54
+    },
+    {
+      "id": "principles:item:1",
+      "start": 513.66,
+      "end": 516.935
+    },
+    {
+      "id": "principles:item:2",
+      "start": 517.055,
+      "end": 520.63
+    },
+    {
+      "id": "principles:item:3",
+      "start": 520.75,
+      "end": 525.025
+    },
+    {
+      "id": "limitations:title",
+      "start": 525.145,
+      "end": 527.67
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 527.79,
+      "end": 538.24
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 538.36,
+      "end": 545.41
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 545.53,
+      "end": 555.805
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 555.925,
+      "end": 564.025
+    },
+    {
+      "id": "sources:title",
+      "start": 564.145,
+      "end": 567.37
+    },
+    {
+      "id": "sources:note",
+      "start": 567.49,
+      "end": 579.49
+    },
+    {
+      "id": "sources:item:0",
+      "start": 579.61,
+      "end": 602.135
+    }
+  ]
+}

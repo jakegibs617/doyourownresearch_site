@@ -11,7 +11,8 @@
     "9-11-the-demolition-and-the-warning",
     "vaccine-sterilization-the-water-that-tested-higher",
     "moon-landing-what-the-mirrors-cannot-prove",
-    "mkultra-the-caption-and-the-document"
+    "mkultra-the-caption-and-the-document",
+    "jesus-the-bible-and-the-claims-made-for-god"
   ];
 
   window.DYOR_NARRATION = Object.freeze(Object.fromEntries(slugs.map((slug) => [slug, Object.freeze({
