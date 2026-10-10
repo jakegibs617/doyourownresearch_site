@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "report": "witches-why-the-hunt-turned-on-women",
+  "voice": "Michael",
+  "voiceModel": "kokoro-am_michael",
+  "language": "en-US",
+  "speed": 1.15,
+  "duration": 1638.26,
+  "fingerprint": "8f5818cf4f8cbd0e9af2fb7e9e9cb1a6321350f090e8782c102f8ba629f18d68",
+  "cues": [
+    {
+      "id": "hero:title",
+      "start": 0.0,
+      "end": 2.925
+    },
+    {
+      "id": "hero:deck",
+      "start": 3.045,
+      "end": 12.995
+    },
+    {
+      "id": "disclosure",
+      "start": 13.115,
+      "end": 36.14
+    },
+    {
+      "id": "overview:question",
+      "start": 36.26,
+      "end": 80.725
+    },
+    {
+      "id": "overview:answer",
+      "start": 80.845,
+      "end": 133.24
+    },
+    {
+      "id": "overview:stat:0",
+      "start": 133.36,
+      "end": 136.91
+    },
+    {
+      "id": "overview:stat:1",
+      "start": 137.03,
+      "end": 141.03
+    },
+    {
+      "id": "overview:stat:2",
+      "start": 141.15,
+      "end": 144.4
+    },
+    {
+      "id": "overview:thesis",
+      "start": 144.52,
+      "end": 161.27
+    },
+    {
+      "id": "chapter:origins:title",
+      "start": 161.39,
+      "end": 166.515
+    },
+    {
+      "id": "chapter:origins:lead",
+      "start": 166.635,
+      "end": 178.085
+    },
+    {
+      "id": "chapter:origins:body:0",
+      "start": 178.205,
+      "end": 215.375
+    },
+    {
+      "id": "chapter:origins:body:1",
+      "start": 215.495,
+      "end": 232.42
+    },
+    {
+      "id": "chapter:origins:pullquote",
+      "start": 232.54,
+      "end": 239.44
+    },
+    {
+      "id": "chapter:origins:visual",
+      "start": 239.56,
+      "end": 321.225
+    },
+    {
+      "id": "chapter:print:title",
+      "start": 321.345,
+      "end": 326.52
+    },
+    {
+      "id": "chapter:print:lead",
+      "start": 326.64,
+      "end": 334.165
+    },
+    {
+      "id": "chapter:print:body:0",
+      "start": 334.285,
+      "end": 351.585
+    },
+    {
+      "id": "chapter:print:body:1",
+      "start": 351.705,
+      "end": 377.355
+    },
+    {
+      "id": "chapter:print:pullquote",
+      "start": 377.475,
+      "end": 384.5
+    },
+    {
+      "id": "chapter:print:visual",
+      "start": 384.62,
+      "end": 396.195
+    },
+    {
+      "id": "chapter:explanations:title",
+      "start": 396.315,
+      "end": 401.64
+    },
+    {
+      "id": "chapter:explanations:lead",
+      "start": 401.76,
+      "end": 410.585
+    },
+    {
+      "id": "chapter:explanations:body:0",
+      "start": 410.705,
+      "end": 431.705
+    },
+    {
+      "id": "chapter:explanations:body:1",
+      "start": 431.825,
+      "end": 450.575
+    },
+    {
+      "id": "chapter:explanations:pullquote",
+      "start": 450.695,
+      "end": 455.82
+    },
+    {
+      "id": "chapter:explanations:visual",
+      "start": 455.94,
+      "end": 538.53
+    },
+    {
+      "id": "chapter:the-map:title",
+      "start": 538.65,
+      "end": 543.125
+    },
+    {
+      "id": "chapter:the-map:lead",
+      "start": 543.245,
+      "end": 554.195
+    },
+    {
+      "id": "chapter:the-map:body:0",
+      "start": 554.315,
+      "end": 573.84
+    },
+    {
+      "id": "chapter:the-map:body:1",
+      "start": 573.96,
+      "end": 600.41
+    },
+    {
+      "id": "chapter:the-map:pullquote",
+      "start": 600.53,
+      "end": 604.955
+    },
+    {
+      "id": "chapter:the-map:visual",
+      "start": 605.075,
+      "end": 655.145
+    },
+    {
+      "id": "chapter:the-book:title",
+      "start": 655.265,
+      "end": 660.59
+    },
+    {
+      "id": "chapter:the-book:lead",
+      "start": 660.71,
+      "end": 668.385
+    },
+    {
+      "id": "chapter:the-book:body:0",
+      "start": 668.505,
+      "end": 704.375
+    },
+    {
+      "id": "chapter:the-book:body:1",
+      "start": 704.495,
+      "end": 737.89
+    },
+    {
+      "id": "chapter:the-book:body:2",
+      "start": 738.01,
+      "end": 762.735
+    },
+    {
+      "id": "chapter:the-book:pullquote",
+      "start": 762.855,
+      "end": 768.805
+    },
+    {
+      "id": "chapter:the-book:visual",
+      "start": 768.925,
+      "end": 827.765
+    },
+    {
+      "id": "chapter:the-neighbours:title",
+      "start": 827.885,
+      "end": 833.535
+    },
+    {
+      "id": "chapter:the-neighbours:lead",
+      "start": 833.655,
+      "end": 840.98
+    },
+    {
+      "id": "chapter:the-neighbours:body:0",
+      "start": 841.1,
+      "end": 864.175
+    },
+    {
+      "id": "chapter:the-neighbours:body:1",
+      "start": 864.295,
+      "end": 890.795
+    },
+    {
+      "id": "chapter:the-neighbours:body:2",
+      "start": 890.915,
+      "end": 906.69
+    },
+    {
+      "id": "chapter:the-neighbours:pullquote",
+      "start": 906.81,
+      "end": 912.51
+    },
+    {
+      "id": "chapter:the-neighbours:visual",
+      "start": 912.63,
+      "end": 960.575
+    },
+    {
+      "id": "chapter:conspiracies:title",
+      "start": 960.695,
+      "end": 966.645
+    },
+    {
+      "id": "chapter:conspiracies:lead",
+      "start": 966.765,
+      "end": 976.265
+    },
+    {
+      "id": "chapter:conspiracies:body:0",
+      "start": 976.385,
+      "end": 1014.58
+    },
+    {
+      "id": "chapter:conspiracies:body:1",
+      "start": 1014.7,
+      "end": 1042.65
+    },
+    {
+      "id": "chapter:conspiracies:pullquote",
+      "start": 1042.77,
+      "end": 1046.995
+    },
+    {
+      "id": "chapter:conspiracies:visual",
+      "start": 1047.115,
+      "end": 1096.335
+    },
+    {
+      "id": "chapter:attacks:title",
+      "start": 1096.455,
+      "end": 1102.08
+    },
+    {
+      "id": "chapter:attacks:lead",
+      "start": 1102.2,
+      "end": 1108.3
+    },
+    {
+      "id": "chapter:attacks:body:0",
+      "start": 1108.42,
+      "end": 1125.845
+    },
+    {
+      "id": "chapter:attacks:body:1",
+      "start": 1125.965,
+      "end": 1144.24
+    },
+    {
+      "id": "chapter:attacks:pullquote",
+      "start": 1144.36,
+      "end": 1149.835
+    },
+    {
+      "id": "chapter:attacks:visual",
+      "start": 1149.955,
+      "end": 1210.225
+    },
+    {
+      "id": "chapter:score:title",
+      "start": 1210.345,
+      "end": 1215.02
+    },
+    {
+      "id": "chapter:score:lead",
+      "start": 1215.14,
+      "end": 1222.79
+    },
+    {
+      "id": "chapter:score:body:0",
+      "start": 1222.91,
+      "end": 1248.31
+    },
+    {
+      "id": "chapter:score:body:1",
+      "start": 1248.43,
+      "end": 1260.455
+    },
+    {
+      "id": "chapter:score:pullquote",
+      "start": 1260.575,
+      "end": 1267.425
+    },
+    {
+      "id": "chapter:score:visual",
+      "start": 1267.545,
+      "end": 1299.915
+    },
+    {
+      "id": "principles:title",
+      "start": 1300.035,
+      "end": 1302.635
+    },
+    {
+      "id": "principles:item:0",
+      "start": 1302.755,
+      "end": 1309.055
+    },
+    {
+      "id": "principles:item:1",
+      "start": 1309.175,
+      "end": 1315.325
+    },
+    {
+      "id": "principles:item:2",
+      "start": 1315.445,
+      "end": 1320.42
+    },
+    {
+      "id": "principles:item:3",
+      "start": 1320.54,
+      "end": 1327.565
+    },
+    {
+      "id": "limitations:title",
+      "start": 1327.685,
+      "end": 1330.21
+    },
+    {
+      "id": "limitations:item:0",
+      "start": 1330.33,
+      "end": 1337.755
+    },
+    {
+      "id": "limitations:item:1",
+      "start": 1337.875,
+      "end": 1350.1
+    },
+    {
+      "id": "limitations:item:2",
+      "start": 1350.22,
+      "end": 1358.57
+    },
+    {
+      "id": "limitations:item:3",
+      "start": 1358.69,
+      "end": 1368.34
+    },
+    {
+      "id": "limitations:item:4",
+      "start": 1368.46,
+      "end": 1377.16
+    },
+    {
+      "id": "limitations:item:5",
+      "start": 1377.28,
+      "end": 1385.48
+    },
+    {
+      "id": "sources:title",
+      "start": 1385.6,
+      "end": 1388.3
+    },
+    {
+      "id": "sources:note",
+      "start": 1388.42,
+      "end": 1407.22
+    },
+    {
+      "id": "sources:item:0",
+      "start": 1407.34,
+      "end": 1419.04
+    },
+    {
+      "id": "sources:item:1",
+      "start": 1419.16,
+      "end": 1435.16
+    },
+    {
+      "id": "sources:item:2",
+      "start": 1435.28,
+      "end": 1448.905
+    },
+    {
+      "id": "sources:item:3",
+      "start": 1449.025,
+      "end": 1465.1
+    },
+    {
+      "id": "sources:item:4",
+      "start": 1465.22,
+      "end": 1482.97
+    },
+    {
+      "id": "sources:item:5",
+      "start": 1483.09,
+      "end": 1496.39
+    },
+    {
+      "id": "sources:item:6",
+      "start": 1496.51,
+      "end": 1508.66
+    },
+    {
+      "id": "sources:item:7",
+      "start": 1508.78,
+      "end": 1522.255
+    },
+    {
+      "id": "sources:item:8",
+      "start": 1522.375,
+      "end": 1537.0
+    },
+    {
+      "id": "sources:item:9",
+      "start": 1537.12,
+      "end": 1547.945
+    },
+    {
+      "id": "sources:item:10",
+      "start": 1548.065,
+      "end": 1560.565
+    },
+    {
+      "id": "sources:item:11",
+      "start": 1560.685,
+      "end": 1574.66
+    },
+    {
+      "id": "sources:item:12",
+      "start": 1574.78,
+      "end": 1589.355
+    },
+    {
+      "id": "sources:item:13",
+      "start": 1589.475,
+      "end": 1605.55
+    },
+    {
+      "id": "sources:item:14",
+      "start": 1605.67,
+      "end": 1617.545
+    },
+    {
+      "id": "sources:item:15",
+      "start": 1617.665,
+      "end": 1638.14
+    }
+  ]
+}

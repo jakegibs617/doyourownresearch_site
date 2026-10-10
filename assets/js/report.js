@@ -395,7 +395,7 @@
 
     return `<article class="report-document" data-report-slug="${escapeHtml(report.slug)}">
       ${renderStructuredData(report)}
-      <header class="report-hero">
+      <header class="report-hero${(report.tags || []).includes("Halloween") ? " is-halloween" : ""}">
         <div class="report-hero__meta">
           <span>${escapeHtml(report.issue)} / ${escapeHtml(report.label)}</span>
           <span>${escapeHtml(formatDate(report.publishedAt))} / ${escapeHtml(report.readMinutes)} min read</span>

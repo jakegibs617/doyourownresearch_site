@@ -2677,7 +2677,7 @@
       label: "Research dossier",
       issue: "DOSSIER 008",
       status: "published",
-      featured: true,
+      featured: false,
       publishedAt: "2026-08-29",
       updatedAt: "2026-08-29",
       readMinutes: 12,
@@ -3117,6 +3117,619 @@
       sourcesNote: "The source links and full evidence ledgers remain in the seven underlying dossiers. This page preserves their boundaries rather than presenting a new undifferentiated bibliography.",
       sources: [{ number: "01", title: "Jesus, the Bible, and the claims made for God — combined overview", publisher: "Do Your Own Research dossier", tier: "technical report", digest: "78522a5e319fa70ef440681fdfa6dd0773ea6abb7f30cc4944343c8a1a3e8b2b", href: "https://doyourownresearch.me/reports/jesus-the-bible-and-the-claims-made-for-god/", note: "The supplied overview combines seven research runs and identifies which conclusions are historical, institutional, philosophical, or unresolved. The digest is the SHA-256 of the supplied overview file." }],
       next: { slug: "why-the-verdict-comes-last", eyebrow: "Read the method", title: "Ask which document was actually opened.", body: "The overview is strongest where it keeps its clocks and evidence types separate. The method note explains why every public dossier prints the path before the verdict." }
+    },
+    {
+      slug: "witches-why-the-hunt-turned-on-women",
+      kind: "report",
+      label: "Halloween dossier",
+      issue: "DOSSIER 010",
+      status: "published",
+      featured: true,
+      publishedAt: "2026-10-10",
+      updatedAt: "2026-10-10",
+      readMinutes: 17,
+      runId: "c6d32fc5-2f7a-48ad-802d-cf2f7a1ccfe2",
+      title: "Witches, and why the hunt turned on women.",
+      shortTitle: "Witches",
+      deck: "The misogyny in the witch-hunters’ books is real. Whether it decided who burned is a different question, and the places where most witches were men are where it fails.",
+      cardLine: "Iceland had the demonology and burned twenty men to two women. Nine million, the midwives and the pagan cult do not survive the record.",
+      question: "What explains the shift in the gender composition of European witch-hunt accusations from predominantly male defendants in early trials (e.g., Valais 1428, Russia) to roughly 80% female defendants during the peak hunts of 1560–1650, and how well do the leading explanations (demonological misogyny such as the Malleus Maleficarum, versus local accusation dynamics involving neighbours, accusers, household conflict, age/widowhood, and the shift from heresy to maleficium prosecutions) account for this change and for the persistence of male-majority regions (Iceland, Normandy, Estonia, Finland, Russia)?",
+      answer: "At the peak, women were 71–92% of those tried in most places and about 80% in Germany, where more than half of all executions happened. The Malleus is openly misogynist, but as the cause of that share it fails its own test: Iceland received the full demonology and executed twenty men to two women, Burgundy’s court ran 48% women and Finland 51%. What best explains who was named is local: neighbours’ accusations, old and poor people with long quarrel histories, household harm, magic coded male or female by local culture, and courts with torture that turned accusations into executions. The popular claims fare worse: nine million dead, the midwife hunt and Murray’s pagan cult are contradicted by the record. All thirteen asserted findings computed to unknown confidence.",
+      disclosure: "This page combines two research runs, part one of a Halloween pair. Run 8 asked where the witch came from and whether the printing press caused the hunts; run 10 followed up on gender and the popular conspiracy claims. Run 10’s best overall explanation is a hypothesis it could not test, and Federici’s book and any confiscation records were never read.",
+      accent: "amber",
+      tags: ["Halloween", "Folklore", "Gender", "Institutions"],
+      cover: {
+        index: "DYOR—010",
+        serial: "010 / 2026",
+        lines: ["THE BOOKS", "BLAMED WOMEN.", "NEIGHBOURS NAMED THEM."],
+        footer: "Halloween series · part 1 of 2"
+      },
+      transcript: {
+        href: "assets/reports/dyor-c6d32fc5-2f7a-48ad-802d-cf2f7a1ccfe2.md",
+        label: "Read the full method transcript",
+        note: "The complete run 10 record: the bounded question, all four explanations with what would kill each one, every search, every verbatim excerpt and its bearing, every snapshot digest. Run 8’s transcript is listed in the sources. Both are published unedited."
+      },
+      scope: {
+        audience: "Anyone who has heard that the witch hunts were a war on women, and wants to see which parts of that the record supports.",
+        focus: "Why the share of women among accused witches rose to about 80% at the 1560–1650 peak, and why some regions stayed mostly male.",
+        excluded: "Witchcraft outside Europe, modern witchcraft and Wicca, the theology of the demonologists beyond their claims about women, and a full count of the dead, which earlier runs addressed."
+      },
+      stats: [
+        { value: "20 : 2", label: "men to women executed in Iceland" },
+        { value: "30–60k", label: "executions, not nine million" },
+        { value: "5", label: "popular claims checked against the record" }
+      ],
+      thesis: {
+        label: "The distinction this page rests on",
+        statement: "A book can hate women without being the reason women were accused. The record shows the misogyny clearly; it shows the selection happening somewhere else: in what neighbours said, what local culture called magic, and what the court was allowed to do to a suspect.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "origins",
+          number: "01",
+          eyebrow: "Where the witch came from",
+          title: "The pieces were old. The package was assembled in the Alps.",
+          lead: "Run 8 found that every element of the witch existed long before the hunts. What was new in the 1420s was a court putting them together and prosecuting the result at scale.",
+          body: [
+            "Women flying at night with the goddess Diana appear in tenth-century church law, the Canon Episcopi, which called it a demonic illusion priests should teach people not to believe. A 1398 Paris ruling found an implied pact in magic. Secret meetings, orgies and child-eating were charges recycled from trials of heretics. In the western Alps in the 1420s and 1430s, courts fused pact, sabbath, night flight and a secret sect into one crime: Valais from 1428, with more than two hundred executions, and Briançon in 1437.",
+            "The machinery came from heresy-hunting. The Lausanne inquisition existed because of campaigns against Waldensians, and in French the new crime was even called Vauderie. That matters for this page, because heresy trials had no built-in reason to prefer women."
+          ],
+          pullquote: "The witch was not invented in the 1480s. She was assembled from spare parts sixty years earlier.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "c.906", label: "Canon Episcopi", detail: "Night flight with Diana declared an illusion; priests to preach against belief in it." },
+              { date: "1398", label: "Paris ruling", detail: "The university finds an implied pact with demons in magic." },
+              { date: "1424–48", label: "Dauphiné", detail: "250-plus tried; 72% women, by count, before any printed demonology." },
+              { date: "1428", label: "Valais", detail: "Mass trials; victims estimated two-thirds men." },
+              { date: "1484", label: "Summis desiderantes", detail: "The papal bull lists harmful magic only: crops, cattle, fertility. No sabbath, no flight." },
+              { date: "1486", label: "Malleus Maleficarum", detail: "Kramer’s handbook, the Hammer of Witches (Der Hexenhammer); openly misogynist, 28 editions follow.", tone: "seizure" },
+              { date: "1560–1660", label: "The peak", detail: "Women 71–92% of those tried in most places; about 80% in Germany." },
+              { date: "1626–31", label: "Bamberg", detail: "A panic that took officials, clergy, children, men and women indiscriminately." },
+              { date: "1782", label: "Anna Göldi", detail: "Executed in Glarus; the end of the main era.", tone: "end" }
+            ],
+            note: "1398–1486 dates come from run 8; the gender figures from run 10. Dauphiné and Valais disagree about the early baseline: see chapter 04."
+          }
+        },
+        {
+          id: "print",
+          number: "02",
+          eyebrow: "The printing press",
+          title: "Print did not start the hunts. It sped them up where the books were read.",
+          lead: "Run 8 tested whether the printing press caused the witch hunts. Of six explanations, “print caused it” scored worst.",
+          body: [
+            "Mass hunts ran decades before any press. Kramer was already getting women executed at Ravensburg in 1484, before he wrote the Malleus, and the European peak came seventy years after it was printed, with a lull of about fifty years in new editions between.",
+            "Print worked as an accelerant. One study of Central European cities found a city’s odds of holding its first trial rose about 30% when more editions had circulated nearby in the previous decade. But only five of the nine cities that printed the Malleus held any trials at all. What mattered was where it was read, not where it was made, and print also spread the sceptics: Weyer in 1563, Scot in 1584."
+          ],
+          pullquote: "The book that hated women arrived late, sold slowly, and was rejected by the Inquisition within years.",
+          visual: {
+            type: "verdict-shift",
+            before: ["PRINT CAUSED IT", "THE MALLEUS LIT THE FIRE", "ONE BOOK, ONE HUNT"],
+            after: ["HUNTS BEFORE PRESSES", "ACCELERANT WHERE READ", "SECULAR COURTS USED IT"]
+          }
+        },
+        {
+          id: "explanations",
+          number: "03",
+          eyebrow: "Competing explanations",
+          title: "Four explanations for the shift to women, and the favourite lost.",
+          lead: "Run 10 wrote four explanations down with the observation that would destroy each one, then scored eighty-nine passages against all four.",
+          body: [
+            "Demonological misogyny (H1) is the explanation most readers bring to this question. It collected twenty supporting passages and twenty-two against, five of them strongly, for a net score of minus seven. Local accusation dynamics (H2) collected nineteen for and two against, net plus seventeen, the best of the four.",
+            "A recording artefact (H3), that the shift is partly about which courts kept records, came out roughly even. Demographic vulnerability (H4), that rising numbers of poor and widowed women made women easier targets, came out slightly negative, for a reason chapter 06 explains."
+          ],
+          pullquote: "The explanation everyone expects drew more passages against it than for it.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              { id: "H1", claim: "Demonological treatises like the Malleus, which theorized women as susceptible to the Devil, were the primary driver of the shift to ~80% women.", falsifier: "Regions with heavy demonological circulation and female shares at or below 50%, or regions with little demonology and high female shares.", counts: [0, 20, 47, 17, 5] },
+              { id: "H2", claim: "Bottom-up accusation dynamics — neighbour disputes, household conflict, old and unprotected women, women accusing women — drove the shift as prosecution moved from heresy to harmful magic.", falsifier: "Trial samples showing the same local-conflict profile in early male-majority and peak female-majority trials.", counts: [0, 19, 68, 2, 0] },
+              { id: "H3", claim: "The shift is partly an artefact of which courts kept records, what charges were logged, and which records survived.", falsifier: "A single continuously operating court with stable records showing the same shift.", counts: [0, 7, 77, 5, 0] },
+              { id: "H4", claim: "Rising numbers of unmarried and widowed women, and their economic marginalization, independently raised women’s vulnerability.", falsifier: "Regions with the same demographic change but no rise in the female share.", counts: [0, 5, 77, 7, 0] }
+            ],
+            note: "Counts are bearings, not votes: each of 89 passages was scored against all four explanations."
+          }
+        },
+        {
+          id: "the-map",
+          number: "04",
+          eyebrow: "The exceptions",
+          title: "The places where witches were men are the real test.",
+          lead: "The 80% figure is an average over very different places. Several large jurisdictions sat at or below half women during exactly the decades of peak hunting.",
+          body: [
+            "Iceland executed twenty men and two women. Muscovy, Normandy and Estonia had male majorities; so did Styria and Carinthia, inside the Holy Roman Empire. Finland ran 51% women and the Parlement of Burgundy 48% between 1580 and 1642.",
+            "The early baseline is shakier than the question assumed. Valais is estimated at two-thirds men, but that estimate rests on a chronicler who reported a conspiracy of seven hundred. Dauphiné between 1424 and 1448 is a count of more than 250 people tried, and it was already 72% women, before the Malleus existed. “Men first, women later” may be one valley’s story rather than Europe’s."
+          ],
+          pullquote: "A theory that explains Germany also has to explain Iceland.",
+          visual: {
+            type: "prevalence-ladder",
+            items: [
+              { value: 9, wording: "Iceland: 20 men and 2 women executed", source: "Witch trials in Iceland" },
+              { value: 33, wording: "Valais, 1428 onward (an estimate)", source: "Valais witch trials" },
+              { value: 48, wording: "Parlement of Burgundy, 1580–1642", source: "Trends & Statistics" },
+              { value: 51, wording: "Finland, 1520–1699", source: "Trends & Statistics" },
+              { value: 72, wording: "Dauphiné, 1424–48, before the Malleus", source: "Encyclopedia.com" },
+              { value: 80, wording: "Germany at the peak, where most executions happened", source: "Encyclopedia.com" },
+              { value: 84, wording: "Scotland", source: "BBC Bitesize" }
+            ],
+            note: "Share of the accused or executed who were women. Iceland is computed from 20 of 22 executions; Valais is a chronicle-based estimate, not a count."
+          }
+        },
+        {
+          id: "the-book",
+          number: "05",
+          eyebrow: "Was it the sexism?",
+          title: "The misogyny is in the book. The skew is not explained by it.",
+          lead: "Run 10 established the content of the misogyny beyond doubt, and then watched the causal claim fail on its own terms.",
+          body: [
+            "The Malleus Maleficarum is the same book many readers know as the Hammer of Witches, or in German Der Hexenhammer. Its bias starts with its name: maleficarum is the feminine plural, “of female witches”, where the masculine would have been maleficorum. Inside, it calls women the frailer sex, “defective in all the powers of both soul and body”, quicker to doubt in faith. It argued witches were more often women and urged magistrates to follow its procedures. Kramer’s own trials at Ravensburg and Innsbruck targeted women almost exclusively, and it ran to twenty-eight editions.",
+            "But Iceland received the full demonology — Danish-trained clergy, the Danish witchcraft act of 1617 imposed in 1630, two domestic witchcraft books — and still burned men. Its Italian publication was followed by a fall in witchcraft cases. The Inquisition denied it authority and censured Kramer, and the Spanish Inquisition warned its members against believing it in 1538. Bamberg, a court steeped in demonology, extracted the full diabolic confession from men and women of all ages and classes.",
+            "The run’s reconciling reading: the misogyny supplied a vocabulary that could amplify and lethalise a female-skewed accusation pattern where courts already allowed torture, but it did not create the skew and could not override a local culture that saw magic as men’s work. That reading is marked as a hypothesis, because no source here tabulated text circulation, court type and female share together."
+          ],
+          pullquote: "The sexism was a justification that made things worse, not the switch that chose who burned.",
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Established premise",
+              status: "observed",
+              text: "The Malleus and the tradition it founded explicitly theorized women as the paradigmatic witch, and Kramer’s own trials targeted women almost exclusively.",
+              id: "fnd_e7538ab344e43e8c_02",
+              meta: "content established · computed confidence: unknown"
+            },
+            attack: {
+              label: "Its own falsifier, met",
+              kind: "inferred",
+              text: "Iceland had pact-demonology, witchcraft books and the Danish act, yet executed 20 men to 2 women; Burgundy ran 48% women; Styria and Carinthia stayed male-majority inside the Empire.",
+              id: "fnd_cffd104faf5e1794_03"
+            },
+            failureLabel: "What the run concluded",
+            failure: "Demonological misogyny must be rejected as the primary mechanism of the female share. It survives as an amplifier inside particular courts — a reading the run could not test."
+          }
+        },
+        {
+          id: "the-neighbours",
+          number: "06",
+          eyebrow: "What did select women",
+          title: "Neighbours named them. Local culture decided what magic looked like.",
+          lead: "The best-supported account is about who got named, and it runs through ordinary village life rather than through the books.",
+          body: [
+            "Most accused were denounced by people in their own community. The talk of three or four neighbours was enough for an arrest; five to ten qualified accusers opened the way to torture. The accused typically had quarrelsome reputations and were over forty — more than 60% in Scotland — with long histories of conflict behind them. In England most of the accusers were women too.",
+            "The accusations followed household roles. Women were far more often accused of harming other women’s young children; men were just as likely to be accused of harming a neighbour’s livestock or property. Where local culture tied magic to men, men were accused: Iceland’s magic was learned from books in schools that admitted almost only men; Normandy’s witches were mostly shepherds, priests and blacksmiths; Muscovy’s were vagrants, fugitives and outsiders.",
+            "One popular piece did not hold. Widows were not the main target: of 319 Scottish accused with a known marital status, 245 were married and 67 widowed. Age and poverty held up; widowhood did not."
+          ],
+          pullquote: "The witch was whoever the village already distrusted, doing the kind of harm the village feared.",
+          visual: {
+            type: "lineage-chain",
+            items: [
+              { actor: "A quarrel", date: "years", added: "A long history of conflict with neighbours, often an older, poorer person with a sharp reputation." },
+              { actor: "A misfortune", date: "", added: "A sick child or a dead animal — harm read through household roles." },
+              { actor: "Neighbours’ talk", date: "3–4 voices", added: "Enough for arrest; five to ten qualified accusers opened the way to torture." },
+              { actor: "The court", date: "", added: "Roman-law courts with public accusers and torture turned accusations into executions; northern courts needing a private accuser mostly did not." },
+              { actor: "The confession", date: "", added: "Under torture, the demonologists’ sabbath and pact appear, along with new names." }
+            ],
+            note: "A composite of the mechanisms the run found, not one documented case. Agnes Finnie of Edinburgh is the run’s concrete example of a long neighbourhood quarrel ending in trial."
+          }
+        },
+        {
+          id: "conspiracies",
+          number: "07",
+          eyebrow: "The popular claims",
+          title: "Nine million, the midwives, and the pagan cult do not survive the record.",
+          lead: "Five popular stories about the witch hunts were checked against what the run read. Three are contradicted outright. Two were not properly tested.",
+          body: [
+            "Nine million dead is a myth. Historians put executions at 30,000 to 60,000, with the highest professional estimate at 100,000. The nine million came from an early nineteenth-century extrapolation from misread data, and the suffragist Matilda Joslyn Gage repeated it in Woman, Church, and State. The midwife hunt is also a myth: midwives were rarely accused, and were more likely to work beside the accusers searching for witch marks. The idea that healers were hunted to clear the way for male doctors traces to a 1973 claim by Barbara Ehrenreich and Deirdre English, not to trial records.",
+            "Murray’s surviving pagan witch-cult has no trace in the records beyond residual paganism in a few trials. Silvia Federici’s argument, that the hunts disciplined women’s bodies for early capitalism, was represented here only by a detailed critique, not the book, so it was not tested. And burning people for their property found no supporting passage: Bamberg and Würzburg did take officials, clergy and the wealthy, but nothing about confiscation came back."
+          ],
+          pullquote: "The real history is grim enough without the inflated numbers.",
+          visual: {
+            type: "report-layers",
+            layers: [
+              { label: "Nine million burned — contradicted", detail: "30,000–60,000 executions; highest professional estimate 100,000. A misread early-1800s extrapolation, repeated by Gage." },
+              { label: "Midwives and healers targeted — contradicted", detail: "Midwives were rarely accused and often helped the accusers look for witch marks." },
+              { label: "A surviving pagan cult (Murray) — contradicted", detail: "No trace of goddess-worship in the records; residual paganism in a very few trials." },
+              { label: "Federici’s capitalism thesis — not tested", detail: "Only a critique of the book was read. Its central claim met no evidence either way." },
+              { label: "Burned for their property — not supported here", detail: "Bamberg took rich and poor, men and women; no passage on confiscation came back." }
+            ]
+          }
+        },
+        {
+          id: "attacks",
+          number: "08",
+          eyebrow: "Trying to break it",
+          title: "Nine searches for the other side, and the two that came back hurt the favourite.",
+          lead: "After the first pass, the run hunted for the evidence that would damage each explanation most.",
+          body: [
+            "Both searches that returned anything were aimed at the misogyny explanation, and both returned evidence against it: the Iceland record showing demonology arriving without changing who was accused, and a statistics table showing female shares near parity in Burgundy and Finland.",
+            "The other seven came back empty, including the decisive test for the local-dynamics account: no trial sample compares accusers, ages and quarrels between early male-majority and peak female-majority trials in the same place. The winning explanation has not faced its own falsifier."
+          ],
+          pullquote: "The best explanation won partly because nobody found the data that could sink it.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Norman judges using standard demonology while prosecuting mostly men", outcome: "empty" },
+              { target: "H1", looked: "Whether demonology reached Iceland, Finland and Estonia without changing the gender balance", outcome: "returned" },
+              { target: "H1", looked: "Male and high-status shares rising toward parity in elite-driven panics", outcome: "returned" },
+              { target: "H2", looked: "Early Alpine records already dominated by neighbour disputes and harmful magic", outcome: "empty" },
+              { target: "H2", looked: "Whether accusers in female-majority trials were mostly men", outcome: "empty" },
+              { target: "H3", looked: "Single jurisdictions with unbroken records from 1450 to 1650", outcome: "empty" },
+              { target: "H3", looked: "Critiques showing early records over-represent male heresy prosecutions", outcome: "empty" },
+              { target: "H4", looked: "Studies showing married women, not widows, were most of the accused", outcome: "empty" },
+              { target: "H4", looked: "Evidence that the accused were mostly middling or prosperous", outcome: "empty" }
+            ],
+            footer: "2 of 9 adversarial searches returned a source. No probe was pre-registered, so the seven blanks are not evidence of absence."
+          }
+        },
+        {
+          id: "score",
+          number: "09",
+          eyebrow: "What the number means",
+          title: "Fourteen out of a hundred, again, for the same reason.",
+          lead: "Thirteen findings asserted, one conjecture, four open questions. Every one computed to unknown confidence.",
+          body: [
+            "Corroboration and provenance scored zero because no passage was traced to an independent origin. The sources are encyclopedias, Wikipedia, English Heritage, the BBC and a university course page; agreement among them may be one historiography retold. Falsification scored 15 of 20 for the counter-searches, and saturation zero, because the second round still turned up new source families.",
+            "Run 8 landed on the same 14 out of 100 for the same reason. Both runs are best read as maps of what the secondary literature claims, with the gaps marked, not as verdicts."
+          ],
+          pullquote: "The score is low because the sources may all be repeating each other, not because the history is unclear.",
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 passages traced to an independent origin" },
+              { label: "Provenance", value: 0, max: 25, note: "5 sources could not be traced to an origin" },
+              { label: "Falsification", value: 15, max: 20, note: "9 counter-searches run, 2 returned" },
+              { label: "Saturation", value: 0, max: 15, note: "round 2 still found new source families" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "15",
+            capLabel: "Counter-evidence found caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: { eyebrow: "Take this with you", title: "Find the place that breaks the pattern." },
+      principles: [
+        "A hateful text and the cause of an outcome are two claims. Check them separately.",
+        "Test any explanation on the places where the pattern fails, not where it holds.",
+        "Ask who did the naming and what the court was allowed to do next.",
+        "A dramatic number with no source date is usually the oldest number, not the best one."
+      ],
+      limitations: [
+        "This page combines two runs; each has its own scope, sources and unanswered questions.",
+        "No trial sample compares accusers, ages and quarrels between early and peak trials in the same place, so the best explanation has not met its own falsifier.",
+        "Accuser gender is known only for England; whether women accusing women was general is unresolved.",
+        "The reconciling reading — misogyny as amplifier inside torture-permitting courts — is a hypothesis no source here tested.",
+        "Federici’s book and any confiscation records were not read; those two claims are untested, not refuted.",
+        "Most sources are encyclopedias and popular histories; none was traced to an independent origin."
+      ],
+      sourcesHeading: { eyebrow: "Source record", title: "Two runs, and the bytes that were stored." },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. Sources 01–11 are from run 10; 12–16 from run 8. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        { number: "01", title: "Malleus Maleficarum", publisher: "Wikipedia", tier: "quality journalism", digest: "8a5c677af125591a35521fd49b3907b59096181b86985a2abe6373eff07de9ae", href: "https://en.wikipedia.org/wiki/Malleus_Maleficarum", note: "22 passages: the book’s claims about women, its editions, and its rejection by the Inquisition." },
+        { number: "02", title: "Witch Trials, Europe", publisher: "Encyclopedia.com", tier: "expert analysis", digest: "c554d530c5909946efea82635ce52ce028b8f4d1c808c0850344f31eda1c2b01", href: "https://www.encyclopedia.com/social-sciences/encyclopedias-almanacs-transcripts-and-maps/witch-trials-europe", note: "16 passages: Dauphiné 72% women, the 71–92% peak range, Normandy and Muscovy, harm to children versus livestock." },
+        { number: "03", title: "What sort of people were accused of being witches?", publisher: "BBC Bitesize", tier: "quality journalism", digest: "dc904403b24e97bec0d3161f749e408ec25c3e96bcb41831fd829dfc48681eb7", href: "https://www.bbc.co.uk/bitesize/articles/z9y7m39", note: "12 passages: Scotland’s 84% women, ages over forty, and the marital-status sample." },
+        { number: "04", title: "Witchcraft: Eight Myths and Misconceptions", publisher: "English Heritage", tier: "expert analysis", digest: "bf53a223765b3ebaa44c0816ad3cca0ddcf5ad3f94453d662ad37bfcb397b22e", href: "https://www.english-heritage.org.uk/learn/histories/eight-witchcraft-myths", note: "9 passages: the 30,000–60,000 estimate, women accusers in England, the midwife myth, and no pagan cult." },
+        { number: "05", title: "Caliban and the Witch: A Critical Analysis (Kindo and Darmangeat)", publisher: "libcom.org", tier: "expert analysis", digest: "f76b5fdcf034ef4c748550725112c6751a688caea5de69bc50d01c461538de3d", href: "https://libcom.org/article/caliban-and-witch-critical-analysis-yann-kindo-and-christophe-darmangeat", note: "9 passages: regional variation, the nine-million figure, the 1973 male-doctors thesis. A critique of Federici, not Federici herself." },
+        { number: "06", title: "Valais witch trials", publisher: "Wikipedia", tier: "industry commentary", digest: "cd8d10389080a076440bfa78ff3830341d64622fd249ea2036feec53b2a32a13", href: "https://en.wikipedia.org/wiki/Valais_witch_trials", note: "6 passages in run 10 and 11 in run 8: the two-thirds-male estimate and the neighbours’ slander that sufficed for arrest." },
+        { number: "07", title: "Bamberg witch trials", publisher: "Wikipedia", tier: "quality journalism", digest: "62d74fa6ae912d42e393ca73e61788dd0c31c25b4e3c62c067ccaa662200a823", href: "https://en.wikipedia.org/wiki/Bamberg_witch_trials", note: "6 passages: indiscriminate arrests across sex, age and class; the Haan family and Johannes Junius." },
+        { number: "08", title: "Witch trials in Iceland", publisher: "Wikipedia", tier: "industry commentary", digest: "8b845f0e5990a6318d0304fe06bf7071920abb1847c6728531d961f2c85f6b84", href: "https://en.wikipedia.org/wiki/Witch_trials_in_Iceland", note: "6 passages: twenty men and two women executed, male-only schools, the Danish act. Returned by an H1 counter-search." },
+        { number: "09", title: "Trends & Statistics", publisher: "University of Oregon (course page)", tier: "technical report", digest: "6b44a26db45fd1591b9c99cb66b2398e60cbe090101fa25889774c116f423d3f", href: "https://pages.uoregon.edu/dluebke/Witches442/Trends&Statistics.html", note: "3 passages: Burgundy 48% and Finland 51% women. Returned by an H1 counter-search." },
+        { number: "10", title: "From Fact to Fallacy: The Evolution of Margaret Alice Murray’s Witch-Cult", publisher: "Pomegranate", tier: "peer reviewed", digest: "ebc19109e0a5fce4eba7e57ae729f7192b8972c35c4e7fde88981aa52010a021", href: "https://journal.equinoxpub.com/POM/article/view/2936", note: "Stored and assessed. Contributed no passage." },
+        { number: "11", title: "Justiça, magia e poder: a bruxaria entre a legislação e a prática", publisher: "Universidade de Brasília", tier: "peer reviewed", digest: "847bbb0db6e347555198ee8fc19d3f33a4208494c3dc90d1b77e73bdf92e080d", href: "https://repositorio.unb.br/handle/10482/40993?locale=es", note: "Stored and assessed. Contributed no passage." },
+        { number: "12", title: "Ideational diffusion and the great witch hunt in Central Europe", publisher: "Theory and Society", tier: "peer reviewed", digest: "3c433a0d9296bf405cc76c17f0a9a738fc28f23b1649065662acaac34d8425d0", href: "https://link.springer.com/article/10.1007/s11186-024-09576-1", note: "Run 8, 17 passages: the edition-circulation study behind the accelerant finding." },
+        { number: "13", title: "Witchcraft", publisher: "Catholic Encyclopedia (New Advent)", tier: "expert analysis", digest: "6bd260b6d6e9149b61f83f26337ac79b558cef86c348bc49018b59a3e614ed0b", href: "https://www.newadvent.org/cathen/15674a.htm", note: "Run 8, 25 passages: the Canon Episcopi, the Malleus’s “animus against the female sex”, and torture-shaped confessions." },
+        { number: "14", title: "Can witches fly? A historian unpacks the medieval invention of the witch on a broomstick", publisher: "The Conversation", tier: "expert analysis", digest: "6f6d43b76b0d0121311eca2195463f0a1db4096f299816ea95be45998b1b9907", href: "https://theconversation.com/can-witches-fly-a-historian-unpacks-the-medieval-invention-and-skepticism-of-the-witch-on-a-broomstick-222472", note: "Run 8, 14 passages: sceptics of flight, and accusations increasingly focused on women." },
+        { number: "15", title: "Summis desiderantes", publisher: "Wikisource", tier: "primary data", digest: "2f8dc261b4d378c5e3fd9911af97a782a39c797e4cfd6cff69b80ac6eecf950c", href: "https://en.wikisource.org/wiki/Summis_desiderantes", note: "Run 8, 4 passages: the 1484 bull’s text, listing harmful magic and no sabbath or flight." },
+        { number: "16", title: "Run 8 method transcript: where the witch came from, and the printing press", publisher: "Do Your Own Research", tier: "technical report", digest: "ced5e0076bd36a5a34e249cf557bec474834c7607ad84b90fa20f75d095a6f72", href: "https://doyourownresearch.me/assets/reports/dyor-4fb36ca0-8500-4de2-87e4-fcd259b5329d.md", note: "The complete, unedited record of run 8 ($3.69, 94 passages, 6 explanations). The digest is the SHA-256 of the published file." }
+      ],
+      next: {
+        slug: "vampires-the-corpse-that-looked-fed",
+        eyebrow: "Halloween series · part 2",
+        title: "Vampires, and the corpse that looked fed.",
+        body: "The vampire panics of the 1720s follow the same shape: an old folk belief became a documented crisis once officials started investigating and printing, and the state ended it by decree. Part two asks whether vampires were real, in three different senses."
+      }
+    },
+    {
+      slug: "vampires-the-corpse-that-looked-fed",
+      kind: "report",
+      label: "Halloween dossier",
+      issue: "DOSSIER 011",
+      status: "published",
+      featured: false,
+      publishedAt: "2026-10-09",
+      updatedAt: "2026-10-09",
+      readMinutes: 14,
+      runId: "d497310d-de5b-48e2-bab5-4652d4db975c",
+      title: "Vampires, and the corpse that looked fed.",
+      shortTitle: "Vampires",
+      deck: "Were vampires real? As undead, no. As documented events, very. As misread decay and disease, that is the best-supported answer, and the one document that could settle it corpse by corpse came back as a title only.",
+      cardLine: "Eight explanations, one 1732 army surgeon’s report, and a supernatural hypothesis that scored minus twenty.",
+      question: "What are the origins of European vampire lore, what caused the 18th-century Balkan vampire panics (Serbia, c.1725-1732), and in what distinct senses—documented historical events, misread natural phenomena (decomposition, disease, premature burial), or genuine supernatural occurrence—can vampires be said to have been 'real'?",
+      answer: "Three readings of “real”, three different answers. As supernatural undead: the hypothesis scored worst of eight, with twenty passages against it and none for. As events: the exhumations and corpse “killings” are in official records, and the army surgeon’s 1732 Medvegia report survives in the Austrian State Archives. As misread natural causes: ordinary decomposition best explains the Serbian signs, and tuberculosis best explains the 1892 New England case. Rabies is a weak timing link; porphyria and premature burial are unsupported. All twenty asserted findings computed to unknown confidence, because no passage was traced to an independent origin.",
+      disclosure: "This is a single research run, part two of a Halloween pair. Its decomposition verdict rests on modern summaries and an 18th-century investigator sent to stamp the belief out. The surgeon’s report itself came back as an archive title, so the corpse-by-corpse decay check the strongest explanation demands has not been done.",
+      accent: "violet",
+      tags: ["Halloween", "Folklore", "Medical history", "Archival records"],
+      cover: {
+        index: "DYOR—011",
+        serial: "011 / 2026",
+        lines: ["THE CORPSE", "THAT LOOKED", "FED."],
+        footer: "Halloween series · part 2 of 2"
+      },
+      transcript: {
+        href: "assets/reports/dyor-d497310d-de5b-48e2-bab5-4652d4db975c.md",
+        label: "Read the full method transcript",
+        note: "The complete run record: the bounded question, all eight explanations with what would kill each one, every search, every verbatim excerpt and its bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone who has heard that vampires were “really” rabies, porphyria or people buried alive, and wants to know which of those survived a test.",
+        focus: "The origin of European vampire belief, the Habsburg-era Serbian panics of 1725–1732, and the 1892 Mercy Brown case in Rhode Island as a cross-check.",
+        excluded: "Whether vampires exist as a metaphysical question, literary criticism of Polidori or Stoker, Vlad III and Báthory except as alleged myth sources, non-European undead traditions, and modern “real vampire” subcultures."
+      },
+      stats: [
+        { value: "8", label: "competing explanations tested" },
+        { value: "−20", label: "net score for the supernatural reading" },
+        { value: "1", label: "surgeon’s report found only as a title" }
+      ],
+      thesis: {
+        label: "The distinction this page rests on",
+        statement: "“Were vampires real?” is three questions. The events were real and documented. The natural causes people misread were real, with decomposition and tuberculosis carrying the evidence. The undead were not, and the run’s two closest things to a controlled test both came back negative.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "Three meanings of real, written down before any source was read.",
+          lead: "The run refused to answer “were vampires real” as one question. It split it into documented events, misread natural causes, and genuine supernatural occurrence, and kept the metaphysics itself out of scope.",
+          body: [
+            "The primary period runs from the Petar Blagojević case in 1725 to Maria Theresa’s 1755 decree ending state-sanctioned exhumations. Medieval revenants and Slavic and Greek traditions sit behind it as background. The 1892 Mercy Brown case in Exeter, Rhode Island, is a cross-check from another continent and century, not a core geography.",
+            "Fifteen subquestions were written first: the earliest textual sources, what Johann Flückinger’s report actually records, whether rabies or porphyria symptoms appear in any case file, how long the exhumed had been buried, whether the Polish “deviant burials” were about revenants at all, and how Stoker’s Dracula relates to any of it.",
+            "One rule mattered more than the rest. Tabloid claims about specific exhumed bodies that no primary record or scholar corroborates were to be flagged as unverifiable, not used as findings."
+          ],
+          pullquote: "The question was not whether vampires exist. It was which kind of real the record can support.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "Where European vampire belief first appears in writing",
+              "What caused the Serbian panics of 1725–1732",
+              "Whether decay, rabies, porphyria, tuberculosis or live burial explain the signs",
+              "Whether the frontier administration made the panics, or only recorded them",
+              "Whether the supernatural reading survives once every sign has a natural account"
+            ],
+            excludedLabel: "Declared out of scope",
+            excluded: [
+              "Whether vampires exist, as a metaphysical claim",
+              "Literary criticism of Polidori’s The Vampyre or Stoker’s Dracula",
+              "Vlad III and Báthory, except as alleged myth sources",
+              "Non-European undead traditions such as the jiangshi",
+              "Modern “real vampire” subcultures"
+            ],
+            note: "Period: 1725–1755 as the core, with medieval revenant belief as background and 1819, 1885, 1892 and 1897 as the later transmission. Geography: Habsburg-administered Serbia, with New England as a comparison."
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Eight explanations, and one that every passage leaned against.",
+          lead: "Each explanation was written down with the observation that would destroy it. Thirty-seven passages were then scored against all eight.",
+          body: [
+            "Decomposition (H1) collected nine supporting passages and none against. Frontier administration (H6) collected seven for and one against. Tuberculosis for the Brown family (H4) collected five for and none against. Rabies (H2) managed two weak supports. Porphyria (H3) and premature burial (H5) drew only opposing passages.",
+            "The supernatural reading (H8) is the outlier: twenty passages against, none for. That is not one refutation. It is cumulative coverage, because every class of sign in the ledger has a named natural or social account: blood at the mouth and bloating from decomposition, apparent non-decay from cold and lack of air, death clusters from contagion, and the paper trail from frontier officials.",
+            "Most passages were neutral to most explanations, which is how it should be. A passage dating the word “vampire” to an Old Russian text says nothing about rabies."
+          ],
+          pullquote: "No single passage killed the supernatural. Every sign it relied on was claimed by something else.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              { id: "H1", claim: "Villagers and officials misread ordinary decomposition (bloating, purge fluid, skin slippage) as signs of a corpse that had been feeding.", falsifier: "Forensic analysis of the signs in Flückinger’s report showing states decomposition cannot produce for that climate and burial depth.", counts: [1, 8, 28, 0, 0] },
+              { id: "H2", claim: "Rabies caused the biting, agitation and aversion to light and water attributed to vampirism.", falsifier: "Case records showing victims without hydrophobia, bite history or a short incubation-to-death course.", counts: [0, 2, 35, 0, 0] },
+              { id: "H3", claim: "Porphyria explains the photosensitivity, disfigurement and reddish teeth attributed to suspects.", falsifier: "No primary panic record describing porphyria-specific symptoms, and porphyria too rare to cluster in the implicated families.", counts: [0, 0, 36, 1, 0] },
+              { id: "H4", claim: "Tuberculosis explains the death cluster and wasting in the 1892 Mercy Brown case.", falsifier: "Brown family records showing rapid simultaneous deaths, no respiratory symptoms, or a course inconsistent with consumption.", counts: [0, 5, 32, 0, 0] },
+              { id: "H5", claim: "Premature burial produced corpses that seemed to move, moan or bleed.", falsifier: "Exhumation records showing burial intervals of weeks to months that preclude survival.", counts: [0, 0, 34, 3, 0] },
+              { id: "H6", claim: "The panics were driven by the instability and surveillance of the Habsburg–Ottoman military frontier.", falsifier: "Equally intense documented panics in comparable villages outside the frontier zone in the same decades.", counts: [0, 7, 29, 1, 0] },
+              { id: "H7", claim: "Polish deviant burials (sickles, stones, stakes) are an independent anti-revenant tradition corroborating the panics.", falsifier: "Isotope or contextual analysis tying the burials to epidemic, execution or outsider status rather than revenant belief.", counts: [0, 2, 33, 1, 1] },
+              { id: "H8", claim: "The panics reflect, at least in part, a genuine supernatural occurrence.", falsifier: "Every recorded sign accounted for by a natural process or social dynamic, with no residue that resists explanation.", counts: [0, 0, 17, 20, 0] }
+            ],
+            note: "Counts are bearings, not votes: each of 37 passages was scored against all eight explanations. Most passages are neutral to most explanations because they address only one of them."
+          }
+        },
+        {
+          id: "chronology",
+          number: "03",
+          eyebrow: "Where the lore came from",
+          title: "The belief was old. What changed in the 1720s was the paperwork.",
+          lead: "The earliest reference the run found is an Old Russian text of 1047. The panics that made “vampire” a European word came almost seven centuries later, when an empire started writing village cases down.",
+          body: [
+            "In 1718 the Habsburgs took northern Serbia from the Ottomans and settled the frontier with soldier-farmers. Military officials now investigated village deaths and filed reports. Petar Blagojević was exhumed at Kisiljevo in 1725, ten weeks after burial. Arnold Paole was accused after his death and dug up forty days in. In January 1732 the army surgeon Johann Flückinger filed his report on Medvegia, Visum et Repertum, which still sits in the Austrian State Archives.",
+            "Those reports were printed and passed around, and that is how the word reached German and English. The run supports the frontier as an explanation of documentation and diffusion, not of belief: the belief predates the frontier by centuries, and van Swieten was still being sent to stamp it out in the 1750s.",
+            "Dracula is a separate, later layer. Stoker drew on Emily Gerard’s 1885 “Transylvanian Superstitions” for garlic, the stake and the word Nosferatu. The run judged the link to Vlad III thin and found it has nothing to do with the panics of the 1700s."
+          ],
+          pullquote: "The frontier explains why these villages were written down, not why their people believed.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "1047", label: "Earliest reference", detail: "A vampire reference in an Old Russian text, the earliest the run found." },
+              { date: "1718", label: "The frontier", detail: "Habsburg annexation of northern Serbia puts military officials in the villages." },
+              { date: "1725", label: "Petar Blagojević", detail: "Exhumed at Kisiljevo ten weeks after burial and staked." },
+              { date: "1726–32", label: "Arnold Paole", detail: "Accused after death, exhumed forty days after burial; the Medvegia deaths follow." },
+              { date: "Jan 1732", label: "Visum et Repertum", detail: "Flückinger’s report filed on the Turkish border. The run retrieved only its archive record.", tone: "seizure" },
+              { date: "1755", label: "The decree", detail: "Maria Theresa, advised by van Swieten, bans state-sanctioned exhumations.", tone: "end" },
+              { date: "1885", label: "Emily Gerard", detail: "“Transylvanian Superstitions”: garlic, the stake, Nosferatu.", tone: "after" },
+              { date: "1892", label: "Mercy Brown", detail: "Exhumed in Exeter, Rhode Island, during a tuberculosis cluster.", tone: "after" },
+              { date: "1897", label: "Dracula", detail: "Stoker’s novel; the run finds no link to the 1700s panics.", tone: "after" }
+            ],
+            note: "Dates are as recorded in the run’s passages. Calmet, Polidori and the Greek vrykolakas were asked about and not reached."
+          }
+        },
+        {
+          id: "three-reals",
+          number: "04",
+          eyebrow: "Were they real?",
+          title: "Real events, real causes, no undead.",
+          lead: "Two moments in the record come closest to a controlled test of the supernatural reading. Both came back negative.",
+          body: [
+            "In 1892 a trained physician, Dr Metcalf, examined the exhumed Mercy Brown and found the decay expected for her time in the ground. The blood in her heart was what a body in a cold grave keeps. Her brother Edwin drank the ashes of her burned heart and liver in water as a cure, and died two months later anyway. A cure built on the vampire theory was tried, and it failed exactly as tuberculosis would predict.",
+            "The Brown deaths were sequential over nearly a decade: Mary Eliza in December 1883, Mary Olive in June 1884, then Mercy and Edwin falling ill in 1891. That slow, household-by-household wasting is consumption’s signature, and it is what looked like someone draining the living.",
+            "In Serbia, gas pressure from decomposition pushes blood into a corpse’s mouth, and bloating and skin slippage are routine. Villagers who dug up a suspect saw ordinary decay and read it as a body that had been feeding. Even the Habsburg investigator van Swieten put “undecayed” corpses down to fermentation and lack of air in the grave."
+          ],
+          pullquote: "The cure was tried. The patient died on tuberculosis’s schedule.",
+          visual: {
+            type: "verdict-shift",
+            before: ["VAMPIRES WERE REAL", "OR THEY WERE NOT", "ONE QUESTION"],
+            after: ["EVENTS: documented exhumations", "CAUSES: decay and tuberculosis", "UNDEAD: worst of eight"]
+          }
+        },
+        {
+          id: "weak-link",
+          number: "05",
+          eyebrow: "The weak link",
+          title: "The strongest explanation rests on an investigator sent to end the belief.",
+          lead: "Decomposition wins on the counts. But the one document that could test it corpse by corpse came back as a title, and the historical witness for it had a job to do.",
+          body: [
+            "Decomposition’s own falsifier asks for a sign-by-sign check of Flückinger’s report against burial depth, coffin type, soil and season. The run could not do it. The Austrian archive record came back with the report’s title and date, not its text, and a Spanish transcription site was assessed as anecdotal and contributed nothing.",
+            "The run also flagged its 18th-century witness. Maria Theresa sent van Swieten with the stated aim of eradicating the belief as a “barbarism of ignorance”, so his naturalistic conclusion is not a neutral test. And it noticed something it could not check: the Medvegia inquest is dated 7 January 1732, so the exhumations were in midwinter, when cold slows decay and “undecayed” corpses are expected rather than strange. That would strengthen the decomposition case if the burial dates and weather were found."
+          ],
+          pullquote: "Winning on the counts is not the same as passing your own test.",
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Asserted finding",
+              status: "observed",
+              text: "Normal post-mortem processes generate the signs attributed to vampires: decomposition gas forces blood into the mouth, and bloating and skin slippage are routine changes.",
+              id: "fnd_7124223372bd9877_01",
+              meta: "causal claim on mechanism and temporality · computed confidence: unknown"
+            },
+            attack: {
+              label: "Open question the run recorded against it",
+              kind: "unknown",
+              text: "The Medvegia report is present only as a title. No sign-by-sign reconstruction against burial depth, coffin construction, soil and seasonal temperature appears in the ledger.",
+              id: "fnd_52ef07faff9be289_04"
+            },
+            failureLabel: "What would settle it",
+            failure: "The transcribed body of Visum et Repertum listing each corpse’s condition, with burial dates and depths, and forensic commentary on adipocere and apparent nail and hair growth."
+          }
+        },
+        {
+          id: "medical-theories",
+          number: "06",
+          eyebrow: "The popular theories",
+          title: "Rabies is a coincidence of timing. Porphyria has no patient.",
+          lead: "Two medical explanations circulate widely as the “real” vampire disease. The run tested both against the case records and neither found a case.",
+          body: [
+            "Rabies has a timing link: an outbreak in 18th-century Europe coincided with the hysteria, and insomnia and aversion to light and water resemble vampire traits. But the Blagojević and Paole passages record burial intervals, accusations and deaths, with no hydrophobia, salivation, bite history or incubation period for any victim. The decisive test could not be run, and the strongest rabies argument actually leads to werewolves, through dog bites and wolf fear.",
+            "Porphyria is doubly disfavoured. No passage describes photosensitivity, excess hair, discoloured urine or reddish teeth in any accused person or family. The run’s caution is that this is absence from the narratives, not a genealogical record ruling it out.",
+            "Premature burial is excluded for the best-dated cases. Blagojević had been buried ten weeks and Paole forty days, and the Brown bodies showed ordinary decay. The run notes the exclusion does not yet cover the individual Medvegia corpses, whose burial dates it never saw."
+          ],
+          pullquote: "A disease that fits the legend is not a disease that appears in the case files.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "Decomposition explains the corpse signs", state: "supported" },
+              { label: "Tuberculosis explains the Brown cluster", state: "supported" },
+              { label: "Rabies explains the victims’ symptoms", state: "weak link" },
+              { label: "Porphyria explains the suspects’ traits", state: "unknown" },
+              { label: "Premature burial explains movement", state: "weak link" }
+            ]
+          }
+        },
+        {
+          id: "attacks",
+          number: "07",
+          eyebrow: "Trying to break it",
+          title: "Eight searches for the other side, and two that came back.",
+          lead: "After the first pass, the run went looking for the evidence that would hurt each explanation most. Six searches returned nothing. Two returned a source.",
+          body: [
+            "The premature-burial search returned the Smithsonian’s account of burial intervals, which cut against live burial rather than for it. The deviant-burial search returned the PLOS One isotope study of Drawsko, which found the people buried with sickles and stones were locals, not outsiders. That rules out the outsider explanation but not an epidemic one, since cholera kills too fast to mark a skeleton.",
+            "The reading that survives at Drawsko folds the two together: locals distrusted on some ground, often the first to die in an outbreak, buried so they would stay down. The burials were never dated against the Serbian panics, so they cannot yet corroborate them.",
+            "Three passages were refused by the verbatim gate because their wording could not be found in the stored bytes. They are in the transcript and count for nothing."
+          ],
+          pullquote: "The isotopes cleared the outsiders. They did not clear the epidemic.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Forensic critiques arguing Flückinger’s preserved corpses cannot be explained by decomposition", outcome: "empty" },
+              { target: "H2", looked: "Clinical critiques of the rabies thesis against the Blagojević and Paole symptom records", outcome: "empty" },
+              { target: "H3", looked: "Literature refuting the porphyria hypothesis against the Balkan exhumation records", outcome: "empty" },
+              { target: "H4", looked: "Brown family medical records inconsistent with pulmonary tuberculosis", outcome: "empty" },
+              { target: "H5", looked: "Burial durations in the Serbian cases that preclude live interment", outcome: "returned" },
+              { target: "H6", looked: "Vampire panics with official exhumations outside the Habsburg military frontier", outcome: "empty" },
+              { target: "H7", looked: "Isotopic or pathological evidence that Drawsko or Pień burials were about epidemic, execution or outsiders", outcome: "returned" },
+              { target: "H8", looked: "Studies showing every sign in the panics is fully explicable by natural or social causes", outcome: "empty" }
+            ],
+            footer: "2 of 8 adversarial searches returned a source. No probe was pre-registered, so the six blanks are not evidence of absence."
+          }
+        },
+        {
+          id: "score",
+          number: "08",
+          eyebrow: "What the number means",
+          title: "Fourteen out of a hundred, and why the number is that low.",
+          lead: "Twenty findings asserted, one conjecture, six open questions. Every one computed to unknown confidence.",
+          body: [
+            "Corroboration and provenance scored zero because no passage was traced to an independent origin. The sources are mostly secondary: PBS, the Smithsonian, Wikipedia articles, a Frontline interview, and one peer-reviewed isotope study. Agreement among them may be one story retold, and the run does not pretend otherwise.",
+            "Falsification scored 15 of 20 for the eight counter-searches. Saturation scored zero: the second retrieval round found seven new source families where the first found three, which means the search had not run dry. Twelve stress probes were recorded against the findings, and counter-evidence was found, which caps the result in the unknown band."
+          ],
+          pullquote: "A low score here is the run admitting that its sources may all be repeating each other.",
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 0, max: 40, note: "0 passages traced to an independent origin" },
+              { label: "Provenance", value: 0, max: 25, note: "4 sources could not be traced to an origin" },
+              { label: "Falsification", value: 15, max: 20, note: "8 counter-searches run, 2 returned" },
+              { label: "Saturation", value: 0, max: 15, note: "round 2 found 7 new families, so not saturated" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "15",
+            capLabel: "Counter-evidence found caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: { eyebrow: "Take this with you", title: "Ask which kind of real." },
+      principles: [
+        "Split “was it real?” into the events, the causes, and the claim. They have different answers.",
+        "A medical theory that fits the legend still has to appear in a case file.",
+        "Ask who sent the investigator, and what they were sent to conclude.",
+        "When the best explanation’s own test needs a document nobody opened, the case is strong but not closed."
+      ],
+      limitations: [
+        "Flückinger’s Visum et Repertum came back as an archive title only, so the corpse-by-corpse decomposition check has not been done.",
+        "No clinical description of any Serbian “victim” was retrieved, so rabies could not be properly tested.",
+        "No comparison with villages outside the Habsburg frontier was found, so the frontier explanation is untested at its own falsifier.",
+        "The Drawsko and Pień burials were not dated against the panics, and no local Polish record links them to revenant belief.",
+        "The Greek vrykolakas, English medieval revenants, Calmet and the historians’ own debates were asked about and not reached.",
+        "Several sources are popular-press or Wikipedia articles; none was traced to an independent origin."
+      ],
+      sourcesHeading: { eyebrow: "Source record", title: "Twelve sources, and the bytes that were stored." },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        { number: "01", title: "How vampire lore emerged from shadowy medical mysteries", publisher: "PBS News", tier: "quality journalism", digest: "00512db67fbc53b35ca54f596f45aebc06afcd311432cfc931a5a90b530b17df", href: "https://www.pbs.org/newshour/science/how-vampire-lore-emerged-from-shadowy-medical-mysteries", note: "14 passages, the most of any source: the 1047 Old Russian reference, the frontier and Wehrbauer settlement, rabies, pellagra and decomposition." },
+        { number: "02", title: "Vampire im Dorf Medved (Metveje), Bericht des Feldscherers Johann Flückinger", publisher: "Austrian State Archives", tier: "primary data", digest: "ff09eede9fd1788937de202ec64d035d27e2e1c1e0ad8d7f60d05357af596653", href: "https://www.archivinformationssystem.at/detail.aspx?ID=2233878", note: "1 passage. The archive record of the 1732 Medvegia report: its title, date and place. The report’s text was not retrieved." },
+        { number: "03", title: "Mercy Brown vampire incident", publisher: "Wikipedia", tier: "industry commentary", digest: "803319d4e39bf18e67b37dd2316e3a2b411d6e38905c91644286495d2619c544", href: "https://en.wikipedia.org/wiki/Mercy_Brown_vampire_incident", note: "6 passages: the sequence of Brown family deaths, Dr Metcalf’s examination, and Edwin’s ash tonic." },
+        { number: "04", title: "Gerard van Swieten", publisher: "Wikipedia", tier: "quality journalism", digest: "bfdabba5def046445e76e879c0c1c25777bc1e3e4a32008cc105b93a43219f1f", href: "https://en.wikipedia.org/wiki/Gerard_van_Swieten", note: "6 passages: van Swieten’s mission, his fermentation explanation, and Maria Theresa’s decree." },
+        { number: "05", title: "Dracula: The Metamorphosis of a Fiend — interview", publisher: "PBS Frontline/World", tier: "quality journalism", digest: "b758abed212b5a3278dd04898491d8501e7e8502329b8047d39fb83af6ca13ea", href: "https://www.pbs.org/frontlineworld/stories/romania/miller.html", note: "4 passages on Stoker’s sources: Emily Gerard, Nosferatu, and the thin Vlad link." },
+        { number: "06", title: "Apotropaic Practices and the Undead: A Biogeochemical Assessment of Deviant Burials in Post-Medieval Poland", publisher: "PLOS One", tier: "peer reviewed", digest: "66ecc6c982927903052fd4263616b6a7b1eec9ef7244389b8c399af17534e55e", href: "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0113564", note: "4 passages. Isotopes show the Drawsko deviant burials were locals; returned by the H7 counter-search." },
+        { number: "07", title: "Decomposing Bodies in the 1720s Gave Birth to the First Vampire Panic", publisher: "Smithsonian Magazine", tier: "quality journalism", digest: "999824229027b49135bdfdefadbdfecef6988d90c48adfe0fcdba5506a5a9a82", href: "https://www.smithsonianmag.com/history/decomposing-bodies-1720s-gave-birth-first-vampire-panic-180976097/", note: "2 passages: the Blagojević and Paole burial intervals; returned by the H5 counter-search." },
+        { number: "08", title: "Outbreaks of the Balkan Village Vampire in the Eighteenth Century", publisher: "Springer Nature", tier: "peer reviewed", digest: "1e0f69d409b42795511f803e4454bda0064498597513679029a0166f2df919c9", href: "https://link.springer.com/rwe/10.1007/978-3-030-82301-6_113-2", note: "Stored and assessed. Contributed no passage." },
+        { number: "09", title: "Vampires, Porphyria, and the Media: Medicalization of a Myth", publisher: "Peer-reviewed article", tier: "peer reviewed", digest: "5c07739a7a126b1962e1ce84d60c4d20f2c064bb597bfacf659c9fd235339ffd", href: "https://exa.ai/library/publication/h6cc1l4w863", note: "Stored and assessed. Contributed no passage." },
+        { number: "10", title: "Rabies: a possible explanation for the vampire legend", publisher: "PubMed abstract", tier: "unsupported", digest: "25ee8a902dede18eb76c4e92f60b21ed956da81ca5b48e0636d706b4089c0d33", href: "https://pubmed.ncbi.nlm.nih.gov/9748039/", note: "The Gómez-Alonso rabies thesis. Assessed at the bottom tier as stored and contributed no passage." },
+        { number: "11", title: "Visum et Repertum (transcription)", publisher: "La Cripta (Vampirología)", tier: "anecdotal", digest: "cbb93cd9b98ca1210498f9411b22140fdd960a632452a4f2d4f88a6b8f4364df", href: "https://arries.es/la_cripta/textos/visum_et_repertum.html", note: "A hobbyist transcription of the report. Assessed as anecdotal and contributed no passage." },
+        { number: "12", title: "Master’s thesis, Central European University (2020)", publisher: "CEU Open Research", tier: "unsupported", digest: "a34ede3f0d15b855c08e0cbb055842419ffd0ae4a85f8648e6cd9b653d098035", href: "https://openresearch.ceu.edu/", note: "Stored and assessed at the bottom tier. Contributed no passage." }
+      ],
+      next: {
+        slug: "witches-why-the-hunt-turned-on-women",
+        eyebrow: "Halloween series · part 1",
+        title: "Witches, and why the hunt turned on women.",
+        body: "The vampire panics followed a pattern the witch run found first: an old folk belief became a documented crisis once officials began investigating and printing, and the state ended it by decree. Part one asks where the witch came from, and why the earliest victims were mostly men."
+      }
     }
   ];
 })();

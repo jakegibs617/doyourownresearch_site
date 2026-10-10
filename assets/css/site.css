@@ -3842,3 +3842,20 @@ blockquote {
   .tl-body { border-left: 0; padding-left: 0; }
   .tl-row--after .tl-body { border-left: 0; }
 }
+
+/* Halloween series: pumpkin on near-black, opted into by the "Halloween" tag. */
+.report-cover.is-halloween {
+  background: #1b1512;
+  box-shadow: 1.4rem 1.4rem 0 #f07a1a;
+  color: #f7e9d7;
+}
+.report-cover.is-halloween .cover-index,
+.report-cover.is-halloween em { color: #f07a1a; }
+.report-cover.is-halloween .cover-orbit { border-color: #f07a1a; }
+.report-cover.is-halloween .cover-orbit i,
+.report-cover.is-halloween .cover-arrow { background: #f07a1a; color: #1b1512; }
+.archive-card.is-halloween { border-color: #f07a1a; box-shadow: inset 0 4px 0 #f07a1a; }
+.archive-card.is-halloween:hover { background: #1b1512; color: #f7e9d7; }
+.report-hero.is-halloween { background: #1b1512; }
+.report-hero.is-halloween h1 em { color: #f07a1a; }
+.report-hero.is-halloween .report-hero__label { color: #f07a1a; }

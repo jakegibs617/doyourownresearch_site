@@ -31,7 +31,7 @@
       return `${head}<em>${escapeHtml(last)}</em>`;
     }).join("<br>");
 
-    return `<a class="report-cover" href="${escapeHtml(reportHref(report))}">
+    return `<a class="report-cover${seriesClass(report)}" href="${escapeHtml(reportHref(report))}">
       <div class="report-cover__top"><span>${escapeHtml(report.label)}</span><span>${escapeHtml(cover.serial)}</span></div>
       <div class="report-cover__field">
         <span class="cover-index">${escapeHtml(cover.index)}</span>
@@ -40,6 +40,11 @@
       </div>
       <div class="report-cover__bottom"><span>${escapeHtml(cover.footer)}</span><span class="cover-arrow" aria-hidden="true">↗</span></div>
     </a>`;
+  }
+
+  // A seasonal series restyles its covers and cards; the series is named by a tag, not a new field.
+  function seriesClass(report) {
+    return (report.tags || []).includes("Halloween") ? " is-halloween" : "";
   }
 
   function padStat(value) {
@@ -63,7 +68,7 @@
   }
 
   function archiveCard(report) {
-    return `<a class="archive-card" href="${escapeHtml(reportHref(report))}">
+    return `<a class="archive-card${seriesClass(report)}" href="${escapeHtml(reportHref(report))}">
       <div class="archive-card__meta"><span>${escapeHtml(report.issue)}</span><span>${escapeHtml(report.readMinutes)} min</span></div>
       <h3>${escapeHtml(report.shortTitle || report.title)}</h3>
       <p>${escapeHtml(report.cardLine || report.deck)}</p>
