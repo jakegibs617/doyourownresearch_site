@@ -37,3 +37,26 @@ test("visual narration includes the figure type and its report data", () => {
   assert.match(text, /Would survive/);
   assert.doesNotMatch(text, /signal/);
 });
+
+test("visual narration skips machine record IDs but keeps hypothesis labels", () => {
+  const text = sandbox.window.DYOR_NARRATION_CONTENT.visualText({
+    type: "finding-attack",
+    finding: { text: "A finding", id: "fnd_1f2a0d588602fe21_00" },
+    attack: { text: "An attack", id: "stp_0db2de9413361318_00" },
+    items: [{ id: "H1", claim: "A claim" }]
+  }, "05");
+
+  assert.match(text, /A finding/);
+  assert.match(text, /An attack/);
+  assert.match(text, /\bH1\b/);
+  assert.doesNotMatch(text, /fnd_|stp_/);
+});
+
+test("no report narrates a machine record ID", () => {
+  const machineId = /\b(?:fnd|stp|ev|src)_[0-9a-z_]{6,}/i;
+  for (const report of sandbox.window.DYOR_REPORTS) {
+    for (const segment of sandbox.window.DYOR_NARRATION_CONTENT.segmentsForReport(report)) {
+      assert.doesNotMatch(segment.text, machineId, `${report.slug} ${segment.id}`);
+    }
+  }
+});

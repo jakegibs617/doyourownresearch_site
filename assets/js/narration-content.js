@@ -10,8 +10,12 @@
     if (normalized) segments.push({ id, text: normalized });
   }
 
+  // Ledger record IDs (fnd_…, stp_…) are for auditors reading the page, not for a listener.
+  const machineId = /^(?:fnd|stp|ev|src)_[0-9a-z_]{6,}$/i;
+
   function collectVisualValues(value, parts, key = "") {
     if (value === null || value === undefined || key === "type" || key === "tone" || key === "composite") return;
+    if (typeof value === "string" && machineId.test(value.trim())) return;
     if (Array.isArray(value)) {
       value.forEach((item) => collectVisualValues(item, parts));
       return;

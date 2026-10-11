@@ -5,8 +5,8 @@
   "voiceModel": "kokoro-am_michael",
   "language": "en-US",
   "speed": 1.15,
-  "duration": 1638.26,
-  "fingerprint": "8f5818cf4f8cbd0e9af2fb7e9e9cb1a6321350f090e8782c102f8ba629f18d68",
+  "duration": 1625.915,
+  "fingerprint": "6b075ad331aa6ec7bca64e6ddc4d9a8d8ef0a4eae6925c3b26ff5c92e3d30b7e",
   "cues": [
     {
       "id": "hero:title",
@@ -206,282 +206,282 @@
     {
       "id": "chapter:the-book:visual",
       "start": 768.925,
-      "end": 827.765
+      "end": 815.42
     },
     {
       "id": "chapter:the-neighbours:title",
-      "start": 827.885,
-      "end": 833.535
+      "start": 815.54,
+      "end": 821.19
     },
     {
       "id": "chapter:the-neighbours:lead",
-      "start": 833.655,
-      "end": 840.98
+      "start": 821.31,
+      "end": 828.635
     },
     {
       "id": "chapter:the-neighbours:body:0",
-      "start": 841.1,
-      "end": 864.175
+      "start": 828.755,
+      "end": 851.83
     },
     {
       "id": "chapter:the-neighbours:body:1",
-      "start": 864.295,
-      "end": 890.795
+      "start": 851.95,
+      "end": 878.45
     },
     {
       "id": "chapter:the-neighbours:body:2",
-      "start": 890.915,
-      "end": 906.69
+      "start": 878.57,
+      "end": 894.345
     },
     {
       "id": "chapter:the-neighbours:pullquote",
-      "start": 906.81,
-      "end": 912.51
+      "start": 894.465,
+      "end": 900.165
     },
     {
       "id": "chapter:the-neighbours:visual",
-      "start": 912.63,
-      "end": 960.575
+      "start": 900.285,
+      "end": 948.23
     },
     {
       "id": "chapter:conspiracies:title",
-      "start": 960.695,
-      "end": 966.645
+      "start": 948.35,
+      "end": 954.3
     },
     {
       "id": "chapter:conspiracies:lead",
-      "start": 966.765,
-      "end": 976.265
+      "start": 954.42,
+      "end": 963.92
     },
     {
       "id": "chapter:conspiracies:body:0",
-      "start": 976.385,
-      "end": 1014.58
+      "start": 964.04,
+      "end": 1002.235
     },
     {
       "id": "chapter:conspiracies:body:1",
-      "start": 1014.7,
-      "end": 1042.65
+      "start": 1002.355,
+      "end": 1030.305
     },
     {
       "id": "chapter:conspiracies:pullquote",
-      "start": 1042.77,
-      "end": 1046.995
+      "start": 1030.425,
+      "end": 1034.65
     },
     {
       "id": "chapter:conspiracies:visual",
-      "start": 1047.115,
-      "end": 1096.335
+      "start": 1034.77,
+      "end": 1083.99
     },
     {
       "id": "chapter:attacks:title",
-      "start": 1096.455,
-      "end": 1102.08
+      "start": 1084.11,
+      "end": 1089.735
     },
     {
       "id": "chapter:attacks:lead",
-      "start": 1102.2,
-      "end": 1108.3
+      "start": 1089.855,
+      "end": 1095.955
     },
     {
       "id": "chapter:attacks:body:0",
-      "start": 1108.42,
-      "end": 1125.845
+      "start": 1096.075,
+      "end": 1113.5
     },
     {
       "id": "chapter:attacks:body:1",
-      "start": 1125.965,
-      "end": 1144.24
+      "start": 1113.62,
+      "end": 1131.895
     },
     {
       "id": "chapter:attacks:pullquote",
-      "start": 1144.36,
-      "end": 1149.835
+      "start": 1132.015,
+      "end": 1137.49
     },
     {
       "id": "chapter:attacks:visual",
-      "start": 1149.955,
-      "end": 1210.225
+      "start": 1137.61,
+      "end": 1197.88
     },
     {
       "id": "chapter:score:title",
-      "start": 1210.345,
-      "end": 1215.02
+      "start": 1198.0,
+      "end": 1202.675
     },
     {
       "id": "chapter:score:lead",
-      "start": 1215.14,
-      "end": 1222.79
+      "start": 1202.795,
+      "end": 1210.445
     },
     {
       "id": "chapter:score:body:0",
-      "start": 1222.91,
-      "end": 1248.31
+      "start": 1210.565,
+      "end": 1235.965
     },
     {
       "id": "chapter:score:body:1",
-      "start": 1248.43,
-      "end": 1260.455
+      "start": 1236.085,
+      "end": 1248.11
     },
     {
       "id": "chapter:score:pullquote",
-      "start": 1260.575,
-      "end": 1267.425
+      "start": 1248.23,
+      "end": 1255.08
     },
     {
       "id": "chapter:score:visual",
-      "start": 1267.545,
-      "end": 1299.915
+      "start": 1255.2,
+      "end": 1287.57
     },
     {
       "id": "principles:title",
-      "start": 1300.035,
-      "end": 1302.635
+      "start": 1287.69,
+      "end": 1290.29
     },
     {
       "id": "principles:item:0",
-      "start": 1302.755,
-      "end": 1309.055
+      "start": 1290.41,
+      "end": 1296.71
     },
     {
       "id": "principles:item:1",
-      "start": 1309.175,
-      "end": 1315.325
+      "start": 1296.83,
+      "end": 1302.98
     },
     {
       "id": "principles:item:2",
-      "start": 1315.445,
-      "end": 1320.42
+      "start": 1303.1,
+      "end": 1308.075
     },
     {
       "id": "principles:item:3",
-      "start": 1320.54,
-      "end": 1327.565
+      "start": 1308.195,
+      "end": 1315.22
     },
     {
       "id": "limitations:title",
-      "start": 1327.685,
-      "end": 1330.21
+      "start": 1315.34,
+      "end": 1317.865
     },
     {
       "id": "limitations:item:0",
-      "start": 1330.33,
-      "end": 1337.755
+      "start": 1317.985,
+      "end": 1325.41
     },
     {
       "id": "limitations:item:1",
-      "start": 1337.875,
-      "end": 1350.1
+      "start": 1325.53,
+      "end": 1337.755
     },
     {
       "id": "limitations:item:2",
-      "start": 1350.22,
-      "end": 1358.57
+      "start": 1337.875,
+      "end": 1346.225
     },
     {
       "id": "limitations:item:3",
-      "start": 1358.69,
-      "end": 1368.34
+      "start": 1346.345,
+      "end": 1355.995
     },
     {
       "id": "limitations:item:4",
-      "start": 1368.46,
-      "end": 1377.16
+      "start": 1356.115,
+      "end": 1364.815
     },
     {
       "id": "limitations:item:5",
-      "start": 1377.28,
-      "end": 1385.48
+      "start": 1364.935,
+      "end": 1373.135
     },
     {
       "id": "sources:title",
-      "start": 1385.6,
-      "end": 1388.3
+      "start": 1373.255,
+      "end": 1375.955
     },
     {
       "id": "sources:note",
-      "start": 1388.42,
-      "end": 1407.22
+      "start": 1376.075,
+      "end": 1394.875
     },
     {
       "id": "sources:item:0",
-      "start": 1407.34,
-      "end": 1419.04
+      "start": 1394.995,
+      "end": 1406.695
     },
     {
       "id": "sources:item:1",
-      "start": 1419.16,
-      "end": 1435.16
+      "start": 1406.815,
+      "end": 1422.815
     },
     {
       "id": "sources:item:2",
-      "start": 1435.28,
-      "end": 1448.905
+      "start": 1422.935,
+      "end": 1436.56
     },
     {
       "id": "sources:item:3",
-      "start": 1449.025,
-      "end": 1465.1
+      "start": 1436.68,
+      "end": 1452.755
     },
     {
       "id": "sources:item:4",
-      "start": 1465.22,
-      "end": 1482.97
+      "start": 1452.875,
+      "end": 1470.625
     },
     {
       "id": "sources:item:5",
-      "start": 1483.09,
-      "end": 1496.39
+      "start": 1470.745,
+      "end": 1484.045
     },
     {
       "id": "sources:item:6",
-      "start": 1496.51,
-      "end": 1508.66
+      "start": 1484.165,
+      "end": 1496.315
     },
     {
       "id": "sources:item:7",
-      "start": 1508.78,
-      "end": 1522.255
+      "start": 1496.435,
+      "end": 1509.91
     },
     {
       "id": "sources:item:8",
-      "start": 1522.375,
-      "end": 1537.0
+      "start": 1510.03,
+      "end": 1524.655
     },
     {
       "id": "sources:item:9",
-      "start": 1537.12,
-      "end": 1547.945
+      "start": 1524.775,
+      "end": 1535.6
     },
     {
       "id": "sources:item:10",
-      "start": 1548.065,
-      "end": 1560.565
+      "start": 1535.72,
+      "end": 1548.22
     },
     {
       "id": "sources:item:11",
-      "start": 1560.685,
-      "end": 1574.66
+      "start": 1548.34,
+      "end": 1562.315
     },
     {
       "id": "sources:item:12",
-      "start": 1574.78,
-      "end": 1589.355
+      "start": 1562.435,
+      "end": 1577.01
     },
     {
       "id": "sources:item:13",
-      "start": 1589.475,
-      "end": 1605.55
+      "start": 1577.13,
+      "end": 1593.205
     },
     {
       "id": "sources:item:14",
-      "start": 1605.67,
-      "end": 1617.545
+      "start": 1593.325,
+      "end": 1605.2
     },
     {
       "id": "sources:item:15",
-      "start": 1617.665,
-      "end": 1638.14
+      "start": 1605.32,
+      "end": 1625.795
     }
   ]
 }

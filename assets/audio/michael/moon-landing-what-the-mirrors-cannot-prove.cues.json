@@ -5,8 +5,8 @@
   "voiceModel": "kokoro-am_michael",
   "language": "en-US",
   "speed": 1.15,
-  "duration": 1985.545,
-  "fingerprint": "94d1fc780f89df06d9163a0bb8bc1b69feaed8195a7bddd7f0f74d5cb4cad5ae",
+  "duration": 1971.45,
+  "fingerprint": "f0b80e94def8f01c87a36e43705165708840bd4b356bab6eb3388242ba6b0f0d",
   "cues": [
     {
       "id": "hero:title",
@@ -296,202 +296,202 @@
     {
       "id": "chapter:strongest:visual",
       "start": 1182.43,
-      "end": 1281.835
+      "end": 1267.74
     },
     {
       "id": "chapter:score:title",
-      "start": 1281.955,
-      "end": 1287.805
+      "start": 1267.86,
+      "end": 1273.71
     },
     {
       "id": "chapter:score:lead",
-      "start": 1287.925,
-      "end": 1303.2
+      "start": 1273.83,
+      "end": 1289.105
     },
     {
       "id": "chapter:score:body:0",
-      "start": 1303.32,
-      "end": 1328.545
+      "start": 1289.225,
+      "end": 1314.45
     },
     {
       "id": "chapter:score:body:1",
-      "start": 1328.665,
-      "end": 1351.515
+      "start": 1314.57,
+      "end": 1337.42
     },
     {
       "id": "chapter:score:body:2",
-      "start": 1351.635,
-      "end": 1368.86
+      "start": 1337.54,
+      "end": 1354.765
     },
     {
       "id": "chapter:score:visual",
-      "start": 1368.98,
-      "end": 1401.35
+      "start": 1354.885,
+      "end": 1387.255
     },
     {
       "id": "principles:title",
-      "start": 1401.47,
-      "end": 1405.57
+      "start": 1387.375,
+      "end": 1391.475
     },
     {
       "id": "principles:item:0",
-      "start": 1405.69,
-      "end": 1416.615
+      "start": 1391.595,
+      "end": 1402.52
     },
     {
       "id": "principles:item:1",
-      "start": 1416.735,
-      "end": 1427.635
+      "start": 1402.64,
+      "end": 1413.54
     },
     {
       "id": "principles:item:2",
-      "start": 1427.755,
-      "end": 1438.755
+      "start": 1413.66,
+      "end": 1424.66
     },
     {
       "id": "principles:item:3",
-      "start": 1438.875,
-      "end": 1449.15
+      "start": 1424.78,
+      "end": 1435.055
     },
     {
       "id": "principles:item:4",
-      "start": 1449.27,
-      "end": 1459.745
+      "start": 1435.175,
+      "end": 1445.65
     },
     {
       "id": "limitations:title",
-      "start": 1459.865,
-      "end": 1462.39
+      "start": 1445.77,
+      "end": 1448.295
     },
     {
       "id": "limitations:item:0",
-      "start": 1462.51,
-      "end": 1487.61
+      "start": 1448.415,
+      "end": 1473.515
     },
     {
       "id": "limitations:item:1",
-      "start": 1487.73,
-      "end": 1499.98
+      "start": 1473.635,
+      "end": 1485.885
     },
     {
       "id": "limitations:item:2",
-      "start": 1500.1,
-      "end": 1510.7
+      "start": 1486.005,
+      "end": 1496.605
     },
     {
       "id": "limitations:item:3",
-      "start": 1510.82,
-      "end": 1524.92
+      "start": 1496.725,
+      "end": 1510.825
     },
     {
       "id": "limitations:item:4",
-      "start": 1525.04,
-      "end": 1541.515
+      "start": 1510.945,
+      "end": 1527.42
     },
     {
       "id": "limitations:item:5",
-      "start": 1541.635,
-      "end": 1558.085
+      "start": 1527.54,
+      "end": 1543.99
     },
     {
       "id": "limitations:item:6",
-      "start": 1558.205,
-      "end": 1578.705
+      "start": 1544.11,
+      "end": 1564.61
     },
     {
       "id": "limitations:item:7",
-      "start": 1578.825,
-      "end": 1593.825
+      "start": 1564.73,
+      "end": 1579.73
     },
     {
       "id": "limitations:item:8",
-      "start": 1593.945,
-      "end": 1604.445
+      "start": 1579.85,
+      "end": 1590.35
     },
     {
       "id": "limitations:item:9",
-      "start": 1604.565,
-      "end": 1615.365
+      "start": 1590.47,
+      "end": 1601.27
     },
     {
       "id": "limitations:item:10",
-      "start": 1615.485,
-      "end": 1629.76
+      "start": 1601.39,
+      "end": 1615.665
     },
     {
       "id": "limitations:item:11",
-      "start": 1629.88,
-      "end": 1638.58
+      "start": 1615.785,
+      "end": 1624.485
     },
     {
       "id": "sources:title",
-      "start": 1638.7,
-      "end": 1643.325
+      "start": 1624.605,
+      "end": 1629.23
     },
     {
       "id": "sources:note",
-      "start": 1643.445,
-      "end": 1657.495
+      "start": 1629.35,
+      "end": 1643.4
     },
     {
       "id": "sources:item:0",
-      "start": 1657.615,
-      "end": 1691.035
+      "start": 1643.52,
+      "end": 1676.94
     },
     {
       "id": "sources:item:1",
-      "start": 1691.155,
-      "end": 1718.755
+      "start": 1677.06,
+      "end": 1704.66
     },
     {
       "id": "sources:item:2",
-      "start": 1718.875,
-      "end": 1758.545
+      "start": 1704.78,
+      "end": 1744.45
     },
     {
       "id": "sources:item:3",
-      "start": 1758.665,
-      "end": 1785.965
+      "start": 1744.57,
+      "end": 1771.87
     },
     {
       "id": "sources:item:4",
-      "start": 1786.085,
-      "end": 1812.835
+      "start": 1771.99,
+      "end": 1798.74
     },
     {
       "id": "sources:item:5",
-      "start": 1812.955,
-      "end": 1838.355
+      "start": 1798.86,
+      "end": 1824.26
     },
     {
       "id": "sources:item:6",
-      "start": 1838.475,
-      "end": 1863.25
+      "start": 1824.38,
+      "end": 1849.155
     },
     {
       "id": "sources:item:7",
-      "start": 1863.37,
-      "end": 1889.32
+      "start": 1849.275,
+      "end": 1875.225
     },
     {
       "id": "sources:item:8",
-      "start": 1889.44,
-      "end": 1910.89
+      "start": 1875.345,
+      "end": 1896.795
     },
     {
       "id": "sources:item:9",
-      "start": 1911.01,
-      "end": 1935.86
+      "start": 1896.915,
+      "end": 1921.765
     },
     {
       "id": "sources:item:10",
-      "start": 1935.98,
-      "end": 1963.855
+      "start": 1921.885,
+      "end": 1949.76
     },
     {
       "id": "sources:item:11",
-      "start": 1963.975,
-      "end": 1985.425
+      "start": 1949.88,
+      "end": 1971.33
     }
   ]
 }
