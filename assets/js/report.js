@@ -456,7 +456,7 @@
         <div class="report-stats">${stats}</div>
       </section>
 
-      <section class="report-thesis" aria-label="Thesis">
+      <section class="report-thesis" aria-label="Thesis" data-length="${lengthTier(report.thesis.statement, [160, 260, 260])}">
         <div class="report-thesis__meta"><span>${escapeHtml(report.thesis.label)}</span><span class="report-thesis__status">${escapeHtml(report.thesis.status)}</span></div>
         <blockquote ${speech("overview:thesis")}>${escapeHtml(report.thesis.statement)}</blockquote>
       </section>

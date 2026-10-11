@@ -2090,11 +2090,23 @@ blockquote {
   max-width: 73rem;
   margin: 0;
   font-family: var(--condensed);
-  font-size: clamp(3rem, 7vw, 7.4rem);
+  font-size: clamp(2.6rem, min(6vw, 9.5vh), 6.4rem);
   font-weight: 900;
   letter-spacing: -0.07em;
   line-height: 0.88;
   text-transform: uppercase;
+}
+
+/* Sized by statement length and capped by viewport height, so the thesis reads as one poster, not a scroll. */
+.report-thesis[data-length="medium"] blockquote {
+  font-size: clamp(2rem, min(4.2vw, 6.8vh), 4.4rem);
+  line-height: 0.92;
+}
+
+.report-thesis[data-length="xl"] blockquote {
+  font-size: clamp(1.8rem, min(4vw, 6.4vh), 4rem);
+  letter-spacing: -0.06em;
+  line-height: 0.94;
 }
 
 .report-body {
