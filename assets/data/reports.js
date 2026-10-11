@@ -3142,7 +3142,7 @@
         index: "DYOR—010",
         serial: "010 / 2026",
         lines: ["THE BOOKS", "BLAMED WOMEN.", "NEIGHBOURS NAMED THEM."],
-        footer: "Halloween series · part 1 of 2"
+        footer: "Halloween series · part 1 of 3"
       },
       transcript: {
         href: "assets/reports/dyor-c6d32fc5-2f7a-48ad-802d-cf2f7a1ccfe2.md",
@@ -3455,7 +3455,7 @@
         index: "DYOR—011",
         serial: "011 / 2026",
         lines: ["THE CORPSE", "THAT LOOKED", "FED."],
-        footer: "Halloween series · part 2 of 2"
+        footer: "Halloween series · part 2 of 3"
       },
       transcript: {
         href: "assets/reports/dyor-d497310d-de5b-48e2-bab5-4652d4db975c.md",
@@ -3725,10 +3725,333 @@
         { number: "12", title: "Master’s thesis, Central European University (2020)", publisher: "CEU Open Research", tier: "unsupported", digest: "a34ede3f0d15b855c08e0cbb055842419ffd0ae4a85f8648e6cd9b653d098035", href: "https://openresearch.ceu.edu/", note: "Stored and assessed at the bottom tier. Contributed no passage." }
       ],
       next: {
+        slug: "werewolves-the-judge-who-called-it-an-illusion",
+        eyebrow: "Halloween series · part 3",
+        title: "Werewolves, and the judge who called it an illusion.",
+        body: "The vampire panics turned a folk belief into official paperwork. The werewolf trials went further: courts took a neighbour’s accusation and rewrote it as a pact with the Devil. Part three asks where the werewolf came from, and why its own judges said nobody changes shape."
+      }
+    },
+    {
+      slug: "werewolves-the-judge-who-called-it-an-illusion",
+      kind: "report",
+      label: "Halloween dossier",
+      issue: "DOSSIER 012",
+      status: "published",
+      featured: false,
+      publishedAt: "2026-10-10",
+      updatedAt: "2026-10-10",
+      readMinutes: 15,
+      runId: "81cf10e4-7aab-4936-bb37-406c68b31aa5",
+      title: "Werewolves, and the judge who called it an illusion.",
+      shortTitle: "Werewolves",
+      deck: "People were burned as werewolves by courts whose own demonologists wrote that nobody turns into a wolf. Real wolves killed thousands, and they are not what put anyone on trial.",
+      cardLine: "Four explanations, a witch-trial judge who called shapeshifting impossible, and an old man in Livonia who said werewolves were God’s hounds.",
+      question: "What was the origin of European werewolf belief, what drove the werewolf trials of the 16th–17th centuries (Peter Stumpp 1589, Gilles Garnier 1573, the Jura and Franche-Comté cases, Thiess of Kaltenbrun 1692), how did those trials relate to the witch trials, and in what distinct senses—documented events, misread natural phenomena, or literal shapeshifting—can werewolves be said to have been “real”?",
+      answer: "The belief is old: Lycaon in Greek myth, Scandinavian warriors in wolf fur, and a church canon that called bodily transformation a dream. The trials came when courts took a folk accusation of a werewolf and, through leading questions and torture, turned it into a confession of a pact with the Devil. Real things fed in: at least one likely killer of children in Franche-Comté, and wolves that may have killed 9,000 people in France over two centuries. But wolves alone put no one on trial. Literal shapeshifting scored worst of four explanations, and the demonologist the run read wrote that it was impossible.",
+      disclosure: "This is a single research run, part three of a Halloween series. Its trial material comes mostly from encyclopaedia and magazine summaries; the one primary text it read is a demonologist’s own treatise, which the run does not name and this page identifies as Henri Boguet’s. No Stumpp court record survives to read, and the run did not measure how many accused werewolves were men.",
+      accent: "rust",
+      tags: ["Halloween", "Folklore", "Legal history", "Medical history"],
+      cover: {
+        index: "DYOR—012",
+        serial: "012 / 2026",
+        lines: ["THE JUDGE", "CALLED IT", "AN ILLUSION."],
+        footer: "Halloween series · part 3 of 3"
+      },
+      transcript: {
+        href: "assets/reports/dyor-81cf10e4-7aab-4936-bb37-406c68b31aa5.md",
+        label: "Read the full method transcript",
+        note: "The complete run record: the bounded question, all four explanations with what would kill each one, every search, every verbatim excerpt and its bearing, every snapshot digest. Published unedited so the story above can be checked against it."
+      },
+      scope: {
+        audience: "Anyone who has heard that werewolves were “really” rabies, porphyria, ergot or a serial killer, and wants to know which of those survived a test.",
+        focus: "Where the werewolf came from, the trials of Gilles Garnier in Franche-Comté and Peter Stumpp near Cologne, the Livonian werewolf Thiess, and the Beast of Gévaudan as a case of real predation with no trial.",
+        excluded: "Non-European shapeshifters such as skin-walkers and kitsune, werewolf fiction after 1941 except as a source of modern tropes, modern “real werewolf” claims, and wolf ecology except where it bears on attacks on people."
+      },
+      stats: [
+        { value: "4", label: "competing explanations tested" },
+        { value: "−38", label: "net score for literal shapeshifting" },
+        { value: "9,000", label: "estimated French wolf-attack deaths, c.1600–1800" }
+      ],
+      thesis: {
+        label: "The distinction this page rests on",
+        statement: "The werewolf was a folk belief that courts translated into witchcraft. The trials were real and lethal, the wolves were real and lethal, and some of the killings were real. The transformation was not, and the demonologists who justified the trials said so in print.",
+        status: "no run-level verdict"
+      },
+      chapters: [
+        {
+          id: "boundary",
+          number: "01",
+          eyebrow: "The boundary",
+          title: "Three meanings of real, written down before any source was read.",
+          lead: "As in the vampire run, the question was split before any searching began: were the trials real events, were natural things misread as werewolves, and did anyone actually change shape?",
+          body: [
+            "The period runs from classical myth through the trial era, roughly the 1520s to 1692, to the Beast of Gévaudan in 1764–67, and ends at The Wolf Man in 1941, which is in scope only to show where the modern rules came from. The places are the trial clusters: Franche-Comté and the Jura, the Rhineland around Bedburg, and Livonia, in today’s Estonia and Latvia.",
+            "Fifteen subquestions were written first: what the confessions actually contain and how they were taken, whether werewolf trials differed from witch trials in the same courts, whether accused werewolves were mostly men, whether clinical lycanthropy can be diagnosed four hundred years late without anachronism, and whether rabies, ergot, porphyria or excess body hair fit any recorded case.",
+            "One ambiguity was written down at the start: the Beast of Gévaudan may not count as a werewolf case at all, because nobody was ever tried for it. That turned out to be the point."
+          ],
+          pullquote: "The question was not whether werewolves exist. It was which kind of real the record can support.",
+          visual: {
+            type: "scope-boundary",
+            askedLabel: "What was asked",
+            asked: [
+              "Where European werewolf belief first appears in writing",
+              "What drove the trials of Garnier, Stumpp and the Jura cases",
+              "How werewolf trials related to witch trials",
+              "Whether wolves, killers, madness or disease explain the records",
+              "Where silver bullets and the full moon came from"
+            ],
+            excludedLabel: "Deliberately left out",
+            excluded: [
+              "Shapeshifters outside Europe",
+              "Werewolf fiction after 1941",
+              "Modern “real werewolf” claims",
+              "Wolf ecology beyond attacks on people"
+            ]
+          }
+        },
+        {
+          id: "explanations",
+          number: "02",
+          eyebrow: "Competing explanations",
+          title: "Four explanations, and the literal one came last.",
+          lead: "Each explanation was written down with the observation that would destroy it. Eighty-seven passages were then scored against all four.",
+          body: [
+            "Fusion (H1), an old folk belief absorbed into the witch-hunting machine, collected forty-four supporting passages and five against. Misread natural causes (H2) split almost evenly, twenty for and twenty-one against, because the wolves and the killings held up and the diseases did not. Opportunism (H3), the werewolf charge as a convenient weapon in local and political fights, came out slightly positive.",
+            "Literal reality (H4), that shapeshifting was real or that the courts prosecuted it as real, drew six supporting passages and thirty-seven against. Every one of the six is about someone believing in werewolves, not about anything turning into a wolf.",
+            "The second round of searching added three new source families, and it pushed the counts further towards fusion and further against the literal reading."
+          ],
+          pullquote: "Every passage that leaned towards the literal werewolf was about belief, not about a body.",
+          visual: {
+            type: "hypothesis-roster",
+            scale: ["++", "+", "0", "-", "--"],
+            items: [
+              { id: "H1", claim: "An independent folk and religious belief fused with the demonological witch-hunting apparatus; the trials were largely witch trials with a werewolf overlay.", falsifier: "Werewolf accusations arising independently of, and before, witch-hunting demonology, or werewolf trials using procedures fundamentally different from witch trials in the same courts.", counts: [2, 42, 38, 5, 0] },
+              { id: "H2", claim: "Real wolf attacks, serial murders and diseases such as rabies, porphyria, ergotism and clinical lycanthropy were misread as werewolves.", falsifier: "Wound patterns, victim profiles and symptoms in the documented cases that match none of the proposed natural causes.", counts: [2, 18, 46, 19, 2] },
+              { id: "H3", claim: "The trials were instruments of local, political and judicial opportunism, with no genuine unusual behaviour or attacks behind them.", falsifier: "Independent, non-confession evidence that the accused really attacked people before any conflict or judicial incentive existed.", counts: [3, 16, 50, 18, 0] },
+              { id: "H4", claim: "Shapeshifting was treated as literally real, and the trials prosecuted an actually occurring supernatural crime.", falsifier: "Natural explanations sufficient for every case detail, or the trial authorities themselves rejecting bodily transformation.", counts: [0, 6, 44, 30, 7] }
+            ],
+            note: "Counts are bearings, not votes: each of 87 passages was scored against all four explanations. Most passages are neutral to most explanations because they address only one of them."
+          }
+        },
+        {
+          id: "origins",
+          number: "03",
+          eyebrow: "Where the belief came from",
+          title: "The wolf-man was ancient. The Church first called him a dream.",
+          lead: "The run found the werewolf long before any court did. What changed in the trial era was not the belief but the official attitude to it.",
+          body: [
+            "The oldest writing on lycanthropy the run found is the Greek myth of Lycaon, king of Arcadia, whom Zeus turns into a wolf. In Ovid’s telling his clothes become shaggy hair, his arms become legs, and he keeps his greed for blood. Scandinavian warriors, the ulfheðnar, ate wolves and wore wolf fur into battle. The belief was in place long before any demonology.",
+            "The medieval Church was sceptical of it. The Canon Episcopi held that such transformations happen in the mind as dream visions, not in the body, and that anyone who believes a person can become another kind of creature is worse in faith than an infidel. Burchard of Worms added: “and worse than a pagan.” Believing in the transformation was the heresy.",
+            "That had to be argued away before the trials could start. The run’s source contrasts the canon with the 1484 bull Summis desiderantes, and notes that the authors of the Malleus Maleficarum, the Hammer of Witches, knew the old canon stood in their way. Even after that, as chapter six shows, the demonologists never quite accepted that a body changes shape."
+          ],
+          pullquote: "In the medieval canon, believing in werewolves was the heresy.",
+          visual: {
+            type: "lineage-chain",
+            items: [
+              { date: "", actor: "Lycaon, in Greek myth and Ovid", added: "Zeus turns a king into a wolf. The oldest writing on lycanthropy the run found." },
+              { date: "", actor: "The ulfheðnar", added: "Scandinavian warriors who ate wolves and dressed in wolf fur before fights." },
+              { date: "", actor: "The Canon Episcopi", added: "Transformation is a dream vision, not a bodily change, and believing otherwise is worse than infidelity." },
+              { date: "1484–87", actor: "Summis desiderantes and the Malleus", added: "The Church sanctions witch trials, and the witch-hunters argue for the reality of witchcraft against the older canon." },
+              { date: "1573–1692", actor: "The trial courts", added: "A folk accusation of werewolfery is reworked, under leading questions and torture, into a pact with the Devil." },
+              { date: "1941–44", actor: "Universal’s Wolf Man films", added: "The “pure in heart” verse, then the full moon, then the silver bullet. All three were invented for the films." }
+            ],
+            note: "Dates appear only where this run’s passages state one. The first three carry none."
+          }
+        },
+        {
+          id: "trials",
+          number: "04",
+          eyebrow: "The trials",
+          title: "One case has witnesses. The other has only a confession on the rack.",
+          lead: "The two famous werewolves are usually told as one story. The run found their evidence is opposite in kind, and that what is true of one cannot be carried over to the other.",
+          body: [
+            "Gilles Garnier, a hermit near Dole, was burned on 18 January 1574 for “crimes of lycanthropy and witchcraft.” His case carries evidence that did not come from his confession. More than fifty witnesses deposed that children had been attacked and killed in the fields and vineyards. A boy of twelve or thirteen was found bitten and torn open. And before any arrest, workers travelling at dusk came on what looked like a wolf, which some recognised as the hermit, with the body of a dead child. Then came the confession under torture: a spectre in the forest, and an ointment that turned him into a wolf.",
+            "Peter Stumpp, executed near Cologne in 1589, has none of that. No interrogation transcript or court record survives; almost everything known comes from a sixteen-page London pamphlet of 1590, translated from a German print that is lost. He confessed after being stretched on the rack, under threat of more: a magic belt from the Devil, fourteen children and two pregnant women eaten, incest, and a succubus. The proof offered was that a wolf had lost its left forepaw, and he had the same injury.",
+            "The run’s conclusion is that confession content tracks the interrogator’s questionnaire, not any disease or predation signature. The more vivid the confession, the less it proves."
+          ],
+          pullquote: "The more vivid the confession, the less it proves.",
+          visual: {
+            type: "timeline",
+            items: [
+              { date: "1573", label: "The edict", detail: "Franche-Comté authorises the people to hunt down a child-killer, at a time when unsolved killings were often blamed on werewolves." },
+              { date: "18 Jan 1574", label: "Gilles Garnier", detail: "Burned at Dole after a secular trial, not the Inquisition’s, for lycanthropy and witchcraft.", tone: "seizure" },
+              { date: "1583–88", label: "The Cologne War", detail: "Catholic and Protestant factions fight over the region; mercenaries roam around Bedburg." },
+              { date: "1589", label: "Peter Stumpp", detail: "Tortured, broken on the wheel, beheaded and burned. No court record survives.", tone: "seizure" },
+              { date: "1590", label: "The pamphlet", detail: "A sixteen-page London translation of a lost German print: the main source for the case." },
+              { date: "1691–92", label: "Thiess of Kaltenbrun", detail: "Called as a witness, he volunteers that he was a werewolf. Flogged and banished, not executed.", tone: "end" },
+              { date: "1764–67", label: "The Beast of Gévaudan", detail: "About a hundred dead and nearly three hundred victims. No one is tried as a werewolf.", tone: "after" },
+              { date: "19 Jun 1767", label: "Jean Chastel", detail: "A local farmer kills the creature with a bullet.", tone: "after" }
+            ],
+            note: "Dates are as recorded in the run’s passages. The Jura trials of the 1520s were asked about and not reached."
+          }
+        },
+        {
+          id: "mechanism",
+          number: "05",
+          eyebrow: "How a werewolf became a witch",
+          title: "The accused never mentioned Satan. The court added him.",
+          lead: "The strongest finding in the run is about procedure, not belief, and it has the right order in time: the neighbours’ werewolf accusation comes first, and the Devil arrives later, in the interrogation room.",
+          body: [
+            "The clearest description comes from the Baltic. Peasants there believed in harmful magic and in werewolves, but, worshipping outside the Christian frame, not in Satan or pacts with him. When they accused someone of doing damage in the shape of a wolf, the authorities read it as witchcraft. Through leading questions and torture, confessions about werewolves were adjusted into confessions about Satan, and the accused were executed as witches.",
+            "That fits the rest of the record. Werewolf charges appear in only a small fraction of witchcraft trials, as an add-on available inside existing machinery. Garnier was convicted of “lycanthropy and witchcraft” together. And the scapegoat reading has support at Bedburg: the Catholic faction had just taken control, Stumpp had reputedly converted to Protestantism, and a brutal trial would warn Protestants off rebellion.",
+            "The weak point is that most of this comes from one place. The run traced its seven supporting passages to a single independent origin, and one of its stress tests names what would break the finding: records in which magistrates started with the Devil before any neighbour had said “werewolf.”"
+          ],
+          pullquote: "The neighbours said werewolf. The interrogators wrote down the Devil.",
+          visual: {
+            type: "finding-attack",
+            finding: {
+              label: "Asserted finding",
+              status: "observed",
+              text: "Werewolf belief circulated as an autonomous folk complex which early modern courts translated into the witchcraft template: leading questions and torture reshaped werewolf statements into Satanic-pact confessions, with lay accusation first and demonic pact extracted afterwards.",
+              id: "fnd_1f2a0d588602fe21_00",
+              meta: "causal claim on mechanism and temporality · computed confidence: low"
+            },
+            attack: {
+              label: "Stress test recorded against it",
+              kind: "causal overreach",
+              text: "If archival records show magistrates or inquisitors opening proceedings under demonic-pact headings before, or without, any lay werewolf accusation, the claimed sequence fails.",
+              id: "stp_0db2de9413361318_00"
+            },
+            failureLabel: "What would break it",
+            failure: "A significant share of early modern werewolf prosecutions beginning with magistrate- or inquisitor-led pact charges, with no prior neighbour accusation."
+          }
+        },
+        {
+          id: "illusion",
+          number: "06",
+          eyebrow: "What the judges believed",
+          title: "The judge who tried werewolves wrote that no one becomes a wolf.",
+          lead: "Literal shapeshifting lost twice: once to the evidence, and once to the men who ran the trials.",
+          body: [
+            "The one primary text the run read is a chapter of An Examen of Witches, the English translation of Henri Boguet’s treatise; Boguet was a judge in Franche-Comté who tried accused witches and werewolves himself. He is blunt: “it has always been my opinion that Lycanthropy is an illusion, and that the metamorphosis of a man into a beast is impossible.” His theory was that the Devil confuses the witch’s imagination, so that the witch really runs about killing while believing he is a wolf, or that Satan does the killing himself in wolf shape while the witch sleeps behind a bush.",
+            "He used the trial evidence against transformation himself. Witnesses had recognised the hands and toes of two accused women, Perrenette Gandillon and Clauda Gaillard. “Are they not evidence,” he asked, “that they were not really transformed into wolves?” He added that a Church council had declared believers in metamorphosis to be infidels.",
+            "So the legal theory was never that a body changed shape. It was that a deluded human being really committed the killings. That is why a conviction cannot tell you which explanation produced the defendant: the same theory fits a serial killer, a scapegoat and a demonological framing equally well."
+          ],
+          pullquote: "“Lycanthropy is an illusion, and the metamorphosis of a man into a beast is impossible.”",
+          visual: {
+            type: "verdict-shift",
+            before: ["WEREWOLVES WERE REAL", "OR THEY WERE NOT", "ONE QUESTION"],
+            after: ["TRIALS: documented, and lethal", "KILLINGS: some real, by wolves and people", "SHAPESHIFTING: worst of four"]
+          }
+        },
+        {
+          id: "natural-causes",
+          number: "07",
+          eyebrow: "The popular theories",
+          title: "Real wolves killed thousands. Real diseases look wolf-like. Neither shows up in a trial.",
+          lead: "The natural explanations split cleanly. Predation was real and large. The medical theories establish only that a mechanism is possible.",
+          body: [
+            "Wolves really did kill people. One estimate puts French wolf-attack deaths at as many as 9,000 between the late sixteenth and early nineteenth centuries. In Gévaudan the victims were almost all women and children, the first a fourteen-year-old girl watching her sheep, many with throats torn out. Officials at the time described something bigger than a wolf, hyena-like or lion-like; popular retelling added walking on hind legs, bullet-proof hide and returning from the dead. The historian the source quotes reads it as a serious wolf infestation rather than one beast. A farmer finally killed the creature with an ordinary bullet, and no one was tried. Predation was a background condition, not a cause of trials.",
+            "The diseases are real too. A systematic review found 43 cases of clinical lycanthropy, or its dog equivalent, reported between 1852 and 2020, mostly in schizophrenia, psychotic depression and mania. Congenital hypertrichosis and Günther’s porphyria cause excess hair, scarring and red-stained teeth. But the review rates its own evidence as low, built on case reports, and none of these conditions appears in any trial record the run saw.",
+            "A peer-reviewed history of medicine adds that the rabies, porphyria and ergot theories were mostly published in medical journals by history enthusiasts, and rebuts the ergot and witches’-ointment theories. Physicians at the time offered melancholy as the explanation, while knowing the classical melancholic lycanthrope was harmless rather than murderous."
+          ],
+          pullquote: "A disease that makes a person look like a wolf is not a disease that appears in a trial record.",
+          visual: {
+            type: "condition-chain",
+            items: [
+              { label: "Real wolves killed people in large numbers", state: "supported" },
+              { label: "Some accused, like Garnier, likely really killed", state: "supported" },
+              { label: "Clinical lycanthropy explains a trial defendant", state: "unknown" },
+              { label: "Porphyria or hypertrichosis explains an accused", state: "unknown" },
+              { label: "Ergot or ointment hallucinations explain sightings", state: "weak link" },
+              { label: "Anyone changed shape", state: "weak link" }
+            ]
+          }
+        },
+        {
+          id: "attacks",
+          number: "08",
+          eyebrow: "Trying to break it",
+          title: "Eight searches for the other side, and six that came back.",
+          lead: "After the first pass, the run went looking for the evidence that would hurt each explanation most. This time most of the counter-searches found something.",
+          body: [
+            "Both searches against fusion returned the same overview of werewolf witch trials, and it supplied the mechanism and the exception to it. Thiess of Kaltenbrun, in his eighties, volunteered in a church-robbery case where it was irrelevant that he had been a werewolf. Werewolves, he said, were God’s hounds who fought witches in Hell to bring back stolen grain. The court could not get a pact with the Devil out of him. Where the peasants had no Satan and the court got no confession, the werewolf stayed a werewolf.",
+            "The searches against literal shapeshifting returned the Canon Episcopi and Boguet’s treatise. The searches against natural causes returned the medical-history critique and National Geographic’s account of how thin the Stumpp evidence is.",
+            "Both searches against opportunism came back empty: one for property confiscation and court fees, one for bite wounds documented before any accusation. The money motive is untested here, not refuted. Three passages were refused by the verbatim gate and count for nothing."
+          ],
+          pullquote: "Where the peasants had no Satan, the werewolf stayed a werewolf.",
+          visual: {
+            type: "attack-log",
+            items: [
+              { target: "H1", looked: "Werewolf cases tried under separate secular procedures before or apart from witch-hunting demonology", outcome: "returned" },
+              { target: "H1", looked: "Comparative studies showing werewolf trials diverged from witch trials in procedure, torture or sentencing", outcome: "returned" },
+              { target: "H2", looked: "Medical and historical rebuttals of porphyria, ergot and rabies as drivers of werewolf trials", outcome: "returned" },
+              { target: "H2", looked: "Analyses showing Stumpp and Garnier were judicial fabrications under torture", outcome: "returned" },
+              { target: "H3", looked: "Evidence tying werewolf prosecutions to property confiscation, court fees or boundary feuds", outcome: "empty" },
+              { target: "H3", looked: "Archival records of wolf bites or attacks documented before any accusation", outcome: "empty" },
+              { target: "H4", looked: "Doctrine classifying werewolf transformation as phantasm rather than bodily change", outcome: "returned" },
+              { target: "H4", looked: "Demonologists rejecting literal shapeshifting in favour of prosecuting the pact or the delusion", outcome: "returned" }
+            ],
+            footer: "6 of 8 adversarial searches returned a source. No probe was pre-registered, so the two blanks are not evidence of absence."
+          }
+        },
+        {
+          id: "score",
+          number: "09",
+          eyebrow: "What the number means",
+          title: "Fourteen out of a hundred, and why the number is that low.",
+          lead: "Sixteen findings asserted, one conjecture, six open questions. Three findings reached low confidence; the rest computed to unknown.",
+          body: [
+            "Falsification scored 18 of 20, the best in the series, because six of eight counter-searches returned something. Corroboration and provenance were close to zero: the whole ledger traced to a single independent origin. The sources are mostly Wikipedia, the Smithsonian and National Geographic, with one systematic review, one peer-reviewed medical history and one primary demonological text.",
+            "Saturation scored zero because the second round found three new source families out of five, so the search had not run dry. Nine stress probes were recorded and counter-evidence was found, which caps the result in the unknown band: the components summed to 28, and the cap brings the score to 14."
+          ],
+          pullquote: "The counter-searches worked. The sources behind them may still be one story retold.",
+          visual: {
+            type: "score-breakdown",
+            components: [
+              { label: "Corroboration", value: 8, max: 40, note: "1 independent origin behind 16 findings" },
+              { label: "Provenance", value: 2, max: 25, note: "4 sources could not be traced to an origin" },
+              { label: "Falsification", value: 18, max: 20, note: "8 counter-searches run, 6 returned" },
+              { label: "Saturation", value: 0, max: 15, note: "round 2 found 3 new families of 5, so not saturated" }
+            ],
+            subtotalLabel: "Components summed",
+            subtotal: "28",
+            capLabel: "Counter-evidence found caps the unknown band",
+            total: "14 / 100",
+            confidence: "unknown",
+            note: "Not a probability. This run holds no calibrated priors and no likelihood model."
+          }
+        }
+      ],
+      principlesHeading: { eyebrow: "Take this with you", title: "Ask who added the Devil." },
+      principles: [
+        "Split “was it real?” into the events, the causes, and the claim. They have different answers.",
+        "A confession taken on the rack tells you about the questions, not the crime.",
+        "Real danger explains fear. It does not explain who was put on trial.",
+        "Read what the prosecutors believed. Sometimes they did not believe the charge either."
+      ],
+      limitations: [
+        "The run did not measure what share of accused werewolves were men, so “werewolves were mostly men” is untested here. The one treatise it read names two accused women.",
+        "No Stumpp court record survives, so whether he killed anyone cannot be settled. For Garnier it is only weakly settled.",
+        "The Jura trials of the 1520s, Petronius, Herodotus’s Neuri, Marie de France’s Bisclavret and the Norse sagas were asked about and not reached.",
+        "Whether court fees, property confiscation or local feuds drove any werewolf accusation is untested: both counter-searches came back empty.",
+        "No defendant has been checked for a somatic “werewolf syndrome,” which would be the cleanest test of the medical theories.",
+        "The Livonian contrast rests on one man’s case, and whether Thiess was tortured at all is not established.",
+        "Most sources are encyclopaedia and magazine articles, traced to a single independent origin."
+      ],
+      sourcesHeading: { eyebrow: "Source record", title: "Fourteen sources, and the bytes that were stored." },
+      sourcesNote: "Each link is the address that was recorded, printed beside the digest of the bytes that were actually stored. The link is not a guarantee that the address still serves those bytes — the digest is the thing to check a quotation against.",
+      sources: [
+        { number: "01", title: "Thiess of Kaltenbrun", publisher: "Wikipedia", tier: "quality journalism", digest: "445b8c092bc61ee77631f0e5b09a9647dfd45263aa153ded351470e599943ff4", href: "https://en.wikipedia.org/wiki/Thiess_of_Kaltenbrun", note: "13 passages, the most of any source: the hounds of God, the harvest journeys to Hell, the sentence, and Ginzburg’s benandanti comparison." },
+        { number: "02", title: "Clinical Lycanthropy, Neurobiology, Culture: A Systematic Review", publisher: "PubMed Central", tier: "systematic review", digest: "cee5ca7bf4ac077130e65e860cdb946ff17f1330dffce97385dd4203f61e5528", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8542696/", note: "12 passages: 43 cases from 1852 to 2020, the somatic “werewolf syndromes,” Lycaon and the ulfheðnar, and the review’s own low-evidence warning." },
+        { number: "03", title: "When the Beast of Gévaudan Terrorized France", publisher: "Smithsonian Magazine", tier: "quality journalism", digest: "00bd96f9dcce849bc6705cd65303a9877a60d3faf39e3378bf54763a5a3dc30b", href: "https://www.smithsonianmag.com/history/beast-gevaudan-terrorized-france-countryside-180963820/", note: "11 passages: the Gévaudan victims, the contemporary descriptions, the wolf-infestation reading and the 9,000 estimate." },
+        { number: "04", title: "Gilles Garnier", publisher: "Wikipedia", tier: "anecdotal", digest: "ef83cb0a6ec802b95fe90583dcd18af7f0ec5b4c040de158ea4abb0eafeb4b7a", href: "https://en.wikipedia.org/wiki/Gilles_Garnier", note: "10 passages: the edict, the fifty witnesses, the pre-arrest sighting, the confession and the sentence." },
+        { number: "05", title: "Werewolf witch trials", publisher: "Wikipedia", tier: "quality journalism", digest: "b1e7e90f39802b0d0bc3830e2de2d839c28a256a6343a63a7058e9e56666f6e9", href: "https://en.wikipedia.org/wiki/Werewolf_witch_trials", note: "8 passages, returned by both H1 counter-searches: the Baltic mechanism and the “small fraction” of witch trials." },
+        { number: "06", title: "Peter Stumpp", publisher: "Wikipedia", tier: "unsupported", digest: "c9476a9544670a2233afed031c969049496a33a060b5efe9f6941e09630fcefd", href: "https://en.wikipedia.org/wiki/Peter_Stumpp", note: "7 passages: the rack, the belt, the confession, the execution and the 1590 pamphlet." },
+        { number: "07", title: "An Examen of Witches, Chapter 47", publisher: "Wikisource", tier: "anecdotal", digest: "811f15726ce410468efb566c2aefd1202f2057ab4b63151469fd11e5f0554fc5", href: "https://en.wikisource.org/wiki/An_Examen_of_Witches/Chapter_47", note: "7 passages, returned by an H4 counter-search. The one primary text in the ledger: Boguet calling lycanthropy an illusion." },
+        { number: "08", title: "A German werewolf’s “confessions” horrified 1500s Europe", publisher: "National Geographic", tier: "quality journalism", digest: "fd98fe48be77490dc89a4952b96c4609be6fa0607f453a402667219c2e94ab10", href: "https://www.nationalgeographic.com/history/history-magazine/article/a-german-werewolfs-confessions-horrified-1500s-europe", note: "5 passages, returned by an H2 counter-search: no surviving court record, and the Cologne War scapegoat reading." },
+        { number: "09", title: "Canon Episcopi", publisher: "Wikipedia", tier: "quality journalism", digest: "c1366b9a2fa996406d84be86a472d5a91832d90e694646f9e6708d8ae7337368", href: "https://en.wikipedia.org/wiki/Canon_Episcopi", note: "5 passages, returned by an H4 counter-search: transformation as dream vision, and the Malleus authors’ problem with it." },
+        { number: "10", title: "The Wolf Man (1941 film)", publisher: "Wikipedia", tier: "quality journalism", digest: "46fd51314bb5d541b3e3e18260133de65e89ee713cb39d14a660fa86c36c134c", href: "https://en.wikipedia.org/wiki/The_Wolf_Man_(1941_film)", note: "4 passages: the invented verse, the 1943 full moon and the 1944 silver bullet." },
+        { number: "11", title: "Battling demons with medical authority: werewolves, physicians and rationalization", publisher: "PubMed Central", tier: "peer reviewed", digest: "47d3b416353a7fcf0f8fc9362bc84fde23474312c00764f4ffede94d2b69bd6f", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4090416/", note: "4 passages, returned by an H2 counter-search: the critique of the rabies, porphyria and ergot theories, and the melancholy argument." },
+        { number: "12", title: "Metamorphoses, Book 1, line 163", publisher: "Perseus Digital Library", tier: "anecdotal", digest: "887c99a64bea99ee123108afa02f28a5be5f2492e06caee06d541ca0ad74b8cd", href: "https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3A1999.02.0028%3Abook%3D1%3Acard%3D163", note: "1 passage: Ovid’s account of Lycaon becoming a wolf." },
+        { number: "13", title: "On Porphyria and the Ætiology of Werwolves", publisher: "PubMed Central", tier: "unsupported", digest: "42303100636b241da439111d3ab51ca0113aee32eff701068b03251630e56bd3", href: "https://pmc.ncbi.nlm.nih.gov/articles/PMC1897308/", note: "The 1964 porphyria thesis. Stored and assessed at the bottom tier; contributed no passage." },
+        { number: "14", title: "Witch Trials in Early Modern Europe and New England", publisher: "UC Berkeley Law, Robbins Collection", tier: "expert analysis", digest: "0e1e6c4f9a17e2c416d71ead17e73efb4158a3f068864423ea6ecab998ef3c50", href: "https://www.law.berkeley.edu/research/the-robbins-collection/exhibitions/witch-trials-in-early-modern-europe-and-new-england/", note: "Stored and assessed. Contributed no passage." }
+      ],
+      next: {
         slug: "witches-why-the-hunt-turned-on-women",
         eyebrow: "Halloween series · part 1",
         title: "Witches, and why the hunt turned on women.",
-        body: "The vampire panics followed a pattern the witch run found first: an old folk belief became a documented crisis once officials began investigating and printing, and the state ended it by decree. Part one asks where the witch came from, and why the earliest victims were mostly men."
+        body: "The werewolf trials ran on the machinery the witch runs traced: a neighbour’s accusation, an interrogator’s questionnaire, and a confession shaped to fit it. Part one asks where the witch came from, and why the earliest victims were mostly men."
       }
     }
   ];

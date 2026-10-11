@@ -14,7 +14,8 @@
     "mkultra-the-caption-and-the-document",
     "jesus-the-bible-and-the-claims-made-for-god",
     "witches-why-the-hunt-turned-on-women",
-    "vampires-the-corpse-that-looked-fed"
+    "vampires-the-corpse-that-looked-fed",
+    "werewolves-the-judge-who-called-it-an-illusion"
   ];
 
   window.DYOR_NARRATION = Object.freeze(Object.fromEntries(slugs.map((slug) => [slug, Object.freeze({
