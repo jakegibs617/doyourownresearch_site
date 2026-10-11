@@ -262,6 +262,14 @@
     </section>`;
   }
 
+  // Long research questions step the type down so the whole question fits on one screen.
+  function questionLength(question = "") {
+    if (question.length > 420) return "xl";
+    if (question.length > 260) return "long";
+    if (question.length > 140) return "medium";
+    return "short";
+  }
+
   // Every word a reader actually reads on the page, so wordCount describes the article and not the data file.
   function countWords(report) {
     const parts = [report.title, report.deck, report.question, report.answer, report.disclosure, report.thesis?.statement];
@@ -437,7 +445,7 @@
       </nav>
 
       <section class="report-intro" id="overview" data-report-section>
-        <div class="report-question">
+        <div class="report-question" data-length="${questionLength(report.question)}">
           <div class="report-question__label">The question / Q</div>
           <blockquote ${speech("overview:question")}>${escapeHtml(report.question)}</blockquote>
         </div>
