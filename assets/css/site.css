@@ -1987,11 +1987,33 @@ blockquote {
   max-width: 56rem;
   margin: 0;
   font-family: var(--condensed);
-  font-size: clamp(2.1rem, 4.5vw, 4.8rem);
+  font-size: clamp(2rem, min(4.2vw, 7vh), 4.4rem);
   font-weight: 900;
   letter-spacing: -0.055em;
   line-height: 0.98;
   text-transform: uppercase;
+}
+
+/* Sized by answer length and capped by viewport height. Long answers drop the capitals, which stop being readable past a few lines. */
+.report-answer[data-length="medium"] p {
+  font-size: clamp(1.5rem, min(3vw, 5vh), 3rem);
+  line-height: 1.02;
+}
+
+.report-answer[data-length="long"] p,
+.report-answer[data-length="xl"] p {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  text-transform: none;
+}
+
+.report-answer[data-length="long"] p {
+  font-size: clamp(1.4rem, min(2.6vw, 4.4vh), 2.5rem);
+}
+
+.report-answer[data-length="xl"] p {
+  font-size: clamp(1.3rem, min(2.3vw, 3.9vh), 2.2rem);
 }
 
 .report-stats {

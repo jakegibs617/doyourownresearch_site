@@ -262,11 +262,11 @@
     </section>`;
   }
 
-  // Long research questions step the type down so the whole question fits on one screen.
-  function questionLength(question = "") {
-    if (question.length > 420) return "xl";
-    if (question.length > 260) return "long";
-    if (question.length > 140) return "medium";
+  // Long questions and answers step the type down so each fits on one screen.
+  function lengthTier(text = "", [medium, long, xl]) {
+    if (text.length > xl) return "xl";
+    if (text.length > long) return "long";
+    if (text.length > medium) return "medium";
     return "short";
   }
 
@@ -445,11 +445,11 @@
       </nav>
 
       <section class="report-intro" id="overview" data-report-section>
-        <div class="report-question" data-length="${questionLength(report.question)}">
+        <div class="report-question" data-length="${lengthTier(report.question, [140, 260, 420])}">
           <div class="report-question__label">The question / Q</div>
           <blockquote ${speech("overview:question")}>${escapeHtml(report.question)}</blockquote>
         </div>
-        <div class="report-answer">
+        <div class="report-answer" data-length="${lengthTier(report.answer, [260, 480, 680])}">
           <div class="report-answer__label">The short answer / A</div>
           <p ${speech("overview:answer")}>${escapeHtml(report.answer)}</p>
         </div>
